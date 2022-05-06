@@ -5,4 +5,5 @@
 ln -f -i -n -s ~/dotfiles/nvim ~/.config/nvim
 ln -f -i -n -s ~/dotfiles/ranger ~/.config/ranger
 ln -f -i -n -s ~/dotfiles/.zshrc ~/.zshrc
+ln -f -i -n -s ~/dotfiles/.gitconfig ~/.gitconfig
 ln -f -i -n -s ~/dotfiles/lazygit.yml ~/Library/Application\ Support/lazygit/config.yml

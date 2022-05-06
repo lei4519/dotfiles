@@ -1,4 +1,15 @@
+gui:
+  showIcons: true
+
 git:
+  autofetch: true
   paging:
     colorArg: always
     pager: delta --dark --paging=never
+    # pager: delta --show-syntax-themes --dark --paging=never --theme="OneHalfDark"
+
+os:
+  editCommand: 'nvim' # see 'Configuring File Editing' section
+  editCommandTemplate: 'nvim'
+  openCommand: 'nvim'
+

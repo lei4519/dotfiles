@@ -37,10 +37,6 @@ map("n", "g_", "$", opt)
 map("n", "<C-u>", "10k", opt)
 map("n", "<C-d>", "10j", opt)
 
--- magic search
-map("n", "/", "/\\v", { noremap = true, silent = false })
-map("v", "/", "/\\v", { noremap = true, silent = false })
-
 -- visual模式下缩进代码
 map("v", "<", "<gv", opt)
 map("v", ">", ">gv", opt)

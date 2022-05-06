@@ -1,5 +1,7 @@
 :lua require('setup')
 
+set foldmethod=indent
+
 " -------- Coc 配置 --------
 " Set internal encoding of vim, not needed on neovim, since coc.nvim using some
 " unicode characters in the file autoload/float.vim
@@ -81,8 +83,8 @@ nmap ga  <Plug>(coc-codeaction)
 nmap <leader>R <Plug>(coc-rename)
 
 " Formatting selected code.
-xmap <leader>f  :Format<cr>
-nmap <leader>f  :Format<cr>
+xmap <leader>F  :Format<cr>
+nmap <leader>F  :Format<cr>
 
 " Map function and class text objects
 " NOTE: Requires 'textDocument.documentSymbol' support from the language server.
@@ -105,10 +107,10 @@ xmap <silent> <C-s> <Plug>(coc-range-select)
 command! -nargs=0 Format :call CocActionAsync('format')
 
 " Add `:Fold` command to fold current buffer.
-command! -nargs=? Fold :call     CocAction('fold', <f-args>)
-nmap zC  :Fold<cr>
+" command! -nargs=? Fold :call     CocAction('fold', <f-args>)
+
 " Add `:OR` command for organize imports of the current buffer.
-command! -nargs=0 OR   :call     CocActionAsync('runCommand', 'editor.action.organizeImport')
+" command! -nargs=0 OR   :call     CocActionAsync('runCommand', 'editor.action.organizeImport')
 
 " Mappings for CoCList
 " 打开 coclist
