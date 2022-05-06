@@ -1,0 +1,9 @@
+{
+  "diagnostic.checkCurrentLine": true,
+  "git.addGBlameToVirtualText": true,
+  "translator.enableHover": true,
+  "translator.engines": [
+    "google",
+    "youdao"
+  ]
+}
