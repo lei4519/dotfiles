@@ -25,24 +25,34 @@ if not status_ok then
     return
 end
 
+local plugin_paths = {}
+
+for item in require("io").popen("ls " .. NVIMRC .. "/lua/plugins"):lines() do
+    -- 文件以 -- 开头表示注释，不加载插件
+    if item.sub(item, 1, 2) ~= '--' and item ~= 'init.lua' then
+        -- 文件
+        if item.sub(item, -4) == '.lua' then
+            -- print("plugins." .. item.sub(item, 0, -5))
+            -- require("plugins." .. item.sub(item, 0, -5)).setup(use)
+            table.insert(plugin_paths, "plugins." .. item.sub(item, 0, -5))
+        else
+            -- 目录，调用 /init.lua
+            -- require("plugins." .. item).setup(use)
+            table.insert(plugin_paths, "plugins." .. item)
+        end
+    end
+end
+
+print(plugin_paths)
+
 packer.startup({
-    function(use)
+   function(use)
         -- Packer 可以升级自己
         use("wbthomason/packer.nvim")
 
         -- 注册当前目录下的插件
-        for item in require("io").popen("ls " .. NVIMRC .. "/lua/plugins"):lines() do
-            -- 文件以 -- 开头表示注释，不加载插件
-            if item.sub(item, 1, 2) ~= '--' and item ~= 'init.lua' then
-                -- 文件
-                if item.sub(item, -4) == '.lua' then
-                    -- print("plugins." .. item.sub(item, 0, -5))
-                    require("plugins." .. item.sub(item, 0, -5)).setup(use)
-                else
-                    -- 目录，调用 /init.lua
-                    require("plugins." .. item).setup(use)
-                end
-            end
+        for i, v in ipairs(plugin_paths) do
+            require(v).setup(use)
         end
 
         if packer_bootstrap then
@@ -69,3 +79,11 @@ packer.startup({
         }
     }
 })
+
+-- 调用插件配置
+for i, v in ipairs(plugin_paths) do
+    local m = require(v);
+    if type(m.config) == 'function' then
+        m.config()
+    end
+end

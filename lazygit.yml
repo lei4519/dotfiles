@@ -7,9 +7,7 @@ git:
     colorArg: always
     pager: delta --dark --paging=never
     # pager: delta --show-syntax-themes --dark --paging=never --theme="OneHalfDark"
-
-os:
-  editCommand: 'nvim' # see 'Configuring File Editing' section
-  editCommandTemplate: 'nvim'
-  openCommand: 'nvim'
-
+#
+# os:
+#   openCommand: 'lvim {{filename}}'
+#

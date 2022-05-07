@@ -99,6 +99,13 @@ source $ZSH/oh-my-zsh.sh
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
 
+
+export NVM_DIR="$HOME/.nvm"
+    [ -s "$(brew --prefix)/opt/nvm/nvm.sh" ] && \. "$(brew --prefix)/opt/nvm/nvm.sh" # This loads nvm
+    [ -s "$(brew --prefix)/opt/nvm/etc/bash_completion.d/nvm" ] && \. "$(brew --prefix)/opt/nvm/etc/bash_completion.d/nvm" # This loads nvm bash_completion
+
+export EDITOR="/Users/lay/.local/bin/lvim"
+
 # Set personal aliases, overriding those provided by oh-my-zsh libs,
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh
 # users are encouraged to define aliases within the ZSH_CUSTOM folder.
@@ -108,24 +115,19 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
-
-export NVM_DIR="$HOME/.nvm"
-    [ -s "$(brew --prefix)/opt/nvm/nvm.sh" ] && \. "$(brew --prefix)/opt/nvm/nvm.sh" # This loads nvm
-    [ -s "$(brew --prefix)/opt/nvm/etc/bash_completion.d/nvm" ] && \. "$(brew --prefix)/opt/nvm/etc/bash_completion.d/nvm" # This loads nvm bash_completion
-
-export EDITOR="nvim"
-
-# alias
 alias taskbiz="cd /Users/lay/Desktop/work/ad-taskbiz-web && yarn start"
 alias zhiadmin="cd /Users/lay/Desktop/work/ad-zhitask-admin-web && yarn start"
 alias zhitask="cd /Users/lay/Desktop/work/zhitask-site/packages/biz && yarn start"
 alias zhihome="cd /Users/lay/Desktop/work/zhitask-site/packages/home && yarn start"
-alias nrc="nvim ~/.config/nvim"
-alias vi="nvim"
-alias vim="nvim"
+
+# alias lvim="/Users/lay/.local/bin/lvim"
+
+alias vi="$EDITOR"
+alias vim="$EDITOR"
 alias python="/usr/bin/python3"
 alias lg="lazygit"
 alias ra="ranger"
+
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 

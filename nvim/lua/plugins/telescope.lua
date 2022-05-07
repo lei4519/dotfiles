@@ -1,7 +1,7 @@
 
 local M = {}
 
-local function config()
+function M.config()
     -- load extensions
     local extensions = {"ui-select", "live_grep_raw"}
 
@@ -53,17 +53,6 @@ local function config()
             })}
         }
     })
-end
-
-function M.setup(use)
-    -- telescope
-    use {
-        "nvim-telescope/telescope.nvim",
-        requires = {"nvim-lua/plenary.nvim", "nvim-telescope/telescope-ui-select.nvim", -- UI 选择器，例如 code action 的多个选项
-                    "nvim-telescope/telescope-live-grep-raw.nvim" -- 可以携带参数的grep，例如忽略大小写等
-        },
-        config = config
-    }
 
     local opt = {
       noremap = true,
@@ -74,7 +63,8 @@ function M.setup(use)
     local map = vim.api.nvim_set_keymap
 
     map("n", "<leader>ff", ":Telescope find_files<CR>", opt)
-    map("n", "<leader>fg", ":Telescope live_grep<CR>", opt)
+    -- map("n", "<leader>fg", ":Telescope live_grep<CR>", opt)
+    map("n", "<leader>fg", ":lua require('telescope').extensions.live_grep_raw.live_grep_raw()<CR>", opt)
     map("n", "<leader>fb", ":Telescope buffers<CR>", opt)
     map("n", "<leader>fm", ":Telescope marks<CR>", opt)
     map("n", "<leader>fs", ":Telescope git_status<CR>", opt)
@@ -83,6 +73,16 @@ function M.setup(use)
     map("n", "<leader>fc", ":Telescope commands<CR>", opt)
     map("n", "<leader>fp", ":Telescope<CR>", opt)
   
+end
+
+function M.setup(use)
+    -- telescope
+    use {
+        "nvim-telescope/telescope.nvim",
+        requires = {"nvim-lua/plenary.nvim", "nvim-telescope/telescope-ui-select.nvim", -- UI 选择器，例如 code action 的多个选项
+                    "nvim-telescope/telescope-live-grep-raw.nvim" -- 可以携带参数的grep，例如忽略大小写等
+        },
+    }
 end
 
 return M
