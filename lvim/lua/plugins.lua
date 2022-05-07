@@ -23,12 +23,25 @@ function M.setup()
       end
     },
     -- 自动保存
-    -- {
-    --   "Pocco81/AutoSave.nvim",
-    --   config = function()
-    --     require("autosave").setup()
-    --   end
-    -- },
+    {
+      "Pocco81/AutoSave.nvim",
+      disable = true,
+      config = function()
+        require("autosave").setup({
+          enabled = true,
+          execution_message = "AutoSave: saved at " .. vim.fn.strftime("%H:%M:%S"),
+          events = {"InsertLeave"},
+          conditions = {
+              exists = true,
+              filename_is_not = {},
+              filetype_is_not = {},
+              modifiable = true
+          },
+          clean_command_line_interval = 0,
+          debounce_delay = 1000
+      })
+      end
+    },
     -- 缩进线
     {
       "lukas-reineke/indent-blankline.nvim",
@@ -177,10 +190,11 @@ function M.setup()
     -- 函数参数文档提示
     {
       "ray-x/lsp_signature.nvim",
-      event = "BufRead",
+      -- event = "BufRead",
       config = function()
         require "lsp_signature".setup()
       end
+      -- config = function() require"lsp_signature".on_attach() end,
     },
     -- 大纲
     {
