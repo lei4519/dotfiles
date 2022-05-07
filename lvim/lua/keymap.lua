@@ -1,7 +1,6 @@
 local M = {}
 
 function M.config()
-
   -- treesitter 折叠
   lvim.keys.normal_mode['zc'] = ":foldclose<CR>"
   lvim.keys.normal_mode['zo'] = ":foldopen<CR>"
@@ -36,6 +35,11 @@ function M.config()
   -- 悬浮终端
   lvim.builtin.terminal.open_mapping = "<leader>tt"
   lvim.builtin.terminal.execs[#lvim.builtin.terminal.execs + 1] = { "lazygit", "<leader>tg", "LazyGit", "float" }
+  lvim.builtin.which_key.mappings['tw'] = {"<cmd>TranslateW<CR>", "Translate Window"}
+  lvim.builtin.which_key.vmappings['tw'] = {"<cmd>TranslateWV<CR>", "Translate Window"}
+  lvim.builtin.which_key.mappings['tr'] = {"<cmd>TranslateR<CR>", "Translate Replace"}
+  lvim.builtin.which_key.vmappings['tr'] = {"<cmd>TranslateRV<CR>", "Translate Replace"}
+  lvim.builtin.which_key.mappings['ty'] = {"<cmd>TranslateX<CR>", "Translate Yank"}
 
   -- 保存全部
   lvim.builtin.which_key.mappings['s'] = {"<cmd>wa!<CR>", "Save All"}

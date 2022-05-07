@@ -57,6 +57,8 @@ function M.setup()
     -- 平滑滚动
     {
       "karb94/neoscroll.nvim",
+      -- neovide 不需要平滑滚动
+      disable = vim.fn.exists('g:neovide'),
       event = "WinScrolled",
       config = function()
         require('neoscroll').setup({
@@ -191,7 +193,20 @@ function M.setup()
     --   cmd = "TroubleToggle"
     -- },
     -- 使 . 可以在全局重复
-    { "tpope/vim-repeat" }
+    { "tpope/vim-repeat" },
+    -- 翻译
+    {
+      'voldikss/vim-translator',
+      setup = function()
+        vim.g.translator_default_engines = {'google', 'youdao'}
+        vim.cmd([[
+          nnoremap <silent><expr> <M-f> translator#window#float#has_scroll() ?
+                            \ translator#window#float#scroll(1) : "\<M-f>"
+          nnoremap <silent><expr> <M-b> translator#window#float#has_scroll() ?
+                                      \ translator#window#float#scroll(0) : "\<M-f>"
+        ]])
+      end
+    }
   }
 end
 
