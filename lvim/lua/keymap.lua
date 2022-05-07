@@ -2,6 +2,10 @@ local M = {}
 
 function M.config()
 
+  -- treesitter 折叠
+  lvim.keys.normal_mode['zc'] = ":foldclose<CR>"
+  lvim.keys.normal_mode['zo'] = ":foldopen<CR>"
+
   lvim.keys.insert_mode = {
     -- 'jk' for quitting insert mode
     ["jf"] = "<ESC>",
@@ -16,46 +20,89 @@ function M.config()
     ["<A-Right>"] = "<C-\\><C-N><C-w>l",
   }
 
-	-- 项目管理
-	lvim.builtin.which_key.mappings["p"] = {
-		"<cmd>lua require'telescope'.extensions.project.project{}<CR>", "Projects"
-	}
+  -- 项目管理
+  lvim.builtin.which_key.mappings["r"] = {
+    "<cmd>RnvimrToggle<CR>", "ranger"
+  }
 
-	-- session 管理
-	lvim.builtin.which_key.mappings["S"]= {
+  -- session 管理
+  lvim.builtin.which_key.mappings["S"] = {
     name = "Session",
     c = { "<cmd>lua require('persistence').load()<cr>", "Restore last session for current dir" },
     l = { "<cmd>lua require('persistence').load({ last = true })<cr>", "Restore last session" },
     Q = { "<cmd>lua require('persistence').stop()<cr>", "Quit without saving session" },
   }
 
-	-- Ctrl + G: lazygit
-	lvim.builtin.terminal.execs[#lvim.builtin.terminal.execs+1] = { "lazygit", "<c-g>", "LazyGit", "float" }
+  -- 悬浮终端
+  lvim.builtin.terminal.open_mapping = "<leader>tt"
+  lvim.builtin.terminal.execs[#lvim.builtin.terminal.execs + 1] = { "lazygit", "<leader>tg", "LazyGit", "float" }
 
-	lvim.builtin.which_key.mappings["t"] = {
-		name = "Diagnostics",
-		t = { "<cmd>TroubleToggle<cr>", "trouble" },
-		w = { "<cmd>TroubleToggle lsp_workspace_diagnostics<cr>", "workspace" },
-		d = { "<cmd>TroubleToggle lsp_document_diagnostics<cr>", "document" },
-		q = { "<cmd>TroubleToggle quickfix<cr>", "quickfix" },
-		l = { "<cmd>TroubleToggle loclist<cr>", "loclist" },
-		r = { "<cmd>TroubleToggle lsp_references<cr>", "references" },
-	}
+  -- 保存全部
+  lvim.builtin.which_key.mappings['s'] = {"<cmd>wa!<CR>", "Save All"}
 
+  -- 窗口管理
+  lvim.builtin.which_key.mappings['w'] = {
+    name = "Window",
+    v = { ":vsp<cr>", "Split Vertical" },
+    h = { ":sp<cr>", "Split Horizontal" },
+    c = { "<c-w>c", "Close current" },
+    o = { "<c-w>o", "Close Other" },
+    ['='] = { "<c-w>=", "Change Average" }
+  }
+
+  -- 搜索
   lvim.builtin.which_key.mappings["f"] = {
-		name = "Telescope",
-		-- f = { "<cmd>Telescope find_files<cr>", "find_files" },
+    name = "Telescope",
+    -- f = { "<cmd>telescope find_files<cr>", "find_files" },
     -- lunarvim 的配置，在 git repo 中使用 git_files，否则使用 fine_files
-		f = lvim.builtin.which_key.mappings["f"],
-		l = { "<cmd>Telescope live_grep<cr>", "live_grep" },
-		b = { "<cmd>Telescope buffers<cr>", "buffers" },
-		m = { "<cmd>Telescope marks<cr>", "marks" },
-		g = { "<cmd>Telescope git_status<cr>", "git_status" },
-		o = { "<cmd>Telescope oldfiles<cr>", "oldfiles" },
-		q = { "<cmd>Telescope quickfix<cr>", "quickfix" },
-		c = { "<cmd>Telescope commands<cr>", "commands" },
-		p = { "<cmd>Telescope<cr>", "Telescope" },
-	}
+    f = lvim.builtin.which_key.mappings["f"],
+    l = { "<cmd>telescope live_grep<cr>", "live_grep" },
+    b = { "<cmd>telescope buffers<cr>", "buffers" },
+    m = { "<cmd>telescope marks<cr>", "marks" },
+    g = { "<cmd>telescope git_status<cr>", "git_status" },
+    o = { "<cmd>telescope oldfiles<cr>", "oldfiles" },
+    q = { "<cmd>telescope quickfix<cr>", "quickfix" },
+    c = { "<cmd>telescope commands<cr>", "commands" },
+    k = { "<cmd>telescope keymaps<cr>", "keymaps" },
+    p = { "<cmd>telescope projects<cr>", "projects" },
+    t = {
+      "<cmd>lua require('telescope.builtin.internal').colorscheme({enable_preview = true})<cr>",
+      "colorscheme with preview",
+    },
+    s = { "<cmd>telescope<cr>", "telescope" },
+  }
+
+  -- 回车补全
+  local cmp = require"cmp"
+  lvim.builtin.cmp.mapping["<CR>"] = cmp.mapping.confirm({
+    select = true,
+    behavior = cmp.ConfirmBehavior.Replace,
+  })
+
+  -- nvim tree
+  lvim.builtin.nvimtree.setup.view.mappings.list = {
+    { key = { "l", "<CR>", "o" }, action = "edit", mode = "n" },
+    -- { key = "h", action = "close_node" },
+    { key = "v", action = "vsplit" },
+    { key = "h", action = "split" },
+    { key = "i", action = "toggle_ignored" },
+    -- Hide (dotfiles)
+    { key = ".", action = "toggle_dotfiles" },
+    { key = "<F5>", action = "refresh" },
+    { key = "a", action = "create" },
+    { key = "d", action = "remove" },
+    { key = "r", action = "rename" },
+    { key = "x", action = "cut" },
+    { key = "c", action = "copy" },
+    { key = "p", action = "paste" },
+    -- 进入下一级
+    { key = { "]" }, action = "cd" },
+    -- 进入上一级
+    -- { key = { "[" }, action = "dir_up" },
+    { key = { "[" }, action = "cd .." },
+    { key = "f", action = "telescope_find_files", action_cb = telescope_find_files },
+    { key = "g", action = "telescope_live_grep", action_cb = telescope_live_grep },
+  }
 end
 
 return M

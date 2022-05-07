@@ -2,3 +2,8 @@ plugin
 adapters
 .DS_Store
 .vscode
+nvim/lsp.log
+nvim/session
+nvim/luacache_chunks
+nvim/luacache_modpaths
+nvim/lvim.shada

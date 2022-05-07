@@ -104,7 +104,7 @@ export NVM_DIR="$HOME/.nvm"
     [ -s "$(brew --prefix)/opt/nvm/nvm.sh" ] && \. "$(brew --prefix)/opt/nvm/nvm.sh" # This loads nvm
     [ -s "$(brew --prefix)/opt/nvm/etc/bash_completion.d/nvm" ] && \. "$(brew --prefix)/opt/nvm/etc/bash_completion.d/nvm" # This loads nvm bash_completion
 
-export EDITOR="/Users/lay/.local/bin/lvim"
+export EDITOR="~/.local/bin/lvim"
 
 # Set personal aliases, overriding those provided by oh-my-zsh libs,
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh
@@ -121,6 +121,10 @@ alias zhitask="cd /Users/lay/Desktop/work/zhitask-site/packages/biz && yarn star
 alias zhihome="cd /Users/lay/Desktop/work/zhitask-site/packages/home && yarn start"
 
 # alias lvim="/Users/lay/.local/bin/lvim"
+export LUNARVIM_RUNTIME_DIR="${LUNARVIM_RUNTIME_DIR:-"$HOME/.local/share/lunarvim"}"
+export LUNARVIM_CONFIG_DIR="${LUNARVIM_CONFIG_DIR:-"$HOME/.config/lvim"}"
+export LUNARVIM_CACHE_DIR="${LUNARVIM_CACHE_DIR:-"$HOME/.cache/lvim"}"
+alias nl="neovide -- -u "$LUNARVIM_RUNTIME_DIR/lvim/init.lua""
 
 alias vi="$EDITOR"
 alias vim="$EDITOR"

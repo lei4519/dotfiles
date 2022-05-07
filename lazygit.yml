@@ -6,7 +6,7 @@ git:
   paging:
     colorArg: always
     pager: delta --dark --paging=never
-    # pager: delta --show-syntax-themes --dark --paging=never --theme="OneHalfDark"
+  # pager: delta --show-syntax-themes --dark --paging=never --theme="OneHalfDark"
 #
 # os:
 #   openCommand: 'lvim {{filename}}'

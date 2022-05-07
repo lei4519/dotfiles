@@ -20,4 +20,3 @@ autocmd("TermOpen", {
   group = myAutoGroup,
   command = "startinsert",
 })
-

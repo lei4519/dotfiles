@@ -36,15 +36,18 @@ brew install fd # telescope
    > 重启 iterm 后会进入 `p10k` 的初始化流程，后面想要主动调用就执行：`p10k configure`
 
 ## Lunarvim
+
 [https://www.lunarvim.org/](https://www.lunarvim.org/)
 
 ### Install
+
 ```
 bash <(curl -s https://raw.githubusercontent.com/lunarvim/lunarvim/master/utils/installer/install.sh)
 ln -f -i -n -s ~/.local/bin/lvim /usr/local/bin/lvim
 ```
 
 ### Uninstall
+
 ```
 bash <(curl -s https://raw.githubusercontent.com/lunarvim/lunarvim/master/utils/installer/uninstall.sh)
 rm /usr/local/bin/lvim
