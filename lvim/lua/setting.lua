@@ -24,6 +24,7 @@ function M.config()
   -- }
 
   -- treesitter
+  -- lvim.builtin.treesitter.autotag.enable = true
   lvim.builtin.treesitter.incremental_selection = {
     enable = true,
     keymaps = {

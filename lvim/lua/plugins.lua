@@ -17,7 +17,7 @@ function M.setup()
       "danymat/neogen",
       disable = false,
       config = function()
-          require('neogen').setup {snippet_engine = "luasnip"}
+          require('neogen').setup({snippet_engine = "luasnip"})
       end,
       requires = "nvim-treesitter/nvim-treesitter",
     },
@@ -199,10 +199,10 @@ function M.setup()
       event = "BufReadPre", -- this will only start session saving when an actual file was opened
       module = "persistence",
       config = function()
-        require("persistence").setup {
+        require("persistence").setup({
           dir = vim.fn.expand(vim.fn.stdpath "config" .. "/session/"),
           options = { "buffers", "curdir", "tabpages", "winsize" }
-        }
+        })
       end
     },
     -- vim-surround
@@ -217,7 +217,7 @@ function M.setup()
     -- 自动闭合标签
     {
       "windwp/nvim-ts-autotag",
-      event = "InsertEnter",
+      -- event = "InsertEnter",
       config = function()
         require("nvim-ts-autotag").setup()
       end
@@ -228,7 +228,7 @@ function M.setup()
     {
       "romgrk/nvim-treesitter-context",
       config = function()
-        require("treesitter-context").setup {
+        require("treesitter-context").setup({
           enable = true, -- Enable this plugin (Can be enabled/disabled later via commands)
           throttle = true, -- Throttles plugin updates (may improve performance)
           max_lines = 0, -- How many lines the window should span. Values <= 0 mean no limit.
@@ -239,7 +239,7 @@ function M.setup()
             -- appear in the context window.
             default = { 'class', 'function', 'method' }
           }
-        }
+        })
       end
     },
     -- telescope 插件：项目管理
@@ -258,6 +258,21 @@ function M.setup()
         require "lsp_signature".setup()
       end
       -- config = function() require"lsp_signature".on_attach() end,
+    },
+    -- 颜色高亮
+    {
+      "norcalli/nvim-colorizer.lua",
+        config = function()
+          require("colorizer").setup({ "*" }, {
+              RGB = true, -- #RGB hex codes
+              RRGGBB = true, -- #RRGGBB hex codes
+              RRGGBBAA = true, -- #RRGGBBAA hex codes
+              rgb_fn = true, -- CSS rgb() and rgba() functions
+              hsl_fn = true, -- CSS hsl() and hsla() functions
+              css = true, -- Enable all CSS features: rgb_fn, hsl_fn, names, RGB, RRGGBB
+              css_fn = true, -- Enable all CSS *functions*: rgb_fn, hsl_fn
+              })
+      end,
     },
     -- 大纲
     {
@@ -283,7 +298,21 @@ function M.setup()
                                       \ translator#window#float#scroll(0) : "\<M-f>"
         ]])
       end
-    }
+    },
+    -- preview markdown
+    {
+      "iamcco/markdown-preview.nvim",
+      run = "cd app && npm install",
+      ft = "markdown",
+      config = function()
+        vim.g.mkdp_auto_start = 1
+      end,
+    },
+    -- open url with gx
+    {
+      "felipec/vim-sanegx",
+      event = "BufRead",
+    },
   }
 end
 
