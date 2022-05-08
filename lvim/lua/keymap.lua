@@ -102,7 +102,7 @@ function M.config()
       w = { "<cmd>Trouble workspace_diagnostics<cr>", "Workspace Diagnostics" },
     },
     f = lvim.builtin.which_key.mappings["f"],
-    g = { "<cmd>Telescope live_grep<cr>", "Live Grep" },
+    g = { ":lua require('telescope').extensions.live_grep_raw.live_grep_raw()<cr>", "Live Grep Raw" },
     k = { "<cmd>Telescope keymaps<cr>", "Keymaps" },
     m = { "<cmd>Telescope marks<cr>", "Marks" },
     o = { "<cmd>Telescope oldfiles<cr>", "Oldfiles" },

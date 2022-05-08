@@ -10,10 +10,11 @@
 
 - [x] 'rmagatti/goto-preview'
 
-- [ ] nvim-bqf: Query fix
-- [ ] folke/trouble.nvim
+- [x] folke/trouble.nvim
 
-- [ ] nvim-spectre: search and replace
+- [x] nvim-bqf: Query fix
+
+<!-- - [ ] nvim-spectre: search and replace -->
 
 - [ ] Lightspeed
 
@@ -42,3 +43,5 @@
 - [ ] Rust 增强 use("simrat39/rust-tools.nvim")
 
 - [ ] smart close buffer or window
+
+- [ ] telescope 图片预览

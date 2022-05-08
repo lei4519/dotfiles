@@ -375,11 +375,16 @@ function M.setup()
     {
       'rmagatti/goto-preview',
       config = function()
-        require('goto-preview').setup {height = 30}
-        -- {
-        --   width = 120; -- Width of the floating window
-        --   height = 15; -- Height of the floating window
-        -- }
+        require('goto-preview').setup { height = 30 }
+      end
+    },
+    -- 更好的 quickfix
+    { 'kevinhwang91/nvim-bqf', ft = 'qf' },
+    -- 原始的 grep
+    {
+      'nvim-telescope/telescope-live-grep-raw.nvim',
+      config = function()
+        require('telescope').load_extension('live_grep_raw')
       end
     }
   }
