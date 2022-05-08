@@ -16,7 +16,7 @@
 
 <!-- - [ ] nvim-spectre: search and replace -->
 
-- [ ] Lightspeed
+- [x] Lightspeed
 
 - [ ] Lightspeed z键还能折叠吗？
 

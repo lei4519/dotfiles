@@ -17,7 +17,7 @@ function M.setup()
       "danymat/neogen",
       disable = false,
       config = function()
-          require('neogen').setup({snippet_engine = "luasnip"})
+        require('neogen').setup({ snippet_engine = "luasnip" })
       end,
       requires = "nvim-treesitter/nvim-treesitter",
     },
@@ -39,16 +39,16 @@ function M.setup()
         require("autosave").setup({
           enabled = true,
           execution_message = "AutoSave: saved at " .. vim.fn.strftime("%H:%M:%S"),
-          events = {"InsertLeave"},
+          events = { "InsertLeave" },
           conditions = {
-              exists = true,
-              filename_is_not = {},
-              filetype_is_not = {},
-              modifiable = true
+            exists = true,
+            filename_is_not = {},
+            filetype_is_not = {},
+            modifiable = true
           },
           clean_command_line_interval = 0,
           debounce_delay = 1000
-      })
+        })
       end
     },
     -- 缩进线
@@ -259,16 +259,16 @@ function M.setup()
     -- 颜色高亮
     {
       "norcalli/nvim-colorizer.lua",
-        config = function()
-          require("colorizer").setup({ "*" }, {
-              RGB = true, -- #RGB hex codes
-              RRGGBB = true, -- #RRGGBB hex codes
-              RRGGBBAA = true, -- #RRGGBBAA hex codes
-              rgb_fn = true, -- CSS rgb() and rgba() functions
-              hsl_fn = true, -- CSS hsl() and hsla() functions
-              css = true, -- Enable all CSS features: rgb_fn, hsl_fn, names, RGB, RRGGBB
-              css_fn = true, -- Enable all CSS *functions*: rgb_fn, hsl_fn
-              })
+      config = function()
+        require("colorizer").setup({ "*" }, {
+          RGB = true, -- #RGB hex codes
+          RRGGBB = true, -- #RRGGBB hex codes
+          RRGGBBAA = true, -- #RRGGBBAA hex codes
+          rgb_fn = true, -- CSS rgb() and rgba() functions
+          hsl_fn = true, -- CSS hsl() and hsla() functions
+          css = true, -- Enable all CSS features: rgb_fn, hsl_fn, names, RGB, RRGGBB
+          css_fn = true, -- Enable all CSS *functions*: rgb_fn, hsl_fn
+        })
       end,
     },
     -- 大纲
@@ -290,7 +290,7 @@ function M.setup()
     {
       'voldikss/vim-translator',
       config = function()
-        vim.g.translator_default_engines = {'google', 'youdao'}
+        vim.g.translator_default_engines = { 'google', 'youdao' }
         vim.cmd([[
           nnoremap <silent><expr> <M-f> translator#window#float#has_scroll() ?
                             \ translator#window#float#scroll(1) : "\<M-f>"
@@ -386,7 +386,15 @@ function M.setup()
       config = function()
         require('telescope').load_extension('live_grep_raw')
       end
-    }
+    },
+    -- lightspeed 光标快速跳转
+    {
+      "ggandor/lightspeed.nvim",
+      event = "BufRead",
+      -- config = function()
+      --   require 'lightspeed'.setup()
+      -- end
+    },
   }
 end
 
