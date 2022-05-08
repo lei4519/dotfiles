@@ -277,10 +277,13 @@ function M.setup()
       cmd = "SymbolsOutline"
     },
     -- 更友好的诊断提示
-    -- {
-    --   "folke/trouble.nvim",
-    --   cmd = "TroubleToggle"
-    -- },
+    {
+      "folke/trouble.nvim",
+      requires = "kyazdani42/nvim-web-devicons",
+      config = function()
+        require("trouble").setup {}
+      end
+    },
     -- 使 . 可以在全局重复
     { "tpope/vim-repeat" },
     -- 翻译
@@ -333,7 +336,7 @@ function M.setup()
           },
           finder_definition_icon = "  ",
           finder_reference_icon = "  ",
-          max_preview_lines = 99,
+          max_preview_lines = 10,
           finder_action_keys = {
             -- open = "o",
             open = "<CR>",

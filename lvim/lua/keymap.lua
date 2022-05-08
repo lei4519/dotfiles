@@ -81,29 +81,40 @@ function M.config()
   lvim.builtin.which_key.mappings["k"] = { "<C-w>k", "Move Up Window" }
   lvim.builtin.which_key.mappings["l"] = { "<C-w>l", "Move Left Window" }
 
+
+  -- --
+  -- lvim.builtin.which_key.mappings["t"] = {
+  --   name = "Term & Translate & Troble",
+  --   q = { "<cmd>Trouble quickfix<cr>", "QuickFix" },
+  -- }
+
   -- 搜索
   lvim.builtin.which_key.mappings["f"] = {
     name = "Telescope",
     -- f = { "<cmd>telescope find_files<cr>", "find_files" },
     -- lunarvim 的配置，在 git repo 中使用 git_files，否则使用 fine_files
-    f = lvim.builtin.which_key.mappings["f"],
-    g = { "<cmd>Telescope live_grep<cr>", "Live_grep" },
+    a = { "<cmd>Telescope<cr>", "Telescope" },
     b = { "<cmd>Telescope buffers<cr>", "Buffers" },
+    c = { "<cmd>Telescope commands<cr>", "Commands" },
+    d = {
+      name = "Diagnostics",
+      b = { "<cmd>Trouble document_diagnostics<cr>", "Buffer Diagnostics" },
+      w = { "<cmd>Trouble workspace_diagnostics<cr>", "Workspace Diagnostics" },
+    },
+    f = lvim.builtin.which_key.mappings["f"],
+    g = { "<cmd>Telescope live_grep<cr>", "Live Grep" },
+    k = { "<cmd>Telescope keymaps<cr>", "Keymaps" },
     m = { "<cmd>Telescope marks<cr>", "Marks" },
     o = { "<cmd>Telescope oldfiles<cr>", "Oldfiles" },
-    q = { "<cmd>Telescope quickfix<cr>", "Quickfix" },
-    c = { "<cmd>Telescope commands<cr>", "Commands" },
-    k = { "<cmd>Telescope keymaps<cr>", "Keymaps" },
     p = { "<cmd>Telescope projects<cr>", "Projects" },
-    d = { "<cmd>Telescope diagnostics bufnr=0 theme=get_ivy<cr>", "Buffer Diagnostics" },
-    w = { "<cmd>Telescope diagnostics<cr>", "Diagnostics" },
-    t = { "<cmd>TodoTelescope<cr>", "Todo" },
+    q = { "<cmd>Telescope quickfix<cr>", "Quickfix" },
+    r = { "<cmd>Trouble lsp_references<cr>", "Find All References" },
     s = { "<cmd>Telescope lsp_document_symbols<cr>", "Document Symbols" },
     S = {
       "<cmd>Telescope lsp_dynamic_workspace_symbols<cr>",
       "Workspace Symbols",
     },
-    e = { "<cmd>Telescope quickfix<cr>", "Telescope Quickfix" },
+    t = { "<cmd>TodoTelescope<cr>", "Todo" },
   }
   -- 映射 telescope C-j C-k 上下选择 C-n C-p 历史切换
   local telescope_actions = require "telescope.actions"
@@ -113,7 +124,7 @@ function M.config()
       ["<C-k>"] = telescope_actions.move_selection_previous,
       ["<C-n>"] = telescope_actions.cycle_history_next,
       ["<C-p>"] = telescope_actions.cycle_history_prev,
-    }
+    },
   }
 
   -- 回车补全
