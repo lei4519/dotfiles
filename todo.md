@@ -14,15 +14,23 @@
 
 - [x] nvim-bqf: Query fix
 
-<!-- - [ ] nvim-spectre: search and replace -->
-
 - [x] Lightspeed
 
-- [ ] Lightspeed z键还能折叠吗？
-
-- [ ] Eslint save  fix
+- [x] markdown preview
 
 - [ ] Git side_by_side
+
+- [ ] Eslint save autofix
+
+- [ ] TypeScript 增强 use({ "jose-elias-alvarez/nvim-lsp-ts-utils", requires = "nvim-lua/plenary.nvim" })
+
+- [ ] Rust 增强 use("simrat39/rust-tools.nvim")
+
+- [ ] smart close buffer or window
+
+- [ ] telescope 图片预览
+
+- [ ] lazygit 推送某个commit
 
 - [ ] which-key 自定义按键分组
 
@@ -38,10 +46,3 @@
 
 - [ ] indent-blankline highlight (try change theme)
 
-- [ ] TypeScript 增强 use({ "jose-elias-alvarez/nvim-lsp-ts-utils", requires = "nvim-lua/plenary.nvim" })
-
-- [ ] Rust 增强 use("simrat39/rust-tools.nvim")
-
-- [ ] smart close buffer or window
-
-- [ ] telescope 图片预览

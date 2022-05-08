@@ -300,7 +300,9 @@ function M.setup()
       end
     },
     -- preview markdown
+    { "ellisonleao/glow.nvim", branch = 'main' },
     {
+      disable = true,
       "iamcco/markdown-preview.nvim",
       run = "cd app && npm install",
       ft = "markdown",

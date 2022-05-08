@@ -208,6 +208,10 @@ function M.config()
       end,
       "Type Definition",
     },
+    ['gpm'] = {
+      "<cmd>Glow<CR>",
+      "Preview Markdown",
+    },
   }
 end
 
