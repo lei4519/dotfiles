@@ -19,8 +19,8 @@ function M.config()
     ["<A-Right>"] = "<C-\\><C-N><C-w>l",
   }
 
-  -- 取出注释默认的按键
-  lvim.builtin.comment.mappings.basic = false
+  -- 注释配置
+  lvim.builtin.comment.mappings.extra = true
 
   -- 两次空格取消高亮
   lvim.builtin.which_key.mappings["<space>"] = { "<cmd>nohlsearch<CR>", "No Highlight" }
@@ -41,13 +41,14 @@ function M.config()
   -- 悬浮终端
   lvim.builtin.terminal.open_mapping = nil
   lvim.builtin.which_key.mappings['tt'] = { "<cmd>ToggleTerm<cr>", "ToggleTerm" }
-  lvim.builtin.terminal.execs = {{ "lazygit", "<leader>tg", "LazyGit", "float" }}
+  lvim.builtin.terminal.execs = { { "lazygit", "<leader>tg", "LazyGit", "float" } }
   require("lvim.keymappings").load {
     term_mode = { ['<leader>tt'] = "<cmd>lua require('lvim.core.terminal')._exec_toggle()<CR>" },
   }
   function set_terminal_mode_tt_keymap()
-    vim.api.nvim_buf_set_keymap(0, 't', '<leader>tt', [[<cmd>ToggleTerm<cr>]], {noremap = true})
+    vim.api.nvim_buf_set_keymap(0, 't', '<leader>tt', [[<cmd>ToggleTerm<cr>]], { noremap = true })
   end
+
   vim.cmd('autocmd! TermOpen term://* lua set_terminal_mode_tt_keymap()')
 
   -- 翻译
@@ -96,7 +97,7 @@ function M.config()
     p = { "<cmd>Telescope projects<cr>", "Projects" },
     d = { "<cmd>Telescope diagnostics bufnr=0 theme=get_ivy<cr>", "Buffer Diagnostics" },
     w = { "<cmd>Telescope diagnostics<cr>", "Diagnostics" },
-    t = { "<cmd>Telescope<cr>", "Telescope" },
+    t = { "<cmd>TodoTelescope<cr>", "Todo" },
     s = { "<cmd>Telescope lsp_document_symbols<cr>", "Document Symbols" },
     S = {
       "<cmd>Telescope lsp_dynamic_workspace_symbols<cr>",
@@ -152,52 +153,52 @@ function M.config()
   }
 
   -- Lsp 快捷键
-  lvim.buffer_mappings = {
-    normal_mode = {
-      -- ["[q"] = ":cprev<CR>", QuickFix
-      -- ["]q"] = ":cnext<CR>", QuickFix
-      ["[d"] = { vim.diagnostic.goto_prev, "Prev Diagnostic" },
-      ["]d"] = { vim.diagnostic.goto_next, "Next Diagnostic" },
-      ["gd"] = { vim.lsp.buf.definition, "Goto Definition" },
-      ["gD"] = { vim.lsp.buf.declaration, "Goto declaration" },
-      ["gh"] = { vim.lsp.buf.hover, "Show hover" },
-      ["gI"] = { vim.lsp.buf.implementation, "Goto Implementation" },
-      ["gr"] = { vim.lsp.buf.references, "Goto References" },
-      ["gs"] = { vim.lsp.buf.signature_help, "Show Signature Help" },
-      ["gt"] = { vim.lsp.buf.type_definition, "Goto Type Definition" },
-      ["gR"] = { vim.lsp.buf.rename, "Rename" },
-      ["ga"] = { vim.lsp.buf.code_action, "Code Action" },
-      ["gf"] = { require("lvim.lsp.utils").format, "Format" },
-      ['gc'] = { vim.lsp.codelens.run, "CodeLens Action" },
-      ['gq'] = { vim.diagnostic.setloclist, "Quickfix" },
-      ["gl"] = {
-        function()
-          local config = lvim.lsp.diagnostics.float
-          config.scope = "line"
-          vim.diagnostic.open_float(0, config)
-        end,
-        "Show line diagnostics",
-      },
-      ['gpt'] = {
-        function()
-          require("lvim.lsp.peek").Peek "typeDefinition"
-        end,
-        "Type Definition",
-      },
-      ["gpd"] = {
-        function()
-          require("lvim.lsp.peek").Peek "definition"
-        end,
-        "Peek Definition",
-      },
-      ['gpi'] = {
-        function()
-          require("lvim.lsp.peek").Peek "implementation"
-        end,
-        "Peek Implementation",
-      }
+  lvim.lsp.buffer_mappings.normal_mode = {
+    -- ["[q"] = ":cprev<CR>", QuickFix
+    -- ["]q"] = ":cnext<CR>", QuickFix
+    ["[d"] = { vim.diagnostic.goto_prev, "Prev Diagnostic" },
+    ["]d"] = { vim.diagnostic.goto_next, "Next Diagnostic" },
+    ["gd"] = { vim.lsp.buf.definition, "Goto Definition" },
+    ["gD"] = { vim.lsp.buf.declaration, "Goto declaration" },
+    ["gh"] = { vim.lsp.buf.hover, "Show hover" },
+    ["gI"] = { vim.lsp.buf.implementation, "Goto Implementation" },
+    ["gr"] = { vim.lsp.buf.references, "Goto References" },
+    ["gs"] = { vim.lsp.buf.signature_help, "Show Signature Help" },
+    ["gt"] = { vim.lsp.buf.type_definition, "Goto Type Definition" },
+    ["gR"] = { vim.lsp.buf.rename, "Rename" },
+    ["ga"] = { vim.lsp.buf.code_action, "Code Action" },
+    ["gf"] = { require("lvim.lsp.utils").format, "Format" },
+    -- 注释使用了
+    -- ['gca'] = { vim.lsp.codelens.run, "CodeLens Action" },
+    ['gq'] = { vim.diagnostic.setloclist, "Quickfix" },
+    ["gl"] = {
+      function()
+        local config = lvim.lsp.diagnostics.float
+        config.scope = "line"
+        vim.diagnostic.open_float(0, config)
+      end,
+      "Show line diagnostics",
+    },
+    ['gpt'] = {
+      function()
+        require("lvim.lsp.peek").Peek "typeDefinition"
+      end,
+      "Type Definition",
+    },
+    ["gpd"] = {
+      function()
+        require("lvim.lsp.peek").Peek "definition"
+      end,
+      "Peek Definition",
+    },
+    ['gpi'] = {
+      function()
+        require("lvim.lsp.peek").Peek "implementation"
+      end,
+      "Peek Implementation",
     }
   }
+
 end
 
 return M

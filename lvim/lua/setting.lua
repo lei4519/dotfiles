@@ -9,11 +9,29 @@ function M.config()
   -- 透明窗口
   lvim.transparent_window = true
 
+  -- 折叠
+  vim.opt.foldmethod = "expr" -- folding set to "expr" for treesitter based folding
+  vim.opt.foldexpr = "nvim_treesitter#foldexpr()" -- set to "nvim_treesitter#foldexpr()" for treesitter based folding
+  -- 默认不要折叠
+  -- https://stackoverflow.com/questions/8316139/how-to-set-the-default-to-unfolded-when-you-open-a-file
+  vim.opt.foldlevel = 99
+
   -- lsp peek 窗口
-  lvim.lsp.peek = {
-    max_height = 300,
-    max_width = 500,
-    context = 10,
+  -- lvim.lsp.peek = {
+  --   max_height = 300,
+  --   max_width = 500,
+  --   context = 10,
+  -- }
+
+  -- treesitter
+  lvim.builtin.treesitter.incremental_selection = {
+    enable = true,
+    keymaps = {
+      init_selection = "<CR>",
+      node_incremental = "<CR>",
+      node_decremental = "<BS>",
+      scope_incremental = "<TAB>",
+    },
   }
 
   -- Dashboard

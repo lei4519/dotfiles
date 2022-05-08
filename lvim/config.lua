@@ -19,8 +19,7 @@ vim.opt.linespace = 20
 lvim.log.level = "warn"
 lvim.format_on_save = true
 lvim.colorscheme = "onedarker"
--- vim.opt.foldmethod = "expr" -- folding set to "expr" for treesitter based folding
--- vim.opt.foldexpr = "nvim_treesitter#foldexpr()" -- set to "nvim_treesitter#foldexpr()" for treesitter based folding
+
 
 -- to disable icons and use a minimalist setup, uncomment the following
 -- lvim.use_icons = false
