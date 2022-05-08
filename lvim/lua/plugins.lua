@@ -246,9 +246,6 @@ function M.setup()
     {
       "nvim-telescope/telescope-project.nvim",
       event = "BufWinEnter",
-      setup = function()
-        vim.cmd [[packadd telescope.nvim]]
-      end
     },
     -- 函数参数文档提示
     {
@@ -289,7 +286,7 @@ function M.setup()
     -- 翻译
     {
       'voldikss/vim-translator',
-      setup = function()
+      config = function()
         vim.g.translator_default_engines = {'google', 'youdao'}
         vim.cmd([[
           nnoremap <silent><expr> <M-f> translator#window#float#has_scroll() ?
@@ -369,6 +366,17 @@ function M.setup()
           diagnostic_message_format = "%m %c",
           highlight_prefix = false,
         })
+      end
+    },
+    -- preview 增强
+    {
+      'rmagatti/goto-preview',
+      config = function()
+        require('goto-preview').setup {height = 30}
+        -- {
+        --   width = 120; -- Width of the floating window
+        --   height = 15; -- Height of the floating window
+        -- }
       end
     }
   }

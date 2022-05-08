@@ -167,7 +167,6 @@ function M.config()
     ["]d"] = { ":Lspsaga diagnostic_jump_next<CR>", "Next Diagnostic" },
     ["gd"] = { ":Lspsaga lsp_finder<CR>", "Show Definition & Reference" },
     ["ga"] = { ":Lspsaga code_action<CR>", "Code Action" },
-    -- and you also can use smart_scroll_with_saga to scroll in signature help win
     ["gs"] = { ":Lspsaga signature_help<CR>", "Show Signature Help" },
     ["gr"] = { ':Lspsaga rename<CR>', "Rename" },
     ["gh"] = { ":Lspsaga hover_doc<CR>", "Show Doc" },
@@ -175,33 +174,34 @@ function M.config()
       ":Lspsaga show_line_diagnostics<CR>",
       "Show line diagnostics",
     },
-    ["gp"] = {
-      ":Lspsaga preview_definition<CR>",
-      "Preview Definition",
-    },
+    ['gq'] = { vim.diagnostic.setloclist, "Quickfix" },
     ["gI"] = { vim.lsp.buf.implementation, "Goto Implementation" },
     ["gt"] = { vim.lsp.buf.type_definition, "Goto Type Definition" },
     ["gf"] = { require("lvim.lsp.utils").format, "Format" },
     -- 注释使用了
     -- ['gca'] = { vim.lsp.codelens.run, "CodeLens Action" },
-    ['gq'] = { vim.diagnostic.setloclist, "Quickfix" },
-
-    -- ['gpt'] = {
-    --   function()
-    --     require("lvim.lsp.peek").Peek "typeDefinition"
-    --   end,
-    --   "Type Definition",
-    -- },
-    -- ["gpd"] = {
-    --   ":Lspsaga preview_definition<CR>",
-    --   "Peek Definition",
-    -- },
-    -- ['gpi'] = {
-    --   function()
-    --     require("lvim.lsp.peek").Peek "implementation"
-    --   end,
-    --   "Peek Implementation",
-    -- }
+    ["gpd"] = {
+      "<cmd>lua require('goto-preview').goto_preview_definition()<CR>",
+      "Peek Definition",
+    },
+    ['gpi'] = {
+      "<cmd>lua require('goto-preview').goto_preview_implementation()<CR>",
+      "Preview Implementation",
+    },
+    ['gpr'] = {
+      "<cmd>lua require('goto-preview').goto_preview_references()<CR>",
+      "Preview References",
+    },
+    ['gP'] = {
+      "<cmd>lua require('goto-preview').close_all_win()<CR>",
+      "Close All Preview",
+    },
+    ['gpt'] = {
+      function()
+        require("lvim.lsp.peek").Peek "typeDefinition"
+      end,
+      "Type Definition",
+    },
   }
 
 end

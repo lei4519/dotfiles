@@ -8,7 +8,7 @@
 
 - [x] lspsage
 
-- [ ] 'rmagatti/goto-preview'
+- [x] 'rmagatti/goto-preview'
 
 - [ ] nvim-bqf: Query fix
 - [ ] folke/trouble.nvim
@@ -40,3 +40,5 @@
 - [ ] TypeScript 增强 use({ "jose-elias-alvarez/nvim-lsp-ts-utils", requires = "nvim-lua/plenary.nvim" })
 
 - [ ] Rust 增强 use("simrat39/rust-tools.nvim")
+
+- [ ] smart close buffer or window
