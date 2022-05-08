@@ -35,11 +35,12 @@ gui:
   showRandomTip: true
   showBottomLine: true # for hiding the bottom information line (unless it has important information to tell you)
   showCommandLog: true
-  showIcons: false
+  showIcons: true
   commandLogSize: 8
 git:
   paging:
     colorArg: always
+    pager: delta --dark --paging=never
     useConfig: false
   commit:
     signOff: false

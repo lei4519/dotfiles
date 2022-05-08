@@ -18,21 +18,17 @@
 
 - [x] markdown preview
 
-- [ ] Git side_by_side
-
-- [ ] Eslint save autofix
+- [x] Git side_by_side
 
 - [ ] TypeScript 增强 use({ "jose-elias-alvarez/nvim-lsp-ts-utils", requires = "nvim-lua/plenary.nvim" })
 
-- [ ] Rust 增强 use("simrat39/rust-tools.nvim")
-
 - [ ] smart close buffer or window
 
+- [ ] Eslint save autofix
+
+- [ ] Rust 增强 use("simrat39/rust-tools.nvim")
+
 - [ ] telescope 图片预览
-
-- [ ] lazygit 推送某个commit
-
-- [ ] which-key 自定义按键分组
 
 - [ ] 失焦保存
 
@@ -46,3 +42,6 @@
 
 - [ ] indent-blankline highlight (try change theme)
 
+- [ ] lazygit 推送某个commit
+
+- [ ] which-key 自定义按键分组
