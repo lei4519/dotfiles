@@ -35,6 +35,9 @@ function M.config()
     },
   }
 
+  -- 注释配置
+  lvim.builtin.comment.mappings.extra = true
+
   -- Dashboard
   lvim.builtin.alpha.dashboard.section.buttons = {
     entries = {
