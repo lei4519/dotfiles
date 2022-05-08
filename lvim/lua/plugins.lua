@@ -397,6 +397,8 @@ function M.setup()
       --   require 'lightspeed'.setup()
       -- end
     },
+    -- ts 增强：重命名文件名等
+    { "jose-elias-alvarez/nvim-lsp-ts-utils", requires = "nvim-lua/plenary.nvim" }
   }
 end
 

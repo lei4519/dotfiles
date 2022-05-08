@@ -160,6 +160,61 @@ function M.config()
 
   -- Lsp 快捷键
   lvim.lsp.on_attach_callback = function(client, bufnr)
+    if client.name == 'tsserver' then
+      -- 禁用格式化功能，交给专门插件插件处理
+      -- client.resolved_capabilities.document_formatting = false
+      -- client.resolved_capabilities.document_range_formatting = false
+      local ts_utils = require("nvim-lsp-ts-utils")
+      -- defaults
+      ts_utils.setup({
+          debug = false,
+          disable_commands = false,
+          enable_import_on_completion = false,
+          -- import all
+          import_all_timeout = 5000, -- ms
+          -- lower numbers = higher priority
+          import_all_priorities = {
+              same_file = 1, -- add to existing import statement
+              local_files = 2, -- git files or files with relative path markers
+              buffer_content = 3, -- loaded buffer content
+              buffers = 4, -- loaded buffer names
+          },
+          import_all_scan_buffers = 100,
+          import_all_select_source = false,
+          -- if false will avoid organizing imports
+          always_organize_imports = true,
+
+          -- filter diagnostics
+          filter_out_diagnostics_by_severity = {},
+          filter_out_diagnostics_by_code = {},
+
+          -- inlay hints
+          auto_inlay_hints = true,
+          inlay_hints_highlight = "Comment",
+          inlay_hints_priority = 200, -- priority of the hint extmarks
+          inlay_hints_throttle = 150, -- throttle the inlay hint request
+          inlay_hints_format = { -- format options for individual hint kind
+              Type = {},
+              Parameter = {},
+              Enum = {},
+              -- Example format customization for `Type` kind:
+              -- Type = {
+              --     highlight = "Comment",
+              --     text = function(text)
+              --         return "->" .. text:sub(2)
+              --     end,
+              -- },
+          },
+          -- update imports on file move
+          update_imports_on_move = false,
+          require_confirmation_on_move = false,
+          watch_dir = nil,
+      })
+
+      -- required to fix code action ranges and filter diagnostics
+      ts_utils.setup_client(client)
+    end
+
     local map = vim.api.nvim_buf_set_keymap
     -- lspsaga 弹窗滚动
     map(bufnr, "n", "<C-u>", "<cmd>lua require('lspsaga.action').smart_scroll_with_saga(-1, '<c-u>')<cr>", {})
@@ -171,19 +226,15 @@ function M.config()
     -- ["]q"] = ":cnext<CR>", QuickFix
     ["[d"] = { ":Lspsaga diagnostic_jump_prev<CR>", "Prev Diagnostic" },
     ["]d"] = { ":Lspsaga diagnostic_jump_next<CR>", "Next Diagnostic" },
-    ["gd"] = { ":Lspsaga lsp_finder<CR>", "Show Definition & Reference" },
     ["ga"] = { ":Lspsaga code_action<CR>", "Code Action" },
-    ["gs"] = { ":Lspsaga signature_help<CR>", "Show Signature Help" },
-    ["gr"] = { ':Lspsaga rename<CR>', "Rename" },
+    ["gd"] = { ":Lspsaga lsp_finder<CR>", "Show Definition & Reference" },
+    ["gf"] = { require("lvim.lsp.utils").format, "Format" },
     ["gh"] = { ":Lspsaga hover_doc<CR>", "Show Doc" },
+    ["gI"] = { vim.lsp.buf.implementation, "Goto Implementation" },
     ["gl"] = {
       ":Lspsaga show_line_diagnostics<CR>",
       "Show line diagnostics",
     },
-    ['gq'] = { vim.diagnostic.setloclist, "Quickfix" },
-    ["gI"] = { vim.lsp.buf.implementation, "Goto Implementation" },
-    ["gt"] = { vim.lsp.buf.type_definition, "Goto Type Definition" },
-    ["gf"] = { require("lvim.lsp.utils").format, "Format" },
     -- 注释使用了
     -- ['gca'] = { vim.lsp.codelens.run, "CodeLens Action" },
     ["gpd"] = {
@@ -211,6 +262,19 @@ function M.config()
     ['gpm'] = {
       "<cmd>Glow<CR>",
       "Preview Markdown",
+    },
+    ['gq'] = { vim.diagnostic.setloclist, "Quickfix" },
+    ["gr"] = { ':Lspsaga rename<CR>', "Rename" },
+    ["gs"] = { ":Lspsaga signature_help<CR>", "Show Signature Help" },
+          -- vim.api.nvim_buf_set_keymap(bufnr, "n", "gs", ":TSLspOrganize<CR>", opts)
+      -- vim.api.nvim_buf_set_keymap(bufnr, "n", "gr", ":TSLspRenameFile<CR>", opts)
+      -- vim.api.nvim_buf_set_keymap(bufnr, "n", "gi", ":TSLspImportAll<CR>", opts)
+    ["gt"] = { vim.lsp.buf.type_definition, "Goto Type Definition" },
+    ["gT"] = {
+      name = "TSLsp",
+      o = { ":TSLspOrganize<CR>", "TSLsp Organize" },
+      r = { ":TSLspRenameFile<CR>", "TSLsp Rename File" },
+      i = { ":TSLspImportAll<CR>", "TSLsp Import All" },
     },
   }
 end

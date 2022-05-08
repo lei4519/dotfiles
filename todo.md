@@ -20,7 +20,7 @@
 
 - [x] Git side_by_side
 
-- [ ] TypeScript 增强 use({ "jose-elias-alvarez/nvim-lsp-ts-utils", requires = "nvim-lua/plenary.nvim" })
+- [x] TypeScript 增强 use({ "jose-elias-alvarez/nvim-lsp-ts-utils", requires = "nvim-lua/plenary.nvim" })
 
 - [ ] smart close buffer or window
 
