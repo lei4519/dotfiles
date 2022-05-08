@@ -153,50 +153,55 @@ function M.config()
   }
 
   -- Lsp 快捷键
+  lvim.lsp.on_attach_callback = function(client, bufnr)
+    local map = vim.api.nvim_buf_set_keymap
+    -- lspsaga 弹窗滚动
+    map(bufnr, "n", "<C-u>", "<cmd>lua require('lspsaga.action').smart_scroll_with_saga(-1, '<c-u>')<cr>", {})
+    map(bufnr, "n", "<C-d>", "<cmd>lua require('lspsaga.action').smart_scroll_with_saga(1, '<c-d>')<cr>", {})
+  end
+  lvim.builtin.which_key.vmappings['ga'] = { ":<C-U>Lspsaga range_code_action<CR>", "Range Code Action" }
   lvim.lsp.buffer_mappings.normal_mode = {
     -- ["[q"] = ":cprev<CR>", QuickFix
     -- ["]q"] = ":cnext<CR>", QuickFix
-    ["[d"] = { vim.diagnostic.goto_prev, "Prev Diagnostic" },
-    ["]d"] = { vim.diagnostic.goto_next, "Next Diagnostic" },
-    ["gd"] = { vim.lsp.buf.definition, "Goto Definition" },
-    ["gD"] = { vim.lsp.buf.declaration, "Goto declaration" },
-    ["gh"] = { vim.lsp.buf.hover, "Show hover" },
+    ["[d"] = { ":Lspsaga diagnostic_jump_prev<CR>", "Prev Diagnostic" },
+    ["]d"] = { ":Lspsaga diagnostic_jump_next<CR>", "Next Diagnostic" },
+    ["gd"] = { ":Lspsaga lsp_finder<CR>", "Show Definition & Reference" },
+    ["ga"] = { ":Lspsaga code_action<CR>", "Code Action" },
+    -- and you also can use smart_scroll_with_saga to scroll in signature help win
+    ["gs"] = { ":Lspsaga signature_help<CR>", "Show Signature Help" },
+    ["gr"] = { ':Lspsaga rename<CR>', "Rename" },
+    ["gh"] = { ":Lspsaga hover_doc<CR>", "Show Doc" },
+    ["gl"] = {
+      ":Lspsaga show_line_diagnostics<CR>",
+      "Show line diagnostics",
+    },
+    ["gp"] = {
+      ":Lspsaga preview_definition<CR>",
+      "Preview Definition",
+    },
     ["gI"] = { vim.lsp.buf.implementation, "Goto Implementation" },
-    ["gr"] = { vim.lsp.buf.references, "Goto References" },
-    ["gs"] = { vim.lsp.buf.signature_help, "Show Signature Help" },
     ["gt"] = { vim.lsp.buf.type_definition, "Goto Type Definition" },
-    ["gR"] = { vim.lsp.buf.rename, "Rename" },
-    ["ga"] = { vim.lsp.buf.code_action, "Code Action" },
     ["gf"] = { require("lvim.lsp.utils").format, "Format" },
     -- 注释使用了
     -- ['gca'] = { vim.lsp.codelens.run, "CodeLens Action" },
     ['gq'] = { vim.diagnostic.setloclist, "Quickfix" },
-    ["gl"] = {
-      function()
-        local config = lvim.lsp.diagnostics.float
-        config.scope = "line"
-        vim.diagnostic.open_float(0, config)
-      end,
-      "Show line diagnostics",
-    },
-    ['gpt'] = {
-      function()
-        require("lvim.lsp.peek").Peek "typeDefinition"
-      end,
-      "Type Definition",
-    },
-    ["gpd"] = {
-      function()
-        require("lvim.lsp.peek").Peek "definition"
-      end,
-      "Peek Definition",
-    },
-    ['gpi'] = {
-      function()
-        require("lvim.lsp.peek").Peek "implementation"
-      end,
-      "Peek Implementation",
-    }
+
+    -- ['gpt'] = {
+    --   function()
+    --     require("lvim.lsp.peek").Peek "typeDefinition"
+    --   end,
+    --   "Type Definition",
+    -- },
+    -- ["gpd"] = {
+    --   ":Lspsaga preview_definition<CR>",
+    --   "Peek Definition",
+    -- },
+    -- ['gpi'] = {
+    --   function()
+    --     require("lvim.lsp.peek").Peek "implementation"
+    --   end,
+    --   "Peek Implementation",
+    -- }
   }
 
 end

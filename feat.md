@@ -6,15 +6,9 @@
 
 - [x] `g` Lsp 快捷键
 
-- [ ] lspsage
+- [x] lspsage
 
 - [ ] 'rmagatti/goto-preview'
-
-- [ ] peek 窗口大小
-
-- [ ] Peek 滚动
-
-- [ ] toggleterm.nvim disable
 
 - [ ] nvim-bqf: Query fix
 - [ ] folke/trouble.nvim
@@ -42,3 +36,7 @@
 - [ ] Save 快捷键
 
 - [ ] indent-blankline highlight (try change theme)
+
+- [ ] TypeScript 增强 use({ "jose-elias-alvarez/nvim-lsp-ts-utils", requires = "nvim-lua/plenary.nvim" })
+
+- [ ] Rust 增强 use("simrat39/rust-tools.nvim")
