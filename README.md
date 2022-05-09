@@ -14,6 +14,7 @@ brew install lazygit # lazygit
 brew install git-delta # git pager styles, lazygit need
 brew install ripgrep # rg, telescope need
 brew install fd # telescope need
+npm i -g vscode-langservers-extracted # eslint 服务
 # brew install the_silver_searcher # ag, or rg
 # -f 强制执行
 # -i 交互模式，文件存在则提示用户是否覆盖

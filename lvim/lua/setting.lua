@@ -56,6 +56,10 @@ function M.config()
     }
   }
   lvim.builtin.alpha.dashboard.section.footer = nil
+
+  -- eslint 语言服务
+  require("lvim.lsp.manager").setup("eslint", {})
+  vim.cmd("autocmd BufWritePre *.tsx,*.ts,*.jsx,*.js EslintFixAll")
 end
 
 return M

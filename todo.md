@@ -22,9 +22,7 @@
 
 - [x] TypeScript 增强 use({ "jose-elias-alvarez/nvim-lsp-ts-utils", requires = "nvim-lua/plenary.nvim" })
 
-- [ ] smart close buffer or window
-
-- [ ] Eslint save autofix
+- [x] Eslint save autofix
 
 - [ ] Rust 增强 use("simrat39/rust-tools.nvim")
 
@@ -45,3 +43,5 @@
 - [ ] lazygit 推送某个commit
 
 - [ ] which-key 自定义按键分组
+
+- [ ] smart close buffer or window

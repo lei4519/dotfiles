@@ -20,7 +20,6 @@ lvim.log.level = "warn"
 lvim.format_on_save = true
 lvim.colorscheme = "onedarker"
 
-
 -- to disable icons and use a minimalist setup, uncomment the following
 -- lvim.use_icons = false
 
@@ -63,13 +62,13 @@ formatters.setup {
 
 local linters = require "lvim.lsp.null-ls.linters"
 linters.setup {
-  { name = "eslint", prefer_local = "node_modules/.bin" },
+  -- { name = "eslint", prefer_local = "node_modules/.bin" },
 }
 
 local code_actions = require "lvim.lsp.null-ls.code_actions"
 code_actions.setup {
   { name = "gitsigns" },
-  { name = "eslint", prefer_local = "node_modules/.bin" },
+  -- { name = "eslint", prefer_local = "node_modules/.bin" },
 }
 
 -- Autocommands (https://neovim.io/doc/user/autocmd.html)
