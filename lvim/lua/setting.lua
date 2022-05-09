@@ -61,6 +61,16 @@ function M.config()
 
   -- eslint 语言服务
   require("lvim.lsp.manager").setup("eslint", {})
+
+  -- Telescope UI 增强
+  lvim.builtin.telescope.on_config_done = function (telescope)
+    telescope.extensions["ui-select"] = {
+      require("telescope.themes").get_dropdown {
+        -- even more opts
+      }
+    }
+    telescope.load_extension("ui-select")
+  end
 end
 
 return M

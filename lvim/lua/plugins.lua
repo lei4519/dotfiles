@@ -372,6 +372,10 @@ function M.setup()
         require('telescope').load_extension('live_grep_raw')
       end
     },
+    -- telescope ui 增强
+    {
+      'nvim-telescope/telescope-ui-select.nvim'
+    },
     -- lightspeed 光标快速跳转
     {
       "ggandor/lightspeed.nvim",
@@ -380,8 +384,39 @@ function M.setup()
       --   require 'lightspeed'.setup()
       -- end
     },
-    -- ts 增强：重命名文件名等
-    { "jose-elias-alvarez/nvim-lsp-ts-utils", requires = "nvim-lua/plenary.nvim" }
+    -- ts 增强：重命名文件、导入等
+    { "jose-elias-alvarez/nvim-lsp-ts-utils", requires = "nvim-lua/plenary.nvim" },
+    -- rust 增强
+    {
+      "simrat39/rust-tools.nvim",
+      config = function()
+        local lsp_installer_servers = require "nvim-lsp-installer.servers"
+        local _, requested_server = lsp_installer_servers.get_server "rust_analyzer"
+        require("rust-tools").setup({
+          tools = {
+            autoSetHints = true,
+            hover_with_actions = true,
+            runnables = {
+              use_telescope = true,
+            },
+            inlay_hints = {
+              -- prefix for parameter hints
+              -- default: "<-"
+              parameter_hints_prefix = " ",
+              -- prefix for all the other hints (type, chaining)
+              -- default: "=>"
+              other_hints_prefix = " ",
+            }
+          },
+          server = {
+            cmd_env = requested_server._default_options.cmd_env,
+            on_attach = require("lvim.lsp").common_on_attach,
+            on_init = require("lvim.lsp").common_on_init,
+          },
+        })
+      end,
+      ft = { "rust", "rs" },
+    }
   }
 end
 

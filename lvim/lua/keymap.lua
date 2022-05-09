@@ -81,6 +81,9 @@ function M.config()
   -- bufferline
   lvim.builtin.which_key.mappings["bo"] = { ":BufferLineCloseRight<CR>:BufferLineCloseLeft<CR>", "Close Other" }
 
+  -- SymbolOutLine
+  lvim.builtin.which_key.mappings['o'] = { ":SymbolsOutline<cr>", "Symbols Outline" }
+
   -- 悬浮终端
   lvim.builtin.terminal.open_mapping = nil
   lvim.builtin.which_key.mappings['tt'] = { "<cmd>ToggleTerm<cr>", "ToggleTerm" }

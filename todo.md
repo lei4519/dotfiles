@@ -24,11 +24,11 @@
 
 - [x] Eslint save autofix
 
-- [ ] Rust 增强 use("simrat39/rust-tools.nvim")
+- [x] Rust 增强 use("simrat39/rust-tools.nvim")
 
 - [ ] telescope 图片预览
 
-- [ ] 失焦保存
+- [x] 失焦保存
 
 - [ ] 格式化修改部分
 
@@ -36,12 +36,3 @@
 
 - [ ] auto close tag not work
 
-- [ ] Save 快捷键
-
-- [ ] indent-blankline highlight (try change theme)
-
-- [ ] lazygit 推送某个commit
-
-- [ ] which-key 自定义按键分组
-
-- [ ] smart close buffer or window
