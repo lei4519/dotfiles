@@ -1,8 +1,5 @@
 local M = {}
 
-local function config()
-end
-
 function M.setup()
   -- project
   -- https://github.com/ahmedkhalf/project.nvim
@@ -34,21 +31,8 @@ function M.setup()
     -- 自动保存
     {
       "Pocco81/AutoSave.nvim",
-      disable = true,
       config = function()
-        require("autosave").setup({
-          enabled = true,
-          execution_message = "AutoSave: saved at " .. vim.fn.strftime("%H:%M:%S"),
-          events = { "InsertLeave" },
-          conditions = {
-            exists = true,
-            filename_is_not = {},
-            filetype_is_not = {},
-            modifiable = true
-          },
-          clean_command_line_interval = 0,
-          debounce_delay = 1000
-        })
+        require("autosave").setup()
       end
     },
     -- 缩进线
@@ -79,13 +63,12 @@ function M.setup()
     -- 平滑滚动
     {
       "karb94/neoscroll.nvim",
-      -- neovide 不需要平滑滚动
-      -- disable = vim.fn.exists('g:neovide'),
       event = "WinScrolled",
       config = function()
         require('neoscroll').setup({
           -- All these keys will be mapped to their corresponding default scrolling animation
-          mappings = { '<C-u>', '<C-d>', '<C-b>', '<C-f>', '<C-y>', '<C-e>', 'zt', 'zz', 'zb' },
+          mappings = { '<C-u>', '<C-d>', '<C-b>', '<C-f>',
+            '<C-y>', '<C-e>', 'zt', 'zz', 'zb' },
           hide_cursor = true, -- Hide cursor while scrolling
           stop_eof = true, -- Stop at <EOF> when scrolling downwards
           use_local_scrolloff = false, -- Use the local scope of scrolloff instead of the global scope
@@ -93,7 +76,7 @@ function M.setup()
           cursor_scrolls_alone = true, -- The cursor will keep on scrolling even if the window cannot scroll further
           easing_function = nil, -- Default easing function
           pre_hook = nil, -- Function to run before the scrolling animation starts
-          post_hook = nil -- Function to run after the scrolling animation ends
+          post_hook = nil, -- Function to run after the scrolling animation ends
         })
       end
     },

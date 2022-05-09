@@ -20,7 +20,7 @@ function M.config()
   }
 
   -- 保存全部
-  lvim.builtin.which_key.mappings['s'] = { "<cmd>wa!<CR>", "Save All" }
+  -- lvim.builtin.which_key.mappings['s'] = { "<cmd>wa!<CR>", "Save All" }
 
   -- 窗口跳转
   lvim.builtin.which_key.mappings["h"] = { "<C-w>h", "Move Right Window" }
@@ -95,10 +95,12 @@ function M.config()
   vim.cmd('autocmd! TermOpen term://* lua set_terminal_mode_tt_keymap()')
 
   -- 翻译
+
   lvim.builtin.which_key.mappings['tw'] = { "<cmd>TranslateW<CR>", "Translate Window" }
-  lvim.builtin.which_key.vmappings['tw'] = { "<cmd>TranslateW<CR>", "Translate Window" }
+  -- lvim.builtin.which_key.vmappings['tw'] = { "<cmd>TranslateW<CR>", "Translate Window" }
+  vim.api.nvim_set_keymap('v', '<C-t>', ':TranslateW<CR>', { noremap = true, silent = true })
+  -- lvim.builtin.which_key.vmappings['tr'] = { "<cmd>TranslateR<CR>", "Translate Replace" }
   lvim.builtin.which_key.mappings['tr'] = { "<cmd>TranslateR<CR>", "Translate Replace" }
-  lvim.builtin.which_key.vmappings['tr'] = { "<cmd>TranslateR<CR>", "Translate Replace" }
   lvim.builtin.which_key.mappings['ty'] = { "<cmd>TranslateX<CR>", "Translate Yank" }
 
 
@@ -131,7 +133,7 @@ function M.config()
     },
     f = lvim.builtin.which_key.mappings["f"],
     -- g = { ":lua require('telescope').extensions.live_grep_raw.live_grep_raw()<cr>", "Live Grep Raw" },
-    g = { "<cmd>telescope live_grep<cr>", "live_grep" },
+    g = { "<cmd>Telescope live_grep<cr>", "live_grep" },
     k = { "<cmd>Telescope keymaps<cr>", "Keymaps" },
     m = { "<cmd>Telescope marks<cr>", "Marks" },
     o = { "<cmd>Telescope oldfiles<cr>", "Oldfiles" },
@@ -216,10 +218,10 @@ function M.config()
       ts_utils.setup_client(client)
     end
 
-    local map = vim.api.nvim_buf_set_keymap
-    -- lspsaga 弹窗滚动
-    map(bufnr, "n", "<C-u>", "<cmd>lua require('lspsaga.action').smart_scroll_with_saga(-1, '<c-u>')<cr>", {})
-    map(bufnr, "n", "<C-d>", "<cmd>lua require('lspsaga.action').smart_scroll_with_saga(1, '<c-d>')<cr>", {})
+    -- local map = vim.api.nvim_buf_set_keymap
+    -- -- lspsaga 弹窗滚动
+    -- map(bufnr, "n", "<C-b>", "<cmd>lua require('lspsaga.action').smart_scroll_with_saga(-1, '<c-b>')<cr>", {})
+    -- map(bufnr, "n", "<C-f>", "<cmd>lua require('lspsaga.action').smart_scroll_with_saga(1, '<c-f>')<cr>", {})
   end
   lvim.builtin.which_key.vmappings['ga'] = { ":<C-U>Lspsaga range_code_action<CR>", "Range Code Action" }
   lvim.lsp.buffer_mappings.normal_mode = {
@@ -229,7 +231,11 @@ function M.config()
     ["]d"] = { ":Lspsaga diagnostic_jump_next<CR>", "Next Diagnostic" },
     ["ga"] = { ":Lspsaga code_action<CR>", "Code Action" },
     ["gd"] = { ":Lspsaga lsp_finder<CR>", "Show Definition & Reference" },
-    ["gf"] = { require("lvim.lsp.utils").format, "Format" },
+    ["gf"] = {
+      name = "Format",
+      ['f'] = { require("lvim.lsp.utils").format, "Lsp Format" },
+      ['e'] = { ":EslintFixAll<cr>", "EslintFixAll" }
+    },
     ["gh"] = { ":Lspsaga hover_doc<CR>", "Show Doc" },
     ["gI"] = { vim.lsp.buf.implementation, "Goto Implementation" },
     ["gl"] = {

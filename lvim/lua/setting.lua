@@ -1,6 +1,9 @@
 local M = {}
 
 function M.config()
+  -- 相对行号
+  vim.opt.relativenumber = true -- set relative numbered lines
+
   -- 命令行矮一点
   vim.opt.cmdheight = 1
 
@@ -42,7 +45,6 @@ function M.config()
   lvim.builtin.alpha.dashboard.section.buttons = {
     entries = {
       { "SPC S l", "  Last Session", "<cmd>lua require('persistence').load({ last = true })<cr>", "Restore last session" },
-      { "SPC S c", "  Dir Session", "<cmd>lua require('persistence').load()<cr>", "Restore last session for current dir" },
       { "SPC f p", "  Recent Projects ", "<CMD>Telescope projects<CR>" },
       { "SPC f o", "  Recently Used Files", "<CMD>Telescope oldfiles<CR>" },
       { "SPC f f", "  Find File", "<CMD>Telescope find_files<CR>" },
@@ -59,7 +61,6 @@ function M.config()
 
   -- eslint 语言服务
   require("lvim.lsp.manager").setup("eslint", {})
-  vim.cmd("autocmd BufWritePre *.tsx,*.ts,*.jsx,*.js EslintFixAll")
 end
 
 return M

@@ -17,8 +17,9 @@ vim.opt.linespace = 20
 
 -- general
 lvim.log.level = "warn"
-lvim.format_on_save = true
-lvim.colorscheme = "onedarker"
+-- 这样就可以使用自动保存了
+lvim.format_on_save = false
+lvim.colorscheme = "tokyonight"
 
 -- to disable icons and use a minimalist setup, uncomment the following
 -- lvim.use_icons = false
@@ -70,16 +71,5 @@ code_actions.setup {
   { name = "gitsigns" },
   -- { name = "eslint", prefer_local = "node_modules/.bin" },
 }
-
--- Autocommands (https://neovim.io/doc/user/autocmd.html)
--- autocmd BufEnter * ++nested if winnr('$') == 1 && bufname() == 'NvimTree_' . tabpagenr() | quit | endif
--- -- nvim-tree 自动关闭
--- lvim.autocommands.custom_groups = {
---   { "BufEnter", nested = true, callback = function()
---     if #vim.api.nvim_list_wins() == 1 and vim.api.nvim_buf_get_name(0):match("NvimTree_") ~= nil then
---       vim.api.nvim_command("quit")
---     end
---   end },
--- }
 
 require('setup')
