@@ -130,7 +130,8 @@ function M.config()
       w = { "<cmd>Trouble workspace_diagnostics<cr>", "Workspace Diagnostics" },
     },
     f = lvim.builtin.which_key.mappings["f"],
-    g = { ":lua require('telescope').extensions.live_grep_raw.live_grep_raw()<cr>", "Live Grep Raw" },
+    -- g = { ":lua require('telescope').extensions.live_grep_raw.live_grep_raw()<cr>", "Live Grep Raw" },
+    g = { "<cmd>telescope live_grep<cr>", "live_grep" },
     k = { "<cmd>Telescope keymaps<cr>", "Keymaps" },
     m = { "<cmd>Telescope marks<cr>", "Marks" },
     o = { "<cmd>Telescope oldfiles<cr>", "Oldfiles" },
@@ -167,48 +168,48 @@ function M.config()
       local ts_utils = require("nvim-lsp-ts-utils")
       -- defaults
       ts_utils.setup({
-          debug = false,
-          disable_commands = false,
-          enable_import_on_completion = false,
-          -- import all
-          import_all_timeout = 5000, -- ms
-          -- lower numbers = higher priority
-          import_all_priorities = {
-              same_file = 1, -- add to existing import statement
-              local_files = 2, -- git files or files with relative path markers
-              buffer_content = 3, -- loaded buffer content
-              buffers = 4, -- loaded buffer names
-          },
-          import_all_scan_buffers = 100,
-          import_all_select_source = false,
-          -- if false will avoid organizing imports
-          always_organize_imports = true,
+        debug = false,
+        disable_commands = false,
+        enable_import_on_completion = false,
+        -- import all
+        import_all_timeout = 5000, -- ms
+        -- lower numbers = higher priority
+        import_all_priorities = {
+          same_file = 1, -- add to existing import statement
+          local_files = 2, -- git files or files with relative path markers
+          buffer_content = 3, -- loaded buffer content
+          buffers = 4, -- loaded buffer names
+        },
+        import_all_scan_buffers = 100,
+        import_all_select_source = false,
+        -- if false will avoid organizing imports
+        always_organize_imports = true,
 
-          -- filter diagnostics
-          filter_out_diagnostics_by_severity = {},
-          filter_out_diagnostics_by_code = {},
+        -- filter diagnostics
+        filter_out_diagnostics_by_severity = {},
+        filter_out_diagnostics_by_code = {},
 
-          -- inlay hints
-          auto_inlay_hints = true,
-          inlay_hints_highlight = "Comment",
-          inlay_hints_priority = 200, -- priority of the hint extmarks
-          inlay_hints_throttle = 150, -- throttle the inlay hint request
-          inlay_hints_format = { -- format options for individual hint kind
-              Type = {},
-              Parameter = {},
-              Enum = {},
-              -- Example format customization for `Type` kind:
-              -- Type = {
-              --     highlight = "Comment",
-              --     text = function(text)
-              --         return "->" .. text:sub(2)
-              --     end,
-              -- },
-          },
-          -- update imports on file move
-          update_imports_on_move = false,
-          require_confirmation_on_move = false,
-          watch_dir = nil,
+        -- inlay hints
+        auto_inlay_hints = true,
+        inlay_hints_highlight = "Comment",
+        inlay_hints_priority = 200, -- priority of the hint extmarks
+        inlay_hints_throttle = 150, -- throttle the inlay hint request
+        inlay_hints_format = { -- format options for individual hint kind
+          Type = {},
+          Parameter = {},
+          Enum = {},
+          -- Example format customization for `Type` kind:
+          -- Type = {
+          --     highlight = "Comment",
+          --     text = function(text)
+          --         return "->" .. text:sub(2)
+          --     end,
+          -- },
+        },
+        -- update imports on file move
+        update_imports_on_move = true,
+        require_confirmation_on_move = false,
+        watch_dir = nil,
       })
 
       -- required to fix code action ranges and filter diagnostics
@@ -266,9 +267,9 @@ function M.config()
     ['gq'] = { vim.diagnostic.setloclist, "Quickfix" },
     ["gr"] = { ':Lspsaga rename<CR>', "Rename" },
     ["gs"] = { ":Lspsaga signature_help<CR>", "Show Signature Help" },
-          -- vim.api.nvim_buf_set_keymap(bufnr, "n", "gs", ":TSLspOrganize<CR>", opts)
-      -- vim.api.nvim_buf_set_keymap(bufnr, "n", "gr", ":TSLspRenameFile<CR>", opts)
-      -- vim.api.nvim_buf_set_keymap(bufnr, "n", "gi", ":TSLspImportAll<CR>", opts)
+    -- vim.api.nvim_buf_set_keymap(bufnr, "n", "gs", ":TSLspOrganize<CR>", opts)
+    -- vim.api.nvim_buf_set_keymap(bufnr, "n", "gr", ":TSLspRenameFile<CR>", opts)
+    -- vim.api.nvim_buf_set_keymap(bufnr, "n", "gi", ":TSLspImportAll<CR>", opts)
     ["gt"] = { vim.lsp.buf.type_definition, "Goto Type Definition" },
     ["gT"] = {
       name = "TSLsp",
