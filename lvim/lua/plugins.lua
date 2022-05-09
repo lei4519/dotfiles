@@ -80,7 +80,7 @@ function M.setup()
     {
       "karb94/neoscroll.nvim",
       -- neovide 不需要平滑滚动
-      disable = vim.fn.exists('g:neovide'),
+      -- disable = vim.fn.exists('g:neovide'),
       event = "WinScrolled",
       config = function()
         require('neoscroll').setup({
