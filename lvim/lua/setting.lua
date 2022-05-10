@@ -48,6 +48,7 @@ function M.config()
   lvim.builtin.alpha.dashboard.section.buttons = {
     entries = {
       { "SPC S l", "  Last Session", "<cmd>lua require('persistence').load({ last = true })<cr>", "Restore last session" },
+      { "SPC S c", "  Dir Session", "<cmd>lua require('persistence').load()<cr>", "Restore last session for current dir" },
       { "SPC f p", "  Recent Projects ", "<CMD>Telescope projects<CR>" },
       { "SPC f o", "  Recently Used Files", "<CMD>Telescope oldfiles<CR>" },
       { "SPC f f", "  Find File", "<CMD>Telescope find_files<CR>" },

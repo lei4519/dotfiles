@@ -26,9 +26,11 @@
 
 - [x] Rust 增强 use("simrat39/rust-tools.nvim")
 
-- [ ] telescope 图片预览
-
 - [x] 失焦保存
+
+- [ ] project find file default
+
+- [ ] telescope 图片预览
 
 - [ ] 格式化修改部分
 
