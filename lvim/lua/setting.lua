@@ -26,6 +26,9 @@ function M.config()
   --   context = 10,
   -- }
 
+  -- lualine 文件名显示路径
+  require("lvim.core.lualine.components").filename.path = 1
+
   -- treesitter
   -- lvim.builtin.treesitter.autotag.enable = true
   lvim.builtin.treesitter.incremental_selection = {
@@ -63,7 +66,7 @@ function M.config()
   require("lvim.lsp.manager").setup("eslint", {})
 
   -- Telescope UI 增强
-  lvim.builtin.telescope.on_config_done = function (telescope)
+  lvim.builtin.telescope.on_config_done = function(telescope)
     telescope.extensions["ui-select"] = {
       require("telescope.themes").get_dropdown {
         -- even more opts

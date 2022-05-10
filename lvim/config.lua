@@ -47,6 +47,7 @@ lvim.builtin.treesitter.ensure_installed = {
   "css",
   "rust",
   "yaml",
+  "svelte"
 }
 
 lvim.builtin.treesitter.ignore_install = { "haskell" }

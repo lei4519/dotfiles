@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
 
+# 是用于生成各种文件类型的预览的Shell脚本
 set -o noclobber -o noglob -o nounset -o pipefail
 IFS=$'\n'
 
