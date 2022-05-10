@@ -127,14 +127,17 @@ function M.config()
     -- f = { "<cmd>telescope find_files<cr>", "find_files" },
     -- lunarvim 的配置，在 git repo 中使用 git_files，否则使用 fine_files
     a = { "<cmd>Telescope<cr>", "Telescope" },
-    b = { "<cmd>Telescope buffers<cr>", "Buffers" },
+    -- bufferline 已经够用了
+    -- b = { "<cmd>Telescope buffers<cr>", "Buffers" },
     c = { "<cmd>Telescope commands<cr>", "Commands" },
     d = {
       name = "Diagnostics",
       b = { "<cmd>Trouble document_diagnostics<cr>", "Buffer Diagnostics" },
       w = { "<cmd>Trouble workspace_diagnostics<cr>", "Workspace Diagnostics" },
     },
+    -- 搜索文件: file or git file
     f = lvim.builtin.which_key.mappings["f"],
+    F = { "<cmd>Telescope current_buffer_fuzzy_find<cr>", "Fuzzy Find" },
     -- g = { ":lua require('telescope').extensions.live_grep_raw.live_grep_raw()<cr>", "Live Grep Raw" },
     g = { "<cmd>Telescope live_grep<cr>", "live_grep" },
     k = { "<cmd>Telescope keymaps<cr>", "Keymaps" },

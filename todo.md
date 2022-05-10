@@ -1,4 +1,6 @@
 # Feat
+      name = "Diagnostics",
+      b = { "<cmd>Trouble document_diagnostics<cr>", "Buffer Diagnostics" },
 
 - [x] treesitter 折叠/增量选择
 
@@ -27,6 +29,8 @@
 - [x] Rust 增强 use("simrat39/rust-tools.nvim")
 
 - [x] 失焦保存
+
+- [ ] find current file
 
 - [ ] project find file default
 

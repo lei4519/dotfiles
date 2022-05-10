@@ -64,6 +64,8 @@ function M.config()
   lvim.builtin.alpha.dashboard.section.footer = nil
 
   -- eslint 语言服务
+  -- https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md#eslint
+  -- autocmd BufWritePre *.tsx,*.ts,*.jsx,*.js EslintFixAll
   require("lvim.lsp.manager").setup("eslint", {})
 
   -- Telescope UI 增强
