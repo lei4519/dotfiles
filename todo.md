@@ -30,7 +30,7 @@
 
 - [x] 失焦保存
 
-- [ ] find current file
+- [x] find current file
 
 - [ ] project find file default
 

@@ -13,8 +13,8 @@ function M.config()
   lvim.transparent_window = true
 
   -- 折叠
-  vim.opt.foldmethod = "expr" -- folding set to "expr" for treesitter based folding
-  vim.opt.foldexpr = "nvim_treesitter#foldexpr()" -- set to "nvim_treesitter#foldexpr()" for treesitter based folding
+  vim.opt.foldmethod = "indent" -- folding set to "expr" for treesitter based folding
+  -- vim.opt.foldexpr = "nvim_treesitter#foldexpr()" -- set to "nvim_treesitter#foldexpr()" for treesitter based folding
   -- 默认不要折叠
   -- https://stackoverflow.com/questions/8316139/how-to-set-the-default-to-unfolded-when-you-open-a-file
   vim.opt.foldlevel = 99

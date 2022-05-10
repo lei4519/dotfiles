@@ -135,3 +135,4 @@ alias ra="ranger"
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
+test -e /Users/lay/.iterm2_shell_integration.zsh && source /Users/lay/.iterm2_shell_integration.zsh || true

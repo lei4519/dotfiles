@@ -2,8 +2,8 @@ local M = {}
 
 function M.config()
   -- treesitter 折叠
-  lvim.keys.normal_mode['zc'] = ":foldclose<CR>"
-  lvim.keys.normal_mode['zo'] = ":foldopen<CR>"
+  -- lvim.keys.normal_mode['zc'] = ":foldclose<CR>"
+  -- lvim.keys.normal_mode['zo'] = ":foldopen<CR>"
 
   lvim.keys.insert_mode = {
     -- 'jk' for quitting insert mode
