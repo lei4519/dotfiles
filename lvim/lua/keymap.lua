@@ -118,10 +118,8 @@ function M.config()
   vim.cmd('autocmd! TermOpen term://* lua set_terminal_mode_tt_keymap()')
 
   -- 翻译
-
-  lvim.builtin.which_key.mappings['tw'] = { "<cmd>TranslateW<CR>", "Translate Window" }
-  -- lvim.builtin.which_key.vmappings['tw'] = { "<cmd>TranslateW<CR>", "Translate Window" }
-  vim.api.nvim_set_keymap('v', '<C-t>', ':TranslateW<CR>', { noremap = true, silent = true })
+  vim.api.nvim_set_keymap('n', '<C-t>', ':Translate<CR>', { noremap = true, silent = true })
+  vim.api.nvim_set_keymap('v', '<C-t>', ':Translate<CR>', { noremap = true, silent = true })
   -- lvim.builtin.which_key.vmappings['tr'] = { "<cmd>TranslateR<CR>", "Translate Replace" }
   lvim.builtin.which_key.mappings['tr'] = { "<cmd>TranslateR<CR>", "Translate Replace" }
   lvim.builtin.which_key.mappings['ty'] = { "<cmd>TranslateX<CR>", "Translate Yank" }

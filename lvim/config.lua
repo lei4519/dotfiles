@@ -73,4 +73,9 @@ code_actions.setup {
   -- { name = "eslint", prefer_local = "node_modules/.bin" },
 }
 
+lvim.autocommands.custom_groups = {
+  -- 使用回车换行时自动插入注释
+  { "BufWinEnter", "*", "setlocal fo+=cro" },
+}
+
 require('setup')
