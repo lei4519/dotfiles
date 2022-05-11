@@ -105,8 +105,6 @@ function M.setup()
       run = "make",
       event = "BufRead",
     },
-    -- 注释上下文
-    { 'JoosepAlviste/nvim-ts-context-commentstring', event = "BufRead", },
     -- 注释增强
     {
       "folke/todo-comments.nvim",
