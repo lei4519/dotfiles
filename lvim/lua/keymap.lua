@@ -4,6 +4,26 @@ function M.config()
   -- treesitter 折叠
   -- lvim.keys.normal_mode['zc'] = ":foldclose<CR>"
   -- lvim.keys.normal_mode['zo'] = ":foldopen<CR>"
+  lvim.keys.normal_mode = {
+    -- Resize with arrows
+    ["<C-Up>"] = ":resize -2<CR>",
+    ["<C-Down>"] = ":resize +2<CR>",
+    ["<C-Left>"] = ":vertical resize -2<CR>",
+    ["<C-Right>"] = ":vertical resize +2<CR>",
+
+    -- Tab switch buffer
+    ["<C-l>"] = ":BufferLineCycleNext<CR>",
+    ["<C-h>"] = ":BufferLineCyclePrev<CR>",
+
+    -- Move current line / block with Alt-j/k a la vscode.
+    ["<A-j>"] = ":m .+1<CR>==",
+    ["<A-k>"] = ":m .-2<CR>==",
+
+    -- QuickFix
+    ["]q"] = ":cnext<CR>",
+    ["[q"] = ":cprev<CR>",
+    ["<C-q>"] = ":call QuickFixToggle()<CR>",
+  }
 
   lvim.keys.insert_mode = {
     -- 'jk' for quitting insert mode
