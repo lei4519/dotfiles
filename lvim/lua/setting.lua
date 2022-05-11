@@ -40,6 +40,7 @@ function M.config()
       scope_incremental = "<TAB>",
     },
   }
+  lvim.builtin.treesitter.autotag.enable = true
 
   -- 注释配置
   lvim.builtin.comment.mappings.extra = true
@@ -68,7 +69,7 @@ function M.config()
   -- autocmd BufWritePre *.tsx,*.ts,*.jsx,*.js EslintFixAll
   require("lvim.lsp.manager").setup("eslint", {})
 
-  -- Telescope UI 增强
+  -- Telescope 配置
   lvim.builtin.telescope.on_config_done = function(telescope)
     telescope.extensions["ui-select"] = {
       require("telescope.themes").get_dropdown {
@@ -76,6 +77,7 @@ function M.config()
       }
     }
     telescope.load_extension("ui-select")
+    telescope.load_extension('live_grep_raw')
   end
 end
 

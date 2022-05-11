@@ -321,7 +321,7 @@ function M.setup()
           -- },
           -- finder_definition_icon = "  ",
           -- finder_reference_icon = "  ",
-          -- max_preview_lines = 10,
+          max_preview_lines = 3,
           finder_action_keys = {
             -- open = "o",
             open = "<CR>",
@@ -368,9 +368,6 @@ function M.setup()
     -- 原始的 grep
     {
       'nvim-telescope/telescope-live-grep-raw.nvim',
-      config = function()
-        require('telescope').load_extension('live_grep_raw')
-      end
     },
     -- telescope ui 增强
     {
