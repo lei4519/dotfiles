@@ -1,6 +1,9 @@
 local M = {}
 
 function M.config()
+  -- rust 增强配置
+  vim.list_extend(lvim.lsp.automatic_configuration.skipped_servers, { "rust_analyzer" })
+
   -- 相对行号
   vim.opt.relativenumber = true -- set relative numbered lines
 

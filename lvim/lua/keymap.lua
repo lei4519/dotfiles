@@ -106,11 +106,15 @@ function M.config()
 
   -- 悬浮终端
   lvim.builtin.terminal.open_mapping = nil
-  lvim.builtin.which_key.mappings['tt'] = { "<cmd>ToggleTerm<cr>", "ToggleTerm" }
-  lvim.builtin.terminal.execs = { { "lazygit", "<leader>tg", "LazyGit", "float" } }
-  require("lvim.keymappings").load {
-    term_mode = { ['<leader>tt'] = "<cmd>lua require('lvim.core.terminal')._exec_toggle()<CR>" },
+  lvim.builtin.which_key.mappings['t'] = {
+    t = { "<cmd>ToggleTerm<cr>", "ToggleTerm" },
+    w = { "<cmd>TroubleToggle lsp_workspace_diagnostics<cr>", "workspace" },
+    d = { "<cmd>TroubleToggle lsp_document_diagnostics<cr>", "document" },
+    q = { "<cmd>TroubleToggle quickfix<cr>", "quickfix" },
+    l = { "<cmd>TroubleToggle loclist<cr>", "loclist" },
+    r = { "<cmd>TroubleToggle lsp_references<cr>", "references" },
   }
+  lvim.builtin.terminal.execs = { { "lazygit", "<leader>tg", "LazyGit", "float" } }
   function set_terminal_mode_tt_keymap()
     vim.api.nvim_buf_set_keymap(0, 't', '<leader>tt', [[<cmd>ToggleTerm<cr>]], { noremap = true })
   end
@@ -118,12 +122,8 @@ function M.config()
   vim.cmd('autocmd! TermOpen term://* lua set_terminal_mode_tt_keymap()')
 
   -- 翻译
-  vim.api.nvim_set_keymap('n', '<C-t>', ':Translate<CR>', { noremap = true, silent = true })
   vim.api.nvim_set_keymap('v', '<C-t>', ':Translate<CR>', { noremap = true, silent = true })
-  -- lvim.builtin.which_key.vmappings['tr'] = { "<cmd>TranslateR<CR>", "Translate Replace" }
-  lvim.builtin.which_key.mappings['tr'] = { "<cmd>TranslateR<CR>", "Translate Replace" }
-  lvim.builtin.which_key.mappings['ty'] = { "<cmd>TranslateX<CR>", "Translate Yank" }
-
+  vim.api.nvim_set_keymap('n', '<C-t>', ':Translate<CR>', { noremap = true, silent = true })
 
   -- 窗口管理
   lvim.builtin.which_key.mappings['w'] = {
@@ -163,7 +163,6 @@ function M.config()
     o = { "<cmd>Telescope oldfiles<cr>", "Oldfiles" },
     p = { "<cmd>Telescope projects<cr>", "Projects" },
     q = { "<cmd>Telescope quickfix<cr>", "Quickfix" },
-    r = { "<cmd>Trouble lsp_references<cr>", "Find All References" },
     s = { "<cmd>Telescope lsp_document_symbols<cr>", "Document Symbols" },
     S = {
       "<cmd>Telescope lsp_dynamic_workspace_symbols<cr>",
@@ -241,31 +240,31 @@ function M.config()
       -- required to fix code action ranges and filter diagnostics
       ts_utils.setup_client(client)
     end
-
-    -- local map = vim.api.nvim_buf_set_keymap
-    -- -- lspsaga 弹窗滚动
-    -- map(bufnr, "n", "<C-b>", "<cmd>lua require('lspsaga.action').smart_scroll_with_saga(-1, '<c-b>')<cr>", {})
-    -- map(bufnr, "n", "<C-f>", "<cmd>lua require('lspsaga.action').smart_scroll_with_saga(1, '<c-f>')<cr>", {})
   end
-  lvim.builtin.which_key.vmappings['ga'] = { ":<C-U>Lspsaga range_code_action<CR>", "Range Code Action" }
   lvim.lsp.buffer_mappings.normal_mode = {
     -- ["[q"] = ":cprev<CR>", QuickFix
     -- ["]q"] = ":cnext<CR>", QuickFix
-    ["[d"] = { ":Lspsaga diagnostic_jump_prev<CR>", "Prev Diagnostic" },
-    ["]d"] = { ":Lspsaga diagnostic_jump_next<CR>", "Next Diagnostic" },
-    ["ga"] = { ":Lspsaga code_action<CR>", "Code Action" },
-    ["gd"] = { ":Lspsaga lsp_finder<CR>", "Show Definition & Reference" },
+    ["[d"] = { vim.diagnostic.goto_prev, "Prev Diagnostic" },
+    ["]d"] = { vim.diagnostic.goto_next, "Next Diagnostic" },
+    ["ga"] = { vim.lsp.buf.code_action, "Code Action" },
+    ["gd"] = { vim.lsp.buf.definition, "Goto Definition" },
+    ["gD"] = { vim.lsp.buf.declaration, "Goto declaration" },
     ["gf"] = {
       name = "Format",
       ['f'] = { require("lvim.lsp.utils").format, "Lsp Format" },
       ['e'] = { ":EslintFixAll<cr>", "EslintFixAll" }
     },
-    ["gh"] = { ":Lspsaga hover_doc<CR>", "Show Doc" },
+    ["gh"] = { vim.lsp.buf.hover, "Show Doc" },
     ["gI"] = { vim.lsp.buf.implementation, "Goto Implementation" },
     ["gl"] = {
-      ":Lspsaga show_line_diagnostics<CR>",
+      function()
+        local config = lvim.lsp.diagnostics.float
+        config.scope = "line"
+        vim.diagnostic.open_float(0, config)
+      end,
       "Show line diagnostics",
     },
+    ['gL'] = { vim.lsp.codelens.run, "CodeLens Action" },
     -- 注释使用了
     -- ['gca'] = { vim.lsp.codelens.run, "CodeLens Action" },
     ["gpd"] = {
@@ -295,8 +294,8 @@ function M.config()
       "Preview Markdown",
     },
     ['gq'] = { vim.diagnostic.setloclist, "Quickfix" },
-    ["gr"] = { ':Lspsaga rename<CR>', "Rename" },
-    ["gs"] = { ":Lspsaga signature_help<CR>", "Show Signature Help" },
+    ["gr"] = { vim.lsp.buf.rename, "Rename" },
+    ["gs"] = { vim.lsp.buf.signature_help, "show signature help" },
     -- vim.api.nvim_buf_set_keymap(bufnr, "n", "gs", ":TSLspOrganize<CR>", opts)
     -- vim.api.nvim_buf_set_keymap(bufnr, "n", "gr", ":TSLspRenameFile<CR>", opts)
     -- vim.api.nvim_buf_set_keymap(bufnr, "n", "gi", ":TSLspImportAll<CR>", opts)
