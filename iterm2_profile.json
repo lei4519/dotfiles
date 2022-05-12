@@ -67,7 +67,7 @@
     "Red Component": 0.90730977058410645,
     "Blue Component": 0.93115901947021484
   },
-  "Working Directory": "\/Users\/lay",
+  "Working Directory": "/Users/lay",
   "Blinking Cursor": false,
   "Disable Window Resizing": true,
   "Sync Title": false,
@@ -255,12 +255,6 @@
       "Action": 10,
       "Text": "[1;5C"
     },
-    "0x42-0x120000-0xb": {
-      "Version": 1,
-      "Action": 32,
-      "Text": "",
-      "Label": ""
-    },
     "0xf701-0x260000": {
       "Action": 10,
       "Text": "[1;6B"
@@ -313,7 +307,7 @@
   "Window Type": 0,
   "Blur Radius": 5.7381734645113029,
   "Blur": false,
-  "Background Image Location": "\/Users\/lay\/Pictures\/ANIME-PICTURES.NET_-_685257-8200x4100-ghost+blade-yan+(ghost+blade)-wlop-single-fringe-short+hair.jpeg",
+  "Background Image Location": "/Users/lay/Pictures/ANIME-PICTURES.NET_-_685257-8200x4100-ghost+blade-yan+(ghost+blade)-wlop-single-fringe-short+hair.jpeg",
   "Badge Color": {
     "Red Component": 1,
     "Color Space": "sRGB",

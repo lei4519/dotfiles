@@ -31,6 +31,7 @@ function M.setup()
     -- 自动保存
     {
       "Pocco81/AutoSave.nvim",
+      event = "BufRead",
       config = function()
         require("autosave").setup()
       end
@@ -196,6 +197,7 @@ function M.setup()
     -- vim-surround
     {
       "tpope/vim-surround",
+      event = "BufRead",
       keys = { "c", "d", "y" }
       -- make sure to change the value of `timeoutlen` if it's not triggering correctly, see https://github.com/tpope/vim-surround/issues/117
       -- setup = function()
@@ -205,16 +207,20 @@ function M.setup()
     -- 自动闭合标签
     {
       "windwp/nvim-ts-autotag",
-      -- event = "InsertEnter",
+      event = "InsertEnter",
       config = function()
         require("nvim-ts-autotag").setup()
       end
     },
     -- 彩色括号
-    { "p00f/nvim-ts-rainbow" },
+    {
+      "p00f/nvim-ts-rainbow",
+      event = "BufRead",
+    },
     -- function 悬浮提示
     {
       "romgrk/nvim-treesitter-context",
+      event = "BufRead",
       config = function()
         require("treesitter-context").setup({
           enable = true, -- Enable this plugin (Can be enabled/disabled later via commands)
@@ -238,7 +244,7 @@ function M.setup()
     -- 函数参数文档提示
     {
       "ray-x/lsp_signature.nvim",
-      -- event = "BufRead",
+      event = "BufRead",
       config = function()
         require "lsp_signature".setup()
       end
@@ -247,6 +253,7 @@ function M.setup()
     -- 颜色高亮
     {
       "norcalli/nvim-colorizer.lua",
+      event = "BufRead",
       config = function()
         require("colorizer").setup({ "*" }, {
           RGB = true, -- #RGB hex codes
@@ -262,11 +269,13 @@ function M.setup()
     -- 大纲
     {
       "simrat39/symbols-outline.nvim",
+      event = "BufRead",
       cmd = "SymbolsOutline"
     },
     -- 更友好的诊断提示
     {
       "folke/trouble.nvim",
+      event = "BufRead",
       requires = "kyazdani42/nvim-web-devicons",
       config = function()
         require("trouble").setup {}
@@ -277,17 +286,23 @@ function M.setup()
     -- 翻译
     {
       'voldikss/vim-translator',
+      event = "BufRead",
       config = function()
         vim.g.translator_default_engines = { 'google', 'youdao' }
       end
     },
     -- preview markdown
-    { "ellisonleao/glow.nvim", branch = 'main' },
+    {
+      "ellisonleao/glow.nvim",
+      branch = 'main',
+      event = "BufRead",
+    },
     {
       disable = true,
       "iamcco/markdown-preview.nvim",
       run = "cd app && npm install",
       ft = "markdown",
+      event = "BufRead",
       config = function()
         vim.g.mkdp_auto_start = 1
       end,
@@ -300,6 +315,7 @@ function M.setup()
     -- lsp ui 增强
     {
       'tami5/lspsaga.nvim',
+      event = "BufRead",
       config = function()
         require 'lspsaga'.setup({ -- defaults ...
           -- debug = false,
@@ -358,19 +374,26 @@ function M.setup()
     -- preview 增强
     {
       'rmagatti/goto-preview',
+      event = "BufRead",
       config = function()
         require('goto-preview').setup { height = 30 }
       end
     },
     -- 更好的 quickfix
-    { 'kevinhwang91/nvim-bqf', ft = 'qf' },
+    {
+      'kevinhwang91/nvim-bqf',
+      event = "BufRead",
+      ft = 'qf'
+    },
     -- 原始的 grep
     {
+      disable = true,
+      event = "BufRead",
       'nvim-telescope/telescope-live-grep-raw.nvim',
     },
     -- telescope ui 增强
     {
-      'nvim-telescope/telescope-ui-select.nvim'
+      'nvim-telescope/telescope-ui-select.nvim',
     },
     -- lightspeed 光标快速跳转
     {
@@ -381,10 +404,15 @@ function M.setup()
       -- end
     },
     -- ts 增强：重命名文件、导入等
-    { "jose-elias-alvarez/nvim-lsp-ts-utils", requires = "nvim-lua/plenary.nvim" },
+    {
+      "jose-elias-alvarez/nvim-lsp-ts-utils",
+      event = "BufRead",
+      requires = "nvim-lua/plenary.nvim"
+    },
     -- rust 增强
     {
       "simrat39/rust-tools.nvim",
+      event = "BufRead",
       config = function()
         local lsp_installer_servers = require "nvim-lsp-installer.servers"
         local _, requested_server = lsp_installer_servers.get_server "rust_analyzer"
@@ -413,6 +441,10 @@ function M.setup()
       end,
       ft = { "rust", "rs" },
     },
+    {
+      'andymass/vim-matchup',
+      event = "BufRead",
+    }
   }
 end
 

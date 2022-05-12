@@ -14,6 +14,7 @@ brew install lazygit # lazygit
 brew install git-delta # git pager styles, lazygit need
 brew install ripgrep # rg, telescope need
 brew install fd # telescope need
+# brew install --cask maccy # 系统剪切板历史管理
 npm i -g vscode-langservers-extracted # eslint 服务
 # brew install the_silver_searcher # ag, or rg
 # -f 强制执行
@@ -24,6 +25,7 @@ ln -f -i -n -s ~/dotfiles/lvim ~/.config/lvim
 ln -f -i -n -s ~/dotfiles/nvim ~/.config/nvim
 ln -f -i -n -s ~/dotfiles/ranger ~/.config/ranger
 ln -f -i -n -s ~/dotfiles/.zshrc ~/.zshrc
+ln -f -i -n -s ~/dotfiles/.profile ~/.profile
 ln -f -i -n -s ~/dotfiles/.gitconfig ~/.gitconfig
 ln -f -i -n -s ~/dotfiles/lazygit.yml ~/Library/Application\ Support/lazygit/config.yml
 ```

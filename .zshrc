@@ -99,13 +99,6 @@ source $ZSH/oh-my-zsh.sh
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
 
-
-export NVM_DIR="$HOME/.nvm"
-    [ -s "$(brew --prefix)/opt/nvm/nvm.sh" ] && \. "$(brew --prefix)/opt/nvm/nvm.sh" # This loads nvm
-    [ -s "$(brew --prefix)/opt/nvm/etc/bash_completion.d/nvm" ] && \. "$(brew --prefix)/opt/nvm/etc/bash_completion.d/nvm" # This loads nvm bash_completion
-
-export EDITOR="~/.local/bin/lvim"
-
 # Set personal aliases, overriding those provided by oh-my-zsh libs,
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh
 # users are encouraged to define aliases within the ZSH_CUSTOM folder.
@@ -115,10 +108,10 @@ export EDITOR="~/.local/bin/lvim"
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-alias taskbiz="cd /Users/lay/Desktop/work/ad-taskbiz-web && yarn start"
-alias zhiadmin="cd /Users/lay/Desktop/work/ad-zhitask-admin-web && yarn start"
-alias zhitask="cd /Users/lay/Desktop/work/zhitask-site/packages/biz && yarn start"
-alias zhihome="cd /Users/lay/Desktop/work/zhitask-site/packages/home && yarn start"
+alias taskbiz="cd /Users/lay/work/ad-taskbiz-web && yarn start"
+alias zhiadmin="cd /Users/lay/work/ad-zhitask-admin-web && yarn start"
+alias zhitask="cd /Users/lay/work/zhitask-site/packages/biz && yarn start"
+alias zhihome="cd /Users/lay/work/zhitask-site/packages/home && yarn start"
 
 # alias lvim="/Users/lay/.local/bin/lvim"
 export LUNARVIM_RUNTIME_DIR="${LUNARVIM_RUNTIME_DIR:-"$HOME/.local/share/lunarvim"}"

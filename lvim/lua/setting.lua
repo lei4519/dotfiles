@@ -94,7 +94,7 @@ function M.config()
       }
     }
     telescope.load_extension("ui-select")
-    telescope.load_extension('live_grep_raw')
+    -- telescope.load_extension('live_grep_raw')
   end
 end
 
