@@ -99,6 +99,13 @@ source $ZSH/oh-my-zsh.sh
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
 
+export NVM_DIR="$HOME/.nvm"
+    [ -s "$(brew --prefix)/opt/nvm/nvm.sh" ] && \. "$(brew --prefix)/opt/nvm/nvm.sh" # This loads nvm
+    [ -s "$(brew --prefix)/opt/nvm/etc/bash_completion.d/nvm" ] && \. "$(brew --prefix)/opt/nvm/etc/bash_completion.d/nvm" # This loads nvm bash_completion
+
+export EDITOR="$HOME/.local/bin/lvim"
+export VISUAL="$HOME/.local/bin/lvim"
+
 # Set personal aliases, overriding those provided by oh-my-zsh libs,
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh
 # users are encouraged to define aliases within the ZSH_CUSTOM folder.
@@ -123,6 +130,7 @@ alias vi="$EDITOR"
 alias vim="$EDITOR"
 alias python="/usr/bin/python3"
 alias lg="lazygit"
+# alias ra=". ~/.zshrc; ranger"
 alias ra="ranger"
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
