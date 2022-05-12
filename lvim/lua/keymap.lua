@@ -265,40 +265,38 @@ function M.config()
       "Show line diagnostics",
     },
     ['gL'] = { vim.lsp.codelens.run, "CodeLens Action" },
-    -- 注释使用了
-    -- ['gca'] = { vim.lsp.codelens.run, "CodeLens Action" },
-    ["gpd"] = {
-      "<cmd>lua require('goto-preview').goto_preview_definition()<CR>",
-      "Peek Definition",
-    },
-    ['gpi'] = {
-      "<cmd>lua require('goto-preview').goto_preview_implementation()<CR>",
-      "Preview Implementation",
-    },
-    ['gpr'] = {
-      "<cmd>lua require('goto-preview').goto_preview_references()<CR>",
-      "Preview References",
+    ['gp'] = {
+      name = "Preview",
+      d = {
+        "<cmd>lua require('goto-preview').goto_preview_definition()<CR>",
+        "Peek Definition",
+      },
+      i = {
+        "<cmd>lua require('goto-preview').goto_preview_implementation()<CR>",
+        "Preview Implementation",
+      },
+      r = {
+        "<cmd>lua require('goto-preview').goto_preview_references()<CR>",
+        "Preview References",
+      },
+      t = {
+        function()
+          require("lvim.lsp.peek").Peek "typeDefinition"
+        end,
+        "Type Definition",
+      },
+      m = {
+        "<cmd>MarkdownPreviewToggle<CR>",
+        "Markdown Preview Toggle",
+      },
     },
     ['gP'] = {
       "<cmd>lua require('goto-preview').close_all_win()<CR>",
       "Close All Preview",
     },
-    ['gpt'] = {
-      function()
-        require("lvim.lsp.peek").Peek "typeDefinition"
-      end,
-      "Type Definition",
-    },
-    ['gpm'] = {
-      "<cmd>Glow<CR>",
-      "Preview Markdown",
-    },
     ['gq'] = { vim.diagnostic.setloclist, "Quickfix" },
     ["gr"] = { vim.lsp.buf.rename, "Rename" },
     ["gs"] = { vim.lsp.buf.signature_help, "show signature help" },
-    -- vim.api.nvim_buf_set_keymap(bufnr, "n", "gs", ":TSLspOrganize<CR>", opts)
-    -- vim.api.nvim_buf_set_keymap(bufnr, "n", "gr", ":TSLspRenameFile<CR>", opts)
-    -- vim.api.nvim_buf_set_keymap(bufnr, "n", "gi", ":TSLspImportAll<CR>", opts)
     ["gt"] = { vim.lsp.buf.type_definition, "Goto Type Definition" },
     ["gT"] = {
       name = "TSLsp",
