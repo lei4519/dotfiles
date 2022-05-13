@@ -359,6 +359,7 @@ function M.setup()
               use_telescope = true,
             },
             inlay_hints = {
+              show_variable_name = true,
               -- prefix for parameter hints
               -- default: "<-"
               parameter_hints_prefix = " ",

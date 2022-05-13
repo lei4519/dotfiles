@@ -12,7 +12,7 @@ an executable
 vim.g.neovide_refresh_rate = 60 -- 屏幕刷新率
 vim.g.neovide_transparency = .9 -- 透明度
 -- 字体
-vim.opt.guifont = { "MesloLGS NF", "h16" }
+vim.opt.guifont = { "FiraCode Nerd Font", "h40" }
 vim.opt.linespace = 20
 
 -- general
