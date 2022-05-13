@@ -10,7 +10,7 @@ git clone --depth=1 git@github.com:lei4519/dotfiles.git ~/dotfiles
 ### 终端字体
 
 ```sh
-brew tap homebrew/cask-fonts 
+brew tap homebrew/cask-fonts
 brew install --cask font-fira-code-nred-font
 ```
 
@@ -44,7 +44,7 @@ ln -f -i -n -s ~/dotfiles/lazygit.yml ~/Library/Application\ Support/lazygit/con
 
 ### Alacritty
 ```
-brew install --cask alacritty # alacritty 终端 
+brew install --cask alacritty # alacritty 终端
 ln -f -i -n -s ~/dotfiles/alacritty ~/.config/alacritty
 brew install starship # 终端主题
 ln -f -i -n -s ~/dotfiles/starship.toml ~/.config/starship.toml
@@ -93,3 +93,10 @@ rm /Applications/Neovide.app/Contents/MacOS/neovide_original
 # brew install --cask maccy # 系统剪切板历史管理
 ```
 
+### Karabiner-Elements
+```sh
+brew install --cask karabiner-elements
+ln -f -i -n -s ~/dotfiles/karabiner.json ~/.config/karabiner/karabiner.json
+# https://karabiner-elements.pqrs.org/docs/json/complex-modifications-manipulator-definition/from/modifiers
+# https://genesy.github.io/karabiner-complex-rules-generator
+```
