@@ -1,6 +1,8 @@
 local M = {}
 
 function M.config()
+  lvim.builtin.dap.active = true
+
   -- rust 增强配置
   vim.list_extend(lvim.lsp.automatic_configuration.skipped_servers, { "rust_analyzer" })
 

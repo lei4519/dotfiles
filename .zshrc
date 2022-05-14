@@ -21,7 +21,7 @@ alias vim="$EDITOR"
 alias python="/usr/bin/python3"
 alias lg="lazygit"
 # alias ra=". ~/.zshrc; ranger"
-alias ra="ranger"
+alias ra=". ranger"
 alias ze="zellij"
 
 # eval "$(zellij setup --generate-auto-start zsh)"

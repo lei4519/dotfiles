@@ -122,8 +122,8 @@ function M.config()
   vim.cmd('autocmd! TermOpen term://* lua set_terminal_mode_tt_keymap()')
 
   -- 翻译
-  vim.api.nvim_set_keymap('v', '<C-t>', ':Translate<CR>', { noremap = true, silent = true })
-  vim.api.nvim_set_keymap('n', '<C-t>', ':Translate<CR>', { noremap = true, silent = true })
+  vim.api.nvim_set_keymap('v', '<A-t>', ':Translate<CR>', { noremap = true, silent = true })
+  vim.api.nvim_set_keymap('n', '<A-t>', ':Translate<CR>', { noremap = true, silent = true })
 
   -- 窗口管理
   lvim.builtin.which_key.mappings['w'] = {
@@ -241,12 +241,18 @@ function M.config()
       ts_utils.setup_client(client)
     end
   end
+
+
+  lvim.lsp.buffer_mappings.visual_mode = {
+    ['ge'] = { ":EasyAlign<cr>", "Easy Align" }
+  }
   lvim.lsp.buffer_mappings.normal_mode = {
     -- ["[q"] = ":cprev<CR>", QuickFix
     -- ["]q"] = ":cnext<CR>", QuickFix
     ["[d"] = { vim.diagnostic.goto_prev, "Prev Diagnostic" },
     ["]d"] = { vim.diagnostic.goto_next, "Next Diagnostic" },
     ["ga"] = { vim.lsp.buf.code_action, "Code Action" },
+    ['ge'] = { ":EasyAlign<cr>", "Easy Align" },
     ["gd"] = { vim.lsp.buf.definition, "Goto Definition" },
     ["gD"] = { vim.lsp.buf.declaration, "Goto declaration" },
     ["gf"] = {
