@@ -377,14 +377,21 @@ function M.setup()
       end,
       ft = { "rust", "rs" },
     },
+    -- 增强%
     {
       'andymass/vim-matchup',
       event = "BufRead",
     },
+    -- 对齐
     {
       'junegunn/vim-easy-align',
       event = "BufRead"
     },
+    -- 显示mark
+    {
+      'kshenoy/vim-signature',
+      event = "BufRead"
+    }
   }
 end
 
