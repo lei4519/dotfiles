@@ -122,8 +122,8 @@ function M.config()
   vim.cmd('autocmd! TermOpen term://* lua set_terminal_mode_tt_keymap()')
 
   -- 翻译
-  vim.api.nvim_set_keymap('v', '<A-t>', ':Translate<CR>', { noremap = true, silent = true })
-  vim.api.nvim_set_keymap('n', '<A-t>', ':Translate<CR>', { noremap = true, silent = true })
+  vim.api.nvim_set_keymap('v', '<C-t>', ':Translate<CR>', { noremap = true, silent = true })
+  vim.api.nvim_set_keymap('n', '<C-t>', ':Translate<CR>', { noremap = true, silent = true })
 
   -- 窗口管理
   lvim.builtin.which_key.mappings['w'] = {

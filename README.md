@@ -53,6 +53,13 @@ ln -f -i -n -s ~/dotfiles/zellij ~/.config/zellij
 brew install zsh-autosuggestions # 建议提示补全
 ```
 
+### tmux
+```sh
+brew install tmux
+ln -f -i -n -s ~/dotfiles/.tmux.conf ~/.tmux.conf
+ln -f -i -n -s ~/dotfiles/.tmux.conf.local ~/.tmux.conf.local
+```
+
 ### Lunarvim
 
 [https://www.lunarvim.org/](https://www.lunarvim.org/)
