@@ -59,6 +59,7 @@ brew install tmux
 ln -f -i -n -s ~/dotfiles/.tmux.conf ~/.tmux.conf
 ln -f -i -n -s ~/dotfiles/.tmux.conf.local ~/.tmux.conf.local
 brew install urlview # 快速打开终端里的url
+brew install reattach-to-user-namespace
 ```
 
 ### Lunarvim
@@ -69,7 +70,7 @@ brew install urlview # 快速打开终端里的url
 
 ```sh
 bash <(curl -s https://raw.githubusercontent.com/lunarvim/lunarvim/master/utils/installer/install.sh)
-# ln -f -i -n -s ~/.local/bin/lvim /usr/local/bin/lvim
+ln -f -i -n -s ~/.local/bin/lvim /usr/local/bin/lvim
 ```
 
 #### Uninstall
