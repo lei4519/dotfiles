@@ -30,7 +30,7 @@ gui:
   mouseEvents: true
   skipUnstageLineWarning: false
   skipStashWarning: false
-  showFileTree: true # for rendering changes files in a tree format
+  showFileTree: false # for rendering changes files in a tree format
   showListFooter: true # for seeing the '5 of 20' message in list panels
   showRandomTip: true
   showBottomLine: true # for hiding the bottom information line (unless it has important information to tell you)
@@ -61,6 +61,7 @@ git:
   autoFetch: true
   autoRefresh: true
   branchLogCmd: 'git log --graph --color=always --abbrev-commit --decorate --date=relative --pretty=medium {{branchName}} --'
+  # branchLogCmd: 'git log --graph --all --color=always --format=%h,%an,%as,%s'
   allBranchesLogCmd: 'git log --graph --all --color=always --abbrev-commit --decorate --date=relative  --pretty=medium'
   overrideGpg: false # prevents lazygit from spawning a separate process when using GPG
   disableForcePushing: false
@@ -151,7 +152,7 @@ keybinding:
     recentRepos: '<enter>'
   files:
     commitChanges: 'c'
-    commitChangesWithoutHook: 'w' # commit changes without pre-commit hook
+    # commitChangesWithoutHook: 'w' # commit changes without pre-commit hook
     amendLastCommit: 'A'
     commitChangesWithEditor: 'C'
     ignoreFile: 'i'
@@ -209,3 +210,13 @@ keybinding:
     init: 'i'
     update: 'u'
     bulkMenu: 'b'
+customCommands:
+  - key: 'w'
+    command: "git commit {{if .SelectedFile.HasUnstagedChanges}} -nam {{else}} -nm {{end}} '{{index .PromptResponses 0}}'"
+    context: 'files'
+    stream: true
+    description: 'Commit Changes With --no-verify'
+    prompts:
+      - type: 'input'
+        title: 'Commit message'
+        initialValue: ''
