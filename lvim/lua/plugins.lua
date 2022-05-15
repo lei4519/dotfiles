@@ -351,7 +351,16 @@ function M.setup()
       config = function()
         local lsp_installer_servers = require "nvim-lsp-installer.servers"
         local _, requested_server = lsp_installer_servers.get_server "rust_analyzer"
+
+        local extension_path = HOME .. "/.local/share/nvim/dapinstall/codelldb/extension/"
+        local codelldb_path = extension_path .. "adapter/codelldb"
+        local liblldb_path = extension_path .. "lldb/lib/liblldb.dylib"
+
         require("rust-tools").setup({
+          dap = {
+            adapter = require('rust-tools.dap').get_codelldb_adapter(
+              codelldb_path, liblldb_path)
+          },
           tools = {
             autoSetHints = true,
             hover_with_actions = true,

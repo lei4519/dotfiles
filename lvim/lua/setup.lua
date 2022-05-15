@@ -1,4 +1,5 @@
-NVIMRC = os.getenv('HOME') .. "/dotfiles/lvim"
+HOME = os.getenv('HOME')
+NVIMRC = HOME .. "/dotfiles/lvim"
 
 local config_paths = {}
 
@@ -16,7 +17,7 @@ for item in require("io").popen("ls " .. NVIMRC .. "/lua"):lines() do
 end
 
 -- 调用配置
-for i, v in ipairs(config_paths) do
+for _, v in ipairs(config_paths) do
 	local m = require(v);
 	if type(m.setup) == 'function' then
 		m.setup()

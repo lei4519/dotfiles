@@ -109,3 +109,4 @@ ln -f -i -n -s ~/dotfiles/karabiner.json ~/.config/karabiner/karabiner.json
 # https://karabiner-elements.pqrs.org/docs/json/complex-modifications-manipulator-definition/from/modifiers
 # https://genesy.github.io/karabiner-complex-rules-generator
 ```
+
