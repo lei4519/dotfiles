@@ -24,6 +24,7 @@ brew install git-delta # git pager styles, lazygit need
 brew install ripgrep # rg, telescope need
 brew install fd # telescope need
 npm i -g vscode-langservers-extracted # eslint 服务
+brew install gnu-sed # 搜索替换 nvim-pack/nvim-spectre
 ```
 
 ### 软连接
@@ -60,7 +61,6 @@ ln -f -i -n -s ~/dotfiles/.tmux.conf ~/.tmux.conf
 ln -f -i -n -s ~/dotfiles/.tmux.conf.local ~/.tmux.conf.local
 brew install urlview # 快速打开终端里的url
 brew install reattach-to-user-namespace
-python3 -m pip install libtmux --user # tmux-window-name
 ```
 
 ### Lunarvim

@@ -42,6 +42,32 @@ function M.config()
   -- 保存全部
   -- lvim.builtin.which_key.mappings['s'] = { "<cmd>wa!<CR>", "Save All" }
 
+  -- Debug
+  lvim.builtin.which_key.mappings["d"] = {
+    name = "Debug",
+    R = { "<cmd>lua require'dap'.run_to_cursor()<cr>", "Run to Cursor" },
+    E = { "<cmd>lua require'dapui'.eval(vim.fn.input '[Expression] > ')<cr>", "Evaluate Input" },
+    C = { "<cmd>lua require'dap'.set_breakpoint(vim.fn.input '[Condition] > ')<cr>", "Conditional Breakpoint" },
+    U = { "<cmd>lua require'dapui'.toggle()<cr>", "Toggle UI" },
+    b = { "<cmd>lua require'dap'.step_back()<cr>", "Step Back" },
+    c = { "<cmd>lua require'dap'.continue()<cr>", "Continue" },
+    d = { "<cmd>lua require'dap'.disconnect()<cr>", "Disconnect" },
+    e = { "<cmd>lua require'dapui'.eval()<cr>", "Evaluate" },
+    g = { "<cmd>lua require'dap'.session()<cr>", "Get Session" },
+    h = { "<cmd>lua require'dap.ui.widgets'.hover()<cr>", "Hover Variables" },
+    S = { "<cmd>lua require'dap.ui.widgets'.scopes()<cr>", "Scopes" },
+    i = { "<cmd>lua require'dap'.step_into()<cr>", "Step Into" },
+    o = { "<cmd>lua require'dap'.step_over()<cr>", "Step Over" },
+    p = { "<cmd>lua require'dap'.pause.toggle()<cr>", "Pause" },
+    -- p = { "<cmd>lua require'dap'.pause()<cr>", "Pause" },
+    q = { "<cmd>lua require'dap'.close()<cr>", "Quit" },
+    r = { "<cmd>lua require'dap'.repl.toggle()<cr>", "Toggle Repl" },
+    s = { "<cmd>lua require'dap'.continue()<cr>", "Start" },
+    t = { "<cmd>lua require'dap'.toggle_breakpoint()<cr>", "Toggle Breakpoint" },
+    x = { "<cmd>lua require'dap'.terminate()<cr>", "Terminate" },
+    u = { "<cmd>lua require'dap'.step_out()<cr>", "Step Out" },
+  }
+
   -- 窗口跳转
   lvim.builtin.which_key.mappings["h"] = { "<C-w>h", "Move Right Window" }
   lvim.builtin.which_key.mappings["j"] = { "<C-w>j", "Move Down Window" }
@@ -175,6 +201,71 @@ function M.config()
   lvim.builtin.which_key.mappings["r"] = {
     "<cmd>RnvimrToggle<CR>", "ranger"
   }
+
+  -- 搜索替换
+  lvim.builtin.which_key.vmappings["s"] = {
+    name = "Search And Replace",
+    o = { "<cmd>lua require('spectre').open_visual()<cr>", "Search Selected" }
+  }
+  lvim.builtin.which_key.mappings["s"] = {
+    name = "Search And Replace",
+    o = { "<cmd>lua require('spectre').open()<cr>", "Open Search Panel" },
+    w = { "<cmd>lua require('spectre').open_visual({select_word=true})<cr>", "Search Current Word" },
+    c = { "<cmd>lua require('spectre').open_file_search()<cr>", "Search Current File" },
+  }
+  -- mapping = {
+  --   ['toggle_line'] = { -- 标记
+  --     map = "dd",
+  --     cmd = "<cmd>lua require('spectre').toggle_line()<CR>",
+  --     desc = "toggle current item"
+  --   },
+  --   ['enter_file'] = { -- 进入文件
+  --     map = "<cr>",
+  --     cmd = "<cmd>lua require('spectre.actions').select_entry()<CR>",
+  --     desc = "goto current file"
+  --   },
+  --   ['send_to_qf'] = { -- 发送至 quickfix
+  --     map = "<leader>q",
+  --     cmd = "<cmd>lua require('spectre.actions').send_to_qf()<CR>",
+  --     desc = "send all item to quickfix"
+  --   },
+  --   ['replace_cmd'] = { -- ?
+  --     map = "<leader>c",
+  --     cmd = "<cmd>lua require('spectre.actions').replace_cmd()<CR>",
+  --     desc = "input replace vim command"
+  --   },
+  --   ['show_option_menu'] = {
+  --     map = "<leader>o",
+  --     cmd = "<cmd>lua require('spectre').show_options()<CR>",
+  --     desc = "show option"
+  --   },
+  --   ['run_replace'] = {
+  --     map = "<leader>R",
+  --     cmd = "<cmd>lua require('spectre.actions').run_replace()<CR>",
+  --     desc = "replace all"
+  --   },
+  --   ['change_view_mode'] = {
+  --     map = "<leader>v",
+  --     cmd = "<cmd>lua require('spectre').change_view()<CR>",
+  --     desc = "change result view mode"
+  --   },
+  --   ['toggle_live_update'] = {
+  --     map = "tu",
+  --     cmd = "<cmd>lua require('spectre').toggle_live_update()<CR>",
+  --     desc = "update change when vim write file."
+  --   },
+  --   ['toggle_ignore_case'] = {
+  --     map = "ti",
+  --     cmd = "<cmd>lua require('spectre').change_options('ignore-case')<CR>",
+  --     desc = "toggle ignore case"
+  --   },
+  --   ['toggle_ignore_hidden'] = {
+  --     map = "th",
+  --     cmd = "<cmd>lua require('spectre').change_options('hidden')<CR>",
+  --     desc = "toggle search hidden"
+  --   },
+  --   -- you can put your mapping here it only use normal mode
+  -- }
 
   -- session 管理
   lvim.builtin.which_key.mappings["S"] = {

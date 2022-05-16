@@ -9,6 +9,14 @@ function M.setup()
   lvim.plugins = {
     -- 主题
     { "folke/tokyonight.nvim" },
+    -- 搜索替换
+    {
+      "windwp/nvim-spectre",
+      event = "BufRead",
+      config = function()
+        require("spectre").setup()
+      end,
+    },
     -- comment snip
     {
       "danymat/neogen",
@@ -399,6 +407,16 @@ function M.setup()
     -- 显示mark
     {
       'kshenoy/vim-signature',
+      event = "BufRead"
+    },
+    -- Debugger
+    {
+      "theHamsta/nvim-dap-virtual-text",
+      event = "BufRead"
+    },
+    {
+
+      "rcarriga/nvim-dap-ui",
       event = "BufRead"
     }
   }

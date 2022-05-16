@@ -46,20 +46,49 @@ local function rust(_)
   -- 在 rust-tools 的setup 中配置了
 end
 
+local function configure_debuggers(dap)
+  node(dap)
+  rust(dap)
+end
+
 function M.config()
+  -- local dap_install = require "dap-install"
+  -- dap_install.setup {
+  --   installation_path = vim.fn.stdpath "data" .. "/dapinstall/",
+  -- }
+
   -- https://github.com/mfussenegger/nvim-dap/wiki/Debug-Adapter-installation
   lvim.builtin.dap.on_config_done = function(dap)
-    node(dap)
-    rust(dap)
-    --     "theHamsta/nvim-dap-virtual-text",
-    --     "rcarriga/nvim-dap-ui"
 
-    -- require("plugins.dap.node")
+    -- https://alpha2phi.medium.com/neovim-for-beginners-debugging-using-dap-44626a767f57
+    -- local dap_breakpoint = {
+    --   error = {
+    --     text = "🟥",
+    --     texthl = "LspDiagnosticsSignError",
+    --     linehl = "",
+    --     numhl = "",
+    --   },
+    --   rejected = {
+    --     text = "",
+    --     texthl = "LspDiagnosticsSignHint",
+    --     linehl = "",
+    --     numhl = "",
+    --   },
+    --   stopped = {
+    --     text = "⭐️",
+    --     texthl = "LspDiagnosticsSignInformation",
+    --     linehl = "DiagnosticUnderlineInfo",
+    --     numhl = "LspDiagnosticsSignInformation",
+    --   },
+    -- }
+
     -- local dapui = require("dapui")
 
     -- require("nvim-dap-virtual-text").setup({
     --   commented = true
     -- })
+
+    -- dapui.setup {}
 
     -- dapui.setup({
     --   icons = {
@@ -124,6 +153,8 @@ function M.config()
     -- dap.listeners.before.event_exited["dapui_config"] = function()
     --   dapui.close()
     -- end
+
+    configure_debuggers(dap)
   end
 end
 
