@@ -60,6 +60,7 @@ ln -f -i -n -s ~/dotfiles/.tmux.conf ~/.tmux.conf
 ln -f -i -n -s ~/dotfiles/.tmux.conf.local ~/.tmux.conf.local
 brew install urlview # 快速打开终端里的url
 brew install reattach-to-user-namespace
+python3 -m pip install libtmux --user # tmux-window-name
 ```
 
 ### Lunarvim
