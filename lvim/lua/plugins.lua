@@ -303,11 +303,9 @@ function M.setup()
     {
       "iamcco/markdown-preview.nvim",
       run = "cd app && npm install",
-      ft = "markdown",
+      setup = function() vim.g.mkdp_filetypes = { "markdown" } end,
+      ft = { "markdown" },
       event = "BufRead",
-      config = function()
-        vim.g.mkdp_auto_start = 1
-      end,
     },
     -- open url with gx
     {
@@ -360,7 +358,7 @@ function M.setup()
         local lsp_installer_servers = require "nvim-lsp-installer.servers"
         local _, requested_server = lsp_installer_servers.get_server "rust_analyzer"
 
-        local extension_path = HOME .. "/.local/share/nvim/dapinstall/codelldb/extension/"
+        local extension_path = DAP_INSTALL .. "codelldb/extension/"
         local codelldb_path = extension_path .. "adapter/codelldb"
         local liblldb_path = extension_path .. "lldb/lib/liblldb.dylib"
 
@@ -412,12 +410,10 @@ function M.setup()
     -- Debugger
     {
       "theHamsta/nvim-dap-virtual-text",
-      event = "BufRead"
     },
     {
 
       "rcarriga/nvim-dap-ui",
-      event = "BufRead"
     }
   }
 end

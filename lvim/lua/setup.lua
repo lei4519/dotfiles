@@ -1,5 +1,6 @@
-HOME = os.getenv('HOME')
+HOME = vim.env.HOME
 NVIMRC = HOME .. "/dotfiles/lvim"
+DAP_INSTALL = HOME .. "/.local/share/nvim/dapinstall/"
 
 local config_paths = {}
 

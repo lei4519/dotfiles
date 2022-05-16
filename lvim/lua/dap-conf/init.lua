@@ -1,5 +1,16 @@
 local M = {}
 
+-- - Some variables are supported:
+--   - `${file}`: Active filename
+--   - `${fileBasename}`: The current file's basename
+--   - `${fileBasenameNoExtension}`: The current file's basename without extension
+--   - `${fileDirname}`: The current file's dirname
+--   - `${fileExtname}`: The current file's extension
+--   - `${relativeFile}`: The current file relative to |getcwd()|
+--   - `${relativeFileDirname}`: The current file's dirname relative to |getcwd()|
+--   - `${workspaceFolder}`: The current working directory of Neovim
+--   - `${workspaceFolderBasename}`: The name of the folder opened in Neovim
+
 local function node(dap)
   -- https://code.visualstudio.com/docs/editor/variables-reference
   -- ${workspaceFolder} - 在 VS Code 中打开的文件夹的路径
@@ -25,7 +36,7 @@ local function node(dap)
     type = 'executable',
     name = "node2",
     command = 'node',
-    args = { HOME .. "/.local/share/nvim/dapinstall/jsnode/vscode-node-debug2/out/src/nodeDebug.js" }
+    args = { DAP_INSTALL .. "jsnode/vscode-node-debug2/out/src/nodeDebug.js" }
   }
   dap.configurations.javascript = {
     {
@@ -42,8 +53,8 @@ local function node(dap)
 end
 
 local function rust(_)
-  -- https://github.com/mfussenegger/nvim-dap/wiki/C-C---Rust-(via--codelldb)
-  -- 在 rust-tools 的setup 中配置了
+  -- 在 rust-tools 中配置
+  -- 先在 vscode 中下载 codelldb，然后配置 path 即可
 end
 
 local function configure_debuggers(dap)
@@ -52,13 +63,13 @@ local function configure_debuggers(dap)
 end
 
 function M.config()
-  -- local dap_install = require "dap-install"
-  -- dap_install.setup {
-  --   installation_path = vim.fn.stdpath "data" .. "/dapinstall/",
-  -- }
-
   -- https://github.com/mfussenegger/nvim-dap/wiki/Debug-Adapter-installation
   lvim.builtin.dap.on_config_done = function(dap)
+    -- https://issueantenna.com/repo/mfussenegger/nvim-dap/issues/392
+    -- 启动调试会话后，它会跳转到这个愚蠢的程序集缓冲区，之后我必须手动切换回源代码文件，然后它才能工作
+    -- dap.listeners.before.event_initialized["split_winow"] = function()
+    -- 	vim.cmd("vs")
+    -- end
 
     -- https://alpha2phi.medium.com/neovim-for-beginners-debugging-using-dap-44626a767f57
     -- local dap_breakpoint = {
@@ -82,13 +93,13 @@ function M.config()
     --   },
     -- }
 
-    -- local dapui = require("dapui")
+    local dapui = require("dapui")
 
-    -- require("nvim-dap-virtual-text").setup({
-    --   commented = true
-    -- })
+    require("nvim-dap-virtual-text").setup({
+      commented = true
+    })
 
-    -- dapui.setup {}
+    dapui.setup {}
 
     -- dapui.setup({
     --   icons = {
@@ -144,15 +155,15 @@ function M.config()
     --   }
     -- }) -- use default
 
-    -- dap.listeners.after.event_initialized["dapui_config"] = function()
-    --   dapui.open()
-    -- end
-    -- dap.listeners.before.event_terminated["dapui_config"] = function()
-    --   dapui.close()
-    -- end
-    -- dap.listeners.before.event_exited["dapui_config"] = function()
-    --   dapui.close()
-    -- end
+    dap.listeners.after.event_initialized["dapui_config"] = function()
+      dapui.open()
+    end
+    dap.listeners.before.event_terminated["dapui_config"] = function()
+      dapui.close()
+    end
+    dap.listeners.before.event_exited["dapui_config"] = function()
+      dapui.close()
+    end
 
     configure_debuggers(dap)
   end

@@ -15,7 +15,8 @@ fi
 
 cd ~/.local/share/nvim/dapinstall/codelldb
 
-curl -O -L https://github.com/vadimcn/vscode-lldb/releases/download/v1.7.0/codelldb-x86_64-darwin.vsix
+
+curl -O -L https://github.com/vadimcn/vscode-lldb/releases/download/v1.6.10/codelldb-x86_64-darwin.vsix
 
 unzip codelldb-x86_64-darwin.vsix
 
