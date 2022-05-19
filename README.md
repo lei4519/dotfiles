@@ -72,10 +72,12 @@ brew install reattach-to-user-namespace
 bash <(curl -s https://raw.githubusercontent.com/lunarvim/lunarvim/master/utils/installer/install.sh)
 ln -f -i -n -s ~/.local/bin/lvim /usr/local/bin/lvim
 ```
+ln -f -i -n -s ~/dotfiles/karabiner ~/.config/karabiner
 
 #### Uninstall
 
 ```sh
+ln -f -i -n -s ~/dotfiles/karabiner ~/.config/karabiner
 bash <(curl -s https://raw.githubusercontent.com/lunarvim/lunarvim/master/utils/installer/uninstall.sh)
 # rm /usr/local/bin/lvim
 ```
@@ -105,8 +107,6 @@ rm /Applications/Neovide.app/Contents/MacOS/neovide_original
 ### Karabiner-Elements
 ```sh
 brew install --cask karabiner-elements
-ln -f -i -n -s ~/dotfiles/karabiner.json ~/.config/karabiner/karabiner.json
-# https://karabiner-elements.pqrs.org/docs/json/complex-modifications-manipulator-definition/from/modifiers
-# https://genesy.github.io/karabiner-complex-rules-generator
+ln -f -i -n -s ~/dotfiles/karabiner ~/.config/karabiner
 ```
 

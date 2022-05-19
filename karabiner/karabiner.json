@@ -6,6 +6,62 @@
   },
   "profiles": [
     {
+      "simple_modifications": [
+        {
+          "description": "Alone Command to Esc",
+          "manipulators": [
+            {
+              "from": {
+                "key_code": "left_gui",
+                "modifiers": {
+                  "optional": [
+                    "any"
+                  ]
+                }
+              },
+              "to": [
+                {
+                  "key_code": "left_gui",
+                  "lazy": true
+                }
+              ],
+              "to_if_alone": [
+                {
+                  "key_code": "escape"
+                }
+              ],
+              "type": "basic"
+            }
+          ]
+        },
+        {
+          "description": "Alone Ctrl to Esc",
+          "manipulators": [
+            {
+              "from": {
+                "modifiers": {
+                  "key_code": "left_control",
+                  "optional": [
+                    "any"
+                  ]
+                }
+              },
+              "to": [
+                {
+                  "key_code": "left_control",
+                  "lazy": true
+                }
+              ],
+              "to_if_alone": [
+                {
+                  "key_code": "escape"
+                }
+              ],
+              "type": "basic"
+            }
+          ]
+        }
+      ],
       "complex_modifications": {
         "parameters": {
           "basic.simultaneous_threshold_milliseconds": 50,
@@ -16,16 +72,19 @@
         },
         "rules": [
           {
-            "description": "Alone Ctrl to Esc",
+            "description": "Swap Alt and Command for 68",
             "manipulators": [
               {
                 "conditions": [
                   {
-                    "bundle_identifiers": [
-                      "^io\\.alacritty$",
-                      "^com\\.googlecode\\.iterm2$"
+                    "identifiers": [
+                      {
+                        "is_keyboard": true,
+                        "product_id": 4137,
+                        "vendor_id": 39658
+                      }
                     ],
-                    "type": "frontmost_application_if"
+                    "type": "device_if"
                   }
                 ],
                 "from": {
@@ -38,13 +97,35 @@
                 },
                 "to": [
                   {
-                    "key_code": "left_control",
-                    "lazy": true
+                    "key_code": "left_option"
                   }
                 ],
-                "to_if_alone": [
+                "type": "basic"
+              },
+              {
+                "conditions": [
                   {
-                    "key_code": "escape"
+                    "identifiers": [
+                      {
+                        "is_keyboard": true,
+                        "product_id": 4137,
+                        "vendor_id": 39658
+                      }
+                    ],
+                    "type": "device_if"
+                  }
+                ],
+                "from": {
+                  "key_code": "left_option",
+                  "modifiers": {
+                    "optional": [
+                      "any"
+                    ]
+                  }
+                },
+                "to": [
+                  {
+                    "key_code": "left_gui"
                   }
                 ],
                 "type": "basic"
@@ -52,7 +133,7 @@
             ]
           },
           {
-            "description": "Swap Ctrl and Command",
+            "description": "Swap Ctrl and Command for Term",
             "manipulators": [
               {
                 "conditions": [
@@ -458,12 +539,11 @@
           ]
         }
       ],
-      "name": "Default profile",
+      "name": "Lay profile",
       "parameters": {
         "delay_milliseconds_before_open_device": 1000
       },
       "selected": true,
-      "simple_modifications": [],
       "virtual_hid_keyboard": {
         "country_code": 0,
         "indicate_sticky_modifier_keys_state": true,
