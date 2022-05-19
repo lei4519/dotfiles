@@ -20,7 +20,7 @@ function M.setup()
     -- comment snip
     {
       "danymat/neogen",
-      disable = false,
+      disable = true,
       config = function()
         require('neogen').setup({ snippet_engine = "luasnip" })
       end,
