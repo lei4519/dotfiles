@@ -23,7 +23,6 @@ brew install lazygit # lazygit
 brew install git-delta # git pager styles, lazygit need
 brew install ripgrep # rg, telescope need
 brew install fd # telescope need
-npm i -g vscode-langservers-extracted # eslint 服务
 brew install gnu-sed # 搜索替换 nvim-pack/nvim-spectre
 ```
 

@@ -53,8 +53,8 @@ lvim.builtin.treesitter.ensure_installed = {
 lvim.builtin.treesitter.ignore_install = { "haskell" }
 lvim.builtin.treesitter.highlight.enabled = true
 
--- generic LSP settings
-
+local u = require "lspconfig/util"
+lvim.lsp.null_ls.setup.root_dir = u.root_pattern(".null-ls-root", "Makefile", "package.json", "tsconfig.json", "jsconfig.json", ".git")
 
 local formatters = require "lvim.lsp.null-ls.formatters"
 formatters.setup {
