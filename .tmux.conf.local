@@ -356,6 +356,11 @@ bind t run-shell '~/dotfiles/tmux-float-term'
 # edit configuration - alacritty 下无法使用 EDITOR 变量
 bind e new-window -n "~/.tmux.conf.local" "lvim ~/.tmux.conf.local && tmux source ~/.tmux.conf && tmux display \"~/.tmux.conf sourced\""
  
+# split current window vertically
+bind - split-window -h
+# split current window horizontally
+bind _ split-window -v
+
 # move status line to top
 #set -g status-position top
 

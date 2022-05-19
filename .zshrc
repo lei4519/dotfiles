@@ -24,6 +24,8 @@ alias lg="lazygit"
 alias ra=". ranger"
 alias ze="zellij"
 
+alias ssh-connect="ssh root@43.138.102.54"
+
 # eval "$(zellij setup --generate-auto-start zsh)"
 eval "$(starship init zsh)"
 source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh

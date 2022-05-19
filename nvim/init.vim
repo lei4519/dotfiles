@@ -1,6 +1,7 @@
 :lua require('setup')
 
 set foldmethod=indent
+set foldlevel=99
 
 " -------- Coc 配置 --------
 " Set internal encoding of vim, not needed on neovim, since coc.nvim using some

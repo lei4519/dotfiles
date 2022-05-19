@@ -12,8 +12,13 @@ function M.config()
     ["<C-Right>"] = ":vertical resize +2<CR>",
 
     -- Tab switch buffer
+    ["<S-l>"] = false,
+    ["<S-h>"] = false,
     ["<C-l>"] = ":BufferLineCycleNext<CR>",
     ["<C-h>"] = ":BufferLineCyclePrev<CR>",
+
+    ['<C-j>'] = false,
+    ['<C-k>'] = false,
 
     -- Move current line / block with Alt-j/k a la vscode.
     ["<A-j>"] = ":m .+1<CR>==",
@@ -27,6 +32,9 @@ function M.config()
 
   lvim.keys.insert_mode = {
     -- 'jk' for quitting insert mode
+    ['jk'] = false,
+    ['jj'] = false,
+    ['kj'] = false,
     ["jf"] = "<ESC>",
     -- Move current line / block with Alt-j/k ala vscode.
     ["<A-j>"] = "<Esc>:m .+1<CR>==gi",
