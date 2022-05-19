@@ -6,62 +6,6 @@
   },
   "profiles": [
     {
-      "simple_modifications": [
-        {
-          "description": "Alone Command to Esc",
-          "manipulators": [
-            {
-              "from": {
-                "key_code": "left_gui",
-                "modifiers": {
-                  "optional": [
-                    "any"
-                  ]
-                }
-              },
-              "to": [
-                {
-                  "key_code": "left_gui",
-                  "lazy": true
-                }
-              ],
-              "to_if_alone": [
-                {
-                  "key_code": "escape"
-                }
-              ],
-              "type": "basic"
-            }
-          ]
-        },
-        {
-          "description": "Alone Ctrl to Esc",
-          "manipulators": [
-            {
-              "from": {
-                "modifiers": {
-                  "key_code": "left_control",
-                  "optional": [
-                    "any"
-                  ]
-                }
-              },
-              "to": [
-                {
-                  "key_code": "left_control",
-                  "lazy": true
-                }
-              ],
-              "to_if_alone": [
-                {
-                  "key_code": "escape"
-                }
-              ],
-              "type": "basic"
-            }
-          ]
-        }
-      ],
       "complex_modifications": {
         "parameters": {
           "basic.simultaneous_threshold_milliseconds": 50,
@@ -72,102 +16,17 @@
         },
         "rules": [
           {
-            "description": "Swap Alt and Command for 68",
+            "description": "Alone Ctrl And Command to Esc for Other",
             "manipulators": [
               {
+                "type": "basic",
                 "conditions": [
                   {
-                    "identifiers": [
-                      {
-                        "is_keyboard": true,
-                        "product_id": 4137,
-                        "vendor_id": 39658
-                      }
-                    ],
-                    "type": "device_if"
-                  }
-                ],
-                "from": {
-                  "key_code": "left_gui",
-                  "modifiers": {
-                    "optional": [
-                      "any"
-                    ]
-                  }
-                },
-                "to": [
-                  {
-                    "key_code": "left_option"
-                  }
-                ],
-                "type": "basic"
-              },
-              {
-                "conditions": [
-                  {
-                    "identifiers": [
-                      {
-                        "is_keyboard": true,
-                        "product_id": 4137,
-                        "vendor_id": 39658
-                      }
-                    ],
-                    "type": "device_if"
-                  }
-                ],
-                "from": {
-                  "key_code": "left_option",
-                  "modifiers": {
-                    "optional": [
-                      "any"
-                    ]
-                  }
-                },
-                "to": [
-                  {
-                    "key_code": "left_gui"
-                  }
-                ],
-                "type": "basic"
-              }
-            ]
-          },
-          {
-            "description": "Swap Ctrl and Command for Term",
-            "manipulators": [
-              {
-                "conditions": [
-                  {
+                    "type": "frontmost_application_unless",
                     "bundle_identifiers": [
                       "^io\\.alacritty$",
                       "^com\\.googlecode\\.iterm2$"
-                    ],
-                    "type": "frontmost_application_if"
-                  }
-                ],
-                "from": {
-                  "key_code": "left_gui",
-                  "modifiers": {
-                    "optional": [
-                      "any"
                     ]
-                  }
-                },
-                "to": [
-                  {
-                    "key_code": "left_control"
-                  }
-                ],
-                "type": "basic"
-              },
-              {
-                "conditions": [
-                  {
-                    "bundle_identifiers": [
-                      "^io\\.alacritty$",
-                      "^com\\.googlecode\\.iterm2$"
-                    ],
-                    "type": "frontmost_application_if"
                   }
                 ],
                 "from": {
@@ -180,24 +39,128 @@
                 },
                 "to": [
                   {
-                    "key_code": "left_gui"
+                    "key_code": "left_control",
+                    "lazy": true
                   }
                 ],
-                "type": "basic"
+                "to_if_alone": [
+                  {
+                    "key_code": "escape"
+                  }
+                ]
+              },
+              {
+                "type": "basic",
+                "conditions": [
+                  {
+                    "type": "frontmost_application_unless",
+                    "bundle_identifiers": [
+                      "^io\\.alacritty$",
+                      "^com\\.googlecode\\.iterm2$"
+                    ]
+                  }
+                ],
+                "from": {
+                  "key_code": "left_gui",
+                  "modifiers": {
+                    "optional": [
+                      "any"
+                    ]
+                  }
+                },
+                "to": [
+                  {
+                    "key_code": "left_gui",
+                    "lazy": true
+                  }
+                ],
+                "to_if_alone": [
+                  {
+                    "key_code": "escape"
+                  }
+                ]
               }
             ]
           },
           {
-            "description": "Swap Ctrl C and Command C",
+            "description": "Alone Ctrl And Command to Esc for Term",
             "manipulators": [
               {
+                "type": "basic",
                 "conditions": [
                   {
+                    "type": "frontmost_application_if",
                     "bundle_identifiers": [
                       "^io\\.alacritty$",
                       "^com\\.googlecode\\.iterm2$"
-                    ],
-                    "type": "frontmost_application_if"
+                    ]
+                  }
+                ],
+                "from": {
+                  "key_code": "left_control",
+                  "modifiers": {
+                    "optional": [
+                      "any"
+                    ]
+                  }
+                },
+                "to": [
+                  {
+                    "key_code": "left_gui",
+                    "lazy": true
+                  }
+                ],
+                "to_if_alone": [
+                  {
+                    "key_code": "escape"
+                  }
+                ]
+              },
+              {
+                "type": "basic",
+                "conditions": [
+                  {
+                    "type": "frontmost_application_if",
+                    "bundle_identifiers": [
+                      "^io\\.alacritty$",
+                      "^com\\.googlecode\\.iterm2$"
+                    ]
+                  }
+                ],
+                "from": {
+                  "key_code": "left_gui",
+                  "modifiers": {
+                    "optional": [
+                      "any"
+                    ]
+                  }
+                },
+                "to": [
+                  {
+                    "key_code": "left_control",
+                    "lazy": true
+                  }
+                ],
+                "to_if_alone": [
+                  {
+                    "key_code": "escape"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "description": "Swap Ctrl C and Command C for Term",
+            "manipulators": [
+              {
+                "type": "basic",
+                "conditions": [
+                  {
+                    "type": "frontmost_application_if",
+                    "bundle_identifiers": [
+                      "^io\\.alacritty$",
+                      "^com\\.googlecode\\.iterm2$"
+                    ]
                   }
                 ],
                 "from": {
@@ -215,17 +178,17 @@
                       "left_control"
                     ]
                   }
-                ],
-                "type": "basic"
+                ]
               },
               {
+                "type": "basic",
                 "conditions": [
                   {
+                    "type": "frontmost_application_if",
                     "bundle_identifiers": [
                       "^io\\.alacritty$",
                       "^com\\.googlecode\\.iterm2$"
-                    ],
-                    "type": "frontmost_application_if"
+                    ]
                   }
                 ],
                 "from": {
@@ -243,22 +206,22 @@
                       "left_gui"
                     ]
                   }
-                ],
-                "type": "basic"
+                ]
               }
             ]
           },
           {
-            "description": "Swap Ctrl V and Command V",
+            "description": "Swap Ctrl V and Command V for Term",
             "manipulators": [
               {
+                "type": "basic",
                 "conditions": [
                   {
+                    "type": "frontmost_application_if",
                     "bundle_identifiers": [
                       "^io\\.alacritty$",
                       "^com\\.googlecode\\.iterm2$"
-                    ],
-                    "type": "frontmost_application_if"
+                    ]
                   }
                 ],
                 "from": {
@@ -276,17 +239,17 @@
                       "left_control"
                     ]
                   }
-                ],
-                "type": "basic"
+                ]
               },
               {
+                "type": "basic",
                 "conditions": [
                   {
+                    "type": "frontmost_application_if",
                     "bundle_identifiers": [
                       "^io\\.alacritty$",
                       "^com\\.googlecode\\.iterm2$"
-                    ],
-                    "type": "frontmost_application_if"
+                    ]
                   }
                 ],
                 "from": {
@@ -304,22 +267,22 @@
                       "left_gui"
                     ]
                   }
-                ],
-                "type": "basic"
+                ]
               }
             ]
           },
           {
-            "description": "Swap Ctrl Shift C and Command Shift C",
+            "description": "Swap Ctrl Shift C and Command Shift C For Term",
             "manipulators": [
               {
+                "type": "basic",
                 "conditions": [
                   {
+                    "type": "frontmost_application_if",
                     "bundle_identifiers": [
                       "^io\\.alacritty$",
                       "^com\\.googlecode\\.iterm2$"
-                    ],
-                    "type": "frontmost_application_if"
+                    ]
                   }
                 ],
                 "from": {
@@ -339,17 +302,17 @@
                       "left_shift"
                     ]
                   }
-                ],
-                "type": "basic"
+                ]
               },
               {
+                "type": "basic",
                 "conditions": [
                   {
+                    "type": "frontmost_application_if",
                     "bundle_identifiers": [
                       "^io\\.alacritty$",
                       "^com\\.googlecode\\.iterm2$"
-                    ],
-                    "type": "frontmost_application_if"
+                    ]
                   }
                 ],
                 "from": {
@@ -369,8 +332,7 @@
                       "left_shift"
                     ]
                   }
-                ],
-                "type": "basic"
+                ]
               }
             ]
           }
@@ -415,6 +377,60 @@
           "ignore": false,
           "manipulate_caps_lock_led": true,
           "simple_modifications": []
+        },
+        {
+          "disable_built_in_keyboard_if_exists": false,
+          "fn_function_keys": [],
+          "identifiers": {
+            "is_keyboard": true,
+            "is_pointing_device": false,
+            "product_id": 4137,
+            "vendor_id": 39658
+          },
+          "ignore": false,
+          "manipulate_caps_lock_led": true,
+          "simple_modifications": [
+            {
+              "from": {
+                "key_code": "left_option"
+              },
+              "to": [
+                {
+                  "key_code": "left_gui"
+                }
+              ]
+            },
+            {
+              "from": {
+                "key_code": "left_gui"
+              },
+              "to": [
+                {
+                  "key_code": "left_option"
+                }
+              ]
+            },
+            {
+              "from": {
+                "key_code": "escape"
+              },
+              "to": [
+                {
+                  "key_code": "grave_accent_and_tilde"
+                }
+              ]
+            },
+            {
+              "from": {
+                "key_code": "grave_accent_and_tilde"
+              },
+              "to": [
+                {
+                  "key_code": "insert"
+                }
+              ]
+            }
+          ]
         }
       ],
       "fn_function_keys": [
@@ -424,7 +440,7 @@
           },
           "to": [
             {
-              "consumer_key_code": "display_brightness_decrement"
+              "key_code": "f1"
             }
           ]
         },
@@ -434,7 +450,7 @@
           },
           "to": [
             {
-              "consumer_key_code": "display_brightness_increment"
+              "key_code": "f2"
             }
           ]
         },
@@ -444,7 +460,7 @@
           },
           "to": [
             {
-              "apple_vendor_keyboard_key_code": "mission_control"
+              "key_code": "f3"
             }
           ]
         },
@@ -454,7 +470,7 @@
           },
           "to": [
             {
-              "apple_vendor_keyboard_key_code": "spotlight"
+              "key_code": "f4"
             }
           ]
         },
@@ -464,7 +480,7 @@
           },
           "to": [
             {
-              "consumer_key_code": "dictation"
+              "key_code": "f5"
             }
           ]
         },
@@ -484,7 +500,7 @@
           },
           "to": [
             {
-              "consumer_key_code": "rewind"
+              "key_code": "f7"
             }
           ]
         },
@@ -494,7 +510,7 @@
           },
           "to": [
             {
-              "consumer_key_code": "play_or_pause"
+              "key_code": "f8"
             }
           ]
         },
@@ -504,7 +520,7 @@
           },
           "to": [
             {
-              "consumer_key_code": "fast_forward"
+              "key_code": "f9"
             }
           ]
         },
@@ -514,7 +530,7 @@
           },
           "to": [
             {
-              "consumer_key_code": "mute"
+              "key_code": "f10"
             }
           ]
         },
@@ -524,7 +540,7 @@
           },
           "to": [
             {
-              "consumer_key_code": "volume_decrement"
+              "key_code": "f11"
             }
           ]
         },
@@ -534,7 +550,7 @@
           },
           "to": [
             {
-              "consumer_key_code": "volume_increment"
+              "key_code": "f12"
             }
           ]
         }
@@ -544,6 +560,7 @@
         "delay_milliseconds_before_open_device": 1000
       },
       "selected": true,
+      "simple_modifications": [],
       "virtual_hid_keyboard": {
         "country_code": 0,
         "indicate_sticky_modifier_keys_state": true,
