@@ -221,59 +221,6 @@ function M.config()
     w = { "<cmd>lua require('spectre').open_visual({select_word=true})<cr>", "Search Current Word" },
     c = { "<cmd>lua require('spectre').open_file_search()<cr>", "Search Current File" },
   }
-  -- mapping = {
-  --   ['toggle_line'] = { -- 标记
-  --     map = "dd",
-  --     cmd = "<cmd>lua require('spectre').toggle_line()<CR>",
-  --     desc = "toggle current item"
-  --   },
-  --   ['enter_file'] = { -- 进入文件
-  --     map = "<cr>",
-  --     cmd = "<cmd>lua require('spectre.actions').select_entry()<CR>",
-  --     desc = "goto current file"
-  --   },
-  --   ['send_to_qf'] = { -- 发送至 quickfix
-  --     map = "<leader>q",
-  --     cmd = "<cmd>lua require('spectre.actions').send_to_qf()<CR>",
-  --     desc = "send all item to quickfix"
-  --   },
-  --   ['replace_cmd'] = { -- ?
-  --     map = "<leader>c",
-  --     cmd = "<cmd>lua require('spectre.actions').replace_cmd()<CR>",
-  --     desc = "input replace vim command"
-  --   },
-  --   ['show_option_menu'] = {
-  --     map = "<leader>o",
-  --     cmd = "<cmd>lua require('spectre').show_options()<CR>",
-  --     desc = "show option"
-  --   },
-  --   ['run_replace'] = {
-  --     map = "<leader>R",
-  --     cmd = "<cmd>lua require('spectre.actions').run_replace()<CR>",
-  --     desc = "replace all"
-  --   },
-  --   ['change_view_mode'] = {
-  --     map = "<leader>v",
-  --     cmd = "<cmd>lua require('spectre').change_view()<CR>",
-  --     desc = "change result view mode"
-  --   },
-  --   ['toggle_live_update'] = {
-  --     map = "tu",
-  --     cmd = "<cmd>lua require('spectre').toggle_live_update()<CR>",
-  --     desc = "update change when vim write file."
-  --   },
-  --   ['toggle_ignore_case'] = {
-  --     map = "ti",
-  --     cmd = "<cmd>lua require('spectre').change_options('ignore-case')<CR>",
-  --     desc = "toggle ignore case"
-  --   },
-  --   ['toggle_ignore_hidden'] = {
-  --     map = "th",
-  --     cmd = "<cmd>lua require('spectre').change_options('hidden')<CR>",
-  --     desc = "toggle search hidden"
-  --   },
-  --   -- you can put your mapping here it only use normal mode
-  -- }
 
   -- session 管理
   lvim.builtin.which_key.mappings["S"] = {
@@ -310,6 +257,8 @@ function M.config()
   lvim.lsp.buffer_mappings.normal_mode = {
     -- ["[q"] = ":cprev<CR>", QuickFix
     -- ["]q"] = ":cnext<CR>", QuickFix
+    ['[g'] = { "<cmd>lua require 'gitsigns'.prev_hunk()<cr>", "Prev Hunk" },
+    [']g'] = { "<cmd>lua require 'gitsigns'.next_hunk()<cr>", "Next Hunk" },
     ["[d"] = { vim.diagnostic.goto_prev, "Prev Diagnostic" },
     ["]d"] = { vim.diagnostic.goto_next, "Next Diagnostic" },
     ["ga"] = { vim.lsp.buf.code_action, "Code Action" },

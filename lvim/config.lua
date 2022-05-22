@@ -94,6 +94,9 @@ code_actions.setup {
 lvim.autocommands.custom_groups = {
   -- 使用回车换行时自动插入注释
   { "BufWinEnter", "*", "setlocal fo+=cro" },
+  -- 切换输入法
+  { "InsertEnter", "*", ":lua require'im-select'.InsertEnter()" },
+  { "InsertLeave", "*", ":lua require'im-select'.InsertLeave()" },
 }
 
 require('setup')

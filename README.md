@@ -24,6 +24,7 @@ brew install git-delta # git pager styles, lazygit need
 brew install ripgrep # rg, telescope need
 brew install fd # telescope need
 brew install gnu-sed # 搜索替换 nvim-pack/nvim-spectre
+brew install im-select # 输入法切换
 ```
 
 ### 软连接
