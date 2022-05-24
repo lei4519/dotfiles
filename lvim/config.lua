@@ -87,7 +87,7 @@ linters.setup {
 
 local code_actions = require "lvim.lsp.null-ls.code_actions"
 code_actions.setup {
-  { name = "gitsigns" },
+  -- { name = "gitsigns" },
   -- { name = "eslint", prefer_local = "node_modules/.bin" },
 }
 

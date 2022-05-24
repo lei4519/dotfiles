@@ -82,6 +82,8 @@ function M.config()
   lvim.builtin.which_key.mappings["k"] = { "<C-w>k", "Move Up Window" }
   lvim.builtin.which_key.mappings["l"] = { "<C-w>l", "Move Left Window" }
 
+  lvim.builtin.which_key.mappings["n"] = { "<CMD>ene!<CR>", "New File" }
+
   -- 映射 telescope C-j C-k 上下选择 C-n C-p 历史切换
   local telescope_actions = require "telescope.actions"
   lvim.builtin.telescope.defaults.mappings = {
@@ -239,10 +241,10 @@ function M.config()
       ts_utils.setup({
         enable_import_on_completion = true,
         always_organize_imports = true,
-        filter_out_diagnostics_by_code = {},
-        update_imports_on_move = true,
-        require_confirmation_on_move = true,
-        watch_dir = nil,
+        -- filter_out_diagnostics_by_code = {},
+        -- update_imports_on_move = true,
+        -- require_confirmation_on_move = true,
+        -- watch_dir = nil,
       })
 
       -- required to fix code action ranges and filter diagnostics
