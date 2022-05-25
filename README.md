@@ -49,8 +49,8 @@ brew install --cask alacritty # alacritty 终端
 ln -f -i -n -s ~/dotfiles/alacritty ~/.config/alacritty
 brew install starship # 终端主题
 ln -f -i -n -s ~/dotfiles/starship.toml ~/.config/starship.toml
-brew install zellij # 类似 tmux，但更简单
-ln -f -i -n -s ~/dotfiles/zellij ~/.config/zellij
+# brew install zellij # 类似 tmux，但更简单
+# ln -f -i -n -s ~/dotfiles/zellij ~/.config/zellij
 brew install zsh-autosuggestions # 建议提示补全
 ```
 
