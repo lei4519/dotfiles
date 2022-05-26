@@ -1,13 +1,9 @@
+-- leader key 为空格
+vim.g.mapleader = " "
+vim.g.maplocalleader = " "
 -- utf8
 vim.g.encoding = "UTF-8"
 vim.o.fileencoding = "utf-8"
--- neovide
-vim.g.neovide_refresh_rate=60 -- 屏幕刷新率
-vim.g.neovide_transparency=.8 -- 透明度
--- 字体
-vim.opt.guifont = { "MesloLGS NF", "h16" }
-vim.opt.linespace = 5
--- vim.opt.guilinespace = 30
 -- jkhl 移动时光标周围保留8行
 vim.o.scrolloff = 8
 vim.o.sidescrolloff = 8
@@ -16,8 +12,6 @@ vim.wo.number = true
 vim.wo.relativenumber = true
 -- 高亮所在行
 vim.wo.cursorline = true
--- -- 右侧参考线，超过表示代码太长了，考虑换行
--- vim.wo.colorcolumn = "80"
 -- 缩进2个空格等于一个Tab
 vim.o.tabstop = 2
 vim.bo.tabstop = 2
@@ -37,10 +31,10 @@ vim.o.smartindent = true
 vim.o.ignorecase = true
 vim.o.smartcase = true
 -- 搜索不要高亮
-vim.o.hlsearch = false
+vim.o.hlsearch = true
 -- 边输入边搜索
 vim.o.incsearch = true
--- 命令行高为2，提供足够的显示空间
+-- 命令行高为1，提供足够的显示空间
 vim.o.cmdheight = 1
 -- 当文件被外部程序修改时，自动加载
 vim.o.autoread = true
@@ -60,13 +54,12 @@ vim.o.swapfile = false
 -- smaller updatetime
 vim.o.updatetime = 300
 -- 设置 timeoutlen 为等待键盘快捷键连击时间500毫秒，可根据需要设置
--- 遇到问题详见：https://github.com/nshen/learn-neovim-lua/issues/1
 vim.o.timeoutlen = 500
 -- split window 从下边和右边出现
 vim.o.splitbelow = true
 vim.o.splitright = true
 -- 自动补全不自动选中
-vim.g.completeopt = "menu,menuone,noselect,noinsert"
+vim.g.completeopt = "menuone,noselect"
 -- 样式
 vim.o.termguicolors = true
 vim.opt.termguicolors = true
@@ -86,3 +79,16 @@ vim.o.showtabline = 2
 vim.o.showmode = false
 -- 配置剪切板
 vim.opt.clipboard = "unnamedplus"
+
+vim.opt.colorcolumn = "99999" -- fixes indentline for now
+vim.opt.conceallevel = 0 -- so that `` is visible in markdown files
+vim.opt.foldlevel = 99
+vim.opt.foldmethod = "indent" -- folding set to "expr" for treesitter based folding
+vim.opt.title = true -- set the title of window to the value of the titlestring
+vim.opt.titlestring = "%<%F%=%l/%L - nvim" -- what the title of the window will be set to
+vim.opt.undodir = vim.fn.stdpath "cache" .. "/undo"
+vim.opt.undofile = true -- enable persistent undo
+vim.opt.numberwidth = 4 -- set number column width to 2 {default 4}
+vim.opt.signcolumn = "yes" -- always show the sign column otherwise it would shift the text each time
+vim.opt.spell = false
+vim.opt.spelllang = "en"

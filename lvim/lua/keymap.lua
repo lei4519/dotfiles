@@ -4,6 +4,10 @@ function M.config()
   -- treesitter 折叠
   -- lvim.keys.normal_mode['zc'] = ":foldclose<CR>"
   -- lvim.keys.normal_mode['zo'] = ":foldopen<CR>"
+  lvim.keys.visual_mode = {
+    ['p'] = '"_dP'
+  }
+
   lvim.keys.normal_mode = {
     -- Resize with arrows
     ["<C-Up>"] = ":resize -2<CR>",

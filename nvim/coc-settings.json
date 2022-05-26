@@ -1,9 +1,14 @@
 {
-  "diagnostic.checkCurrentLine": true,
-  "git.addGBlameToVirtualText": true,
-  "translator.enableHover": true,
+  "diagnostic.checkCurrentLine": false,
+  "diagnostic.virtualTextCurrentLineOnly": false,
+  "diagnostic.virtualText": true,
+  "diagnostic.errorSign": ">>",
+  "diagnostic.warningSign": "⚠",
+  "eslint.format.enable": true,
+  "translator.enableHover": false,
   "translator.engines": [
     "google",
     "youdao"
-  ]
+  ],
+  "Lua.telemetry.enable": false
 }
