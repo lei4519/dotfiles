@@ -4,19 +4,23 @@
   "diagnostic.virtualText": true,
   "diagnostic.errorSign": "",
   "diagnostic.infoSign": "",
-  "diagnostic.hintSign": "✎",
+  "diagnostic.hintSign": "",
   "diagnostic.warningSign": "⚠",
 
   "codeLens.enable": true,
   "codeLens.subseparator": "  ",
 
+  "explorer.file.hiddenRules": {
+    "extensions": ["o", "a", "obj", "pyc"],
+    "filenames": [],
+    "patternMatches": []
+  },
+
   "rust-analyzer.inlayHints.enable": true,
   "rust-analyzer.completion.autoimport.enable": true,
   "rust-analyzer.lens.enable": true,
 
-  "project.rootPatterns":[
-    ".git"
-  ],
+  "project.rootPatterns": [".git"],
 
   "cSpell.enabled": false,
 
@@ -33,10 +37,7 @@
   "eslint.format.enable": true,
 
   "translator.enableHover": false,
-  "translator.engines": [
-    "google",
-    "youdao"
-  ],
+  "translator.engines": ["google", "youdao"],
 
   "Lua.telemetry.enable": false
 }
