@@ -115,42 +115,10 @@ local plugins = {
   {
     'neoclide/coc.nvim',
     branch = 'release',
-    config = function()
-      local nvm = os.getenv("NVM_BIN");
-      if nvm ~= nil then
-        vim.g.coc_node_path = nvm .. "/node";
-      end
-
-      vim.g.coc_global_extensions = {
-        'coc-marketplace',
-        'coc-diagnostic',
-        'coc-explorer',
-
-        'coc-translator',
-
-        'coc-html',
-        'coc-tsserver',
-        'coc-svelte',
-        'coc-css',
-        'coc-cssmodules',
-        'coc-json',
-        'coc-rust-analyzer',
-        'coc-sumneko-lua',
-        'coc-tailwindcss',
-
-        'coc-eslint',
-        'coc-markdownlint',
-        'coc-prettier',
-
-        'coc-emmet',
-
-        'coc-yank', -- 复制高亮
-        'coc-symbol-line',
-        'coc-highlight', -- 颜色高亮
-        'coc-pairs', -- 自动配对， { [ `
-        'coc-git',
-      }
-    end
+  },
+  {
+    'antoinemadec/coc-fzf',
+    branch = 'release',
   },
   -- 主题
   {
@@ -271,8 +239,8 @@ local plugins = {
       vim.g.dashboard_custom_section = {
         a = { description = { "  Last Session    " }, command = "lua require('persistence').load({ last = true })" },
         b = { description = { "  Dir Session     " }, command = "lua require('persistence').load()" },
-        c = { description = { "  Recent Projects " }, command = "lua require'telescope'.extensions.project.project{}" },
-        d = { description = { "  Find File       " }, command = "Telescope find_files" },
+        c = { description = { "  Recent Projects " }, command = "CocList project" },
+        d = { description = { "  Find File       " }, command = "CocList files" },
         e = { description = { "  New File        " }, command = "ene!" }
       }
     end
@@ -770,6 +738,7 @@ local plugins = {
   },
   {
     "nvim-telescope/telescope.nvim",
+    disable = coc_enabel,
     requires = {
       "nvim-lua/plenary.nvim",
       "nvim-telescope/telescope-ui-select.nvim",
@@ -881,6 +850,7 @@ local plugins = {
   },
   {
     "nvim-telescope/telescope-fzf-native.nvim",
+    disable = coc_enabel,
     requires = { "nvim-telescope/telescope.nvim" },
     run = "make",
   },
@@ -980,10 +950,19 @@ local plugins = {
       end
     end
   },
+  { 'junegunn/fzf' },
+  {
+    'junegunn/fzf.vim',
+    event = "BufRead"
+  },
   -- 搜索替换
   {
     "windwp/nvim-spectre",
+    disable = coc_enabel,
     event = "BufRead",
+    requires = {
+      "nvim-lua/plenary.nvim",
+    },
     config = function()
       require("spectre").setup()
     end,

@@ -54,32 +54,9 @@ omap ac <Plug>(coc-classobj-a)
 nmap <silent> <CR> <Plug>(coc-range-select)
 xmap <silent> <CR> <Plug>(coc-range-select)
 
-" Mappings for CoCList
-" 打开 coclist
-nnoremap <silent><nowait> <leader>fl  :<C-u>CocList<CR>
-nnoremap <silent><nowait> <leader>fs  :<C-u>CocSearch
-" 恢复上一次的 list
-nnoremap <silent><nowait> <leader>fr  :<C-u>CocListResume<cr>
-nnoremap <silent><nowait> <leader>fj  :<C-u>CocNext<CR>
-nnoremap <silent><nowait> <leader>fk  :<C-u>CocPrev<CR>
-" 展示诊断
-nnoremap <silent><nowait> <leader>fd  :<C-u>CocList diagnostics<cr>
-" 命令
-nnoremap <silent><nowait> <leader>fc  :<C-u>CocList commands<cr>
-" 搜索最近使用的文件列表
-nnoremap <silent><nowait> <leader>fm  :<C-u>CocList mru<cr>
-" 搜索当前文件中的单词
-nnoremap <silent><nowait> <leader>fw  :<C-u>CocList words<cr>
-" 搜索当前工作区中的文件
-nnoremap <silent><nowait> <leader>ff  :<C-u>CocList files<cr>
-" 搜索当前工作区中的文字
-nnoremap <silent><nowait> <leader>fg  :<C-u>CocList grep<cr>
-" 搜索大纲
-nnoremap <silent><nowait> <leader>fo  :<C-u>CocList outline<cr>
-
 " 多光标
-nmap <silent> <C-n> <Plug>(coc-cursors-word)
-xmap <silent> <C-n> <Plug>(coc-cursors-range)
+" nmap <silent> <A-d> <Plug>(coc-cursors-word)
+" xmap <silent> <C-n> y/\V<C-r>=escape(@",'/\')<CR><CR>gN<Plug>(coc-cursors-range)gn
 
 " 浮窗内滚动
 nnoremap <silent><nowait><expr> <C-d> coc#float#has_scroll() ? coc#float#scroll(1) : "\<C-d>"
@@ -98,4 +75,3 @@ vmap <C-t> <Plug>(coc-translator-pv)
 " " replace
 " nmap <Leader>tr <Plug>(coc-translator-r)
 " vmap <Leader>tr <Plug>(coc-translator-rv)
-

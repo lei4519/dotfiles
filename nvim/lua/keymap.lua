@@ -6,15 +6,25 @@
 --   term_mode = "t",
 --   command_mode = "c",
 
+
+function L.set_terminal_mode_tt_keymap()
+  vim.api.nvim_buf_set_keymap(0, 't', '<leader>tt', "<cmd>lua L.toggleA()<cr>", { noremap = true })
+  vim.api.nvim_buf_set_keymap(0, 't', '<leader>tv', "<cmd>lua L.toggleB()<cr>", { noremap = true })
+  vim.api.nvim_buf_set_keymap(0, 't', '<leader>th', "<cmd>lua L.toggleC()<cr>", { noremap = true })
+  vim.api.nvim_buf_set_keymap(0, 't', '<leader>tg', "<cmd>lua L.toggleG()<cr>", { noremap = true })
+end
+
+vim.cmd('autocmd! TermOpen term://* lua L.set_terminal_mode_tt_keymap()')
+
 local keys = {
   {
     { mode = "i" },
     {
       ["jf"] = { "<Esc>", "" },
       -- Move current line / block with Alt-j/k ala vscode.
-      ["<A-j>"] = { "<Esc>:m .+1<CR>==gi", "" },
-      -- Move current line / block with Alt-j/k ala vscode.
-      ["<A-k>"] = { "<Esc>:m .-2<CR>==gi", "" },
+      -- ["<A-j>"] = { "<Esc>:m .+1<CR>==gi", "" },
+      -- -- Move current line / block with Alt-j/k ala vscode.
+      -- ["<A-k>"] = { "<Esc>:m .-2<CR>==gi", "" },
       -- navigation
       ["<A-Up>"] = { "<C-\\><C-N><C-w>k", "" },
       ["<A-Down>"] = { "<C-\\><C-N><C-w>j", "" },
@@ -25,19 +35,20 @@ local keys = {
   {
     { mode = "n" },
     {
-
-      ["]q"] = { ":cnext<CR>", "" },
-      ["[q"] = { ":cprev<CR>", "" },
-      ['[d'] = { "<Plug>(coc-diagnostic-prev)", "" },
-      [']d'] = { "<Plug>(coc-diagnostic-next)", "" },
-      ['[g'] = { "<Plug>(coc-git-prevchunk)", "" },
-      [']g'] = { "<Plug>(coc-git-nextchunk)", "" },
+      ["]q"] = { ":cnext<CR>", "Next Quickfix" },
+      ["[q"] = { ":cprev<CR>", "Prev Quickfix" },
+      ['[d'] = { "<Plug>(coc-diagnostic-prev)", "Prev Diagnostics" },
+      [']d'] = { "<Plug>(coc-diagnostic-next)", "Next Diagnostics" },
+      ['[g'] = { "<Plug>(coc-git-prevchunk)", "Prev Git Chunk" },
+      [']g'] = { "<Plug>(coc-git-nextchunk)", "Next Git Chunk" },
       ["ga"] = { "<Plug>(coc-codeaction)", "Code Action" },
-      ["gd"] = { "<Plug>(coc-definition)", "Code Action" },
-      ["gt"] = { "<Plug>(coc-type-definition)", "Code Action" },
-      ["gi"] = { "<Plug>(coc-implementation)", "Code Action" },
-      ["gR"] = { "<Plug>(coc-references)", "Code Action" },
-      ["gr"] = { "<Plug>(coc-rename)", "Code Action" },
+      ["gd"] = { "<Plug>(coc-definition)", "Go Definition" },
+      ["gt"] = { "<Plug>(coc-type-definition)", "Go Type Definition" },
+      ["gi"] = { "<Plug>(coc-implementation)", "Implementation" },
+      ["gr"] = { "<Plug>(coc-references)", "References" },
+      ["gR"] = { "<Plug>(coc-refactor)", "Refactor" },
+      ["gn"] = { "<Plug>(coc-rename)", "Rename" },
+      ["gl"] = { "<Plug>(coc-codelens-action)", "Code Lens" },
       ['gp'] = {
         name = "Preview",
         d = {
@@ -67,9 +78,9 @@ local keys = {
         "<cmd>lua require('goto-preview').close_all_win()<CR>",
         "Close All Preview",
       },
-      -- 上下移动选中文本
-      ["<A-j>"] = { ":m .+1<CR>==", "" },
-      ["<A-k>"] = { ":m .-2<CR>==", "" },
+      -- -- 上下移动选中文本
+      -- ["<A-j>"] = { ":m .+1<CR>==", "" },
+      -- ["<A-k>"] = { ":m .-2<CR>==", "" },
       -- 窗口大小调整
       ["<A-Up>"] = { ":resize -2<CR>", "" },
       ["<A-Down>"] = { ":resize +2<CR>", "" },
@@ -89,9 +100,9 @@ local keys = {
       -- visual模式下缩进代码
       ["<"] = { "<gv", "" },
       [">"] = { ">gv", "" },
-      -- 上下移动选中文本
-      ["A-j"] = { ":move '>+1<CR>gv-gv", "" },
-      ["A-k"] = { ":move '<-2<CR>gv-gv", "" },
+      -- -- 上下移动选中文本
+      -- ["A-j"] = { ":move '>+1<CR>gv-gv", "" },
+      -- ["A-k"] = { ":move '<-2<CR>gv-gv", "" },
       -- 在visual mode 里粘贴不要复制
       ["p"] = { '"_dP', "" },
       -- ["P"] = { '"_dP', "" },
@@ -103,13 +114,13 @@ local keys = {
   {
     { mode = "x" },
     {
-      -- Move selected line / block of text in visual mode
-      ["K"] = { ":move '<-2<CR>gv-gv", "" },
-      ["J"] = { ":move '>+1<CR>gv-gv", "" },
-
-      -- Move current line / block with Alt-j/k ala vscode.
-      ["<A-j>"] = { ":m '>+1<CR>gv-gv", "" },
-      ["<A-k>"] = { ":m '<-2<CR>gv-gv", "" },
+      -- -- Move selected line / block of text in visual mode
+      -- ["K"] = { ":move '<-2<CR>gv-gv", "" },
+      -- ["J"] = { ":move '>+1<CR>gv-gv", "" },
+      --
+      -- -- Move current line / block with Alt-j/k ala vscode.
+      -- ["<A-j>"] = { ":m '>+1<CR>gv-gv", "" },
+      -- ["<A-k>"] = { ":m '<-2<CR>gv-gv", "" },
     }
   },
   {
@@ -125,19 +136,19 @@ local keys = {
       ["<C-k>"] = { 'pumvisible() ? "\\<C-p>" : "\\<C-k>"', "" },
     }
   },
-  {
-    { mode = "t", prefix = "<leader>" },
-    {
-      t = {
-        name = "Term",
-        t = { L.toggleA, "Toggle Float Term" },
-        v = { L.toggleB, "Toggle Vertical Term" },
-        h = { L.toggleC, "Toggle Horizontal Term" },
-        g = { L.toggleG, "LazyGit" },
-      },
-
-    }
-  },
+  -- {
+  --   { mode = "t", prefix = "<leader>" },
+  --   {
+  --     t = {
+  --       name = "Term",
+  --       t = { L.toggleA, "Toggle Float Term" },
+  --       v = { L.toggleB, "Toggle Vertical Term" },
+  --       h = { L.toggleC, "Toggle Horizontal Term" },
+  --       g = { L.toggleG, "LazyGit" },
+  --     },
+  --
+  --   }
+  -- },
   {
     { mode = "n", prefix = "<leader>" },
     {
@@ -162,7 +173,7 @@ local keys = {
           "<cmd>BufferLineCloseRight<cr>",
           "Close all to the right",
         },
-        o = {"<cmd>BufferLineCloseRight<cr><cmd>BufferLineCloseLeft<cr>", "Close Other"},
+        o = { "<cmd>BufferLineCloseRight<cr><cmd>BufferLineCloseLeft<cr>", "Close Other" },
         D = {
           "<cmd>BufferLineSortByDirectory<cr>",
           "Sort by directory",
@@ -200,19 +211,34 @@ local keys = {
 
       e = { "<Cmd>CocCommand explorer<CR>", "Explorer" },
 
+      f = {
+        name = "Find",
+        f = { ":Files<cr>", "File" },
+        g = { ":Ag<cr>", "Ag" },
+        h = { ":History<cr>", "History" },
+        c = { ":CocFzfList commands<cr>", "CocCommand" },
+        l = {":CocFzfList<cr>", "CocFzfList"},
+        e = {":CocConfig<cr>", "CocConfig"},
+        d = {":CocFzfList diagnostics --current-buf<cr>", "Buffer Diagnostics"},
+        D = {"<Cmd>lua L.diagnostic()<CR>", "diagnostics"},
+        m = {":CocFzfList mru<cr>", "mru"},
+        w = {":CocFzfList words<cr>", "words"},
+        o = {":CocFzfList outline<cr>", "outline"},
+      },
+
       g = {
         name = "Git",
-        y = { ":CocCommand git.copyUrl", "Copy url of current line to clipboard" },
-        i = { ":CocCommand git.chunkInfo", "Show chunk info under cursor." },
-        u = { ":CocCommand git.chunkUndo", "Undo current chunk." },
-        s = { ":CocCommand git.chunkStage", "Stage current chunk." },
-        S = { ":CocCommand git.chunkUnstage", "Unstage chunk that contains current line." },
-        d = { ":CocCommand git.diffCached", "Show cached diff in preview window." },
-        c = { ":CocCommand git.showCommit", "Show commit of current chunk." },
-        o = { ":CocCommand git.browserOpen", "Open current line in browser" },
-        f = { ":CocCommand git.foldUnchanged", "Fold unchanged lines of current buffer." },
-        g = { ":CocCommand git.toggleGutters", "Toggle git gutters in sign column." },
-        p = { ":CocCommand git.push", "push code of current branch to remote." },
+        y = { ":CocCommand git.copyUrl<cr>", "Copy url of current line to clipboard" },
+        i = { ":CocCommand git.chunkInfo<cr>", "Show chunk info under cursor." },
+        u = { ":CocCommand git.chunkUndo<cr>", "Undo current chunk." },
+        s = { ":CocCommand git.chunkStage<cr>", "Stage current chunk." },
+        S = { ":CocCommand git.chunkUnstage<cr>", "Unstage chunk that contains current line." },
+        d = { ":CocCommand git.diffCached<cr>", "Show cached diff in preview window." },
+        c = { ":CocCommand git.showCommit<cr>", "Show commit of current chunk." },
+        o = { ":CocCommand git.browserOpen<cr>", "Open current line in browser" },
+        f = { ":CocCommand git.foldUnchanged<cr>", "Fold unchanged lines of current buffer." },
+        g = { ":CocCommand git.toggleGutters<cr>", "Toggle git gutters in sign column." },
+        p = { ":CocCommand git.push<cr>", "push code of current branch to remote." },
       },
 
       -- 窗口跳转

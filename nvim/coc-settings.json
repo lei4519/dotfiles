@@ -2,13 +2,41 @@
   "diagnostic.checkCurrentLine": false,
   "diagnostic.virtualTextCurrentLineOnly": false,
   "diagnostic.virtualText": true,
-  "diagnostic.errorSign": ">>",
+  "diagnostic.errorSign": "",
+  "diagnostic.infoSign": "",
+  "diagnostic.hintSign": "✎",
   "diagnostic.warningSign": "⚠",
+
+  "codeLens.enable": true,
+  "codeLens.subseparator": "  ",
+
+  "rust-analyzer.inlayHints.enable": true,
+  "rust-analyzer.completion.autoimport.enable": true,
+  "rust-analyzer.lens.enable": true,
+
+  "project.rootPatterns":[
+    ".git"
+  ],
+
+  "cSpell.enabled": false,
+
+  "stylelintplus.autoFixOnFormat": true,
+
+  "css.validate": false,
+  "less.validate": false,
+  "scss.validate": false,
+  "wxss.validate": false,
+
+  "prettier.semi": false,
+
+  "eslint.codeActionsOnSave.mode": "problems",
   "eslint.format.enable": true,
+
   "translator.enableHover": false,
   "translator.engines": [
     "google",
     "youdao"
   ],
+
   "Lua.telemetry.enable": false
 }

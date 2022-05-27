@@ -18,12 +18,14 @@ brew install --cask font-fira-code-nred-font
 ```sh
 brew install neovim # neovim
 pip3 install ranger-fm pynvim # ranger
-# brew install the_silver_searcher # ag, or rg
+brew install the_silver_searcher # ag, or rg
 brew install lazygit # lazygit
 brew install git-delta # git pager styles, lazygit need
-brew install ripgrep # rg, telescope need
+# brew install ripgrep # rg, telescope need
+brew install fzf
+brew install autojump
 brew install fd # telescope need
-brew install gnu-sed # 搜索替换 nvim-pack/nvim-spectre
+# brew install gnu-sed # 搜索替换 nvim-pack/nvim-spectre
 brew install im-select # 输入法切换
 ```
 

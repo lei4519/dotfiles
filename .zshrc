@@ -1,3 +1,7 @@
+# Use ~~ as the trigger sequence instead of the default **
+export FZF_COMPLETION_TRIGGER='\'
+export FZF_DEFAULT_COMMAND='ag --hidden --ignore .git --ignore node_modules -g ""'
+
 export NVM_DIR="$HOME/.nvm"
     [ -s "$(brew --prefix)/opt/nvm/nvm.sh" ] && \. "$(brew --prefix)/opt/nvm/nvm.sh" # This loads nvm
     [ -s "$(brew --prefix)/opt/nvm/etc/bash_completion.d/nvm" ] && \. "$(brew --prefix)/opt/nvm/etc/bash_completion.d/nvm" # This loads nvm bash_completion
@@ -25,6 +29,8 @@ alias ra=". ranger"
 alias ze="zellij"
 
 alias ssh-connect="ssh root@43.138.102.54"
+
+[ -f /usr/local/etc/profile.d/autojump.sh ] && . /usr/local/etc/profile.d/autojump.sh
 
 # eval "$(zellij setup --generate-auto-start zsh)"
 eval "$(starship init zsh)"
