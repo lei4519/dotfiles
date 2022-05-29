@@ -2,6 +2,7 @@ local coc_enabel = true
 
 local plugins = {
   { "wbthomason/packer.nvim" },
+  { 'wellle/targets.vim' },
   { "antoinemadec/FixCursorHold.nvim" }, -- Needed while issue https://github.com/neovim/neovim/issues/12587 is still open
   {
     "rcarriga/nvim-notify",
@@ -1344,12 +1345,14 @@ local plugins = {
     event = "BufRead"
   },
   -- Debugger
-  {
-    "theHamsta/nvim-dap-virtual-text",
-  },
-  {
-    "rcarriga/nvim-dap-ui",
-  }
+  { 'puremourning/vimspector' },
+  -- { 'mfussenegger/nvim-dap' },
+  -- {
+  --   "theHamsta/nvim-dap-virtual-text",
+  -- },
+  -- {
+  --   "rcarriga/nvim-dap-ui",
+  -- }
 }
 
 -- 自动安装 Packer.nvim

@@ -75,3 +75,28 @@ vmap <C-t> <Plug>(coc-translator-pv)
 " " replace
 " nmap <Leader>tr <Plug>(coc-translator-r)
 " vmap <Leader>tr <Plug>(coc-translator-rv)
+
+" Start interactive EasyAlign in visual mode (e.g. vipga)
+xmap ge <Plug>(EasyAlign)
+" Start interactive EasyAlign for a motion/text object (e.g. gaip)
+nmap ge <Plug>(EasyAlign)
+
+" for visual mode, the visually selected text
+" Debugger
+sign define vimspectorBP            text= texthl=WarningMsg
+sign define vimspectorBPCond        text= texthl=WarningMsg
+sign define vimspectorBPLog         text= texthl=SpellRare
+sign define vimspectorBPDisabled    text= texthl=LineNr
+sign define vimspectorPC            text=ﰴ texthl=MatchParen linehl=CursorLine
+sign define vimspectorPCBP          text=ﰳ texthl=MatchParen linehl=CursorLine
+sign define vimspectorCurrentThread text=ﰴ texthl=MatchParen linehl=CursorLine
+sign define vimspectorCurrentFrame  text=ﰴ texthl=Special    linehl=CursorLine
+
+let g:vimspector_sign_priority = {
+  \    'vimspectorBP':         13,
+  \    'vimspectorBPCond':     12,
+  \    'vimspectorBPLog':      12,
+  \    'vimspectorBPDisabled': 11,
+  \    'vimspectorPC':         999,
+  \ }
+

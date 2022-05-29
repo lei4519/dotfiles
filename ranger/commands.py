@@ -18,6 +18,21 @@ from ranger.api.commands import Command
 from ranger.ext.shell_escape import shell_quote
 
 
+class goto_git_dir(Command):
+    """
+    goto recent parent .git dir
+    """
+
+    def execute(self):
+        import subprocess
+        s = subprocess.run(['git', 'rev-parse', '--show-toplevel'],
+                           stdout=subprocess.PIPE, text=True)
+
+        if s.returncode == 0:
+            self.fm.cd(s.stdout.strip())
+        else:
+            self.fm.notify('Could not find recent .git dir', bad=True)
+
 class fzf_select(Command):
     """
     :fzf_select
@@ -50,7 +65,8 @@ class fzf_select(Command):
                 fd, hidden, exclude, only_directories
             )
         else:
-            hidden = ('-false' if self.fm.settings.show_hidden else r"-path '*/\.*' -prune")
+            hidden = (
+                '-false' if self.fm.settings.show_hidden else r"-path '*/\.*' -prune")
             exclude = r"\( -name '\.git' -o -iname '\.*py[co]' -o -fstype 'dev' -o -fstype 'proc' \) -prune"
             only_directories = ('-type d' if self.quantifier else '')
             fzf_default_command = 'find -L . -mindepth 1 {} -o {} -o {} -print | cut -b3-'.format(

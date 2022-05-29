@@ -14,6 +14,7 @@ require("basic")
 require("plugins")
 -- 自动命令
 require("autocmds")
+-- require("dap-conf")
 
 local nvm = os.getenv("NVM_BIN");
 if nvm ~= nil then
@@ -59,7 +60,7 @@ vim.g.coc_global_extensions = {
 }
 
 vim.schedule(function()
-    vim.cmd('au! CocFzfLocation User CocLocationsChange')
+  vim.cmd('au! CocFzfLocation User CocLocationsChange')
 end)
 vim.g.coc_enable_locationlist = 0
 vim.cmd([[
@@ -72,36 +73,61 @@ vim.cmd([[
 -- just use `L` prefix as a global function for a demo
 -- please use module instead in reality
 function L.jumpToLoc(locs)
-    locs = locs or vim.g.coc_jump_locations
-    vim.fn.setloclist(0, {}, ' ', {title = 'CocLocationList', items = locs})
-    local winid = vim.fn.getloclist(0, {winid = 0}).winid
-    if winid == 0 then
-        vim.cmd('bo lw')
-    else
-        vim.api.nvim_set_current_win(winid)
-    end
+  locs = locs or vim.g.coc_jump_locations
+  vim.fn.setloclist(0, {}, ' ', { title = 'CocLocationList', items = locs })
+  local winid = vim.fn.getloclist(0, { winid = 0 }).winid
+  if winid == 0 then
+    vim.cmd('bo lw')
+  else
+    vim.api.nvim_set_current_win(winid)
+  end
 end
 
 function L.diagnostic()
-    vim.fn.CocAction('diagnosticList', '', function(err, res)
-        if err == vim.NIL then
-            local items = {}
-            for _, d in ipairs(res) do
-                local text = ('[%s%s] %s'):format((d.source == '' and 'coc.nvim' or d.source),
-                    (d.code == vim.NIL and '' or ' ' .. d.code), d.message:match('([^\n]+)\n*'))
-                local item = {
-                    filename = d.file,
-                    lnum = d.lnum,
-                    end_lnum = d.end_lnum,
-                    col = d.col,
-                    end_col = d.end_col,
-                    text = text,
-                    type = d.severity
-                }
-                table.insert(items, item)
-            end
-            vim.fn.setqflist({}, ' ', {title = 'CocDiagnosticList', items = items})
-            vim.cmd('bo cope')
-        end
-    end)
+  vim.fn.CocAction('diagnosticList', '', function(err, res)
+    if err == vim.NIL then
+      local items = {}
+      for _, d in ipairs(res) do
+        local text = ('[%s%s] %s'):format((d.source == '' and 'coc.nvim' or d.source),
+          (d.code == vim.NIL and '' or ' ' .. d.code), d.message:match('([^\n]+)\n*'))
+        local item = {
+          filename = d.file,
+          lnum = d.lnum,
+          end_lnum = d.end_lnum,
+          col = d.col,
+          end_col = d.end_col,
+          text = text,
+          type = d.severity
+        }
+        table.insert(items, item)
+      end
+      vim.fn.setqflist({}, ' ', { title = 'CocDiagnosticList', items = items })
+      vim.cmd('bo cope')
+    end
+  end)
 end
+
+-- vim.g.vimspector_install_gadgets = { 'vscode-node-debug2', 'CodeLLDB' };
+-- vim.g.vimspector_configurations = {
+--   node_run = {
+--     adapter = "vscode-node",
+--     filetypes = { "javascript", "typescript" },
+--     configuration = {
+--       request = "launch",
+--       protocol = "auto",
+--       stopOnEntry = true,
+--       console = "integratedTerminal",
+--       program = "${file}",
+--       cwd = "${file}"
+--     }
+--   },
+--   rust_run = {
+--     adapter = "CodeLLDB",
+--     filetypes = { "rust" },
+--     configuration = {
+--       request = "launch",
+--       program = "${file}",
+--       cwd = "${file}"
+--     }
+--   }
+-- }

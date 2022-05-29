@@ -15,6 +15,7 @@ brew install --cask font-fira-code-nred-font
 ```
 
 ### Neovim
+
 ```sh
 brew install neovim # neovim
 pip3 install ranger-fm pynvim # ranger
@@ -45,8 +46,15 @@ ln -f -i -n -s ~/dotfiles/lazygit.yml ~/Library/Application\ Support/lazygit/con
 
 ## 系统软件
 
-### Alacritty
+```sh
+brew install bottom # cpu 内存查看
+brew install --cask fig # 终端自动完成、提示
+brew install --cask alfred
 ```
+
+### Alacritty
+
+```sh
 brew install --cask alacritty # alacritty 终端
 ln -f -i -n -s ~/dotfiles/alacritty ~/.config/alacritty
 brew install starship # 终端主题
@@ -57,6 +65,7 @@ brew install zsh-autosuggestions # 建议提示补全
 ```
 
 ### tmux
+
 ```sh
 brew install tmux
 ln -f -i -n -s ~/dotfiles/.tmux.conf ~/.tmux.conf
@@ -75,6 +84,7 @@ brew install reattach-to-user-namespace
 bash <(curl -s https://raw.githubusercontent.com/lunarvim/lunarvim/master/utils/installer/install.sh)
 ln -f -i -n -s ~/.local/bin/lvim /usr/local/bin/lvim
 ```
+
 ln -f -i -n -s ~/dotfiles/karabiner ~/.config/karabiner
 
 #### Uninstall
@@ -88,6 +98,7 @@ bash <(curl -s https://raw.githubusercontent.com/lunarvim/lunarvim/master/utils/
 ### Neovide use Lvim
 
 #### Install
+
 ```sh
 brew install --cask neovide  # optional rust 编写的 neovim ui
 cp /Applications/Neovide.app/Contents/MacOS/neovide /Applications/Neovide.app/Contents/MacOS/neovide_original
@@ -96,20 +107,16 @@ ln -f -n -s ~/dotfiles/neovide /Applications/Neovide.app/Contents/MacOS/neovide
 ```
 
 #### Uninstall
+
 ```sh
 rm /Applications/Neovide.app/Contents/MacOS/neovide
 cp /Applications/Neovide.app/Contents/MacOS/neovide_original /Applications/Neovide.app/Contents/MacOS/neovide
 rm /Applications/Neovide.app/Contents/MacOS/neovide_original
 ```
 
-### 系统剪切板历史管理
-```sh
-# brew install --cask maccy # 系统剪切板历史管理
-```
-
 ### Karabiner-Elements
+
 ```sh
 brew install --cask karabiner-elements
 ln -f -i -n -s ~/dotfiles/karabiner ~/.config/karabiner
 ```
-

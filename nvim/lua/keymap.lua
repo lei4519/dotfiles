@@ -150,9 +150,19 @@ local keys = {
   --   }
   -- },
   {
+
+    { mode = "x", prefix = "<leader>" },
+    {
+      d = {
+        name = "Debug",
+        v = { "<Plug>VimspectorBalloonEval", "在弹出窗口中显示变量" },
+      }
+    }
+  },
+  {
     { mode = "n", prefix = "<leader>" },
     {
-      [";"] = { "<cmd>Alpha<CR>", "Dashboard" },
+      [";"] = { "<cmd>Dashboard<CR>", "Dashboard" },
       ["/"] = { "<cmd>lua require('Comment.api').toggle_current_linewise()<CR>", "Comment" },
       ["<space>"] = { "<cmd>nohlsearch<CR>", "No Highlight" },
 
@@ -186,27 +196,50 @@ local keys = {
 
       d = {
         name = "Debug",
-        R = { "<cmd>lua require'dap'.run_to_cursor()<cr>", "Run to Cursor" },
-        E = { "<cmd>lua require'dapui'.eval(vim.fn.input '[Expression] > ')<cr>", "Evaluate Input" },
-        C = { "<cmd>lua require'dap'.set_breakpoint(vim.fn.input '[Condition] > ')<cr>", "Conditional Breakpoint" },
-        U = { "<cmd>lua require'dapui'.toggle()<cr>", "Toggle UI" },
-        b = { "<cmd>lua require'dap'.step_back()<cr>", "Step Back" },
-        c = { "<cmd>lua require'dap'.continue()<cr>", "Continue" },
-        d = { "<cmd>lua require'dap'.disconnect()<cr>", "Disconnect" },
-        e = { "<cmd>lua require'dapui'.eval()<cr>", "Evaluate" },
-        g = { "<cmd>lua require'dap'.session()<cr>", "Get Session" },
-        h = { "<cmd>lua require'dap.ui.widgets'.hover()<cr>", "Hover Variables" },
-        S = { "<cmd>lua require'dap.ui.widgets'.scopes()<cr>", "Scopes" },
-        i = { "<cmd>lua require'dap'.step_into()<cr>", "Step Into" },
-        o = { "<cmd>lua require'dap'.step_over()<cr>", "Step Over" },
-        p = { "<cmd>lua require'dap'.pause.toggle()<cr>", "Pause" },
-        -- p = { "<cmd>lua require'dap'.pause()<cr>", "Pause" },
-        q = { "<cmd>lua require'dap'.close()<cr>", "Quit" },
-        r = { "<cmd>lua require'dap'.repl.toggle()<cr>", "Toggle Repl" },
-        s = { "<cmd>lua require'dap'.continue()<cr>", "Start" },
-        t = { "<cmd>lua require'dap'.toggle_breakpoint()<cr>", "Toggle Breakpoint" },
-        x = { "<cmd>lua require'dap'.terminate()<cr>", "Terminate" },
-        u = { "<cmd>lua require'dap'.step_out()<cr>", "Step Out" },
+        c = { "<Plug>VimspectorContinue", "开始或继续调试" },
+        r = { "<Plug>VimpectorRestart", "使用相同的配置重新启动调试" },
+        e = { "<Plug>VimspectorStop", "停止调试" },
+        p = { "<Plug>VimspectorPause", "暂停调试" },
+        R = { "<Plug>VimspectorGoToCurrentLine", "将当前程序计数器重置为当前行" },
+
+
+        w = { "<Plug>VimspectorBreakpoints", "隐藏断点窗口" },
+        b = { "<Plug>VimspectorUpFrame", "在当前调用堆栈中上移一帧" },
+        f = { "<Plug>VimspectorDownFrame", "在当前调用堆栈中下移一帧" },
+
+        v = { "<Plug>VimspectorBalloonEval", "在弹出窗口中显示变量" },
+
+        t = { "<Plug>VimspectorToggleBreakpoint", "在当前行上切换行断点" },
+        T = { "<Plug>VimspectorToggleConditionalBreakpoint", "在当前行切换条件行断点或日志点" },
+        a = { "<Plug>VimspectorAddFunctionBreakpoint", "为光标下的表达式添加函数断点" },
+        x = { ":call vimspector#ClearBreakpoints()", "清除所有断点" },
+
+        d = { "<Plug>VimspectorStepOver", "跨过" },
+        D = { "<Plug>VimspectorRunToCursor", "运行到光标" },
+        i = { "<Plug>VimspectorStepInto", "踏入" },
+        o = { "<Plug>VimspectorStepOut", "跳出当前功能范围" },
+
+        -- R = { "<cmd>lua require'dap'.run_to_cursor()<cr>", "Run to Cursor" },
+        -- E = { "<cmd>lua require'dapui'.eval(vim.fn.input '[Expression] > ')<cr>", "Evaluate Input" },
+        -- C = { "<cmd>lua require'dap'.set_breakpoint(vim.fn.input '[Condition] > ')<cr>", "Conditional Breakpoint" },
+        -- U = { "<cmd>lua require'dapui'.toggle()<cr>", "Toggle UI" },
+        -- b = { "<cmd>lua require'dap'.step_back()<cr>", "Step Back" },
+        -- c = { "<cmd>lua require'dap'.continue()<cr>", "Continue" },
+        -- d = { "<cmd>lua require'dap'.disconnect()<cr>", "Disconnect" },
+        -- e = { "<cmd>lua require'dapui'.eval()<cr>", "Evaluate" },
+        -- g = { "<cmd>lua require'dap'.session()<cr>", "Get Session" },
+        -- h = { "<cmd>lua require'dap.ui.widgets'.hover()<cr>", "Hover Variables" },
+        -- S = { "<cmd>lua require'dap.ui.widgets'.scopes()<cr>", "Scopes" },
+        -- i = { "<cmd>lua require'dap'.step_into()<cr>", "Step Into" },
+        -- o = { "<cmd>lua require'dap'.step_over()<cr>", "Step Over" },
+        -- p = { "<cmd>lua require'dap'.pause.toggle()<cr>", "Pause" },
+        -- -- p = { "<cmd>lua require'dap'.pause()<cr>", "Pause" },
+        -- q = { "<cmd>lua require'dap'.close()<cr>", "Quit" },
+        -- r = { "<cmd>lua require'dap'.repl.toggle()<cr>", "Toggle Repl" },
+        -- s = { "<cmd>lua require'dap'.continue()<cr>", "Start" },
+        -- t = { "<cmd>lua require'dap'.toggle_breakpoint()<cr>", "Toggle Breakpoint" },
+        -- x = { "<cmd>lua require'dap'.terminate()<cr>", "Terminate" },
+        -- u = { "<cmd>lua require'dap'.step_out()<cr>", "Step Out" },
       },
 
       e = { "<Cmd>CocCommand explorer<CR>", "Explorer" },

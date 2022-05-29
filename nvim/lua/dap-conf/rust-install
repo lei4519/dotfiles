@@ -1,0 +1,23 @@
+#!/bin/bash
+
+# 建立下载目录
+if ! test -d ~/.local/share/nvim/dapinstall
+then
+  mkdir -p ~/.local/share/nvim/dapinstall
+fi
+
+
+if ! test -d ~/.local/share/nvim/dapinstall/codelldb
+then
+  mkdir ~/.local/share/nvim/dapinstall/codelldb
+fi
+
+
+cd ~/.local/share/nvim/dapinstall/codelldb
+
+
+curl -O -L https://github.com/vadimcn/vscode-lldb/releases/download/v1.6.10/codelldb-x86_64-darwin.vsix
+
+unzip codelldb-x86_64-darwin.vsix
+
+rm codelldb-x86_64-darwin.vsix
