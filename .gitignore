@@ -10,3 +10,6 @@ nvim/lvim.shada
 karabiner/*
 !karabiner/karabiner.json
 
+
+alacritty/alacritty.yml--
+yarn-error.log

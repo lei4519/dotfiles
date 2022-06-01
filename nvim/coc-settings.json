@@ -16,6 +16,8 @@
     "patternMatches": []
   },
 
+  "hover.target": "float",
+
   "rust-analyzer.debug.runtime": "vimspector",
   "rust-analyzer.debug.vimspector.configuration.name": "rust_run",
   "rust-analyzer.inlayHints.enable": true,

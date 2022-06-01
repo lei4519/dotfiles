@@ -1,7 +1,3 @@
-# dotfiles
-
-```sh
-# 必须放在 ~/dotfiles
 git clone --depth=1 git@github.com:lei4519/dotfiles.git ~/dotfiles
 ```
 
@@ -19,13 +15,14 @@ brew install --cask font-fira-code-nred-font
 ```sh
 brew install neovim # neovim
 pip3 install ranger-fm pynvim # ranger
+brew install highlight # ranger code highlight
 brew install the_silver_searcher # ag, or rg
 brew install lazygit # lazygit
 brew install git-delta # git pager styles, lazygit need
 # brew install ripgrep # rg, telescope need
 brew install fzf
 brew install autojump
-brew install fd # telescope need
+brew install fd
 # brew install gnu-sed # 搜索替换 nvim-pack/nvim-spectre
 brew install im-select # 输入法切换
 ```
@@ -62,6 +59,12 @@ ln -f -i -n -s ~/dotfiles/starship.toml ~/.config/starship.toml
 # brew install zellij # 类似 tmux，但更简单
 # ln -f -i -n -s ~/dotfiles/zellij ~/.config/zellij
 brew install zsh-autosuggestions # 建议提示补全
+```
+
+### 窗口切换
+
+```sh
+brew install alt-tab
 ```
 
 ### tmux

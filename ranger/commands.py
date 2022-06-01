@@ -12,7 +12,9 @@ from __future__ import (absolute_import, division, print_function)
 # You can import any python module as needed.
 import os
 import re
+import subprocess
 from os import path as fs
+from collections import deque
 
 from ranger.api.commands import Command
 from ranger.ext.shell_escape import shell_quote
@@ -32,6 +34,7 @@ class goto_git_dir(Command):
             self.fm.cd(s.stdout.strip())
         else:
             self.fm.notify('Could not find recent .git dir', bad=True)
+
 
 class fzf_select(Command):
     """
@@ -94,3 +97,90 @@ class fzf_select(Command):
             else:
                 self.fm.select_file(selected)
 
+
+def show_error_in_console(msg, fm):
+    fm.notify(msg, bad=True)
+
+
+def navigate_path(fm, selected):
+    if not selected:
+        return
+
+    selected = os.path.abspath(selected)
+    if os.path.isdir(selected):
+        fm.cd(selected)
+    elif os.path.isfile(selected):
+        fm.select_file(selected)
+    else:
+        show_error_in_console(f"Neither directory nor file: {selected}", fm)
+        return
+
+
+def select_with_fzf(fzf_cmd, input, fm):
+    fm.ui.suspend()
+    try:
+        # stderr is used to open to attach to /dev/tty
+        proc = subprocess.Popen(
+            fzf_cmd, stdout=subprocess.PIPE, stdin=subprocess.PIPE, text=True)
+        stdout, _ = proc.communicate(input=input)
+
+        # ESC gives 130
+        if proc.returncode not in [0, 130]:
+            raise Exception(
+                f"Bad process exit code: {proc.returncode}, stdout={stdout}")
+    finally:
+        fm.ui.initialize()
+    return stdout.strip()
+
+
+class dir_history_navigate(Command):
+    def execute(self):
+        lst = []
+        for d in reversed(self.fm.tabs[self.fm.current_tab].history.history):
+            lst.append(d.path)
+
+        fm = self.fm
+        selected = select_with_fzf(["fzf"], "\n".join(lst), fm)
+
+        navigate_path(fm, selected)
+
+
+class create_file_or_dir(Command):
+    def execute(self):
+        from os.path import join, expanduser, lexists
+        from os import makedirs
+        import re
+
+        dirname = join(self.fm.thisdir.path, expanduser(self.rest(1)))
+        if not lexists(dirname):
+            dirname = dirname.split("/")
+            tail = dirname.pop()
+
+            if tail.find('.') == -1:
+                dirname.append(tail)
+                tail = None
+
+            dirname = '/'.join(dirname)
+
+            self.fm.notify(dirname + '/' + tail)
+
+            makedirs(dirname)
+
+            if tail:
+                open(dirname + '/' + tail, 'w')
+
+            match = re.search('^/|^~[^/]*/', dirname)
+            if match:
+                self.fm.cd(match.group(0))
+                dirname = dirname[match.end(0):]
+
+            for m in re.finditer('[^/]+', dirname):
+                s = m.group(0)
+                if s == '..' or (s.startswith('.') and not self.fm.settings['show_hidden']):
+                    self.fm.cd(s)
+                else:
+                    # We force ranger to load content before calling `scout`.
+                    self.fm.thisdir.load_content(schedule=False)
+                    self.fm.execute_console('scout -ae ^{}$'.format(s))
+        else:
+            self.fm.notify("file/directory exists!", bad=True)

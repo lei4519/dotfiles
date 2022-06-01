@@ -100,3 +100,4 @@ let g:vimspector_sign_priority = {
   \    'vimspectorPC':         999,
   \ }
 
+command! -bang -nargs=* Ag call fzf#vim#ag(<q-args>, {'options': '--delimiter : --nth 4..'}, <bang>0)

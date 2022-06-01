@@ -52,7 +52,7 @@ local keys = {
       ['gp'] = {
         name = "Preview",
         d = {
-          "<cmd>lua require('goto-preview').goto_preview_definition()<CR>",
+          ":call CocAction('jumpDefinition', v:false)<CR>",
           "Peek Definition",
         },
         i = {
@@ -197,8 +197,8 @@ local keys = {
       d = {
         name = "Debug",
         c = { "<Plug>VimspectorContinue", "开始或继续调试" },
-        r = { "<Plug>VimpectorRestart", "使用相同的配置重新启动调试" },
-        e = { "<Plug>VimspectorStop", "停止调试" },
+        r = { "<Plug>VimpectorRestart", "VimspectorReset" },
+        e = { ":call vimspector#Stop()<cr><cmd>VimspectorReset<cr>", "停止调试" },
         p = { "<Plug>VimspectorPause", "暂停调试" },
         R = { "<Plug>VimspectorGoToCurrentLine", "将当前程序计数器重置为当前行" },
 
@@ -212,7 +212,7 @@ local keys = {
         t = { "<Plug>VimspectorToggleBreakpoint", "在当前行上切换行断点" },
         T = { "<Plug>VimspectorToggleConditionalBreakpoint", "在当前行切换条件行断点或日志点" },
         a = { "<Plug>VimspectorAddFunctionBreakpoint", "为光标下的表达式添加函数断点" },
-        x = { ":call vimspector#ClearBreakpoints()", "清除所有断点" },
+        x = { ":call vimspector#ClearBreakpoints()<cr>", "清除所有断点" },
 
         d = { "<Plug>VimspectorStepOver", "跨过" },
         D = { "<Plug>VimspectorRunToCursor", "运行到光标" },
