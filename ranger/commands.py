@@ -151,36 +151,34 @@ class create_file_or_dir(Command):
         from os import makedirs
         import re
 
-        dirname = join(self.fm.thisdir.path, expanduser(self.rest(1)))
-        if not lexists(dirname):
-            dirname = dirname.split("/")
-            tail = dirname.pop()
+        dir_or_file = join(self.fm.thisdir.path, expanduser(self.rest(1)))
+        is_file = dir_or_file[-1] != '/'
 
-            if tail.find('.') == -1:
-                dirname.append(tail)
-                tail = None
+        dirname = dir_or_file[0:dir_or_file.rfind('/')]
 
-            dirname = '/'.join(dirname)
+        dir_exist = lexists(dirname)
+        if dir_exist and is_file == False:
+            self.fm.notify("file/directory exists!", bad=True)
+            return
 
-            self.fm.notify(dirname + '/' + tail)
-
+        if dir_exist == False:
             makedirs(dirname)
 
-            if tail:
-                open(dirname + '/' + tail, 'w')
+        if is_file:
+            open(dir_or_file, 'w')
 
-            match = re.search('^/|^~[^/]*/', dirname)
-            if match:
-                self.fm.cd(match.group(0))
-                dirname = dirname[match.end(0):]
+        match = re.search('^/|^~[^/]*/', dirname)
 
-            for m in re.finditer('[^/]+', dirname):
-                s = m.group(0)
-                if s == '..' or (s.startswith('.') and not self.fm.settings['show_hidden']):
-                    self.fm.cd(s)
-                else:
-                    # We force ranger to load content before calling `scout`.
-                    self.fm.thisdir.load_content(schedule=False)
-                    self.fm.execute_console('scout -ae ^{}$'.format(s))
-        else:
-            self.fm.notify("file/directory exists!", bad=True)
+        if match:
+            self.fm.cd(match.group(0))
+            dirname = dirname[match.end(0):]
+
+        for m in re.finditer('[^/]+', dirname):
+            s = m.group(0)
+            if s == '..' or (s.startswith('.') and not self.fm.settings['show_hidden']):
+                self.fm.cd(s)
+            else:
+                # We force ranger to load content before calling `scout`.
+                self.fm.thisdir.load_content(schedule=False)
+                self.fm.execute_console('scout -ae ^{}$'.format(s))
+

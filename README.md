@@ -15,6 +15,7 @@ brew install --cask font-fira-code-nred-font
 ```sh
 brew install neovim # neovim
 pip3 install ranger-fm pynvim # ranger
+brew install jq # preview json
 brew install highlight # ranger code highlight
 brew install the_silver_searcher # ag, or rg
 brew install lazygit # lazygit

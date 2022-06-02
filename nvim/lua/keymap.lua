@@ -302,9 +302,10 @@ local keys = {
       -- 搜索替换
       s = {
         name = "Search And Replace",
-        o = { "<cmd>lua require('spectre').open()<cr>", "Open Search Panel" },
-        w = { "<cmd>lua require('spectre').open_visual({select_word=true})<cr>", "Search Current Word" },
-        c = { "<cmd>lua require('spectre').open_file_search()<cr>", "Search Current File" },
+        s = { ":s/\\v", "Search" },
+        g = { ":%s/\\v", "Search Global" },
+        b = { ":.,0s/\\v", "Search Before" },
+        a = { ":.,$s/\\v", "Search After" },
       },
 
       -- session 管理
