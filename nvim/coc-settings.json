@@ -1,4 +1,6 @@
 {
+  "outline.splitCommand": "to 30vs",
+
   "diagnostic.checkCurrentLine": false,
   "diagnostic.virtualTextCurrentLineOnly": false,
   "diagnostic.virtualText": true,
@@ -37,7 +39,7 @@
 
   "prettier.semi": false,
 
-  "eslint.codeActionsOnSave.mode": "problems",
+  "eslint.codeActionsOnSave.mode": "all",
   "eslint.format.enable": true,
 
   "translator.enableHover": false,
