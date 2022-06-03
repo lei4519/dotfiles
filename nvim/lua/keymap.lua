@@ -55,6 +55,10 @@ local keys = {
           ":call CocAction('jumpDefinition', v:false)<CR>",
           "Peek Definition",
         },
+        -- d = {
+        --   "<cmd>lua require('goto-preview').goto_preview_definition()<CR>",
+        --   "Peek Definition",
+        -- },
         i = {
           "<cmd>lua require('goto-preview').goto_preview_implementation()<CR>",
           "Preview Implementation",
@@ -62,12 +66,6 @@ local keys = {
         r = {
           "<cmd>lua require('goto-preview').goto_preview_references()<CR>",
           "Preview References",
-        },
-        t = {
-          function()
-            require("lvim.lsp.peek").Peek "typeDefinition"
-          end,
-          "Type Definition",
         },
         m = {
           "<cmd>MarkdownPreviewToggle<CR>",
@@ -302,10 +300,13 @@ local keys = {
       -- 搜索替换
       s = {
         name = "Search And Replace",
-        s = { ":s/\\v", "Search" },
+        s = { ":s/\\v", "Search Line" },
         g = { ":%s/\\v", "Search Global" },
         b = { ":.,0s/\\v", "Search Before" },
         a = { ":.,$s/\\v", "Search After" },
+        o = { "<cmd>lua require('spectre').open_visual()<cr>", "Open Search Panel" },
+        w = { "<cmd>lua require('spectre').open_visual({select_word=true})<cr>", "Search Current Word" },
+        c = { "<cmd>lua require('spectre').open_file_search()<cr>", "Search Current File" },
       },
 
       -- session 管理

@@ -50,13 +50,9 @@ omap ic <Plug>(coc-classobj-i)
 xmap ac <Plug>(coc-classobj-a)
 omap ac <Plug>(coc-classobj-a)
 
-" Requires 'textDocument/selectionRange' support of language server.
+" 增量选择
 nmap <silent> <CR> <Plug>(coc-range-select)
 xmap <silent> <CR> <Plug>(coc-range-select)
-
-" 多光标
-" nmap <silent> <A-d> <Plug>(coc-cursors-word)
-" xmap <silent> <C-n> y/\V<C-r>=escape(@",'/\')<CR><CR>gN<Plug>(coc-cursors-range)gn
 
 " 浮窗内滚动
 nnoremap <silent><nowait><expr> <C-d> coc#float#has_scroll() ? coc#float#scroll(1) : "\<C-d>"
@@ -100,4 +96,4 @@ let g:vimspector_sign_priority = {
   \    'vimspectorPC':         999,
   \ }
 
-command! -bang -nargs=* Ag call fzf#vim#ag(<q-args>, fzf#vim#with_preview({'options': '--delimiter : --nth 4..'}), <bang>0)
+" command! -bang -nargs=* Ag call fzf#vim#ag(<q-args>, fzf#vim#with_preview({'options': '--delimiter : --nth 4..'}), <bang>0)

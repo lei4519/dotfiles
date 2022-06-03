@@ -18,11 +18,11 @@ ln -f -i -n -s ~/dotfiles/karabiner ~/.config/karabiner
 
 ```sh
 brew install neovim
+ln -f -i -n -s ~/dotfiles/nvim ~/.config/nvim
 # 搜索替换 nvim-pack/nvim-spectre
 brew install gnu-sed
 # 输入法切换
 brew install im-select
-ln -f -i -n -s ~/dotfiles/nvim ~/.config/nvim
 ```
 
 ### Ranger
@@ -95,6 +95,9 @@ ln -f -i -n -s ~/dotfiles/.tmux.conf.local ~/.tmux.conf.local
 # 类似 tmux，但更简单
 # brew install zellij
 # ln -f -i -n -s ~/dotfiles/zellij ~/.config/zellij
+
+# 漂亮的 cat
+brew install lolcat
 ```
 
 ### Lunarvim
