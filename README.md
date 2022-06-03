@@ -1,116 +1,146 @@
+# dotfiles
+
+```sh
+# 必须放在 ~/dotfiles，保证下面软连接的命令准确
 git clone --depth=1 git@github.com:lei4519/dotfiles.git ~/dotfiles
 ```
 
-## 必需品
+## Install
 
-### 终端字体
+### 按键映射
 
 ```sh
-brew tap homebrew/cask-fonts
-brew install --cask font-fira-code-nred-font
+brew install --cask karabiner-elements
+ln -f -i -n -s ~/dotfiles/karabiner ~/.config/karabiner
 ```
 
 ### Neovim
 
 ```sh
-brew install neovim # neovim
-pip3 install ranger-fm pynvim # ranger
-brew install jq # preview json
-brew install highlight # ranger code highlight
-brew install the_silver_searcher # ag, or rg
-brew install lazygit # lazygit
-brew install git-delta # git pager styles, lazygit need
-# brew install ripgrep # rg, telescope need
-brew install fzf
-brew install autojump
-brew install fd
-# brew install gnu-sed # 搜索替换 nvim-pack/nvim-spectre
-brew install im-select # 输入法切换
+brew install neovim
+# 搜索替换 nvim-pack/nvim-spectre
+brew install gnu-sed
+# 输入法切换
+brew install im-select
+ln -f -i -n -s ~/dotfiles/nvim ~/.config/nvim
 ```
 
-### 软连接
+### Ranger
 
 ```sh
-# -f 强制执行
-# -i 交互模式，文件存在则提示用户是否覆盖
-# -n 把符号链接视为一般目录
-# -s 软链接(符号链接)
-ln -f -i -n -s ~/dotfiles/lvim ~/.config/lvim
-ln -f -i -n -s ~/dotfiles/nvim ~/.config/nvim
+pip3 install ranger-fm pynvim 
+# preview json
+brew install jq 
+# ranger code highlight
+brew install highlight 
 ln -f -i -n -s ~/dotfiles/ranger ~/.config/ranger
+```
+
+### fzf
+
+```sh
+brew install fzf
+# ag
+brew install the_silver_searcher 
+# rg
+# brew install ripgrep # one of rg ag
+```
+
+### lazygit
+
+```sh
+brew install lazygit 
+# git pager styles, lazygit need
+brew install git-delta 
 ln -f -i -n -s ~/dotfiles/.gitconfig ~/.gitconfig
 ln -f -i -n -s ~/dotfiles/lazygit.yml ~/Library/Application\ Support/lazygit/config.yml
 ```
 
-## 系统软件
+### 终端
 
 ```sh
-brew install bottom # cpu 内存查看
-brew install --cask fig # 终端自动完成、提示
-brew install --cask alfred
-```
+# 配置
+ln -f -i -n -s ~/dotfiles/.zshrc ~/.zshrc
 
-### Alacritty
+# 字体
+brew tap homebrew/cask-fonts
+brew install --cask font-fira-code-nred-font
 
-```sh
-brew install --cask alacritty # alacritty 终端
+# 快速跳转
+brew install autojump
+
+# alacritty 终端
+brew install --cask alacritty
 ln -f -i -n -s ~/dotfiles/alacritty ~/.config/alacritty
-brew install starship # 终端主题
+
+# 终端主题
+brew install starship
 ln -f -i -n -s ~/dotfiles/starship.toml ~/.config/starship.toml
-# brew install zellij # 类似 tmux，但更简单
-# ln -f -i -n -s ~/dotfiles/zellij ~/.config/zellij
-brew install zsh-autosuggestions # 建议提示补全
-```
 
-### 窗口切换
+# 终端自动完成、提示
+brew install --cask fig 
 
-```sh
-brew install alt-tab
-```
+# (使用fig内置plugin也可以)建议提示补全
+brew install zsh-autosuggestions
 
-### tmux
-
-```sh
+# tmux
 brew install tmux
+# 快速打开终端里的url
+brew install urlview 
+# 粘贴到系统剪切板
+brew install reattach-to-user-namespace
 ln -f -i -n -s ~/dotfiles/.tmux.conf ~/.tmux.conf
 ln -f -i -n -s ~/dotfiles/.tmux.conf.local ~/.tmux.conf.local
-brew install urlview # 快速打开终端里的url
-brew install reattach-to-user-namespace
+
+# 类似 tmux，但更简单
+# brew install zellij
+# ln -f -i -n -s ~/dotfiles/zellij ~/.config/zellij
 ```
 
 ### Lunarvim
 
 [https://www.lunarvim.org/](https://www.lunarvim.org/)
 
-#### Install
+Install
 
 ```sh
 bash <(curl -s https://raw.githubusercontent.com/lunarvim/lunarvim/master/utils/installer/install.sh)
+ln -f -i -n -s ~/dotfiles/lvim ~/.config/lvim
 ln -f -i -n -s ~/.local/bin/lvim /usr/local/bin/lvim
 ```
 
-ln -f -i -n -s ~/dotfiles/karabiner ~/.config/karabiner
+---
 
-#### Uninstall
+Uninstall
 
 ```sh
-ln -f -i -n -s ~/dotfiles/karabiner ~/.config/karabiner
 bash <(curl -s https://raw.githubusercontent.com/lunarvim/lunarvim/master/utils/installer/uninstall.sh)
-# rm /usr/local/bin/lvim
+rm ~/.config/lvim
+rm /usr/local/bin/lvim
 ```
 
-### Neovide use Lvim
+### Neovide
 
-#### Install
+> neovide 没法和 tmux 一起使用，所以放弃了
 
 ```sh
-brew install --cask neovide  # optional rust 编写的 neovim ui
+# rust 编写的 neovim ui
+brew install --cask neovide  
+```
+
+#### use lvim
+
+config
+
+```sh
 cp /Applications/Neovide.app/Contents/MacOS/neovide /Applications/Neovide.app/Contents/MacOS/neovide_original
-chmod +x ./neovide
+chmod +x ~/dotfiles/neovide
 ln -f -n -s ~/dotfiles/neovide /Applications/Neovide.app/Contents/MacOS/neovide
 ```
 
-#### Uninstall
+---
+
+unconfig
 
 ```sh
 rm /Applications/Neovide.app/Contents/MacOS/neovide
@@ -118,9 +148,15 @@ cp /Applications/Neovide.app/Contents/MacOS/neovide_original /Applications/Neovi
 rm /Applications/Neovide.app/Contents/MacOS/neovide_original
 ```
 
-### Karabiner-Elements
+### 系统软件（增强但不必需）
 
 ```sh
-brew install --cask karabiner-elements
-ln -f -i -n -s ~/dotfiles/karabiner ~/.config/karabiner
+# cpu 内存查看
+brew install bottom 
+
+# alfred
+brew install --cask alfred
+
+# 窗口切换
+brew install alt-tab
 ```
