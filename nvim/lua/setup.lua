@@ -5,6 +5,15 @@ DAP_INSTALL = HOME .. "/.local/share/nvim/dapinstall/"
 
 L = {}
 
+function L.CocOutLineToggle()
+  if L.CocOutLineOpen then
+    L.CocOutLineOpen = false
+    vim.cmd("call CocAction('hideOutline')")
+  else
+    L.CocOutLineOpen = true
+    vim.cmd("call CocAction('showOutline')")
+  end
+end
 
 -- 基础配置
 require("basic")

@@ -18,6 +18,8 @@
     "patternMatches": []
   },
 
+  "colors.filetypes": ["*"],
+
   "hover.target": "float",
 
   "rust-analyzer.debug.runtime": "vimspector",
@@ -39,7 +41,10 @@
 
   "prettier.semi": false,
 
-  "eslint.codeActionsOnSave.mode": "all",
+  "refactor.showMenu": "<Tab>",
+  "refactor.openCommand": "vsplit",
+
+  "eslint.codeActionsOnSave.mode": "problems",
   "eslint.format.enable": true,
 
   "translator.enableHover": false,

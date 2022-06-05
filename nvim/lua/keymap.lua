@@ -258,7 +258,7 @@ local keys = {
       n = { "<CMD>ene!<CR>", "New File" },
 
       -- SymbolOutLine
-      o = { ":CocOutline<cr>", "Symbols Outline" },
+      o = { L.CocOutLineToggle, "Symbols Outline" },
 
       p = {
         name = "Packer",

@@ -231,7 +231,7 @@ local plugins = {
               }
             }
           },
-          extensions = { "nvim-tree" },
+          extensions = {},
           sections = {
             -- these are to remove the defaults
             lualine_a = {},
@@ -302,9 +302,9 @@ local plugins = {
               t = 't'
             }
             if s_map[vim.fn.mode()] ~= nil then
-              return ' ' .. s_map[vim.fn.mode()]
+              return '  ' .. s_map[vim.fn.mode()]
             end
-            return ''
+            return '  '
           end,
           color = function()
             -- auto change color according to neovims mode
@@ -344,6 +344,9 @@ local plugins = {
           color = {
             fg = colors.violet,
             gui = 'bold'
+          },
+          padding = {
+            right = 1
           }
         }
 
@@ -376,7 +379,7 @@ local plugins = {
 
         ins_left {
           'filename',
-          path = 0,
+          path = 1,
           file_status = true,
           cond = conditions.buffer_not_empty,
           color = {
@@ -494,7 +497,6 @@ local plugins = {
             always_divide_middle = true,
             globalstatus = true
           },
-          extensions = { "nvim-tree" },
           sections = {
             lualine_a = { 'mode' },
             lualine_b = { 'g:coc_git_status', -- 分支
@@ -510,7 +512,7 @@ local plugins = {
             lualine_c = { {
               'filename',
               file_status = true, -- Displays file status (readonly status, modified status)
-              path = 0, -- 0: Just the filename
+              path = 1, -- 0: Just the filename
               separator = '',
               -- 1: Relative path
               -- 2: Absolute path
@@ -749,7 +751,6 @@ local plugins = {
             cmd = "ag",
           },
         },
-        is_insert_mode = true -- start open panel on is_insert_mode
       })
     end,
   },
@@ -876,7 +877,7 @@ local plugins = {
     module = "persistence",
     config = function()
       require("persistence").setup({
-        dir = vim.fn.expand(vim.fn.stdpath "config" .. "/session/"),
+        dir = vim.fn.expand(vim.fn.stdpath "data" .. "/session/"),
         options = { "buffers", "curdir", "tabpages", "winsize" }
       })
     end
