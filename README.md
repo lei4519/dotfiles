@@ -28,11 +28,11 @@ brew install im-select
 ### Ranger
 
 ```sh
-pip3 install ranger-fm pynvim 
+pip3 install ranger-fm pynvim
 # preview json
-brew install jq 
+brew install jq
 # ranger code highlight
-brew install highlight 
+brew install highlight
 ln -f -i -n -s ~/dotfiles/ranger ~/.config/ranger
 ```
 
@@ -41,7 +41,7 @@ ln -f -i -n -s ~/dotfiles/ranger ~/.config/ranger
 ```sh
 brew install fzf
 # ag
-brew install the_silver_searcher 
+brew install the_silver_searcher
 # rg
 # brew install ripgrep # one of rg ag
 ```
@@ -49,11 +49,12 @@ brew install the_silver_searcher
 ### lazygit
 
 ```sh
-brew install lazygit 
+brew install lazygit
 # git pager styles, lazygit need
-brew install git-delta 
+brew install git-delta
 ln -f -i -n -s ~/dotfiles/.gitconfig ~/.gitconfig
 ln -f -i -n -s ~/dotfiles/lazygit.yml ~/Library/Application\ Support/lazygit/config.yml
+# ln -f -i -n -s <local path> /usr/local/bin/lazygit
 ```
 
 ### 终端
@@ -78,7 +79,7 @@ brew install starship
 ln -f -i -n -s ~/dotfiles/starship.toml ~/.config/starship.toml
 
 # 终端自动完成、提示
-brew install --cask fig 
+brew install --cask fig
 
 # (使用fig内置plugin也可以)建议提示补全
 brew install zsh-autosuggestions
@@ -86,7 +87,7 @@ brew install zsh-autosuggestions
 # tmux
 brew install tmux
 # 快速打开终端里的url
-brew install urlview 
+brew install urlview
 # 粘贴到系统剪切板
 brew install reattach-to-user-namespace
 ln -f -i -n -s ~/dotfiles/.tmux.conf ~/.tmux.conf
@@ -128,7 +129,7 @@ rm /usr/local/bin/lvim
 
 ```sh
 # rust 编写的 neovim ui
-brew install --cask neovide  
+brew install --cask neovide
 ```
 
 #### use lvim
@@ -155,7 +156,7 @@ rm /Applications/Neovide.app/Contents/MacOS/neovide_original
 
 ```sh
 # cpu 内存查看
-brew install bottom 
+brew install bottom
 
 # alfred
 brew install --cask alfred

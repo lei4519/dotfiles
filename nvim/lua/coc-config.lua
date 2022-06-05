@@ -39,7 +39,7 @@ vim.g.coc_global_extensions = {
   'coc-lists',
   'coc-snippets',
   'coc-spell-checker',
-  'coc-lightbulb', -- code action 小灯泡提示
+  -- 'coc-lightbulb', -- code action 小灯泡提示
 }
 
 vim.schedule(function()
