@@ -165,3 +165,20 @@ brew install --cask alfred
 brew install alt-tab
 ```
 
+## vim 宏
+
+```sh
+# 查看宏
+:reg <letter>
+
+
+# 编辑宏
+
+:let @<letter>='
+
+# 依次按键 Ctrl-R Ctrl-R <letter>自动补全宏指令集
+
+# 做出对应的修改，然后补全最后面的单引号即可
+
+# 此时可以输入:reg a 发现宏的内容已经被修改了
+```

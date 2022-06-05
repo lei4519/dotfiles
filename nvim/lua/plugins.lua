@@ -1,5 +1,7 @@
 local plugins = {
   { "wbthomason/packer.nvim" },
+  -- 驼峰格式转换
+  { 'arthurxavierx/vim-caser' },
   -- 增强文本对象
   { 'wellle/targets.vim' },
   -- Needed while issue https://github.com/neovim/neovim/issues/12587 is still open

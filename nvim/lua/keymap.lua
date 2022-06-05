@@ -76,6 +76,48 @@ local keys = {
         "<cmd>lua require('goto-preview').close_all_win()<CR>",
         "Close All Preview",
       },
+      ['gs'] = {
+        p = {
+          "<Plug>CaserMixedCase",
+          "PascalCase"
+        },
+        c = {
+          "<Plug>CaserCamelCase",
+          "camelCase"
+        },
+        ["_"] = {
+          "<Plug>CaserSnakeCase",
+          "snake_case"
+        },
+        u = {
+          "<Plug>CaserUpperCase",
+          "UPPER_CASE"
+        },
+        t = {
+          "<Plug>CaserTitleCase",
+          "Title Case"
+        },
+        s = {
+          "<Plug>CaserSentenceCase",
+          "Sentence case"
+        },
+        ["<space>"] = {
+          "<Plug>CaserSpaceCase",
+          "space case"
+        },
+        ["-"] = {
+          "<Plug>CaserKebabCase",
+          "kebab-case"
+        },
+        k = {
+          "<Plug>CaserTitleKebabCase",
+          "Title-Kebab-Case",
+        },
+        ["."] = {
+          "<Plug>CaserDotCase",
+          "dot.case"
+        }
+      },
       -- -- 上下移动选中文本
       -- ["<A-j>"] = { ":m .+1<CR>==", "" },
       -- ["<A-k>"] = { ":m .-2<CR>==", "" },
@@ -107,6 +149,48 @@ local keys = {
       -- $跳到行尾不带空格 (交换$ 和 g_)
       ["$"] = { "g_", "" },
       ["g_"] = { "$", "" },
+      ['gs'] = {
+        p = {
+          "<Plug>CaserVMixedCase",
+          "PascalCase"
+        },
+        c = {
+          "<Plug>CaserVCamelCase",
+          "camelCase"
+        },
+        ["_"] = {
+          "<Plug>CaserVSnakeCase",
+          "snake_case"
+        },
+        u = {
+          "<Plug>CaserVUpperCase",
+          "UPPER_CASE"
+        },
+        t = {
+          "<Plug>CaserVTitleCase",
+          "Title Case"
+        },
+        gss = {
+          "<Plug>CaserVSentenceCase",
+          "Sentence case"
+        },
+        ["<space>"] = {
+          "<Plug>CaserVSpaceCase",
+          "space case"
+        },
+        ["-"] = {
+          "<Plug>CaserVKebabCase",
+          "kebab-case"
+        },
+        k = {
+          "<Plug>CaserVTitleKebabCase",
+          "Title-Kebab-Case",
+        },
+        ["."] = {
+          "<Plug>CaserVDotCase",
+          "dot.case"
+        }
+      },
     }
   },
   {
