@@ -13,5 +13,4 @@ karabiner/*
 
 alacritty/alacritty.yml--
 yarn-error.log
-ranger/__pycache__/commands.cpython-39.pyc
-ranger/plugins/__pycache__/autojump.cpython-39.pyc
+__pycache__

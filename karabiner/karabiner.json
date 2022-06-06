@@ -25,7 +25,8 @@
                     "type": "frontmost_application_unless",
                     "bundle_identifiers": [
                       "^io\\.alacritty$",
-                      "^com\\.googlecode\\.iterm2$"
+                      "^com\\.googlecode\\.iterm2$",
+                      "^org\\.gnu\\.Emacs$"
                     ]
                   }
                 ],
@@ -56,7 +57,8 @@
                     "type": "frontmost_application_unless",
                     "bundle_identifiers": [
                       "^io\\.alacritty$",
-                      "^com\\.googlecode\\.iterm2$"
+                      "^com\\.googlecode\\.iterm2$",
+                      "^org\\.gnu\\.Emacs$"
                     ]
                   }
                 ],
@@ -92,7 +94,8 @@
                     "type": "frontmost_application_if",
                     "bundle_identifiers": [
                       "^io\\.alacritty$",
-                      "^com\\.googlecode\\.iterm2$"
+                      "^com\\.googlecode\\.iterm2$",
+                      "^org\\.gnu\\.Emacs$"
                     ]
                   }
                 ],
@@ -123,7 +126,8 @@
                     "type": "frontmost_application_if",
                     "bundle_identifiers": [
                       "^io\\.alacritty$",
-                      "^com\\.googlecode\\.iterm2$"
+                      "^com\\.googlecode\\.iterm2$",
+                      "^org\\.gnu\\.Emacs$"
                     ]
                   }
                 ],
@@ -159,7 +163,8 @@
                     "type": "frontmost_application_if",
                     "bundle_identifiers": [
                       "^io\\.alacritty$",
-                      "^com\\.googlecode\\.iterm2$"
+                      "^com\\.googlecode\\.iterm2$",
+                      "^org\\.gnu\\.Emacs$"
                     ]
                   }
                 ],
@@ -187,7 +192,8 @@
                     "type": "frontmost_application_if",
                     "bundle_identifiers": [
                       "^io\\.alacritty$",
-                      "^com\\.googlecode\\.iterm2$"
+                      "^com\\.googlecode\\.iterm2$",
+                      "^org\\.gnu\\.Emacs$"
                     ]
                   }
                 ],
@@ -220,7 +226,8 @@
                     "type": "frontmost_application_if",
                     "bundle_identifiers": [
                       "^io\\.alacritty$",
-                      "^com\\.googlecode\\.iterm2$"
+                      "^com\\.googlecode\\.iterm2$",
+                      "^org\\.gnu\\.Emacs$"
                     ]
                   }
                 ],
@@ -248,7 +255,8 @@
                     "type": "frontmost_application_if",
                     "bundle_identifiers": [
                       "^io\\.alacritty$",
-                      "^com\\.googlecode\\.iterm2$"
+                      "^com\\.googlecode\\.iterm2$",
+                      "^org\\.gnu\\.Emacs$"
                     ]
                   }
                 ],
@@ -281,7 +289,8 @@
                     "type": "frontmost_application_if",
                     "bundle_identifiers": [
                       "^io\\.alacritty$",
-                      "^com\\.googlecode\\.iterm2$"
+                      "^com\\.googlecode\\.iterm2$",
+                      "^org\\.gnu\\.Emacs$"
                     ]
                   }
                 ],
@@ -311,7 +320,8 @@
                     "type": "frontmost_application_if",
                     "bundle_identifiers": [
                       "^io\\.alacritty$",
-                      "^com\\.googlecode\\.iterm2$"
+                      "^com\\.googlecode\\.iterm2$",
+                      "^org\\.gnu\\.Emacs$"
                     ]
                   }
                 ],
@@ -346,7 +356,8 @@
                     "type": "frontmost_application_if",
                     "bundle_identifiers": [
                       "^io\\.alacritty$",
-                      "^com\\.googlecode\\.iterm2$"
+                      "^com\\.googlecode\\.iterm2$",
+                      "^org\\.gnu\\.Emacs$"
                     ]
                   }
                 ],
@@ -374,7 +385,8 @@
                     "type": "frontmost_application_if",
                     "bundle_identifiers": [
                       "^io\\.alacritty$",
-                      "^com\\.googlecode\\.iterm2$"
+                      "^com\\.googlecode\\.iterm2$",
+                      "^org\\.gnu\\.Emacs$"
                     ]
                   }
                 ],
