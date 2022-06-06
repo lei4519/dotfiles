@@ -2,7 +2,7 @@
 
 ```sh
 # 必须放在 ~/dotfiles，保证下面软连接的命令准确
-git clone --depth=1 git@github.com:lei4519/dotfiles.git ~/dotfiles
+git clone git@github.com:lei4519/dotfiles.git ~/dotfiles
 ```
 
 ## Install
@@ -22,7 +22,7 @@ ln -f -i -n -s ~/dotfiles/nvim ~/.config/nvim
 # 搜索替换 nvim-pack/nvim-spectre
 brew install gnu-sed
 # 输入法切换
-brew install im-select
+brew tap daipeihust/tap && brew install im-select
 ```
 
 ### Ranger
@@ -65,7 +65,7 @@ ln -f -i -n -s ~/dotfiles/.zshrc ~/.zshrc
 
 # 字体
 brew tap homebrew/cask-fonts
-brew install --cask font-fira-code-nred-font
+brew install --cask font-hack-nerd-font
 
 # 快速跳转
 brew install autojump
