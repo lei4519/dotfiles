@@ -13,9 +13,10 @@ function M.config()
   lvim.builtin.alpha.active = true
   lvim.builtin.alpha.mode = "dashboard"
   lvim.builtin.notify.active = true
-  lvim.builtin.nvimtree.setup.view.side = "left"
-  lvim.builtin.nvimtree.show_icons.git = 0
-  
+
+  -- lvim.builtin.nvimtree.setup.view.side = "left"
+  -- lvim.builtin.nvimtree.show_icons.git = 0
+
   lvim.builtin.terminal.active = true
   lvim.builtin.dap.active = true
 
@@ -34,6 +35,41 @@ function M.config()
   }
 
   -- treesitter
+  -- nvim-treesitter-textobjects
+  lvim.builtin.treesitter.textobjects = {
+    select = {
+      enable = true,
+      -- Automatically jump forward to textobj, similar to targets.vim
+      lookahead = true,
+      keymaps = {
+        -- You can use the capture groups defined in textobjects.scm
+        ["af"] = "@function.outer",
+        ["if"] = "@function.inner",
+        ["ac"] = "@class.outer",
+        ["ic"] = "@class.inner",
+      },
+    },
+    move = {
+      enable = true,
+      set_jumps = true, -- whether to set jumps in the jumplist
+      goto_next_start = {
+        ["]m"] = "@function.outer",
+        ["]]"] = "@class.outer",
+      },
+      goto_next_end = {
+        ["]M"] = "@function.outer",
+        ["]["] = "@class.outer",
+      },
+      goto_previous_start = {
+        ["[m"] = "@function.outer",
+        ["[["] = "@class.outer",
+      },
+      goto_previous_end = {
+        ["[M"] = "@function.outer",
+        ["[]"] = "@class.outer",
+      },
+    },
+  }
   lvim.builtin.treesitter.incremental_selection = {
     enable = true,
     keymaps = {
@@ -44,11 +80,24 @@ function M.config()
     },
   }
   lvim.builtin.treesitter.autotag.enable = true
-  -- nvim-ts-context-commentstring config Comment
-  lvim.builtin.treesitter.context_commentstring.autocmd = false
 
   -- 注释配置
   lvim.builtin.comment.mappings.extra = true
+  lvim.builtin.comment.pre_hook = function(ctx)
+    local U = require 'Comment.utils'
+
+    local location = nil
+    if ctx.ctype == U.ctype.block then
+      location = require('ts_context_commentstring.utils').get_cursor_location()
+    elseif ctx.cmotion == U.cmotion.v or ctx.cmotion == U.cmotion.V then
+      location = require('ts_context_commentstring.utils').get_visual_start_location()
+    end
+
+    return require('ts_context_commentstring.internal').calculate_commentstring {
+      key = ctx.ctype == U.ctype.line and '__default' or '__multiline',
+      location = location,
+    }
+  end
 
   -- rust 增强配置
   vim.list_extend(lvim.lsp.automatic_configuration.skipped_servers, { "rust_analyzer" })
@@ -98,17 +147,6 @@ function M.config()
   -- https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md#eslint
   -- autocmd BufWritePre *.tsx,*.ts,*.jsx,*.js EslintFixAll
   require("lvim.lsp.manager").setup("eslint", {})
-
-  -- Telescope 配置
-  lvim.builtin.telescope.on_config_done = function(telescope)
-    telescope.extensions["ui-select"] = {
-      require("telescope.themes").get_dropdown {
-        -- even more opts
-      }
-    }
-    telescope.load_extension("ui-select")
-    -- telescope.load_extension('live_grep_raw')
-  end
 end
 
 return M

@@ -265,18 +265,22 @@ function M.config()
     -- ["]q"] = ":cnext<CR>", QuickFix
     ['[g'] = { "<cmd>lua require 'gitsigns'.prev_hunk()<cr>", "Prev Hunk" },
     [']g'] = { "<cmd>lua require 'gitsigns'.next_hunk()<cr>", "Next Hunk" },
-    ["[d"] = { vim.diagnostic.goto_prev, "Prev Diagnostic" },
-    ["]d"] = { vim.diagnostic.goto_next, "Next Diagnostic" },
-    ["ga"] = { vim.lsp.buf.code_action, "Code Action" },
+    -- ["[d"] = { vim.diagnostic.goto_prev, "Prev Diagnostic" },
+    -- ["]d"] = { vim.diagnostic.goto_next, "Next Diagnostic" },
+    ["[d"] = { ":Lspsaga diagnostic_jump_prev<CR>", "Prev Diagnostic" },
+    ["]d"] = { ":Lspsaga diagnostic_jump_next<CR>", "Next Diagnostic" },
+    -- ["ga"] = { vim.lsp.buf.code_action, "Code Action" },
+    ["ga"] = { ":Lspsaga code_action<CR>", "Code Action" },
     ['ge'] = { ":EasyAlign<cr>", "Easy Align" },
-    ["gd"] = { vim.lsp.buf.definition, "Goto Definition" },
-    ["gD"] = { vim.lsp.buf.declaration, "Goto declaration" },
+    -- ["gd"] = { vim.lsp.buf.definition, "Goto Definition" },
+    ['gd'] = { ':Lspsaga lsp_finder<CR>', "Lspsage Finder" },
     ["gf"] = {
       name = "Format",
       ['f'] = { require("lvim.lsp.utils").format, "Lsp Format" },
       ['e'] = { ":EslintFixAll<cr>", "EslintFixAll" }
     },
-    ["gh"] = { vim.lsp.buf.hover, "Show Doc" },
+    -- ["gh"] = { vim.lsp.buf.hover, "Show Doc" },
+    ["gh"] = { ":Lspsaga hover_doc<CR>", "Show Doc" },
     ["gI"] = { vim.lsp.buf.implementation, "Goto Implementation" },
     ["gl"] = {
       function()
@@ -292,6 +296,10 @@ function M.config()
       d = {
         "<cmd>lua require('goto-preview').goto_preview_definition()<CR>",
         "Peek Definition",
+      },
+      D = {
+        ":Lspsaga preview_definition<CR>",
+        "Lspsaga Peek Definition",
       },
       i = {
         "<cmd>lua require('goto-preview').goto_preview_implementation()<CR>",
@@ -317,8 +325,10 @@ function M.config()
       "Close All Preview",
     },
     ['gq'] = { vim.diagnostic.setloclist, "Quickfix" },
-    ["gr"] = { vim.lsp.buf.rename, "Rename" },
-    ["gs"] = { vim.lsp.buf.signature_help, "show signature help" },
+    -- ["gr"] = { vim.lsp.buf.rename, "Rename" },
+    ["gr"] = { ":Lspsaga rename<CR>", "Rename" },
+    -- ["gs"] = { vim.lsp.buf.signature_help, "show signature help" },
+    ["gs"] = { ":Lspsaga signature_help<CR>", "show signature help" },
     ["gt"] = { vim.lsp.buf.type_definition, "Goto Type Definition" },
     ["gT"] = {
       name = "TSLsp",

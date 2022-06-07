@@ -204,6 +204,10 @@ function M.setup()
       "p00f/nvim-ts-rainbow",
       event = "BufRead",
     },
+    {
+      "JoosepAlviste/nvim-ts-context-commentstring",
+      event = "BufRead",
+    },
     -- function 悬浮提示
     {
       "romgrk/nvim-treesitter-context",
@@ -236,6 +240,52 @@ function M.setup()
         require "lsp_signature".setup()
       end
       -- config = function() require"lsp_signature".on_attach() end,
+    },
+    {
+      'glepnir/lspsaga.nvim',
+      event = "BufRead",
+      config = function()
+        local saga = require 'lspsaga'
+        saga.init_lsp_saga {
+        -- use_saga_diagnostic_sign = true
+        -- error_sign = '',
+        -- warn_sign = '',
+        -- hint_sign = '',
+        -- infor_sign = '',
+        -- diagnostic_header_icon = '   ',
+        -- code_action_icon = ' ',
+        -- code_action_prompt = {
+        --   enable = true,
+        --   sign = true,
+        --   sign_priority = 20,
+        --   virtual_text = true,
+        -- },
+        -- finder_definition_icon = '  ',
+        -- finder_reference_icon = '  ',
+        -- max_preview_lines = 10, -- preview lines of lsp_finder and definition preview
+        finder_action_keys = {
+          open = 'o', vsplit = 's',split = 'i',quit = 'q',scroll_down = '<C-d>', scroll_up = '<C-u>'
+        },
+        -- code_action_keys = {
+        --   quit = 'q',exec = '<CR>'
+        -- },
+        -- rename_action_keys = {
+        --   quit = '<C-c>',exec = '<CR>'  -- quit can be a table
+        -- },
+        -- definition_preview_icon = '  '
+        -- "single" "double" "round" "plus"
+        -- border_style = "single"
+        -- rename_prompt_prefix = '➤',
+        -- if you don't use nvim-lspconfig you must pass your server name and
+        -- the related filetypes into this table
+        -- like server_filetype_map = {metals = {'sbt', 'scala'}}
+        -- server_filetype_map = {}
+        }
+        vim.cmd([[
+nnoremap <silent> <C-d> <cmd>lua require('lspsaga.action').smart_scroll_with_saga(1)<CR>
+nnoremap <silent> <C-u> <cmd>lua require('lspsaga.action').smart_scroll_with_saga(-1)<CR>
+        ]])
+      end
     },
     -- 颜色高亮
     {
@@ -305,10 +355,6 @@ function M.setup()
       event = "BufRead",
       ft = 'qf'
     },
-    -- telescope ui 增强
-    {
-      'nvim-telescope/telescope-ui-select.nvim',
-    },
     -- lightspeed 光标快速跳转
     {
       "ggandor/lightspeed.nvim",
@@ -368,7 +414,10 @@ function M.setup()
     -- 增强%
     {
       'andymass/vim-matchup',
-      event = "BufRead",
+      event = "CursorMoved",
+      config = function()
+        vim.g.matchup_matchparen_offscreen = { method = "popup" }
+      end,
     },
     -- 对齐
     {
