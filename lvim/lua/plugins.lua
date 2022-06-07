@@ -236,6 +236,60 @@ function M.setup()
       -- config = function() require"lsp_signature".on_attach() end,
     },
     {
+      'ray-x/navigator.lua',
+      disable = true,
+      requires = {
+        { 'ray-x/guihua.lua', run = 'cd lua/fzy && make' },
+        { 'neovim/nvim-lspconfig' },
+      },
+      config = function()
+        require 'navigator'.setup(
+          {
+          keymaps = {
+            { key = 'gr', func = "require('navigator.reference').async_ref()" },
+            { key = 'gR', func = "require('navigator.reference').reference()" }, -- reference deprecated
+            { mode = 'i', key = '<M-k>', func = 'signature_help()' },
+            { key = '<c-k>', func = 'signature_help()' },
+            { key = 'g0', func = "require('navigator.symbols').document_symbols()" },
+            { key = 'gW', func = "require('navigator.workspace').workspace_symbol_live()" },
+            { key = '<c-]>', func = "require('navigator.definition').definition()" },
+            { key = 'gd', func = "require('navigator.definition').definition()" },
+            { key = 'gD', func = "declaration({ border = 'rounded', max_width = 80 })" },
+            { key = 'gp', func = "require('navigator.definition').definition_preview()" },
+            { key = 'gt', func = "require('navigator.treesitter').buf_ts()" },
+            { key = 'gT', func = "require('navigator.treesitter').bufs_ts()" },
+            { key = 'gh', func = 'hover({ popup_opts = { border = single, max_width = 80 }})' },
+            { key = 'ga', mode = 'n', func = "require('navigator.codeAction').code_action()" },
+            { key = 'ga', mode = 'v', func = 'range_code_action()' },
+            -- { key = '<Leader>re', func = 'rename()' },
+            { key = 'gn', func = "require('navigator.rename').rename()" },
+            { key = 'gI', func = 'incoming_calls()' },
+            { key = 'go', func = 'outgoing_calls()' },
+            { key = 'gi', func = 'implementation()' },
+            { key = '<Space>D', func = 'type_definition()' },
+            { key = 'gL', func = "require('navigator.diagnostics').show_diagnostics()" },
+            { key = 'gG', func = "require('navigator.diagnostics').show_buf_diagnostics()" },
+            -- { key = '<Leader>dt', func = "require('navigator.diagnostics').toggle_diagnostics()" },
+            { key = ']d', func = "diagnostic.goto_next({ border = 'rounded', max_width = 80})" },
+            { key = '[d', func = "diagnostic.goto_prev({ border = 'rounded', max_width = 80})" },
+            { key = ']O', func = 'diagnostic.set_loclist()' },
+            { key = ']r', func = "require('navigator.treesitter').goto_next_usage()" },
+            { key = '[r', func = "require('navigator.treesitter').goto_previous_usage()" },
+            { key = '<C-LeftMouse>', func = 'definition()' },
+            { key = 'g<LeftMouse>', func = 'implementation()' },
+            { key = '<Leader>k', func = "require('navigator.dochighlight').hi_symbol()" },
+            { key = '<Space>wa', func = "require('navigator.workspace').add_workspace_folder()" },
+            { key = '<Space>wr', func = "require('navigator.workspace').remove_workspace_folder()" },
+            { key = 'gfF', func = 'format({async = true})', mode = 'n' },
+            { key = 'gfF', func = 'range_formatting()', mode = 'v' },
+            { key = '<Space>wl', func = "require('navigator.workspace').list_workspace_folders()" },
+            { key = '<Space>la', mode = 'n', func = "require('navigator.codelens').run_action()" },
+          },
+        }
+        )
+      end
+    },
+    {
       'tami5/lspsaga.nvim',
       requires = "neovim/nvim-lspconfig",
       event = "BufRead",
