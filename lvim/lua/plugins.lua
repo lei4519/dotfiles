@@ -9,6 +9,8 @@ function M.setup()
   lvim.plugins = {
     -- 主题
     { "folke/tokyonight.nvim" },
+    -- 驼峰格式转换
+    { 'arthurxavierx/vim-caser' },
     -- 搜索替换
     {
       "windwp/nvim-spectre",
@@ -204,10 +206,6 @@ function M.setup()
       "p00f/nvim-ts-rainbow",
       event = "BufRead",
     },
-    {
-      "JoosepAlviste/nvim-ts-context-commentstring",
-      event = "BufRead",
-    },
     -- function 悬浮提示
     {
       "romgrk/nvim-treesitter-context",
@@ -245,8 +243,7 @@ function M.setup()
       'glepnir/lspsaga.nvim',
       event = "BufRead",
       config = function()
-        local saga = require 'lspsaga'
-        saga.init_lsp_saga {
+        require 'lspsaga'.setup {
         -- use_saga_diagnostic_sign = true
         -- error_sign = '',
         -- warn_sign = '',
@@ -264,7 +261,7 @@ function M.setup()
         -- finder_reference_icon = '  ',
         -- max_preview_lines = 10, -- preview lines of lsp_finder and definition preview
         finder_action_keys = {
-          open = 'o', vsplit = 's',split = 'i',quit = 'q',scroll_down = '<C-d>', scroll_up = '<C-u>'
+          open = '<CR>', vsplit = 's',split = 'i',quit = '<Esc>',scroll_down = '<C-d>', scroll_up = '<C-u>'
         },
         -- code_action_keys = {
         --   quit = 'q',exec = '<CR>'
