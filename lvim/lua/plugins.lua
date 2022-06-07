@@ -17,15 +17,6 @@ function M.setup()
         require("spectre").setup()
       end,
     },
-    -- comment snip
-    {
-      "danymat/neogen",
-      disable = true,
-      config = function()
-        require('neogen').setup({ snippet_engine = "luasnip" })
-      end,
-      requires = "nvim-treesitter/nvim-treesitter",
-    },
     -- ranger
     {
       "kevinhwang91/rnvimr",
@@ -93,9 +84,6 @@ function M.setup()
     {
       'mg979/vim-visual-multi',
       event = "BufRead",
-      -- config = function()
-      --   require("vim-multiple-cursors").setup()
-      -- end
     },
     -- 打开文件时回到之前编辑的地方
     {
@@ -108,11 +96,6 @@ function M.setup()
           lastplace_open_folds = true
         })
       end
-    },
-    {
-      "nvim-telescope/telescope-fzy-native.nvim",
-      run = "make",
-      event = "BufRead",
     },
     -- 注释增强
     {
@@ -207,10 +190,6 @@ function M.setup()
       "tpope/vim-surround",
       event = "BufRead",
       keys = { "c", "d", "y" }
-      -- make sure to change the value of `timeoutlen` if it's not triggering correctly, see https://github.com/tpope/vim-surround/issues/117
-      -- setup = function()
-      --  vim.o.timeoutlen = 500
-      -- end
     },
     -- 自动闭合标签
     {
@@ -325,12 +304,6 @@ function M.setup()
       'kevinhwang91/nvim-bqf',
       event = "BufRead",
       ft = 'qf'
-    },
-    -- 原始的 grep
-    {
-      disable = true,
-      event = "BufRead",
-      'nvim-telescope/telescope-live-grep-raw.nvim',
     },
     -- telescope ui 增强
     {

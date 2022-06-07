@@ -1,41 +1,39 @@
 local M = {}
 
 function M.config()
+  -- general
+  lvim.log.level = "warn"
+
+  -- 这样就可以使用自动保存了
+  lvim.format_on_save = false
+  lvim.colorscheme = "tokyonight"
+
+  lvim.leader = "space"
+
+  lvim.builtin.alpha.active = true
+  lvim.builtin.alpha.mode = "dashboard"
+  lvim.builtin.notify.active = true
+  lvim.builtin.nvimtree.setup.view.side = "left"
+  lvim.builtin.nvimtree.show_icons.git = 0
+  
+  lvim.builtin.terminal.active = true
   lvim.builtin.dap.active = true
 
-  -- rust 增强配置
-  vim.list_extend(lvim.lsp.automatic_configuration.skipped_servers, { "rust_analyzer" })
-
-  -- 相对行号
-  vim.opt.relativenumber = true -- set relative numbered lines
-
-  -- 命令行矮一点
-  vim.opt.cmdheight = 1
-
-  -- 光标移动到末尾时进入下一行
-  lvim.line_wrap_cursor_movement = true
-  -- 透明窗口
-  lvim.transparent_window = true
-
-  -- 折叠
-  vim.opt.foldmethod = "indent" -- folding set to "expr" for treesitter based folding
-  -- vim.opt.foldexpr = "nvim_treesitter#foldexpr()" -- set to "nvim_treesitter#foldexpr()" for treesitter based folding
-  -- 默认不要折叠
-  -- https://stackoverflow.com/questions/8316139/how-to-set-the-default-to-unfolded-when-you-open-a-file
-  vim.opt.foldlevel = 99
-
-  -- lsp peek 窗口
-  -- lvim.lsp.peek = {
-  --   max_height = 300,
-  --   max_width = 500,
-  --   context = 10,
-  -- }
-
-  -- lualine 文件名显示路径
-  require("lvim.core.lualine.components").filename.path = 1
+  lvim.builtin.treesitter.highlight.enabled = true
+  lvim.builtin.treesitter.ensure_installed = {
+    "bash",
+    "javascript",
+    "json",
+    "lua",
+    "typescript",
+    "tsx",
+    "css",
+    "rust",
+    "yaml",
+    "svelte"
+  }
 
   -- treesitter
-  -- lvim.builtin.treesitter.autotag.enable = true
   lvim.builtin.treesitter.incremental_selection = {
     enable = true,
     keymaps = {
@@ -51,21 +49,31 @@ function M.config()
 
   -- 注释配置
   lvim.builtin.comment.mappings.extra = true
-  -- lvim.builtin.comment.pre_hook = function(ctx)
-  --   local U = require 'Comment.utils'
 
-  --   local location = nil
-  --   if ctx.ctype == U.ctype.block then
-  --     location = require('ts_context_commentstring.utils').get_cursor_location()
-  --   elseif ctx.cmotion == U.cmotion.v or ctx.cmotion == U.cmotion.V then
-  --     location = require('ts_context_commentstring.utils').get_visual_start_location()
-  --   end
+  -- rust 增强配置
+  vim.list_extend(lvim.lsp.automatic_configuration.skipped_servers, { "rust_analyzer" })
 
-  --   return require('ts_context_commentstring.internal').calculate_commentstring {
-  --     key = ctx.ctype == U.ctype.line and '__default' or '__multiline',
-  --     location = location,
-  --   }
-  -- end
+  -- 相对行号
+  vim.opt.relativenumber = true -- set relative numbered lines
+
+  -- 命令行矮一点
+  vim.opt.cmdheight = 1
+
+  -- 光标移动到末尾时进入下一行
+  lvim.line_wrap_cursor_movement = true
+
+  -- 透明窗口
+  lvim.transparent_window = true
+
+  -- 折叠
+  vim.opt.foldmethod = "indent" -- folding set to "expr" for treesitter based folding
+  -- vim.opt.foldexpr = "nvim_treesitter#foldexpr()" -- set to "nvim_treesitter#foldexpr()" for treesitter based folding
+  -- 默认不要折叠
+  -- https://stackoverflow.com/questions/8316139/how-to-set-the-default-to-unfolded-when-you-open-a-file
+  vim.opt.foldlevel = 99
+
+  -- lualine 文件名显示路径
+  require("lvim.core.lualine.components").filename.path = 1
 
   -- Dashboard
   lvim.builtin.alpha.dashboard.section.buttons = {
