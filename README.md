@@ -165,35 +165,3 @@ brew install --cask alfred
 brew install alt-tab
 ```
 
-## emcas
-
-```sh
-brew tap railwaycat/emacsmacport
-brew install emacs-mac --with-modules
-ln -s /usr/local/opt/emacs-mac/Emacs.app /Applications/Emacs.app
-brew install fd ripgrep coreutils
-```
-
-### [doom emacs](https://github.com/doomemacs/doomemacs#install)
-
-```sh
-git clone --depth 1 https://github.com/doomemacs/doomemacs ~/dotfiles/.emacs.d
-ln -f -i -n -s ~/dotfiles/.emacs.d ~/.emacs.d
-~/.emacs.d/bin/doom install
-```
-
-```sh
-But before you doom yourself, here are some things you should know:
-
-1. Don't forget to run 'doom sync', then restart Emacs, after modifyin ~/.doom.d/init.el or ~/.doom.d/packages.el.
-
-    This command ensures needed packages are installed, orphaned packages are removed, and your autoloads/cache files are up to date. When in doubt, run 'doom sync'!
-
-2. If something goes wrong, run `doom doctor`. It diagnoses common issues with your environment and setup, and may offer clues about what is wrong.
-
-3. Use 'doom upgrade' to update Doom. Doing it any other way will require additional steps. Run 'doom help upgrade' to understand those extra steps.
-
-4. Access Doom's documentation from within Emacs via 'SPC h d h' or 'C-h d h' (or 'M-x doom/help')
-
-Have fun!
-```

@@ -28,6 +28,11 @@
   "rust-analyzer.completion.autoimport.enable": true,
   "rust-analyzer.lens.enable": true,
 
+  "typescript.referencesCodeLens.enable": false,
+  "javascript.referencesCodeLens.enable": false,
+  "typescript.implementationsCodeLens.enable": false,
+  "javascript.implementationsCodeLens.enable": false,
+
   "project.rootPatterns": [".git"],
 
   "cSpell.enabled": false,
