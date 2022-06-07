@@ -1,10 +1,6 @@
 local M = {}
 
 function M.setup()
-  -- project
-  -- https://github.com/ahmedkhalf/project.nvim
-  -- use {"kevinhwang91/rnvimr", config = config}
-
   -- Additional Plugins
   lvim.plugins = {
     -- 主题
@@ -240,48 +236,51 @@ function M.setup()
       -- config = function() require"lsp_signature".on_attach() end,
     },
     {
-      'glepnir/lspsaga.nvim',
+      'tami5/lspsaga.nvim',
+      requires = "neovim/nvim-lspconfig",
       event = "BufRead",
       config = function()
         require 'lspsaga'.setup {
-        -- use_saga_diagnostic_sign = true
-        -- error_sign = '',
-        -- warn_sign = '',
-        -- hint_sign = '',
-        -- infor_sign = '',
-        -- diagnostic_header_icon = '   ',
-        -- code_action_icon = ' ',
-        -- code_action_prompt = {
-        --   enable = true,
-        --   sign = true,
-        --   sign_priority = 20,
-        --   virtual_text = true,
-        -- },
-        -- finder_definition_icon = '  ',
-        -- finder_reference_icon = '  ',
-        -- max_preview_lines = 10, -- preview lines of lsp_finder and definition preview
-        finder_action_keys = {
-          open = '<CR>', vsplit = 's',split = 'i',quit = '<Esc>',scroll_down = '<C-d>', scroll_up = '<C-u>'
-        },
-        -- code_action_keys = {
-        --   quit = 'q',exec = '<CR>'
-        -- },
-        -- rename_action_keys = {
-        --   quit = '<C-c>',exec = '<CR>'  -- quit can be a table
-        -- },
-        -- definition_preview_icon = '  '
-        -- "single" "double" "round" "plus"
-        -- border_style = "single"
-        -- rename_prompt_prefix = '➤',
-        -- if you don't use nvim-lspconfig you must pass your server name and
-        -- the related filetypes into this table
-        -- like server_filetype_map = {metals = {'sbt', 'scala'}}
-        -- server_filetype_map = {}
+          -- use_saga_diagnostic_sign = true
+          -- error_sign = '',
+          -- warn_sign = '',
+          -- hint_sign = '',
+          -- infor_sign = '',
+          -- diagnostic_header_icon = '   ',
+          -- code_action_icon = ' ',
+          -- code_action_prompt = {
+          --   enable = true,
+          --   sign = true,
+          --   sign_priority = 20,
+          --   virtual_text = true,
+          -- },
+          -- finder_definition_icon = '  ',
+          -- finder_reference_icon = '  ',
+          -- max_preview_lines = 10, -- preview lines of lsp_finder and definition preview
+          finder_action_keys = {
+            open = '<CR>', vsplit = 's', split = 'i', quit = '<Esc>', scroll_down = '<C-d>', scroll_up = '<C-u>'
+          },
+          code_action_keys = {
+            quit = '<Esc>', exec = '<CR>'
+          },
+          rename_action_keys = {
+            quit = '<C-c>', exec = '<CR>' -- quit can be a table
+          },
+          -- definition_preview_icon = '  '
+          -- "single" "double" "round" "plus"
+          -- border_style = "single"
+          -- rename_prompt_prefix = '➤',
+          -- if you don't use nvim-lspconfig you must pass your server name and
+          -- the related filetypes into this table
+          -- like server_filetype_map = {metals = {'sbt', 'scala'}}
+          -- server_filetype_map = {}
         }
-        vim.cmd([[
-nnoremap <silent> <C-d> <cmd>lua require('lspsaga.action').smart_scroll_with_saga(1)<CR>
-nnoremap <silent> <C-u> <cmd>lua require('lspsaga.action').smart_scroll_with_saga(-1)<CR>
-        ]])
+        lvim.lsp.on_attach_callback = function(_, bufnr)
+          local map = vim.api.nvim_buf_set_keymap
+          -- lspsaga 弹窗滚动
+          map(bufnr, "n", "<C-u>", "<cmd>lua require('lspsaga.action').smart_scroll_with_saga(-1, '<c-u>')<cr>", {})
+          map(bufnr, "n", "<C-d>", "<cmd>lua require('lspsaga.action').smart_scroll_with_saga(1, '<c-d>')<cr>", {})
+        end
       end
     },
     -- 颜色高亮
