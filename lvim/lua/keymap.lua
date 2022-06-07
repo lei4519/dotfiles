@@ -258,7 +258,49 @@ function M.config()
 
 
   lvim.lsp.buffer_mappings.visual_mode = {
-    ['ge'] = { ":EasyAlign<cr>", "Easy Align" }
+    ['ge'] = { ":EasyAlign<cr>", "Easy Align" },
+    ['gs'] = {
+      p = {
+        "<Plug>CaserVMixedCase",
+        "PascalCase"
+      },
+      c = {
+        "<Plug>CaserVCamelCase",
+        "camelCase"
+      },
+      ["_"] = {
+        "<Plug>CaserVSnakeCase",
+        "snake_case"
+      },
+      u = {
+        "<Plug>CaserVUpperCase",
+        "UPPER_CASE"
+      },
+      t = {
+        "<Plug>CaserVTitleCase",
+        "Title Case"
+      },
+      gss = {
+        "<Plug>CaserVSentenceCase",
+        "Sentence case"
+      },
+      ["<space>"] = {
+        "<Plug>CaserVSpaceCase",
+        "space case"
+      },
+      ["-"] = {
+        "<Plug>CaserVKebabCase",
+        "kebab-case"
+      },
+      k = {
+        "<Plug>CaserVTitleKebabCase",
+        "Title-Kebab-Case",
+      },
+      ["."] = {
+        "<Plug>CaserVDotCase",
+        "dot.case"
+      }
+    },
   }
   lvim.lsp.buffer_mappings.normal_mode = {
     -- ["[q"] = ":cprev<CR>", QuickFix
@@ -328,7 +370,49 @@ function M.config()
     -- ["gr"] = { vim.lsp.buf.rename, "Rename" },
     ["gr"] = { ":Lspsaga rename<CR>", "Rename" },
     -- ["gs"] = { vim.lsp.buf.signature_help, "show signature help" },
-    ["gs"] = { ":Lspsaga signature_help<CR>", "show signature help" },
+    -- ["gs"] = { ":Lspsaga signature_help<CR>", "show signature help" },
+    ['gs'] = {
+      p = {
+        "<Plug>CaserMixedCase",
+        "PascalCase"
+      },
+      c = {
+        "<Plug>CaserCamelCase",
+        "camelCase"
+      },
+      ["_"] = {
+        "<Plug>CaserSnakeCase",
+        "snake_case"
+      },
+      u = {
+        "<Plug>CaserUpperCase",
+        "UPPER_CASE"
+      },
+      t = {
+        "<Plug>CaserTitleCase",
+        "Title Case"
+      },
+      s = {
+        "<Plug>CaserSentenceCase",
+        "Sentence case"
+      },
+      ["<space>"] = {
+        "<Plug>CaserSpaceCase",
+        "space case"
+      },
+      ["-"] = {
+        "<Plug>CaserKebabCase",
+        "kebab-case"
+      },
+      k = {
+        "<Plug>CaserTitleKebabCase",
+        "Title-Kebab-Case",
+      },
+      ["."] = {
+        "<Plug>CaserDotCase",
+        "dot.case"
+      }
+    },
     ["gt"] = { vim.lsp.buf.type_definition, "Goto Type Definition" },
     ["gT"] = {
       name = "TSLsp",
