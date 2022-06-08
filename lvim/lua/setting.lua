@@ -5,7 +5,7 @@ function M.config()
   lvim.log.level = "warn"
 
   -- 这样就可以使用自动保存了
-  lvim.format_on_save = false
+  -- lvim.format_on_save = false
   lvim.colorscheme = "tokyonight"
 
   lvim.leader = "space"
@@ -130,8 +130,8 @@ function M.config()
 
   -- eslint 语言服务
   -- https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md#eslint
-  -- autocmd BufWritePre *.tsx,*.ts,*.jsx,*.js EslintFixAll
   require("lvim.lsp.manager").setup("eslint", {})
+  require("autocmds").autocmd("BufWritePre", {"*.tsx", "*.ts", "*.jsx", "*.js" }, ":EslintFixAll")
 end
 
 return M

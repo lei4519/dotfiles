@@ -5,7 +5,8 @@ function M.config()
   -- lvim.keys.normal_mode['zc'] = ":foldclose<CR>"
   -- lvim.keys.normal_mode['zo'] = ":foldopen<CR>"
   lvim.keys.visual_mode = {
-    ['p'] = '"_dP'
+    ['p'] = '"_dP',
+    -- ['d'] = '"_d'
   }
 
   lvim.keys.normal_mode = {
@@ -162,8 +163,8 @@ function M.config()
   vim.cmd('autocmd! TermOpen term://* lua set_terminal_mode_tt_keymap()')
 
   -- 翻译
-  vim.api.nvim_set_keymap('v', '<C-t>', ':Translate<CR>', { noremap = true, silent = true })
-  vim.api.nvim_set_keymap('n', '<C-t>', ':Translate<CR>', { noremap = true, silent = true })
+  vim.api.nvim_set_keymap('v', '<C-t>', ':TranslateW<CR>', { noremap = true, silent = true })
+  vim.api.nvim_set_keymap('n', '<C-t>', ':TranslateW<CR>', { noremap = true, silent = true })
 
   -- 窗口管理
   lvim.builtin.which_key.mappings['w'] = {
@@ -179,14 +180,20 @@ function M.config()
     l = { "<cmd>lua vim.lsp.buf.list_workspace_folders()<CR>", "List Workspace Folder" }
   }
 
+  -- 搜索替换
+  lvim.builtin.which_key.vmappings["f"] = {
+    name = "Telescope",
+    s = {
+      name = "Search And Replace",
+      o = { "<cmd>lua require('spectre').open_visual()<cr>", "Search Selected" }
+    }
+  }
   -- 搜索
   lvim.builtin.which_key.mappings["f"] = {
     name = "Telescope",
-    -- f = { "<cmd>telescope find_files<cr>", "find_files" },
     -- lunarvim 的配置，在 git repo 中使用 git_files，否则使用 fine_files
     a = { "<cmd>Telescope<cr>", "Telescope" },
-    -- bufferline 已经够用了
-    -- b = { "<cmd>Telescope buffers<cr>", "Buffers" },
+    b = { "<cmd>Telescope buffers<cr>", "Buffers" },
     c = { "<cmd>Telescope commands<cr>", "Commands" },
     d = {
       name = "Diagnostics",
@@ -195,19 +202,25 @@ function M.config()
     },
     -- 搜索文件: file or git file
     f = lvim.builtin.which_key.mappings["f"],
+    -- f = { "<cmd>telescope find_files<cr>", "find_files" },
     F = { "<cmd>Telescope current_buffer_fuzzy_find<cr>", "Fuzzy Find" },
-    -- g = { ":lua require('telescope').extensions.live_grep_raw.live_grep_raw()<cr>", "Live Grep Raw" },
     g = { "<cmd>Telescope live_grep<cr>", "live_grep" },
     k = { "<cmd>Telescope keymaps<cr>", "Keymaps" },
     m = { "<cmd>Telescope marks<cr>", "Marks" },
     o = { "<cmd>Telescope oldfiles<cr>", "Oldfiles" },
     p = { "<cmd>Telescope projects<cr>", "Projects" },
     q = { "<cmd>Telescope quickfix<cr>", "Quickfix" },
-    s = { "<cmd>Telescope lsp_document_symbols<cr>", "Document Symbols" },
-    S = {
-      "<cmd>Telescope lsp_dynamic_workspace_symbols<cr>",
-      "Workspace Symbols",
+    s = {
+      name = "Search And Replace",
+      o = { "<cmd>lua require('spectre').open()<cr>", "Open Search Panel" },
+      w = { "<cmd>lua require('spectre').open_visual({select_word=true})<cr>", "Search Current Word" },
+      c = { "<cmd>lua require('spectre').open_file_search()<cr>", "Search Current File" },
     },
+    -- s = { "<cmd>Telescope lsp_document_symbols<cr>", "Document Symbols" },
+    -- S = {
+    --   "<cmd>Telescope lsp_dynamic_workspace_symbols<cr>",
+    --   "Workspace Symbols",
+    -- },
     t = { "<cmd>TodoTelescope<cr>", "Todo" },
   }
 
@@ -216,17 +229,8 @@ function M.config()
     "<cmd>RnvimrToggle<CR>", "ranger"
   }
 
-  -- 搜索替换
-  lvim.builtin.which_key.vmappings["s"] = {
-    name = "Search And Replace",
-    o = { "<cmd>lua require('spectre').open_visual()<cr>", "Search Selected" }
-  }
-  lvim.builtin.which_key.mappings["s"] = {
-    name = "Search And Replace",
-    o = { "<cmd>lua require('spectre').open()<cr>", "Open Search Panel" },
-    w = { "<cmd>lua require('spectre').open_visual({select_word=true})<cr>", "Search Current Word" },
-    c = { "<cmd>lua require('spectre').open_file_search()<cr>", "Search Current File" },
-  }
+  -- 保存
+  lvim.builtin.which_key.mappings["s"] = { "<cmd>w!<CR>", "Save" }
 
   -- session 管理
   lvim.builtin.which_key.mappings["S"] = {
@@ -314,13 +318,13 @@ function M.config()
     -- ["ga"] = { vim.lsp.buf.code_action, "Code Action" },
     ["ga"] = { ":Lspsaga code_action<CR>", "Code Action" },
     ['ge'] = { ":EasyAlign<cr>", "Easy Align" },
-    -- ["gd"] = { vim.lsp.buf.definition, "Goto Definition" },
-    ['gd'] = { ':Lspsaga lsp_finder<CR>', "Lspsage Finder" },
-    ["gf"] = {
-      name = "Format",
-      ['f'] = { require("lvim.lsp.utils").format, "Lsp Format" },
-      ['e'] = { ":EslintFixAll<cr>", "EslintFixAll" }
-    },
+    ["gd"] = { vim.lsp.buf.definition, "Goto Definition" },
+    ['gf'] = { ':Lspsaga lsp_finder<CR>', "Lspsage Finder" },
+    -- ["gf"] = {
+    --   name = "Format",
+    --   ['f'] = { require("lvim.lsp.utils").format, "Lsp Format" },
+    --   ['e'] = { ":EslintFixAll<cr>", "EslintFixAll" }
+    -- },
     -- ["gh"] = { vim.lsp.buf.hover, "Show Doc" },
     ["gh"] = { ":Lspsaga hover_doc<CR>", "Show Doc" },
     ["gI"] = { vim.lsp.buf.implementation, "Goto Implementation" },

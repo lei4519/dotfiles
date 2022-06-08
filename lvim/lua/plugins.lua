@@ -28,6 +28,7 @@ function M.setup()
     -- 自动保存
     {
       "Pocco81/AutoSave.nvim",
+      disable = true,
       event = "BufRead",
       config = function()
         require("autosave").setup()
