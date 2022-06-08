@@ -53,7 +53,7 @@ function M.config()
   }
 
   -- 保存全部
-  -- lvim.builtin.which_key.mappings['s'] = { "<cmd>wa!<CR>", "Save All" }
+  lvim.builtin.which_key.mappings['s'] = { "<cmd>wa!<CR>", "Save All" }
 
   -- Debug
   lvim.builtin.which_key.mappings["d"] = {
@@ -228,9 +228,6 @@ function M.config()
   lvim.builtin.which_key.mappings["r"] = {
     "<cmd>RnvimrToggle<CR>", "ranger"
   }
-
-  -- 保存
-  lvim.builtin.which_key.mappings["s"] = { "<cmd>w!<CR>", "Save" }
 
   -- session 管理
   lvim.builtin.which_key.mappings["S"] = {
