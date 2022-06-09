@@ -53,6 +53,7 @@ brew install lazygit
 # git pager styles, lazygit need
 brew install git-delta
 ln -f -i -n -s ~/dotfiles/.gitconfig ~/.gitconfig
+ln -f -i -n -s ~/dotfiles/.gitignore ~/.gitignore
 ln -f -i -n -s ~/dotfiles/lazygit.yml ~/Library/Application\ Support/lazygit/config.yml
 # ln -f -i -n -s <local path> /usr/local/bin/lazygit
 ```
@@ -165,6 +166,15 @@ brew install --cask alfred
 brew install alt-tab
 ```
 
+### Eslint
+
+配置一个全局的 eslint，对所有的 ts(x) js(x) 文件都可以生效 
+
+```sh
+npm i -g eslint @typescript-eslint/eslint-plugin @typescript-eslint/parser eslint-plugin-prettier eslint-config-standard eslint-config-prettier
+ln -f -i -n -s ~/dotfiles/.eslintrc.js ~/.eslintrc.js
+```
+
 ## vim 宏
 
 ```sh
@@ -182,3 +192,4 @@ brew install alt-tab
 
 # 此时可以输入:reg a 发现宏的内容已经被修改了
 ```
+
