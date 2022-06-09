@@ -4,8 +4,6 @@ function M.config()
   -- general
   lvim.log.level = "warn"
 
-  -- 这样就可以使用自动保存了
-  -- lvim.format_on_save = false
   lvim.colorscheme = "tokyonight"
 
   lvim.leader = "space"
@@ -130,8 +128,10 @@ function M.config()
 
   -- eslint 语言服务
   -- https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md#eslint
+  vim.api.nvim_command("autocmd BufEnter *.tsx,*.ts,*.jsx,*.js lua require('lvim.core.autocmds').disable_format_on_save()")
+  vim.api.nvim_command("autocmd BufLeave *.tsx,*.ts,*.jsx,*.js lua require('lvim.core.autocmds').enable_format_on_save()")
+  vim.api.nvim_command("autocmd BufWritePre *.tsx,*.ts,*.jsx,*.js EslintFixAll")
   require("lvim.lsp.manager").setup("eslint", {})
-  require("autocmds").autocmd("BufWritePre", {"*.tsx", "*.ts", "*.jsx", "*.js" }, ":EslintFixAll")
 end
 
 return M
