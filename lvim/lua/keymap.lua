@@ -325,7 +325,7 @@ function M.config()
     -- ["gh"] = { vim.lsp.buf.hover, "Show Doc" },
     ["gh"] = { ":Lspsaga hover_doc<CR>", "Show Doc" },
     ["gI"] = { vim.lsp.buf.implementation, "Goto Implementation" },
-    ["gl"] = {
+    ["gL"] = {
       function()
         local config = lvim.lsp.diagnostics.float
         config.scope = "line"
@@ -333,7 +333,7 @@ function M.config()
       end,
       "Show line diagnostics",
     },
-    ['gL'] = { vim.lsp.codelens.run, "CodeLens Action" },
+    ['gl'] = { vim.lsp.codelens.run, "CodeLens Action" },
     ['gp'] = {
       name = "Preview",
       d = {
