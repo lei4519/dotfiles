@@ -6,7 +6,13 @@ function M.config()
 
   local formatters = require "lvim.lsp.null-ls.formatters"
   formatters.setup {
-    { name = "prettier" },
+    {
+      name = "prettier",
+      -- "typescriptreact" ,"typescript" , "javascript" , "javascriptreact" use eslint
+      filetypes = {
+        "scss", "css", "json", "handlebars", "yaml", "graphql", "html", "markdown", "jsonc", "vue", "less"
+      }
+    },
     {
       name = "rustfmt",
       -- extra_args

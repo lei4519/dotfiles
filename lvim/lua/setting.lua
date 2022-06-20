@@ -128,8 +128,8 @@ function M.config()
 
   -- eslint 语言服务
   -- https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md#eslint
-  vim.api.nvim_command("autocmd BufEnter *.tsx,*.ts,*.jsx,*.js lua require('lvim.core.autocmds').disable_format_on_save()")
-  vim.api.nvim_command("autocmd BufLeave *.tsx,*.ts,*.jsx,*.js lua require('lvim.core.autocmds').enable_format_on_save()")
+  -- vim.api.nvim_command("autocmd BufEnter *.tsx,*.ts,*.jsx,*.js lua require('lvim.core.autocmds').disable_format_on_save()")
+  -- vim.api.nvim_command("autocmd BufLeave *.tsx,*.ts,*.jsx,*.js lua require('lvim.core.autocmds').enable_format_on_save()")
   vim.api.nvim_command("autocmd BufWritePre *.tsx,*.ts,*.jsx,*.js EslintFixAll")
   require("lvim.lsp.manager").setup("eslint", {})
 end
