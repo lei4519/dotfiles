@@ -3,21 +3,21 @@
   email = lei4519@126.com
 
 [core]
-    pager = delta
-	hooksPath = /Users/lay/.inspect-commits/hooks
+  pager = delta
+  hooksPath = /Users/lay/.inspect-commits/hooks
 
 [interactive]
-    diffFilter = delta --color-only
+  diffFilter = delta --color-only
 
 [delta]
-    navigate = true  # use n and N to move between diff sections
-    ; side-by-side = true
+  navigate = true  # use n and N to move between diff sections
+  ; side-by-side = true
 
 [merge]
-    conflictstyle = diff3
+  conflictstyle = diff3
 
 [diff]
-    colorMoved = default
+  colorMoved = default
 
 [pull]
-	rebase = true
+  rebase = true
