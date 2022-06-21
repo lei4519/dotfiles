@@ -132,6 +132,24 @@ function M.config()
   -- vim.api.nvim_command("autocmd BufLeave *.tsx,*.ts,*.jsx,*.js lua require('lvim.core.autocmds').enable_format_on_save()")
   vim.api.nvim_command("autocmd BufWritePre *.tsx,*.ts,*.jsx,*.js EslintFixAll")
   require("lvim.lsp.manager").setup("eslint", {})
+
+  lvim.lsp.on_attach_callback = function(client, bufnr)
+    if client.name == 'tsserver' then
+      -- 禁用格式化功能，交给专门插件插件处理
+      local ts_utils = require("nvim-lsp-ts-utils")
+      -- defaults
+      ts_utils.setup {}
+
+      -- required to fix code action ranges and filter diagnostics
+      ts_utils.setup_client(client)
+    end
+
+    local map = vim.api.nvim_buf_set_keymap
+    -- lspsaga 弹窗滚动
+    map(bufnr, "n", "<C-u>", "<cmd>lua require('lspsaga.action').smart_scroll_with_saga(-1, '<c-u>')<cr>", {})
+    map(bufnr, "n", "<C-d>", "<cmd>lua require('lspsaga.action').smart_scroll_with_saga(1, '<c-d>')<cr>", {})
+
+  end
 end
 
 return M

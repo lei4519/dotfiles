@@ -239,26 +239,6 @@ function M.config()
   }
 
   -- Lsp 快捷键
-  lvim.lsp.on_attach_callback = function(client, bufnr)
-    if client.name == 'tsserver' then
-      -- 禁用格式化功能，交给专门插件插件处理
-      local ts_utils = require("nvim-lsp-ts-utils")
-      -- defaults
-      ts_utils.setup({
-        enable_import_on_completion = true,
-        always_organize_imports = true,
-        -- filter_out_diagnostics_by_code = {},
-        -- update_imports_on_move = true,
-        -- require_confirmation_on_move = true,
-        -- watch_dir = nil,
-      })
-
-      -- required to fix code action ranges and filter diagnostics
-      ts_utils.setup_client(client)
-    end
-  end
-
-
   lvim.lsp.buffer_mappings.visual_mode = {
     ['ge'] = { ":EasyAlign<cr>", "Easy Align" },
     ['gs'] = {
