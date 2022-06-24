@@ -1079,7 +1079,7 @@
                   }
                 ],
                 "from": {
-                  "key_code": "right_shift"
+                  "key_code": "right_alt"
                 },
                 "parameters": {
                   "basic.to_if_alone_threshold_milliseconds": 0,
@@ -1171,7 +1171,7 @@
                   }
                 ],
                 "from": {
-                  "key_code": "right_shift"
+                  "key_code": "right_alt"
                 },
                 "to": [
                   {
@@ -2106,7 +2106,7 @@
                   }
                 ],
                 "from": {
-                  "key_code": "right_shift",
+                  "key_code": "right_alt",
                   "modifiers": {
                     "optional": [
                       "any"
@@ -2115,7 +2115,7 @@
                 },
                 "to": [
                   {
-                    "key_code": "right_shift"
+                    "key_code": "right_alt"
                   }
                 ],
                 "type": "basic"
@@ -5330,7 +5330,7 @@
                   }
                 ],
                 "from": {
-                  "key_code": "right_shift",
+                  "key_code": "right_alt",
                   "modifiers": {
                     "optional": [
                       "any"
@@ -5339,7 +5339,7 @@
                 },
                 "to": [
                   {
-                    "key_code": "right_shift"
+                    "key_code": "right_alt"
                   }
                 ],
                 "type": "basic"

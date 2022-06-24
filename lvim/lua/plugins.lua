@@ -7,6 +7,8 @@ function M.setup()
     { "folke/tokyonight.nvim" },
     -- 驼峰格式转换
     { 'arthurxavierx/vim-caser' },
+    -- 增强文本对象
+    { 'wellle/targets.vim' },
     -- 搜索替换
     {
       "windwp/nvim-spectre",
