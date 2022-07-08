@@ -23,6 +23,8 @@ ln -f -i -n -s ~/dotfiles/nvim ~/.config/nvim
 brew install gnu-sed
 # 输入法切换
 brew tap daipeihust/tap && brew install im-select
+# tsserver
+npm install -g typescript typescript-language-server
 ```
 
 ### Ranger
