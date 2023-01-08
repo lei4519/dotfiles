@@ -43,7 +43,12 @@ function M.codeaction()
                   return
                 end
 
-                vim.notify('fetch ts type')
+                local insertIdx = comment_end + 1
+
+                for item in require("io").popen("node $(echo $HOME)/dotfiles/lvim/lua/--fetchType.js"):lines() do
+                  vim.api.nvim_buf_set_lines(context.bufnr, insertIdx, insertIdx, false, { item })
+                  insertIdx = insertIdx + 1
+                end
               end
             }
           }

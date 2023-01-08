@@ -39,5 +39,10 @@ alias ssh-connect="ssh root@43.138.102.54"
 eval "$(starship init zsh)"
 source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 
+# pnpm
+export PNPM_HOME="/Users/lay/Library/pnpm"
+export PATH="$PNPM_HOME:$PATH"
+# pnpm end
+
 # Fig post block. Keep at the bottom of this file.
 [[ -f "$HOME/.fig/shell/zshrc.post.zsh" ]] && builtin source "$HOME/.fig/shell/zshrc.post.zsh"
