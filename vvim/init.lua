@@ -91,6 +91,8 @@ vim.opt.signcolumn = "yes" -- always show the sign column otherwise it would shi
 vim.opt.spell = false
 vim.opt.spelllang = "en"
 
+vim.keymap.set('', 's', '<Plug>(easymotion-prefix)')
+
 local plugins = {
   { "wbthomason/packer.nvim" },
   -- 驼峰格式转换 https://github.com/arthurxavierx/vim-caser
@@ -107,7 +109,7 @@ local plugins = {
   { "tpope/vim-repeat" },
   -- lightspeed 光标快速跳转
   {
-    "ggandor/lightspeed.nvim",
+    "asvetliakov/vim-easymotion",
     event = "BufRead",
   },
 }
