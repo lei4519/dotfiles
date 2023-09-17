@@ -5,62 +5,14 @@
 git clone git@github.com:lei4519/dotfiles.git ~/dotfiles
 ```
 
-## Install
-
-### 按键映射
+## 按键映射
 
 ```sh
 brew install --cask karabiner-elements
 ln -f -n -s ~/dotfiles/karabiner ~/.config/karabiner
 ```
 
-### Neovim
-
-```sh
-brew install neovim
-ln -f -n -s ~/dotfiles/native-nvim ~/.config/nvim
-# 搜索替换 nvim-pack/nvim-spectre
-brew install gnu-sed
-# 输入法切换
-brew tap daipeihust/tap && brew install im-select
-# tsserver
-npm install -g typescript typescript-language-server
-```
-
-### Ranger
-
-```sh
-pip3 install ranger-fm pynvim
-# preview json
-brew install jq
-# ranger code highlight
-brew install highlight
-ln -f -n -s ~/dotfiles/ranger ~/.config/ranger
-```
-
-### fzf
-
-```sh
-brew install fzf
-# ag
-brew install the_silver_searcher
-# rg
-# brew install ripgrep # one of rg ag
-```
-
-### lazygit
-
-```sh
-brew install lazygit
-# git pager styles, lazygit need
-brew install git-delta
-ln -f -n -s ~/dotfiles/.gitconfig ~/.gitconfig
-ln -f -n -s ~/dotfiles/.gitignore ~/.gitignore
-ln -f -n -s ~/dotfiles/lazygit.yml ~/Library/Application\ Support/lazygit/config.yml
-# ln -f -n -s <local path> /usr/local/bin/lazygit
-```
-
-### 终端
+## 终端
 
 ```sh
 # 配置
@@ -79,7 +31,7 @@ ln -f -n -s ~/dotfiles/alacritty ~/.config/alacritty
 
 # 终端主题
 brew install starship
-ln -f -n -s ~/dotfiles/starship.toml ~/.config/starship.toml
+ln -f -n -s ~/dotfiles/alacritty/starship.toml ~/.config/starship.toml
 
 # 终端自动完成、提示
 brew install --cask fig
@@ -93,22 +45,47 @@ brew install tmux
 brew install urlview
 # 粘贴到系统剪切板
 brew install reattach-to-user-namespace
-ln -f -n -s ~/dotfiles/.tmux.conf ~/.tmux.conf
-ln -f -n -s ~/dotfiles/.tmux.conf.local ~/.tmux.conf.local
-
-# 类似 tmux，但更简单
-# brew install zellij
-# ln -f -n -s ~/dotfiles/zellij ~/.config/zellij
+ln -f -n -s ~/dotfiles/tmux/.tmux.conf ~/.tmux.conf
+ln -f -n -s ~/dotfiles/tmux/.tmux.conf.local ~/.tmux.conf.local
 
 # 漂亮的 cat
 brew install lolcat
 ```
 
+## Vim
+
+```sh
+# 清理现有配置
+rm -rf ~/.config/nvim
+rm -rf ~/.local/share/nvim
+rm -rf ~/.local/state/nvim
+rm -rf ~/.cache/nvim
+
+brew install neovim
+
+
+# ----- TODO -----
+# 搜索替换 nvim-pack/nvim-spectre
+brew install gnu-sed
+
+# 输入法切换
+brew tap daipeihust/tap && brew install im-select
+
+# tsserver
+npm install -g typescript typescript-language-server
+```
+
+### Lazyvim
+```sh
+ln -f -n -s ~/dotfiles/lazy-vim ~/.config/nvim
+```
+
+
 ### Lunarvim
 
 [https://www.lunarvim.org/](https://www.lunarvim.org/)
 
-Install
+#### Install
 
 ```sh
 bash <(curl -s https://raw.githubusercontent.com/lunarvim/lunarvim/master/utils/installer/install.sh)
@@ -116,9 +93,7 @@ ln -f -n -s ~/dotfiles/lunar-vim ~/.config/lvim
 ln -f -n -s ~/.local/bin/lvim /usr/local/bin/lvim
 ```
 
----
-
-Uninstall
+#### Uninstall
 
 ```sh
 bash <(curl -s https://raw.githubusercontent.com/lunarvim/lunarvim/master/utils/installer/uninstall.sh)
@@ -126,47 +101,45 @@ rm ~/.config/lvim
 rm /usr/local/bin/lvim
 ```
 
-### Neovide
-
-> neovide 没法和 tmux 一起使用，所以放弃了
+### 原生 nvim
 
 ```sh
-# rust 编写的 neovim ui
-brew install --cask neovide
+ln -f -n -s ~/dotfiles/native-nvim ~/.config/nvim
 ```
 
-#### use lvim
-
-config
+## lazygit
 
 ```sh
-cp /Applications/Neovide.app/Contents/MacOS/neovide /Applications/Neovide.app/Contents/MacOS/neovide_original
-chmod +x ~/dotfiles/neovide
-ln -f -n -s ~/dotfiles/neovide /Applications/Neovide.app/Contents/MacOS/neovide
+brew install lazygit
+# git pager styles, lazygit need
+brew install git-delta
+ln -f -n -s ~/dotfiles/git/lazygit.yml ~/Library/Application\ Support/lazygit/config.yml
+ln -f -n -s ~/dotfiles/.gitconfig ~/.gitconfig
+ln -f -n -s ~/dotfiles/.gitignore ~/.gitignore
 ```
 
----
-
-unconfig
+## Ranger[废弃？]
 
 ```sh
-rm /Applications/Neovide.app/Contents/MacOS/neovide
-cp /Applications/Neovide.app/Contents/MacOS/neovide_original /Applications/Neovide.app/Contents/MacOS/neovide
-rm /Applications/Neovide.app/Contents/MacOS/neovide_original
+pip3 install ranger-fm pynvim
+# preview json
+brew install jq
+# ranger code highlight
+brew install highlight
+ln -f -n -s ~/dotfiles/ranger ~/.config/ranger
 ```
 
-### 系统软件（增强但不必需）
+## fzf
 
 ```sh
-# cpu 内存查看
-brew install bottom
-
-# alfred
-brew install --cask alfred
-
-# 窗口切换
-brew install alt-tab
+brew install fzf
+# ag
+brew install the_silver_searcher
+# rg
+# brew install ripgrep # one of rg ag
 ```
+
+## 提示
 
 ### Eslint
 

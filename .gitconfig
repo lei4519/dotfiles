@@ -4,7 +4,7 @@
 
 [core]
   pager = delta
-  hooksPath = /Users/lay/.inspect-commits/hooks
+  # hooksPath = /Users/lay/.inspect-commits/hooks
 
 [interactive]
   diffFilter = delta --color-only

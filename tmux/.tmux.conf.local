@@ -353,13 +353,9 @@ set -g prefix C-a
 bind C-a send-prefix
 set-option -g repeat-time 0
 
-# 默认显示时间
-unbind t
-bind t run-shell '~/dotfiles/tmux-float-term'
-
 # edit configuration - alacritty 下无法使用 EDITOR 变量
 bind e new-window -n "~/.tmux.conf.local" "lvim ~/.tmux.conf.local && tmux source ~/.tmux.conf && tmux display \"~/.tmux.conf sourced\""
- 
+
 # split current window vertically
 bind - split-window -h
 # split current window horizontally
