@@ -18,6 +18,7 @@ alias vim="$EDITOR"
 alias python="/usr/bin/python3"
 alias lg="lazygit"
 alias ra=". ranger"
+alias js="joshuto"
 
 [ -f /usr/local/etc/profile.d/autojump.sh ] && . /usr/local/etc/profile.d/autojump.sh
 

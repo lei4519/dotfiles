@@ -118,7 +118,7 @@ ln -f -n -s ~/dotfiles/.gitconfig ~/.gitconfig
 ln -f -n -s ~/dotfiles/.gitignore ~/.gitignore
 ```
 
-## Ranger[废弃？]
+## Ranger [废弃？]
 
 ```sh
 pip3 install ranger-fm pynvim
@@ -127,6 +127,12 @@ brew install jq
 # ranger code highlight
 brew install highlight
 ln -f -n -s ~/dotfiles/ranger ~/.config/ranger
+```
+
+## joshuto
+
+```sh
+brew install joshuto
 ```
 
 ## fzf
