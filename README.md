@@ -11,14 +11,14 @@ git clone git@github.com:lei4519/dotfiles.git ~/dotfiles
 
 ```sh
 brew install --cask karabiner-elements
-ln -f -i -n -s ~/dotfiles/karabiner ~/.config/karabiner
+ln -f -n -s ~/dotfiles/karabiner ~/.config/karabiner
 ```
 
 ### Neovim
 
 ```sh
 brew install neovim
-ln -f -i -n -s ~/dotfiles/nvim ~/.config/nvim
+ln -f -n -s ~/dotfiles/native-nvim ~/.config/nvim
 # 搜索替换 nvim-pack/nvim-spectre
 brew install gnu-sed
 # 输入法切换
@@ -35,7 +35,7 @@ pip3 install ranger-fm pynvim
 brew install jq
 # ranger code highlight
 brew install highlight
-ln -f -i -n -s ~/dotfiles/ranger ~/.config/ranger
+ln -f -n -s ~/dotfiles/ranger ~/.config/ranger
 ```
 
 ### fzf
@@ -54,17 +54,17 @@ brew install the_silver_searcher
 brew install lazygit
 # git pager styles, lazygit need
 brew install git-delta
-ln -f -i -n -s ~/dotfiles/.gitconfig ~/.gitconfig
-ln -f -i -n -s ~/dotfiles/.gitignore ~/.gitignore
-ln -f -i -n -s ~/dotfiles/lazygit.yml ~/Library/Application\ Support/lazygit/config.yml
-# ln -f -i -n -s <local path> /usr/local/bin/lazygit
+ln -f -n -s ~/dotfiles/.gitconfig ~/.gitconfig
+ln -f -n -s ~/dotfiles/.gitignore ~/.gitignore
+ln -f -n -s ~/dotfiles/lazygit.yml ~/Library/Application\ Support/lazygit/config.yml
+# ln -f -n -s <local path> /usr/local/bin/lazygit
 ```
 
 ### 终端
 
 ```sh
 # 配置
-ln -f -i -n -s ~/dotfiles/.zshrc ~/.zshrc
+ln -f -n -s ~/dotfiles/.zshrc ~/.zshrc
 
 # 字体
 brew tap homebrew/cask-fonts
@@ -75,11 +75,11 @@ brew install autojump
 
 # alacritty 终端
 brew install --cask alacritty
-ln -f -i -n -s ~/dotfiles/alacritty ~/.config/alacritty
+ln -f -n -s ~/dotfiles/alacritty ~/.config/alacritty
 
 # 终端主题
 brew install starship
-ln -f -i -n -s ~/dotfiles/starship.toml ~/.config/starship.toml
+ln -f -n -s ~/dotfiles/starship.toml ~/.config/starship.toml
 
 # 终端自动完成、提示
 brew install --cask fig
@@ -93,12 +93,12 @@ brew install tmux
 brew install urlview
 # 粘贴到系统剪切板
 brew install reattach-to-user-namespace
-ln -f -i -n -s ~/dotfiles/.tmux.conf ~/.tmux.conf
-ln -f -i -n -s ~/dotfiles/.tmux.conf.local ~/.tmux.conf.local
+ln -f -n -s ~/dotfiles/.tmux.conf ~/.tmux.conf
+ln -f -n -s ~/dotfiles/.tmux.conf.local ~/.tmux.conf.local
 
 # 类似 tmux，但更简单
 # brew install zellij
-# ln -f -i -n -s ~/dotfiles/zellij ~/.config/zellij
+# ln -f -n -s ~/dotfiles/zellij ~/.config/zellij
 
 # 漂亮的 cat
 brew install lolcat
@@ -112,8 +112,8 @@ Install
 
 ```sh
 bash <(curl -s https://raw.githubusercontent.com/lunarvim/lunarvim/master/utils/installer/install.sh)
-ln -f -i -n -s ~/dotfiles/lvim ~/.config/lvim
-ln -f -i -n -s ~/.local/bin/lvim /usr/local/bin/lvim
+ln -f -n -s ~/dotfiles/lunar-vim ~/.config/lvim
+ln -f -n -s ~/.local/bin/lvim /usr/local/bin/lvim
 ```
 
 ---
@@ -170,11 +170,11 @@ brew install alt-tab
 
 ### Eslint
 
-配置一个全局的 eslint，对所有的 ts(x) js(x) 文件都可以生效 
+配置一个全局的 eslint，对所有的 ts(x) js(x) 文件都可以生效
 
 ```sh
 npm i -g eslint @typescript-eslint/eslint-plugin @typescript-eslint/parser eslint-plugin-prettier eslint-config-standard eslint-config-prettier
-ln -f -i -n -s ~/dotfiles/.eslintrc.js ~/.eslintrc.js
+ln -f -n -s ~/dotfiles/.eslintrc.js ~/.eslintrc.js
 ```
 
 ## vim 宏
