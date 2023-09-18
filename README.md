@@ -133,6 +133,7 @@ ln -f -n -s ~/dotfiles/ranger ~/.config/ranger
 
 ```sh
 brew install joshuto
+ln -f -n -s ~/dotfiles/joshuto ~/.config/joshuto
 ```
 
 ## fzf
