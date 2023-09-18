@@ -10,6 +10,12 @@ git clone git@github.com:lei4519/dotfiles.git ~/dotfiles
 ```sh
 brew install --cask karabiner-elements
 ln -f -n -s ~/dotfiles/karabiner ~/.config/karabiner
+
+## 截图
+
+```sh
+brew install --cask snipaste
+```
 ```
 
 ## 终端

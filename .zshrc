@@ -44,7 +44,7 @@ function joshuto() {
 			;;
 	esac
 }
-alias js="joshuto --change-directory"
+alias ls="joshuto --change-directory"
 
 [ -f /opt/homebrew/etc/profile.d/autojump.sh ] && . /opt/homebrew/etc/profile.d/autojump.sh
 
