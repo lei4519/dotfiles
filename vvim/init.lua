@@ -80,8 +80,8 @@ vim.opt.clipboard = "unnamedplus"
 
 vim.opt.colorcolumn = "99999" -- fixes indentline for now
 vim.opt.conceallevel = 0 -- so that `` is visible in markdown files
-vim.opt.foldlevel = 99
-vim.opt.foldmethod = "indent" -- folding set to "expr" for treesitter based folding
+-- vim.opt.foldlevel = 99
+-- vim.opt.foldmethod = "indent" -- folding set to "expr" for treesitter based folding
 vim.opt.title = true -- set the title of window to the value of the titlestring
 vim.opt.titlestring = "%<%F%=%l/%L - nvim" -- what the title of the window will be set to
 vim.opt.undodir = vim.fn.stdpath "cache" .. "/undo"
@@ -92,6 +92,10 @@ vim.opt.spell = false
 vim.opt.spelllang = "en"
 
 vim.keymap.set('', 's', '<Plug>(easymotion-prefix)')
+vim.keymap.set({'x', 'n', 'o'}, 'gc', '<Plug>VSCodeCommentary')
+vim.keymap.set('n', 'gcc', '<Plug>VSCodeCommentaryLine')
+vim.keymap.set('n', 'zo', '<Cmd>call VSCodeNotify(\'editor.unfold\')<CR>')
+vim.keymap.set('n', 'zc', '<Cmd>call VSCodeNotify(\'editor.fold\')<CR>')
 
 local plugins = {
   { "wbthomason/packer.nvim" },
@@ -152,3 +156,41 @@ packer.startup({
     end
   end,
 })
+
+local IM = {}
+
+IM.defaultIM = "com.apple.keylayout.ABC"
+-- IM.defaultIM = "com.apple.inputmethod.SCIM.Shuangpin"
+IM.currentIM = IM.defaultIM
+
+IM.InsertLeave = function()
+  IM.currentIM = vim.fn.system({ "im-select" })
+  vim.cmd(":silent :!im-select" .. " " .. IM.defaultIM)
+end
+
+IM.InsertEnter = function()
+  if IM.currentIM then
+    vim.cmd(":silent :!im-select" .. " " .. IM.currentIM)
+  else
+    vim.cmd(":silent :!im-select" .. " " .. IM.defaultIM)
+  end
+end
+
+
+local myAutoGroup = vim.api.nvim_create_augroup("Lay", {
+  clear = true,
+})
+
+local autocmd = vim.api.nvim_create_autocmd
+
+-- 切换输入法
+autocmd("InsertEnter", {
+  group = myAutoGroup,
+  callback = IM.InsertEnter
+})
+
+autocmd("InsertLeave", {
+  group = myAutoGroup,
+  callback = IM.InsertLeave
+})
+
