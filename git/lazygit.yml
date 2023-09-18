@@ -62,9 +62,9 @@ git:
     skipHookPrefix: WIP
     autoFetch: true
     autoRefresh: true
-    branchLogCmd: 'git log --graph --color=always --abbrev-commit --decorate --date=relative --pretty=medium {{branchName}} --'
+    branchLogCmd: 'git log --graph --all --color=always --abbrev-commit --decorate --date=relative --pretty=medium {{branchName}} --oneline --'
     # branchLogCmd: 'git log --graph --all --color=always --format=%h,%an,%as,%s'
-    allBranchesLogCmd: 'git log --graph --all --color=always --abbrev-commit --decorate --date=relative  --pretty=medium'
+    # allBranchesLogCmd: 'git log --graph --all --color=always --abbrev-commit --decorate --date=relative  --pretty=medium'
     overrideGpg: false # prevents lazygit from spawning a separate process when using GPG
     disableForcePushing: false
     parseEmoji: false
