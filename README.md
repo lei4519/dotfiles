@@ -15,6 +15,7 @@ ln -f -n -s ~/dotfiles/karabiner ~/.config/karabiner
 
 ```sh
 brew install --cask snipaste
+ln -f -n -s ~/dotfiles/snipaste/config.ini ~/.snipaste/config.ini
 ```
 ```
 
