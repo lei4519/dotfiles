@@ -71,13 +71,12 @@ rm -rf ~/.cache/nvim
 
 brew install neovim
 
+# 输入法切换
+brew tap daipeihust/tap && brew install im-select
 
 # ----- TODO -----
 # 搜索替换 nvim-pack/nvim-spectre
 brew install gnu-sed
-
-# 输入法切换
-brew tap daipeihust/tap && brew install im-select
 
 # tsserver
 npm install -g typescript typescript-language-server
