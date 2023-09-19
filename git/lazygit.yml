@@ -10,3 +10,8 @@ log:
 os:
   editPreset: "nvim"
 promptToReturnFromSubprocess: false
+keybinding:
+  universal:
+    nextScreenMode: "="
+    prevScreenMode: "-"
+
