@@ -1,6 +1,12 @@
 gui:
   nerdFontsVersion: "3"
+  language: "zh-CN"
 git:
-  branchLogCmd: "git log --graph --all --color=always --abbrev-commit --decorate --date=relative --pretty=medium {{branchName}} --"
+  paging:
+    pager: delta
+log:
+  showGraph: "always"
+  showWholeGraph: true
 os:
-  editPreset: "nvim" # see 'Configuring File Editing' section
+  editPreset: "nvim"
+promptToReturnFromSubprocess: false
