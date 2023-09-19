@@ -11,10 +11,10 @@
 
 [delta]
   navigate = true  # use n and N to move between diff sections
-  ; side-by-side = true
+  side-by-side = true
 
 [merge]
-  conflictstyle = zdiff3
+  conflictstyle = diff3
 
 [diff]
   colorMoved = default

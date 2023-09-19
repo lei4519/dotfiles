@@ -7,7 +7,7 @@ git clone git@github.com:lei4519/dotfiles.git ~/dotfiles
 
 ## 按键映射
 
-```sh
+````sh
 brew install --cask karabiner-elements
 ln -f -n -s ~/dotfiles/karabiner ~/.config/karabiner
 
@@ -16,8 +16,9 @@ ln -f -n -s ~/dotfiles/karabiner ~/.config/karabiner
 ```sh
 brew install --cask snipaste
 ln -f -n -s ~/dotfiles/snipaste/config.ini ~/.snipaste/config.ini
-```
-```
+````
+
+````
 
 ## 终端
 
@@ -57,7 +58,7 @@ ln -f -n -s ~/dotfiles/tmux/.tmux.conf.local ~/.tmux.conf.local
 
 # 漂亮的 cat
 brew install lolcat
-```
+````
 
 ## Vim
 
@@ -83,10 +84,10 @@ npm install -g typescript typescript-language-server
 ```
 
 ### Lazyvim
+
 ```sh
 ln -f -n -s ~/dotfiles/lazy-vim ~/.config/nvim
 ```
-
 
 ### Lunarvim
 
@@ -181,4 +182,3 @@ ln -f -n -s ~/dotfiles/.eslintrc.js ~/.eslintrc.js
 
 # 此时可以输入:reg a 发现宏的内容已经被修改了
 ```
-
