@@ -3,15 +3,15 @@ gui:
   language: "zh-CN"
 git:
   paging:
-    pager: delta
+    pager: delta --dark --paging=never
 log:
   showGraph: "always"
   showWholeGraph: true
 os:
   editPreset: "nvim"
+notARepository: "skip" # one of: 'prompt' | 'create' | 'skip' | 'quit'
 promptToReturnFromSubprocess: false
 keybinding:
   universal:
     nextScreenMode: "="
     prevScreenMode: "-"
-

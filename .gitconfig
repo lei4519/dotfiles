@@ -12,10 +12,11 @@
   path = ~/dotfiles/delta/themes.gitconfig
 
 [delta]
-  features = side-by-side decorations villsau
+  ; features = side-by-side decorations 
+  ; theme: woolly-mammoth chameleon mellow-barbet
+  features = decorations chameleon 
   navigate = true
   true-color = always
-  ; syntax-theme = Dracula
 
 [delta "interactive"]
   keep-plus-minus-markers = false

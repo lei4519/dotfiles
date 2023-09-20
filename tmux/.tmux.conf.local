@@ -43,7 +43,7 @@ tmux_conf_new_session_prompt=false
 # RGB 24-bit colour support (tmux >= 2.2), possible values are:
 #  - true
 #  - false (default)
-tmux_conf_24b_colour=false
+tmux_conf_24b_colour=true
 
 # default theme
 tmux_conf_theme_colour_1="#080808"    # dark gray
@@ -353,13 +353,17 @@ set -g prefix C-a
 bind C-a send-prefix
 set-option -g repeat-time 0
 
-# edit configuration - alacritty 下无法使用 EDITOR 变量
-bind e new-window -n "~/.tmux.conf.local" "lvim ~/.tmux.conf.local && tmux source ~/.tmux.conf && tmux display \"~/.tmux.conf sourced\""
-
 # split current window vertically
 bind - split-window -h
 # split current window horizontally
 bind _ split-window -v
+
+# Toggle popup window with t
+bind t if-shell -F '#{==:#{session_name},popup}' {
+    detach-client
+} {
+    display-popup -d "#{pane_current_path}" -xC -yC -w 80% -h 75% -E 'tmux attach-session -t popup || tmux new-session -s popup'
+}
 
 # move status line to top
 #set -g status-position top
@@ -406,13 +410,13 @@ tmux_conf_uninstall_plugins_on_reload=true
 # set -g @tmux_window_name_use_tilde "True"
 # set -g @tmux_window_dir_programs "[]"
 
-set -g @plugin 'tmux-plugins/tmux-resurrect'
-set -g @resurrect-capture-pane-contents 'on'
-# set -g @resurrect-processes '"~yarn"'
-
-set -g @plugin 'tmux-plugins/tmux-continuum'
-set -g @continuum-save-interval '60'
-set -g @continuum-restore 'on'
+# set -g @plugin 'tmux-plugins/tmux-resurrect'
+# set -g @resurrect-capture-pane-contents 'on'
+# # set -g @resurrect-processes '"~yarn"'
+#
+# set -g @plugin 'tmux-plugins/tmux-continuum'
+# set -g @continuum-save-interval '60'
+# set -g @continuum-restore 'on'
 
 # set -g @plugin 'schasse/tmux-jump'
 
