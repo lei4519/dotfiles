@@ -383,11 +383,25 @@ bind - split-window -h
 bind _ split-window -v
 
 # Toggle popup window with t
-bind t if-shell -F '#{==:#{session_name},popup}' {
-    detach-client
-} {
-    display-popup -d "#{pane_current_path}" -xC -yC -w 80% -h 75% -E 'tmux attach-session -t popup || tmux new-session -s popup'
-}
+# bind t if-shell -F '#{==:#{session_name},popup}' {
+#     detach-client
+# } {
+#     display-popup -d "#{pane_current_path}" -xC -yC -w 80% -h 75% -E 'tmux attach-session -t popup || tmux new-session -s popup'
+# }
+
+bind -n M-1 select-window -t 1
+bind -n M-2 select-window -t 2
+bind -n M-3 select-window -t 3
+bind -n M-4 select-window -t 4
+bind -n M-5 select-window -t 5
+bind -n M-6 select-window -t 6
+
+bind -n M-h select-pane -L  # move left
+bind -n M-j select-pane -D  # move down
+bind -n M-k select-pane -U  # move up
+bind -n M-l select-pane -R  # move right
+
+bind -n M-Tab last-window        # move to last active window
 
 
 # if you don't want Oh my tmux! to alter a binding, use #!important
