@@ -8,6 +8,9 @@ export FZF_DEFAULT_OPTS='--bind ctrl-d:page-down,ctrl-u:page-up'
 
 eval "$(fnm env --use-on-cd)"
 
+# man use bat
+export MANPAGER="sh -c 'col -bx | bat -l man -p'"
+
 export EDITOR="nvim"
 export VISUAL="nvim"
 

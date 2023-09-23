@@ -1,8 +1,5 @@
 [class]
-text_default = [
-  { command = "nvim" },
-  { command = "code" },
-]
+text_default = [{ command = "nvim" }]
 
 
 [mimetype]
@@ -10,4 +7,3 @@ text_default = [
 # text/*
 [mimetype.text]
 inherit = "text_default"
-

@@ -57,7 +57,8 @@ ln -f -n -s ~/dotfiles/tmux/.tmux.conf ~/.tmux.conf
 ln -f -n -s ~/dotfiles/tmux/.tmux.conf.local ~/.tmux.conf.local
 
 # 漂亮的 cat
-brew install lolcat
+# brew install lolcat
+brew install bat
 ````
 
 ## Vim
