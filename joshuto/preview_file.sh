@@ -132,6 +132,11 @@ handle_extension() {
 		;;
 
 		## JSON
+	md | mdx)
+		mdcat "${FILE_PATH}" && exit 0
+		;;
+
+		## JSON
 	json | ipynb)
 		jq --color-output . "${FILE_PATH}" && exit 0
 		python -m json.tool -- "${FILE_PATH}" && exit 0
@@ -209,7 +214,7 @@ handle_mime() {
 	image/*)
 		## Preview as text conversion
 		exiftool "${FILE_PATH}" && exit 0
-		exit 1
+		exit 0
 		;;
 
 		## Video and audio
