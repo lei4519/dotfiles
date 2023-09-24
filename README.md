@@ -37,6 +37,10 @@ brew install autojump
 brew install --cask alacritty
 ln -f -n -s ~/dotfiles/alacritty ~/.config/alacritty
 
+# kitty 终端
+brew install kitty
+ln -f -n -s ~/dotfiles/kitty ~/.config/kitty
+
 # 终端主题
 brew install starship
 ln -f -n -s ~/dotfiles/alacritty/starship.toml ~/.config/starship.toml
