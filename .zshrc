@@ -17,7 +17,8 @@ export VISUAL="nvim"
 alias vi="$EDITOR"
 alias vim="$EDITOR"
 
-alias python="/usr/bin/python3"
+alias icat="kitty +kitten icat"
+
 alias lg="lazygit"
 alias ra=". ranger"
 

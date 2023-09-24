@@ -26,9 +26,15 @@ ln -f -n -s ~/dotfiles/snipaste/config.ini ~/.snipaste/config.ini
 # 配置
 ln -f -n -s ~/dotfiles/.zshrc ~/.zshrc
 
+# 图片查看
+brew install imagemagick
+brew install ghostscript
+
 # 字体
+# https://www.nerdfonts.com/font-downloads
+# 搜索 fira code nerd font
 brew tap homebrew/cask-fonts
-brew install --cask font-hack-nerd-font
+brew install --cask fira-code-nerd-font
 
 # 快速跳转
 brew install autojump
@@ -63,6 +69,10 @@ ln -f -n -s ~/dotfiles/tmux/.tmux.conf.local ~/.tmux.conf.local
 # 漂亮的 cat
 # brew install lolcat
 brew install bat
+# preview markdown
+brew install pandoc
+# preview json
+brew install jq
 ````
 
 ## Vim
@@ -134,8 +144,7 @@ ln -f -n -s ~/dotfiles/.gitignore ~/.gitignore
 
 ```sh
 pip3 install ranger-fm pynvim
-# preview json
-brew install jq
+
 # ranger code highlight
 brew install highlight
 ln -f -n -s ~/dotfiles/ranger ~/.config/ranger
