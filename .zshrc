@@ -1,13 +1,6 @@
 # Fig pre block. Keep at the top of this file.
 [[ -f "$HOME/.fig/shell/zshrc.pre.zsh" ]] && builtin source "$HOME/.fig/shell/zshrc.pre.zsh"
 
-# Use ~~ as the trigger sequence instead of the default **
-export FZF_COMPLETION_TRIGGER='\'
-export FZF_DEFAULT_COMMAND='ag --hidden --ignore .git --ignore node_modules -g ""'
-export FZF_DEFAULT_OPTS='--bind ctrl-d:page-down,ctrl-u:page-up'
-
-eval "$(fnm env --use-on-cd)"
-
 # man use bat
 export MANPAGER="sh -c 'col -bx | bat -l man -p'"
 
@@ -21,6 +14,13 @@ alias icat="kitty +kitten icat"
 
 alias lg="lazygit"
 alias ra=". ranger"
+
+function zvm_config() {
+  ZVM_LINE_INIT_MODE=$ZVM_MODE_INSERT
+}
+function zvm_after_init() {
+  [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+}
 
 function joshuto() {
 	ID="$$"
@@ -46,12 +46,10 @@ function joshuto() {
 			;;
 	esac
 }
-alias ls="joshuto --change-directory"
+alias j="joshuto --change-directory"
 
-[ -f /opt/homebrew/etc/profile.d/autojump.sh ] && . /opt/homebrew/etc/profile.d/autojump.sh
-[ -f /usr/local/etc/profile.d/autojump.sh ] && . /usr/local/etc/profile.d/autojump.sh
-
-
+eval "$(fnm env --use-on-cd)"
+eval "$(zoxide init zsh)"
 eval "$(starship init zsh)"
 # source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 # source $(brew --prefix)/share/zsh-autocomplete/zsh-autocomplete.plugin.zsh
@@ -62,5 +60,8 @@ export PNPM_HOME="$HOME/Library/pnpm"
 export PATH="$PNPM_HOME:$PATH"
 # pnpm end
 
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
 # Fig post block. Keep at the bottom of this file.
 [[ -f "$HOME/.fig/shell/zshrc.post.zsh" ]] && builtin source "$HOME/.fig/shell/zshrc.post.zsh"
+

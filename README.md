@@ -37,7 +37,8 @@ brew tap homebrew/cask-fonts
 brew install --cask fira-code-nerd-font
 
 # 快速跳转
-brew install autojump
+# brew install autojump
+brew install zoxide
 
 # alacritty 终端
 brew install --cask alacritty
@@ -164,10 +165,9 @@ ln -f -n -s ~/dotfiles/joshuto ~/.config/joshuto
 
 ```sh
 brew install fzf
-# ag
-brew install the_silver_searcher
-# rg
-# brew install ripgrep # one of rg ag
+ln -f -n -s  ~/dotfiles/.fzf.zsh ~/.fzf.zsh
+brew install fd
+brew install ripgrep
 ```
 
 ## 提示
