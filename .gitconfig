@@ -14,7 +14,7 @@
 [delta]
   ; features = side-by-side decorations 
   ; theme: woolly-mammoth chameleon mellow-barbet
-  features = decorations chameleon 
+  features = side-by-side decorations ;chameleon 
   navigate = true
   true-color = always
 
