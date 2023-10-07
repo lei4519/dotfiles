@@ -1,13 +1,9 @@
-# Fig pre block. Keep at the top of this file.
-[[ -f "$HOME/.fig/shell/zshrc.pre.zsh" ]] && builtin source "$HOME/.fig/shell/zshrc.pre.zsh"
-
 # pnpm
 export PNPM_HOME="$HOME/Library/pnpm"
 export PATH="$PNPM_HOME:$PATH"
 # pnpm end
 
-# zoxide
-export _ZO_ECHO='1'
+export https_proxy=http://127.0.0.1:8118;export http_proxy=http://127.0.0.1:8118
 
 # man use bat
 export MANPAGER="sh -c 'col -bx | bat -l man -p'"
@@ -21,7 +17,6 @@ alias vim="$EDITOR"
 alias icat="kitty +kitten icat"
 
 alias lg="lazygit"
-alias ra=". ranger"
 
 function zvm_config() {
   ZVM_LINE_INIT_MODE=$ZVM_MODE_INSERT
@@ -59,12 +54,15 @@ alias j="joshuto --change-directory"
 eval "$(fnm env --use-on-cd)"
 eval "$(zoxide init zsh)"
 eval "$(starship init zsh)"
-# source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
-# source $(brew --prefix)/share/zsh-autocomplete/zsh-autocomplete.plugin.zsh
-# source $(brew --prefix)/opt/zsh-vi-mode/share/zsh-vi-mode/zsh-vi-mode.plugin.zsh
+source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+source $(brew --prefix)/share/zsh-autocomplete/zsh-autocomplete.plugin.zsh
+source $(brew --prefix)/opt/zsh-vi-mode/share/zsh-vi-mode/zsh-vi-mode.plugin.zsh
+
+# zoxide
+export _ZO_ECHO='1'
+unalias z
+function z () {
+    __zoxide_z "$@"
+}
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-
-# Fig post block. Keep at the bottom of this file.
-[[ -f "$HOME/.fig/shell/zshrc.post.zsh" ]] && builtin source "$HOME/.fig/shell/zshrc.post.zsh"
-

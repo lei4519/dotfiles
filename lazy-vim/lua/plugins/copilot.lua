@@ -18,19 +18,19 @@ return {
     --   ratio = 0.4,
     -- },
     -- },
-    suggestion = {
-      -- enabled = false,
-      auto_trigger = true,
-      -- debounce = 75,
-      -- keymap = {
-      --   accept = "<M-l>",
-      --   accept_word = false,
-      --   accept_line = false,
-      --   next = "<M-]>",
-      --   prev = "<M-[>",
-      --   dismiss = "<C-]>",
-      -- },
-    },
+    -- suggestion = {
+    -- enabled = false,
+    -- auto_trigger = true,
+    -- debounce = 75,
+    -- keymap = {
+    --   accept = "<M-l>",
+    --   accept_word = false,
+    --   accept_line = false,
+    --   next = "<M-]>",
+    --   prev = "<M-[>",
+    --   dismiss = "<C-]>",
+    -- },
+    -- },
     filetypes = {
       javascript = true,
       javascriptreact = true,
