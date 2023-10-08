@@ -12,7 +12,9 @@ fi
 # ------------
 source "/opt/homebrew/opt/fzf/shell/key-bindings.zsh"
 
-export FZF_DEFAULT_OPTS='--bind ctrl-d:page-down,ctrl-u:page-up'
+export FZF_DEFAULT_OPTS='--ansi --bind ctrl-d:page-down,ctrl-u:page-up'
+export FZF_DEFAULT_COMMAND='fd --type file --color=always --follow --hidden --exclude .git'
+export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 
 # Options to fzf command
 # export FZF_COMPLETION_OPTS='--border --info=inline'
@@ -22,12 +24,12 @@ export FZF_DEFAULT_OPTS='--bind ctrl-d:page-down,ctrl-u:page-up'
 # - The first argument to the function ($1) is the base path to start traversal
 # - See the source code (completion.{bash,zsh}) for the details.
 _fzf_compgen_path() {
-  fd --hidden --follow --exclude ".git" --exclude "node_modules" . "$1"
+  fd --hidden --follow --exclude ".git" . "$1"
 }
 
 # Use fd to generate the list for directory completion
 _fzf_compgen_dir() {
-  fd --type d --hidden --follow  --exclude ".git" --exclude "node_modules" . "$1"
+  fd --type d --hidden --follow --exclude ".git" . "$1"
 }
 
 # Advanced customization of fzf options via _fzf_comprun function
