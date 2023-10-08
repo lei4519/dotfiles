@@ -17,3 +17,8 @@ local function map(mode, lhs, rhs, opts)
 end
 
 map("n", "<leader>bo", "<cmd>BufferLineCloseOthers<cr>", { desc = "Close Other Buffer" })
+map("n", "<leader>bl", "<cmd>BufferLineCloseLeft<cr>", { desc = "Close Left Buffer" })
+map("n", "<leader>br", "<cmd>BufferLineCloseRight<cr>", { desc = "Close Right Buffer" })
+
+map("n", "ga", "<cmd>lua vim.lsp.buf.code_action()<cr>", { desc = "Code Action" })
+map("n", "gk", "<cmd>lua vim.diagnostic.open_float()<cr>", { desc = "Line Diagnostics" })

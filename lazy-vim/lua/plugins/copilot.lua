@@ -32,6 +32,7 @@ return {
     -- },
     -- },
     filetypes = {
+      rust = true,
       javascript = true,
       javascriptreact = true,
       typescript = true,
