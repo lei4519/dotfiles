@@ -1019,7 +1019,7 @@
             ]
           },
           {
-            "description": "(Vim 1/11) caps_lock -> on, caps_lock, esc, control+[ or any pointing_button -> off",
+            "description": "(Vim 1/11) caps_lock -> on, esc or any pointing_button -> off",
             "manipulators": [
               {
                 "conditions": [
@@ -1041,18 +1041,15 @@
                   }
                 ],
                 "from": {
-                  "key_code": "right_alt"
+                  "key_code": "left_shift",
+                  "modifiers": {
+                    "optional": ["any"]
+                  }
                 },
-                "parameters": {
-                  "basic.to_if_alone_threshold_milliseconds": 0,
-                  "basic.to_if_held_down_threshold_milliseconds": 100
-                },
-                "to_after_key_up": [
+                "to": [
                   {
-                    "set_variable": {
-                      "name": "vim_mode",
-                      "value": 0
-                    }
+                    "key_code": "left_shift",
+                    "lazy": true
                   }
                 ],
                 "to_if_alone": [
@@ -1065,17 +1062,6 @@
                   {
                     "halt": true,
                     "shell_command": "osascript -e 'display notification \"Press [i] to leave\" with title \"-- NORMAL --\"'"
-                  }
-                ],
-                "to_if_held_down": [
-                  {
-                    "set_variable": {
-                      "name": "vim_mode",
-                      "value": 1
-                    }
-                  },
-                  {
-                    "shell_command": "osascript -e 'display notification \"Release [caps lock] to leave\" with title \"-- NORMAL --\"'"
                   }
                 ],
                 "type": "basic"
@@ -1101,41 +1087,6 @@
                 ],
                 "from": {
                   "key_code": "escape"
-                },
-                "to": [
-                  {
-                    "set_variable": {
-                      "name": "vim_mode",
-                      "value": 0
-                    }
-                  },
-                  {
-                    "shell_command": "osascript -e 'display notification with title \"-- INSERT --\"'"
-                  }
-                ],
-                "type": "basic"
-              },
-              {
-                "conditions": [
-                  {
-                    "bundle_identifiers": [
-                      "com.googlecode.iterm2",
-                      "io.alacritty",
-                      "net.kovidgoyal.kitty",
-                      "org.gnu.Emacs",
-                      "com.jetbrains.pycharm",
-                      "com.visualstudio.code.oss"
-                    ],
-                    "type": "frontmost_application_unless"
-                  },
-                  {
-                    "name": "vim_mode",
-                    "type": "variable_if",
-                    "value": 1
-                  }
-                ],
-                "from": {
-                  "key_code": "right_alt"
                 },
                 "to": [
                   {

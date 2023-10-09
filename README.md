@@ -26,9 +26,9 @@ ln -f -n -s ~/dotfiles/snipaste/config.ini ~/.snipaste/config.ini
 # 配置
 ln -f -n -s ~/dotfiles/.zshrc ~/.zshrc
 
-# 图片查看
-brew install imagemagick
-brew install ghostscript
+# kitty 图片查看
+# brew install imagemagick
+# brew install ghostscript
 
 # 字体
 # https://www.nerdfonts.com/font-downloads
@@ -50,16 +50,15 @@ rm -rf ~/.config/kitty && ln -f -n -s ~/dotfiles/kitty ~/.config/kitty
 
 # 终端主题
 brew install starship
-ln -f -n -s ~/dotfiles/starship.toml ~/.config/starship.toml
+rm -rf ~/.config/starship.toml && ln -f -n -s ~/dotfiles/starship.toml ~/.config/starship.toml
 
 # 终端自动完成、提示
 brew install --cask fig
 
-# (使用 fig 内置 plugin 就不需要这些了)
 # 建议提示补全
-# brew install zsh-autosuggestions
-# brew install zsh-autocomplete
-# brew install zsh-vi-mode
+brew install zsh-autosuggestions
+brew install zsh-autocomplete
+brew install zsh-vi-mode
 
 # tmux
 brew install tmux
@@ -165,7 +164,7 @@ ln -f -n -s ~/dotfiles/joshuto ~/.config/joshuto
 
 ```sh
 brew install fzf
-ln -f -n -s  ~/dotfiles/.fzf.zsh ~/.fzf.zsh
+rm -rf ~/.fzf.zsh && ln -f -n -s  ~/dotfiles/.fzf.zsh ~/.fzf.zsh
 brew install fd
 brew install ripgrep
 ```

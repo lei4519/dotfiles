@@ -4,13 +4,23 @@ if [[ ! "$PATH" == */opt/homebrew/opt/fzf/bin* ]]; then
   PATH="${PATH:+${PATH}:}/opt/homebrew/opt/fzf/bin"
 fi
 
+if [[ ! "$PATH" == */usr/local/opt/fzf/bin* ]]; then
+  PATH="${PATH:+${PATH}:}/usr/local/opt/fzf/bin"
+fi
+
+brew_path='/opt/homebrew'
+
+if [[ ! -d "$brew_path" ]] then
+  brew_path="/usr/local"
+fi
+
 # Auto-completion
 # ---------------
-[[ $- == *i* ]] && source "/opt/homebrew/opt/fzf/shell/completion.zsh" 2> /dev/null
+[[ $- == *i* ]] && source "$brew_path/opt/fzf/shell/completion.zsh" 2> /dev/null
 
 # Key bindings
 # ------------
-source "/opt/homebrew/opt/fzf/shell/key-bindings.zsh"
+source "$brew_path/opt/fzf/shell/key-bindings.zsh"
 
 export FZF_DEFAULT_OPTS='--ansi --bind ctrl-d:page-down,ctrl-u:page-up'
 export FZF_DEFAULT_COMMAND='fd --type file --color=always --follow --hidden --exclude .git'
