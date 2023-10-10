@@ -26,6 +26,7 @@
                     "bundle_identifiers": [
                       "io.alacritty",
                       "net.kovidgoyal.kitty",
+                      "com.neovide.neovide",
                       "com.googlecode.iterm2",
                       "org.gnu.Emacs"
                     ],
@@ -57,6 +58,7 @@
                     "bundle_identifiers": [
                       "io.alacritty",
                       "net.kovidgoyal.kitty",
+                      "com.neovide.neovide",
                       "com.googlecode.iterm2",
                       "org.gnu.Emacs"
                     ],
@@ -93,6 +95,7 @@
                     "bundle_identifiers": [
                       "io.alacritty",
                       "net.kovidgoyal.kitty",
+                      "com.neovide.neovide",
                       "com.googlecode.iterm2",
                       "org.gnu.Emacs"
                     ],
@@ -124,6 +127,7 @@
                     "bundle_identifiers": [
                       "io.alacritty",
                       "net.kovidgoyal.kitty",
+                      "com.neovide.neovide",
                       "com.googlecode.iterm2",
                       "org.gnu.Emacs"
                     ],
@@ -160,6 +164,7 @@
                     "bundle_identifiers": [
                       "io.alacritty",
                       "net.kovidgoyal.kitty",
+                      "com.neovide.neovide",
                       "com.googlecode.iterm2",
                       "org.gnu.Emacs"
                     ],
@@ -186,6 +191,7 @@
                     "bundle_identifiers": [
                       "io.alacritty",
                       "net.kovidgoyal.kitty",
+                      "com.neovide.neovide",
                       "com.googlecode.iterm2",
                       "org.gnu.Emacs"
                     ],
@@ -212,6 +218,7 @@
                     "bundle_identifiers": [
                       "io.alacritty",
                       "net.kovidgoyal.kitty",
+                      "com.neovide.neovide",
                       "com.googlecode.iterm2",
                       "org.gnu.Emacs"
                     ],
@@ -238,6 +245,7 @@
                     "bundle_identifiers": [
                       "io.alacritty",
                       "net.kovidgoyal.kitty",
+                      "com.neovide.neovide",
                       "com.googlecode.iterm2",
                       "org.gnu.Emacs"
                     ],
@@ -264,6 +272,7 @@
                     "bundle_identifiers": [
                       "io.alacritty",
                       "net.kovidgoyal.kitty",
+                      "com.neovide.neovide",
                       "com.googlecode.iterm2",
                       "org.gnu.Emacs"
                     ],
@@ -290,6 +299,7 @@
                     "bundle_identifiers": [
                       "io.alacritty",
                       "net.kovidgoyal.kitty",
+                      "com.neovide.neovide",
                       "com.googlecode.iterm2",
                       "org.gnu.Emacs"
                     ],
@@ -316,6 +326,7 @@
                     "bundle_identifiers": [
                       "io.alacritty",
                       "net.kovidgoyal.kitty",
+                      "com.neovide.neovide",
                       "com.googlecode.iterm2",
                       "org.gnu.Emacs"
                     ],
@@ -342,6 +353,7 @@
                     "bundle_identifiers": [
                       "io.alacritty",
                       "net.kovidgoyal.kitty",
+                      "com.neovide.neovide",
                       "com.googlecode.iterm2",
                       "org.gnu.Emacs"
                     ],
@@ -368,6 +380,7 @@
                     "bundle_identifiers": [
                       "io.alacritty",
                       "net.kovidgoyal.kitty",
+                      "com.neovide.neovide",
                       "com.googlecode.iterm2",
                       "org.gnu.Emacs"
                     ],
@@ -394,6 +407,7 @@
                     "bundle_identifiers": [
                       "io.alacritty",
                       "net.kovidgoyal.kitty",
+                      "com.neovide.neovide",
                       "com.googlecode.iterm2",
                       "org.gnu.Emacs"
                     ],
@@ -420,6 +434,7 @@
                     "bundle_identifiers": [
                       "io.alacritty",
                       "net.kovidgoyal.kitty",
+                      "com.neovide.neovide",
                       "com.googlecode.iterm2",
                       "org.gnu.Emacs"
                     ],
@@ -446,6 +461,7 @@
                     "bundle_identifiers": [
                       "io.alacritty",
                       "net.kovidgoyal.kitty",
+                      "com.neovide.neovide",
                       "com.googlecode.iterm2",
                       "org.gnu.Emacs"
                     ],
@@ -472,6 +488,7 @@
                     "bundle_identifiers": [
                       "io.alacritty",
                       "net.kovidgoyal.kitty",
+                      "com.neovide.neovide",
                       "com.googlecode.iterm2",
                       "org.gnu.Emacs"
                     ],
@@ -498,6 +515,7 @@
                     "bundle_identifiers": [
                       "io.alacritty",
                       "net.kovidgoyal.kitty",
+                      "com.neovide.neovide",
                       "com.googlecode.iterm2",
                       "org.gnu.Emacs"
                     ],
@@ -524,6 +542,7 @@
                     "bundle_identifiers": [
                       "io.alacritty",
                       "net.kovidgoyal.kitty",
+                      "com.neovide.neovide",
                       "com.googlecode.iterm2",
                       "org.gnu.Emacs"
                     ],
@@ -550,6 +569,7 @@
                     "bundle_identifiers": [
                       "io.alacritty",
                       "net.kovidgoyal.kitty",
+                      "com.neovide.neovide",
                       "com.googlecode.iterm2",
                       "org.gnu.Emacs"
                     ],
@@ -576,6 +596,7 @@
                     "bundle_identifiers": [
                       "io.alacritty",
                       "net.kovidgoyal.kitty",
+                      "com.neovide.neovide",
                       "com.googlecode.iterm2",
                       "org.gnu.Emacs"
                     ],
@@ -602,6 +623,7 @@
                     "bundle_identifiers": [
                       "io.alacritty",
                       "net.kovidgoyal.kitty",
+                      "com.neovide.neovide",
                       "com.googlecode.iterm2",
                       "org.gnu.Emacs"
                     ],
@@ -628,6 +650,7 @@
                     "bundle_identifiers": [
                       "io.alacritty",
                       "net.kovidgoyal.kitty",
+                      "com.neovide.neovide",
                       "com.googlecode.iterm2",
                       "org.gnu.Emacs"
                     ],
@@ -654,6 +677,7 @@
                     "bundle_identifiers": [
                       "io.alacritty",
                       "net.kovidgoyal.kitty",
+                      "com.neovide.neovide",
                       "com.googlecode.iterm2",
                       "org.gnu.Emacs"
                     ],
@@ -685,6 +709,7 @@
                     "bundle_identifiers": [
                       "io.alacritty",
                       "net.kovidgoyal.kitty",
+                      "com.neovide.neovide",
                       "com.googlecode.iterm2",
                       "org.gnu.Emacs"
                     ],
@@ -711,6 +736,7 @@
                     "bundle_identifiers": [
                       "io.alacritty",
                       "net.kovidgoyal.kitty",
+                      "com.neovide.neovide",
                       "com.googlecode.iterm2",
                       "org.gnu.Emacs"
                     ],
@@ -742,6 +768,7 @@
                     "bundle_identifiers": [
                       "io.alacritty",
                       "net.kovidgoyal.kitty",
+                      "com.neovide.neovide",
                       "com.googlecode.iterm2",
                       "org.gnu.Emacs"
                     ],
@@ -768,6 +795,7 @@
                     "bundle_identifiers": [
                       "io.alacritty",
                       "net.kovidgoyal.kitty",
+                      "com.neovide.neovide",
                       "com.googlecode.iterm2",
                       "org.gnu.Emacs"
                     ],
@@ -799,6 +827,7 @@
                     "bundle_identifiers": [
                       "io.alacritty",
                       "net.kovidgoyal.kitty",
+                      "com.neovide.neovide",
                       "com.googlecode.iterm2",
                       "org.gnu.Emacs"
                     ],
@@ -825,6 +854,7 @@
                     "bundle_identifiers": [
                       "io.alacritty",
                       "net.kovidgoyal.kitty",
+                      "com.neovide.neovide",
                       "com.googlecode.iterm2",
                       "org.gnu.Emacs"
                     ],
@@ -856,6 +886,7 @@
                     "bundle_identifiers": [
                       "io.alacritty",
                       "net.kovidgoyal.kitty",
+                      "com.neovide.neovide",
                       "com.googlecode.iterm2",
                       "org.gnu.Emacs"
                     ],
@@ -882,6 +913,7 @@
                     "bundle_identifiers": [
                       "io.alacritty",
                       "net.kovidgoyal.kitty",
+                      "com.neovide.neovide",
                       "com.googlecode.iterm2",
                       "org.gnu.Emacs"
                     ],
@@ -913,6 +945,7 @@
                     "bundle_identifiers": [
                       "io.alacritty",
                       "net.kovidgoyal.kitty",
+                      "com.neovide.neovide",
                       "com.googlecode.iterm2",
                       "org.gnu.Emacs"
                     ],
@@ -939,6 +972,7 @@
                     "bundle_identifiers": [
                       "io.alacritty",
                       "net.kovidgoyal.kitty",
+                      "com.neovide.neovide",
                       "com.googlecode.iterm2",
                       "org.gnu.Emacs"
                     ],
@@ -970,6 +1004,7 @@
                     "bundle_identifiers": [
                       "io.alacritty",
                       "net.kovidgoyal.kitty",
+                      "com.neovide.neovide",
                       "com.googlecode.iterm2",
                       "org.gnu.Emacs"
                     ],
@@ -996,6 +1031,7 @@
                     "bundle_identifiers": [
                       "io.alacritty",
                       "net.kovidgoyal.kitty",
+                      "com.neovide.neovide",
                       "com.googlecode.iterm2",
                       "org.gnu.Emacs"
                     ],
@@ -1028,6 +1064,7 @@
                       "com.googlecode.iterm2",
                       "io.alacritty",
                       "net.kovidgoyal.kitty",
+                      "com.neovide.neovide",
                       "org.gnu.Emacs",
                       "com.jetbrains.pycharm",
                       "com.visualstudio.code.oss"
@@ -1073,6 +1110,7 @@
                       "com.googlecode.iterm2",
                       "io.alacritty",
                       "net.kovidgoyal.kitty",
+                      "com.neovide.neovide",
                       "org.gnu.Emacs",
                       "com.jetbrains.pycharm",
                       "com.visualstudio.code.oss"
@@ -1108,6 +1146,7 @@
                       "com.googlecode.iterm2",
                       "io.alacritty",
                       "net.kovidgoyal.kitty",
+                      "com.neovide.neovide",
                       "org.gnu.Emacs",
                       "com.jetbrains.pycharm",
                       "com.visualstudio.code.oss"
@@ -1207,6 +1246,7 @@
                       "com.googlecode.iterm2",
                       "io.alacritty",
                       "net.kovidgoyal.kitty",
+                      "com.neovide.neovide",
                       "org.gnu.Emacs",
                       "com.jetbrains.pycharm",
                       "com.visualstudio.code.oss"
@@ -1253,6 +1293,7 @@
                       "com.googlecode.iterm2",
                       "io.alacritty",
                       "net.kovidgoyal.kitty",
+                      "com.neovide.neovide",
                       "org.gnu.Emacs",
                       "com.jetbrains.pycharm",
                       "com.visualstudio.code.oss"
@@ -1294,6 +1335,7 @@
                       "com.googlecode.iterm2",
                       "io.alacritty",
                       "net.kovidgoyal.kitty",
+                      "com.neovide.neovide",
                       "org.gnu.Emacs",
                       "com.jetbrains.pycharm",
                       "com.visualstudio.code.oss"
@@ -1324,6 +1366,7 @@
                       "com.googlecode.iterm2",
                       "io.alacritty",
                       "net.kovidgoyal.kitty",
+                      "com.neovide.neovide",
                       "org.gnu.Emacs",
                       "com.jetbrains.pycharm",
                       "com.visualstudio.code.oss"
@@ -1354,6 +1397,7 @@
                       "com.googlecode.iterm2",
                       "io.alacritty",
                       "net.kovidgoyal.kitty",
+                      "com.neovide.neovide",
                       "org.gnu.Emacs",
                       "com.jetbrains.pycharm",
                       "com.visualstudio.code.oss"
@@ -1384,6 +1428,7 @@
                       "com.googlecode.iterm2",
                       "io.alacritty",
                       "net.kovidgoyal.kitty",
+                      "com.neovide.neovide",
                       "org.gnu.Emacs",
                       "com.jetbrains.pycharm",
                       "com.visualstudio.code.oss"
@@ -1414,6 +1459,7 @@
                       "com.googlecode.iterm2",
                       "io.alacritty",
                       "net.kovidgoyal.kitty",
+                      "com.neovide.neovide",
                       "org.gnu.Emacs",
                       "com.jetbrains.pycharm",
                       "com.visualstudio.code.oss"
@@ -1444,6 +1490,7 @@
                       "com.googlecode.iterm2",
                       "io.alacritty",
                       "net.kovidgoyal.kitty",
+                      "com.neovide.neovide",
                       "org.gnu.Emacs",
                       "com.jetbrains.pycharm",
                       "com.visualstudio.code.oss"
@@ -1474,6 +1521,7 @@
                       "com.googlecode.iterm2",
                       "io.alacritty",
                       "net.kovidgoyal.kitty",
+                      "com.neovide.neovide",
                       "org.gnu.Emacs",
                       "com.jetbrains.pycharm",
                       "com.visualstudio.code.oss"
@@ -1508,6 +1556,7 @@
                       "com.googlecode.iterm2",
                       "io.alacritty",
                       "net.kovidgoyal.kitty",
+                      "com.neovide.neovide",
                       "org.gnu.Emacs",
                       "com.jetbrains.pycharm",
                       "com.visualstudio.code.oss"
@@ -1541,6 +1590,7 @@
                       "com.googlecode.iterm2",
                       "io.alacritty",
                       "net.kovidgoyal.kitty",
+                      "com.neovide.neovide",
                       "org.gnu.Emacs",
                       "com.jetbrains.pycharm",
                       "com.visualstudio.code.oss"
@@ -1574,6 +1624,7 @@
                       "com.googlecode.iterm2",
                       "io.alacritty",
                       "net.kovidgoyal.kitty",
+                      "com.neovide.neovide",
                       "org.gnu.Emacs",
                       "com.jetbrains.pycharm",
                       "com.visualstudio.code.oss"
@@ -1624,6 +1675,7 @@
                       "com.googlecode.iterm2",
                       "io.alacritty",
                       "net.kovidgoyal.kitty",
+                      "com.neovide.neovide",
                       "org.gnu.Emacs",
                       "com.jetbrains.pycharm",
                       "com.visualstudio.code.oss"
@@ -1665,6 +1717,7 @@
                       "com.googlecode.iterm2",
                       "io.alacritty",
                       "net.kovidgoyal.kitty",
+                      "com.neovide.neovide",
                       "org.gnu.Emacs",
                       "com.jetbrains.pycharm",
                       "com.visualstudio.code.oss"
@@ -1698,6 +1751,7 @@
                       "com.googlecode.iterm2",
                       "io.alacritty",
                       "net.kovidgoyal.kitty",
+                      "com.neovide.neovide",
                       "org.gnu.Emacs",
                       "com.jetbrains.pycharm",
                       "com.visualstudio.code.oss"
@@ -1731,6 +1785,7 @@
                       "com.googlecode.iterm2",
                       "io.alacritty",
                       "net.kovidgoyal.kitty",
+                      "com.neovide.neovide",
                       "org.gnu.Emacs",
                       "com.jetbrains.pycharm",
                       "com.visualstudio.code.oss"
@@ -1764,6 +1819,7 @@
                       "com.googlecode.iterm2",
                       "io.alacritty",
                       "net.kovidgoyal.kitty",
+                      "com.neovide.neovide",
                       "org.gnu.Emacs",
                       "com.jetbrains.pycharm",
                       "com.visualstudio.code.oss"
@@ -1809,6 +1865,7 @@
                       "com.googlecode.iterm2",
                       "io.alacritty",
                       "net.kovidgoyal.kitty",
+                      "com.neovide.neovide",
                       "org.gnu.Emacs",
                       "com.jetbrains.pycharm",
                       "com.visualstudio.code.oss"
@@ -1854,6 +1911,7 @@
                       "com.googlecode.iterm2",
                       "io.alacritty",
                       "net.kovidgoyal.kitty",
+                      "com.neovide.neovide",
                       "org.gnu.Emacs",
                       "com.jetbrains.pycharm",
                       "com.visualstudio.code.oss"
@@ -1899,6 +1957,7 @@
                       "com.googlecode.iterm2",
                       "io.alacritty",
                       "net.kovidgoyal.kitty",
+                      "com.neovide.neovide",
                       "org.gnu.Emacs",
                       "com.jetbrains.pycharm",
                       "com.visualstudio.code.oss"
@@ -1943,6 +2002,7 @@
                       "com.googlecode.iterm2",
                       "io.alacritty",
                       "net.kovidgoyal.kitty",
+                      "com.neovide.neovide",
                       "org.gnu.Emacs",
                       "com.jetbrains.pycharm",
                       "com.visualstudio.code.oss"
@@ -1975,6 +2035,7 @@
                       "com.googlecode.iterm2",
                       "io.alacritty",
                       "net.kovidgoyal.kitty",
+                      "com.neovide.neovide",
                       "org.gnu.Emacs",
                       "com.jetbrains.pycharm",
                       "com.visualstudio.code.oss"
@@ -2007,6 +2068,7 @@
                       "com.googlecode.iterm2",
                       "io.alacritty",
                       "net.kovidgoyal.kitty",
+                      "com.neovide.neovide",
                       "org.gnu.Emacs",
                       "com.jetbrains.pycharm",
                       "com.visualstudio.code.oss"
@@ -2044,6 +2106,7 @@
                       "com.googlecode.iterm2",
                       "io.alacritty",
                       "net.kovidgoyal.kitty",
+                      "com.neovide.neovide",
                       "org.gnu.Emacs",
                       "com.jetbrains.pycharm",
                       "com.visualstudio.code.oss"
@@ -2094,6 +2157,7 @@
                       "com.googlecode.iterm2",
                       "io.alacritty",
                       "net.kovidgoyal.kitty",
+                      "com.neovide.neovide",
                       "org.gnu.Emacs",
                       "com.jetbrains.pycharm",
                       "com.visualstudio.code.oss"
@@ -2147,6 +2211,7 @@
                       "com.googlecode.iterm2",
                       "io.alacritty",
                       "net.kovidgoyal.kitty",
+                      "com.neovide.neovide",
                       "org.gnu.Emacs",
                       "com.jetbrains.pycharm",
                       "com.visualstudio.code.oss"
@@ -2192,6 +2257,7 @@
                       "com.googlecode.iterm2",
                       "io.alacritty",
                       "net.kovidgoyal.kitty",
+                      "com.neovide.neovide",
                       "org.gnu.Emacs",
                       "com.jetbrains.pycharm",
                       "com.visualstudio.code.oss"
@@ -2237,6 +2303,7 @@
                       "com.googlecode.iterm2",
                       "io.alacritty",
                       "net.kovidgoyal.kitty",
+                      "com.neovide.neovide",
                       "org.gnu.Emacs",
                       "com.jetbrains.pycharm",
                       "com.visualstudio.code.oss"
@@ -2286,6 +2353,7 @@
                       "com.googlecode.iterm2",
                       "io.alacritty",
                       "net.kovidgoyal.kitty",
+                      "com.neovide.neovide",
                       "org.gnu.Emacs",
                       "com.jetbrains.pycharm",
                       "com.visualstudio.code.oss"
@@ -2334,6 +2402,7 @@
                       "com.googlecode.iterm2",
                       "io.alacritty",
                       "net.kovidgoyal.kitty",
+                      "com.neovide.neovide",
                       "org.gnu.Emacs",
                       "com.jetbrains.pycharm",
                       "com.visualstudio.code.oss"
@@ -2382,6 +2451,7 @@
                       "com.googlecode.iterm2",
                       "io.alacritty",
                       "net.kovidgoyal.kitty",
+                      "com.neovide.neovide",
                       "org.gnu.Emacs",
                       "com.jetbrains.pycharm",
                       "com.visualstudio.code.oss"
@@ -2443,6 +2513,7 @@
                       "com.googlecode.iterm2",
                       "io.alacritty",
                       "net.kovidgoyal.kitty",
+                      "com.neovide.neovide",
                       "org.gnu.Emacs",
                       "com.jetbrains.pycharm",
                       "com.visualstudio.code.oss"
@@ -2488,6 +2559,7 @@
                       "com.googlecode.iterm2",
                       "io.alacritty",
                       "net.kovidgoyal.kitty",
+                      "com.neovide.neovide",
                       "org.gnu.Emacs",
                       "com.jetbrains.pycharm",
                       "com.visualstudio.code.oss"
@@ -2536,6 +2608,7 @@
                       "com.googlecode.iterm2",
                       "io.alacritty",
                       "net.kovidgoyal.kitty",
+                      "com.neovide.neovide",
                       "org.gnu.Emacs",
                       "com.jetbrains.pycharm",
                       "com.visualstudio.code.oss"
@@ -2584,6 +2657,7 @@
                       "com.googlecode.iterm2",
                       "io.alacritty",
                       "net.kovidgoyal.kitty",
+                      "com.neovide.neovide",
                       "org.gnu.Emacs",
                       "com.jetbrains.pycharm",
                       "com.visualstudio.code.oss"
@@ -2633,6 +2707,7 @@
                       "com.googlecode.iterm2",
                       "io.alacritty",
                       "net.kovidgoyal.kitty",
+                      "com.neovide.neovide",
                       "org.gnu.Emacs",
                       "com.jetbrains.pycharm",
                       "com.visualstudio.code.oss"
@@ -2683,6 +2758,7 @@
                       "com.googlecode.iterm2",
                       "io.alacritty",
                       "net.kovidgoyal.kitty",
+                      "com.neovide.neovide",
                       "org.gnu.Emacs",
                       "com.jetbrains.pycharm",
                       "com.visualstudio.code.oss"
@@ -2736,6 +2812,7 @@
                       "com.googlecode.iterm2",
                       "io.alacritty",
                       "net.kovidgoyal.kitty",
+                      "com.neovide.neovide",
                       "org.gnu.Emacs",
                       "com.jetbrains.pycharm",
                       "com.visualstudio.code.oss"
@@ -2781,6 +2858,7 @@
                       "com.googlecode.iterm2",
                       "io.alacritty",
                       "net.kovidgoyal.kitty",
+                      "com.neovide.neovide",
                       "org.gnu.Emacs",
                       "com.jetbrains.pycharm",
                       "com.visualstudio.code.oss"
@@ -2826,6 +2904,7 @@
                       "com.googlecode.iterm2",
                       "io.alacritty",
                       "net.kovidgoyal.kitty",
+                      "com.neovide.neovide",
                       "org.gnu.Emacs",
                       "com.jetbrains.pycharm",
                       "com.visualstudio.code.oss"
@@ -2875,6 +2954,7 @@
                       "com.googlecode.iterm2",
                       "io.alacritty",
                       "net.kovidgoyal.kitty",
+                      "com.neovide.neovide",
                       "org.gnu.Emacs",
                       "com.jetbrains.pycharm",
                       "com.visualstudio.code.oss"
@@ -2923,6 +3003,7 @@
                       "com.googlecode.iterm2",
                       "io.alacritty",
                       "net.kovidgoyal.kitty",
+                      "com.neovide.neovide",
                       "org.gnu.Emacs",
                       "com.jetbrains.pycharm",
                       "com.visualstudio.code.oss"
@@ -2971,6 +3052,7 @@
                       "com.googlecode.iterm2",
                       "io.alacritty",
                       "net.kovidgoyal.kitty",
+                      "com.neovide.neovide",
                       "org.gnu.Emacs",
                       "com.jetbrains.pycharm",
                       "com.visualstudio.code.oss"
@@ -3032,6 +3114,7 @@
                       "com.googlecode.iterm2",
                       "io.alacritty",
                       "net.kovidgoyal.kitty",
+                      "com.neovide.neovide",
                       "org.gnu.Emacs",
                       "com.jetbrains.pycharm",
                       "com.visualstudio.code.oss"
@@ -3077,6 +3160,7 @@
                       "com.googlecode.iterm2",
                       "io.alacritty",
                       "net.kovidgoyal.kitty",
+                      "com.neovide.neovide",
                       "org.gnu.Emacs",
                       "com.jetbrains.pycharm",
                       "com.visualstudio.code.oss"
@@ -3125,6 +3209,7 @@
                       "com.googlecode.iterm2",
                       "io.alacritty",
                       "net.kovidgoyal.kitty",
+                      "com.neovide.neovide",
                       "org.gnu.Emacs",
                       "com.jetbrains.pycharm",
                       "com.visualstudio.code.oss"
@@ -3173,6 +3258,7 @@
                       "com.googlecode.iterm2",
                       "io.alacritty",
                       "net.kovidgoyal.kitty",
+                      "com.neovide.neovide",
                       "org.gnu.Emacs",
                       "com.jetbrains.pycharm",
                       "com.visualstudio.code.oss"
@@ -3226,6 +3312,7 @@
                       "com.googlecode.iterm2",
                       "io.alacritty",
                       "net.kovidgoyal.kitty",
+                      "com.neovide.neovide",
                       "org.gnu.Emacs",
                       "com.jetbrains.pycharm",
                       "com.visualstudio.code.oss"
@@ -3276,6 +3363,7 @@
                       "com.googlecode.iterm2",
                       "io.alacritty",
                       "net.kovidgoyal.kitty",
+                      "com.neovide.neovide",
                       "org.gnu.Emacs",
                       "com.jetbrains.pycharm",
                       "com.visualstudio.code.oss"
@@ -3338,6 +3426,7 @@
                       "com.googlecode.iterm2",
                       "io.alacritty",
                       "net.kovidgoyal.kitty",
+                      "com.neovide.neovide",
                       "org.gnu.Emacs",
                       "com.jetbrains.pycharm",
                       "com.visualstudio.code.oss"
@@ -3392,6 +3481,7 @@
                       "com.googlecode.iterm2",
                       "io.alacritty",
                       "net.kovidgoyal.kitty",
+                      "com.neovide.neovide",
                       "org.gnu.Emacs",
                       "com.jetbrains.pycharm",
                       "com.visualstudio.code.oss"
@@ -3446,6 +3536,7 @@
                       "com.googlecode.iterm2",
                       "io.alacritty",
                       "net.kovidgoyal.kitty",
+                      "com.neovide.neovide",
                       "org.gnu.Emacs",
                       "com.jetbrains.pycharm",
                       "com.visualstudio.code.oss"
@@ -3504,6 +3595,7 @@
                       "com.googlecode.iterm2",
                       "io.alacritty",
                       "net.kovidgoyal.kitty",
+                      "com.neovide.neovide",
                       "org.gnu.Emacs",
                       "com.jetbrains.pycharm",
                       "com.visualstudio.code.oss"
@@ -3561,6 +3653,7 @@
                       "com.googlecode.iterm2",
                       "io.alacritty",
                       "net.kovidgoyal.kitty",
+                      "com.neovide.neovide",
                       "org.gnu.Emacs",
                       "com.jetbrains.pycharm",
                       "com.visualstudio.code.oss"
@@ -3618,6 +3711,7 @@
                       "com.googlecode.iterm2",
                       "io.alacritty",
                       "net.kovidgoyal.kitty",
+                      "com.neovide.neovide",
                       "org.gnu.Emacs",
                       "com.jetbrains.pycharm",
                       "com.visualstudio.code.oss"
@@ -3679,6 +3773,7 @@
                       "com.googlecode.iterm2",
                       "io.alacritty",
                       "net.kovidgoyal.kitty",
+                      "com.neovide.neovide",
                       "org.gnu.Emacs",
                       "com.jetbrains.pycharm",
                       "com.visualstudio.code.oss"
@@ -3733,6 +3828,7 @@
                       "com.googlecode.iterm2",
                       "io.alacritty",
                       "net.kovidgoyal.kitty",
+                      "com.neovide.neovide",
                       "org.gnu.Emacs",
                       "com.jetbrains.pycharm",
                       "com.visualstudio.code.oss"
@@ -3790,6 +3886,7 @@
                       "com.googlecode.iterm2",
                       "io.alacritty",
                       "net.kovidgoyal.kitty",
+                      "com.neovide.neovide",
                       "org.gnu.Emacs",
                       "com.jetbrains.pycharm",
                       "com.visualstudio.code.oss"
@@ -3847,6 +3944,7 @@
                       "com.googlecode.iterm2",
                       "io.alacritty",
                       "net.kovidgoyal.kitty",
+                      "com.neovide.neovide",
                       "org.gnu.Emacs",
                       "com.jetbrains.pycharm",
                       "com.visualstudio.code.oss"
@@ -3909,6 +4007,7 @@
                       "com.googlecode.iterm2",
                       "io.alacritty",
                       "net.kovidgoyal.kitty",
+                      "com.neovide.neovide",
                       "org.gnu.Emacs",
                       "com.jetbrains.pycharm",
                       "com.visualstudio.code.oss"
@@ -3938,6 +4037,7 @@
                       "com.googlecode.iterm2",
                       "io.alacritty",
                       "net.kovidgoyal.kitty",
+                      "com.neovide.neovide",
                       "org.gnu.Emacs",
                       "com.jetbrains.pycharm",
                       "com.visualstudio.code.oss"
@@ -3970,6 +4070,7 @@
                       "com.googlecode.iterm2",
                       "io.alacritty",
                       "net.kovidgoyal.kitty",
+                      "com.neovide.neovide",
                       "org.gnu.Emacs",
                       "com.jetbrains.pycharm",
                       "com.visualstudio.code.oss"
@@ -4000,6 +4101,7 @@
                       "com.googlecode.iterm2",
                       "io.alacritty",
                       "net.kovidgoyal.kitty",
+                      "com.neovide.neovide",
                       "org.gnu.Emacs",
                       "com.jetbrains.pycharm",
                       "com.visualstudio.code.oss"
@@ -4033,6 +4135,7 @@
                       "com.googlecode.iterm2",
                       "io.alacritty",
                       "net.kovidgoyal.kitty",
+                      "com.neovide.neovide",
                       "org.gnu.Emacs",
                       "com.jetbrains.pycharm",
                       "com.visualstudio.code.oss"
@@ -4063,6 +4166,7 @@
                       "com.googlecode.iterm2",
                       "io.alacritty",
                       "net.kovidgoyal.kitty",
+                      "com.neovide.neovide",
                       "org.gnu.Emacs",
                       "com.jetbrains.pycharm",
                       "com.visualstudio.code.oss"
@@ -4101,6 +4205,7 @@
                       "com.googlecode.iterm2",
                       "io.alacritty",
                       "net.kovidgoyal.kitty",
+                      "com.neovide.neovide",
                       "org.gnu.Emacs",
                       "com.jetbrains.pycharm",
                       "com.visualstudio.code.oss"
@@ -4133,6 +4238,7 @@
                       "com.googlecode.iterm2",
                       "io.alacritty",
                       "net.kovidgoyal.kitty",
+                      "com.neovide.neovide",
                       "org.gnu.Emacs",
                       "com.jetbrains.pycharm",
                       "com.visualstudio.code.oss"
@@ -4165,6 +4271,7 @@
                       "com.googlecode.iterm2",
                       "io.alacritty",
                       "net.kovidgoyal.kitty",
+                      "com.neovide.neovide",
                       "org.gnu.Emacs",
                       "com.jetbrains.pycharm",
                       "com.visualstudio.code.oss"
@@ -4197,6 +4304,7 @@
                       "com.googlecode.iterm2",
                       "io.alacritty",
                       "net.kovidgoyal.kitty",
+                      "com.neovide.neovide",
                       "org.gnu.Emacs",
                       "com.jetbrains.pycharm",
                       "com.visualstudio.code.oss"
@@ -4229,6 +4337,7 @@
                       "com.googlecode.iterm2",
                       "io.alacritty",
                       "net.kovidgoyal.kitty",
+                      "com.neovide.neovide",
                       "org.gnu.Emacs",
                       "com.jetbrains.pycharm",
                       "com.visualstudio.code.oss"
@@ -4259,6 +4368,7 @@
                       "com.googlecode.iterm2",
                       "io.alacritty",
                       "net.kovidgoyal.kitty",
+                      "com.neovide.neovide",
                       "org.gnu.Emacs",
                       "com.jetbrains.pycharm",
                       "com.visualstudio.code.oss"
@@ -4289,6 +4399,7 @@
                       "com.googlecode.iterm2",
                       "io.alacritty",
                       "net.kovidgoyal.kitty",
+                      "com.neovide.neovide",
                       "org.gnu.Emacs",
                       "com.jetbrains.pycharm",
                       "com.visualstudio.code.oss"
@@ -4323,6 +4434,7 @@
                       "com.googlecode.iterm2",
                       "io.alacritty",
                       "net.kovidgoyal.kitty",
+                      "com.neovide.neovide",
                       "org.gnu.Emacs",
                       "com.jetbrains.pycharm",
                       "com.visualstudio.code.oss"
@@ -4356,6 +4468,7 @@
                       "com.googlecode.iterm2",
                       "io.alacritty",
                       "net.kovidgoyal.kitty",
+                      "com.neovide.neovide",
                       "org.gnu.Emacs",
                       "com.jetbrains.pycharm",
                       "com.visualstudio.code.oss"
@@ -4389,6 +4502,7 @@
                       "com.googlecode.iterm2",
                       "io.alacritty",
                       "net.kovidgoyal.kitty",
+                      "com.neovide.neovide",
                       "org.gnu.Emacs",
                       "com.jetbrains.pycharm",
                       "com.visualstudio.code.oss"
@@ -4439,6 +4553,7 @@
                       "com.googlecode.iterm2",
                       "io.alacritty",
                       "net.kovidgoyal.kitty",
+                      "com.neovide.neovide",
                       "org.gnu.Emacs",
                       "com.jetbrains.pycharm",
                       "com.visualstudio.code.oss"
@@ -4480,6 +4595,7 @@
                       "com.googlecode.iterm2",
                       "io.alacritty",
                       "net.kovidgoyal.kitty",
+                      "com.neovide.neovide",
                       "org.gnu.Emacs",
                       "com.jetbrains.pycharm",
                       "com.visualstudio.code.oss"
@@ -4513,6 +4629,7 @@
                       "com.googlecode.iterm2",
                       "io.alacritty",
                       "net.kovidgoyal.kitty",
+                      "com.neovide.neovide",
                       "org.gnu.Emacs",
                       "com.jetbrains.pycharm",
                       "com.visualstudio.code.oss"
@@ -4546,6 +4663,7 @@
                       "com.googlecode.iterm2",
                       "io.alacritty",
                       "net.kovidgoyal.kitty",
+                      "com.neovide.neovide",
                       "org.gnu.Emacs",
                       "com.jetbrains.pycharm",
                       "com.visualstudio.code.oss"
@@ -4584,6 +4702,7 @@
                       "com.googlecode.iterm2",
                       "io.alacritty",
                       "net.kovidgoyal.kitty",
+                      "com.neovide.neovide",
                       "org.gnu.Emacs",
                       "com.jetbrains.pycharm",
                       "com.visualstudio.code.oss"
@@ -4619,6 +4738,7 @@
                       "com.googlecode.iterm2",
                       "io.alacritty",
                       "net.kovidgoyal.kitty",
+                      "com.neovide.neovide",
                       "org.gnu.Emacs",
                       "com.jetbrains.pycharm",
                       "com.visualstudio.code.oss"
@@ -4661,6 +4781,7 @@
                       "com.googlecode.iterm2",
                       "io.alacritty",
                       "net.kovidgoyal.kitty",
+                      "com.neovide.neovide",
                       "org.gnu.Emacs",
                       "com.jetbrains.pycharm",
                       "com.visualstudio.code.oss"
@@ -4696,6 +4817,7 @@
                       "com.googlecode.iterm2",
                       "io.alacritty",
                       "net.kovidgoyal.kitty",
+                      "com.neovide.neovide",
                       "org.gnu.Emacs",
                       "com.jetbrains.pycharm",
                       "com.visualstudio.code.oss"
@@ -4738,6 +4860,7 @@
                       "com.googlecode.iterm2",
                       "io.alacritty",
                       "net.kovidgoyal.kitty",
+                      "com.neovide.neovide",
                       "org.gnu.Emacs",
                       "com.jetbrains.pycharm",
                       "com.visualstudio.code.oss"
@@ -4780,6 +4903,7 @@
                       "com.googlecode.iterm2",
                       "io.alacritty",
                       "net.kovidgoyal.kitty",
+                      "com.neovide.neovide",
                       "org.gnu.Emacs",
                       "com.jetbrains.pycharm",
                       "com.visualstudio.code.oss"
@@ -4833,6 +4957,7 @@
                       "com.googlecode.iterm2",
                       "io.alacritty",
                       "net.kovidgoyal.kitty",
+                      "com.neovide.neovide",
                       "org.gnu.Emacs",
                       "com.jetbrains.pycharm",
                       "com.visualstudio.code.oss"
@@ -4871,6 +4996,7 @@
                       "com.googlecode.iterm2",
                       "io.alacritty",
                       "net.kovidgoyal.kitty",
+                      "com.neovide.neovide",
                       "org.gnu.Emacs",
                       "com.jetbrains.pycharm",
                       "com.visualstudio.code.oss"
@@ -4909,6 +5035,7 @@
                       "com.googlecode.iterm2",
                       "io.alacritty",
                       "net.kovidgoyal.kitty",
+                      "com.neovide.neovide",
                       "org.gnu.Emacs",
                       "com.jetbrains.pycharm",
                       "com.visualstudio.code.oss"
@@ -4952,6 +5079,7 @@
                       "com.googlecode.iterm2",
                       "io.alacritty",
                       "net.kovidgoyal.kitty",
+                      "com.neovide.neovide",
                       "org.gnu.Emacs",
                       "com.jetbrains.pycharm",
                       "com.visualstudio.code.oss"
@@ -4984,6 +5112,7 @@
                       "com.googlecode.iterm2",
                       "io.alacritty",
                       "net.kovidgoyal.kitty",
+                      "com.neovide.neovide",
                       "org.gnu.Emacs",
                       "com.jetbrains.pycharm",
                       "com.visualstudio.code.oss"
@@ -5016,6 +5145,7 @@
                       "com.googlecode.iterm2",
                       "io.alacritty",
                       "net.kovidgoyal.kitty",
+                      "com.neovide.neovide",
                       "org.gnu.Emacs",
                       "com.jetbrains.pycharm",
                       "com.visualstudio.code.oss"
@@ -5048,6 +5178,7 @@
                       "com.googlecode.iterm2",
                       "io.alacritty",
                       "net.kovidgoyal.kitty",
+                      "com.neovide.neovide",
                       "org.gnu.Emacs",
                       "com.jetbrains.pycharm",
                       "com.visualstudio.code.oss"
@@ -5080,6 +5211,7 @@
                       "com.googlecode.iterm2",
                       "io.alacritty",
                       "net.kovidgoyal.kitty",
+                      "com.neovide.neovide",
                       "org.gnu.Emacs",
                       "com.jetbrains.pycharm",
                       "com.visualstudio.code.oss"
@@ -5112,6 +5244,7 @@
                       "com.googlecode.iterm2",
                       "io.alacritty",
                       "net.kovidgoyal.kitty",
+                      "com.neovide.neovide",
                       "org.gnu.Emacs",
                       "com.jetbrains.pycharm",
                       "com.visualstudio.code.oss"
@@ -5144,6 +5277,7 @@
                       "com.googlecode.iterm2",
                       "io.alacritty",
                       "net.kovidgoyal.kitty",
+                      "com.neovide.neovide",
                       "org.gnu.Emacs",
                       "com.jetbrains.pycharm",
                       "com.visualstudio.code.oss"
@@ -5176,6 +5310,7 @@
                       "com.googlecode.iterm2",
                       "io.alacritty",
                       "net.kovidgoyal.kitty",
+                      "com.neovide.neovide",
                       "org.gnu.Emacs",
                       "com.jetbrains.pycharm",
                       "com.visualstudio.code.oss"
@@ -5208,6 +5343,7 @@
                       "com.googlecode.iterm2",
                       "io.alacritty",
                       "net.kovidgoyal.kitty",
+                      "com.neovide.neovide",
                       "org.gnu.Emacs",
                       "com.jetbrains.pycharm",
                       "com.visualstudio.code.oss"
