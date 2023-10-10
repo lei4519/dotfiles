@@ -1,12 +1,14 @@
 gui:
   nerdFontsVersion: "3"
+  scrollHeight: 20 # how many lines you scroll by
   language: "zh-CN"
 git:
   paging:
     pager: delta --dark --paging=never
-log:
-  showGraph: "always"
-  showWholeGraph: true
+  log:
+    showGraph: "always"
+    showWholeGraph: true
+  branchLogCmd: "git log --graph --color=always --oneline --decorate --date=relative {{branchName}} --"
 os:
   editPreset: "nvim"
 notARepository: "skip" # one of: 'prompt' | 'create' | 'skip' | 'quit'
@@ -15,3 +17,5 @@ keybinding:
   universal:
     nextScreenMode: "="
     prevScreenMode: "-"
+    prevPage: "<c-b>" # go to next page in list
+    nextPage: "<c-f>" # go to previous page in list
