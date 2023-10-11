@@ -177,32 +177,9 @@ rm -rf ~/.fzf.zsh && ln -f -n -s  ~/dotfiles/.fzf.zsh ~/.fzf.zsh
 brew install fd
 brew install ripgrep
 ```
-
-## 提示
-
-### Eslint
-
-配置一个全局的 eslint，对所有的 ts(x) js(x) 文件都可以生效
+## neovide
 
 ```sh
-npm i -g eslint @typescript-eslint/eslint-plugin @typescript-eslint/parser eslint-plugin-prettier eslint-config-standard eslint-config-prettier
-ln -f -n -s ~/dotfiles/.eslintrc.js ~/.eslintrc.js
-```
-
-## vim 宏
-
-```sh
-# 查看宏
-:reg <letter>
-
-
-# 编辑宏
-
-:let @<letter>='
-
-# 依次按键 Ctrl-R Ctrl-R <letter>自动补全宏指令集
-
-# 做出对应的修改，然后补全最后面的单引号即可
-
-# 此时可以输入:reg a 发现宏的内容已经被修改了
+brew install neovide
+rm -rf ~/.config/neovide/config.toml && ln -f -n -s ~/dotfiles/neovide/config.toml ~/.config/neovide/config.toml 
 ```

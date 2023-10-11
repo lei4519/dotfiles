@@ -1,47 +1,31 @@
--- kitty
--- vim.api.nvim_exec(
---   [[
---
--- let &t_AU = "\e[58:5:%dm"
--- let &t_8u = "\e[58:2:%lu:%lu:%lum"
--- let &t_Us = "\e[4:2m"
--- let &t_Cs = "\e[4:3m"
--- let &t_ds = "\e[4:4m"
--- let &t_Ds = "\e[4:5m"
--- let &t_Ce = "\e[4:0m"
---
--- let &t_Ts = "\e[9m"
--- let &t_Te = "\e[29m"
---
--- let &t_8f = "\e[38:2:%lu:%lu:%lum"
--- let &t_8b = "\e[48:2:%lu:%lu:%lum"
--- let &t_RF = "\e]10;?\e\\"
--- let &t_RB = "\e]11;?\e\\"
---
--- let &t_BE = "\e[?2004h"
--- let &t_BD = "\e[?2004l"
--- let &t_PS = "\e[200~"
--- let &t_PE = "\e[201~"
---
--- let &t_RC = "\e[?12$p"
--- let &t_SH = "\e[%d q"
--- let &t_RS = "\eP$q q\e\\"
--- let &t_SI = "\e[5 q"
--- let &t_SR = "\e[3 q"
--- let &t_EI = "\e[1 q"
--- let &t_VS = "\e[?12l"
---
--- let &t_fe = "\e[?1004h"
--- let &t_fd = "\e[?1004l"
---
--- let &t_ST = "\e[22;2t"
--- let &t_RT = "\e[23;2t"
---
--- let &t_ut=''
---
--- ]],
---   true
--- )
-
 -- bootstrap lazy.nvim, LazyVim and your plugins
 require("config.lazy")
+
+if vim.g.neovide then
+  -- Put anything you want to happen only in Neovide here
+  vim.g.neovide_transparency = 0.9
+
+  vim.keymap.set("n", "<D-s>", ":w<CR>") -- Save
+  vim.keymap.set("v", "<D-c>", '"+y') -- Copy
+  vim.keymap.set("n", "<D-v>", '"+P') -- Paste normal mode
+  vim.keymap.set("v", "<D-v>", '"+P') -- Paste visual mode
+  vim.keymap.set("c", "<D-v>", "<C-R>+") -- Paste command mode
+  vim.keymap.set("i", "<D-v>", '<ESC>l"+Pli') -- Paste insert mode
+
+  -- Allow clipboard copy paste in neovim
+  vim.api.nvim_set_keymap("", "<D-v>", "+p<CR>", { noremap = true, silent = true })
+  vim.api.nvim_set_keymap("!", "<D-v>", "<C-R>+", { noremap = true, silent = true })
+  vim.api.nvim_set_keymap("t", "<D-v>", "<C-R>+", { noremap = true, silent = true })
+  vim.api.nvim_set_keymap("v", "<D-v>", "<C-R>+", { noremap = true, silent = true })
+
+  -- Add keybinds to change transparency
+  local change_transparency = function(delta)
+    vim.g.neovide_transparency = vim.g.neovide_transparency + delta
+  end
+  vim.keymap.set({ "n", "v", "o" }, "<D-]>", function()
+    change_transparency(0.01)
+  end)
+  vim.keymap.set({ "n", "v", "o" }, "<D-[>", function()
+    change_transparency(-0.01)
+  end)
+end
