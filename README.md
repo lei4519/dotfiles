@@ -7,18 +7,27 @@ git clone git@github.com:lei4519/dotfiles.git ~/dotfiles
 
 ## 按键映射
 
-````sh
+```sh
 brew install --cask karabiner-elements
 ln -f -n -s ~/dotfiles/karabiner ~/.config/karabiner
+```
 
 ## 截图
 
 ```sh
 brew install --cask snipaste
 ln -f -n -s ~/dotfiles/snipaste/config.ini ~/.snipaste/config.ini
-````
+```
 
-````
+## 笔记
+
+```sh
+brew install --cask obsidian
+
+# 图床上传
+brew install piclist --cask
+rm -rf /Users/lay/Library/Application\ Support/piclist/data.json && ln -f -n -s ~/dotfiles/picgo/data.json /Users/lay/Library/Application Support/piclist/data.json
+```
 
 ## 终端
 
@@ -76,7 +85,7 @@ brew install bat
 brew install pandoc
 # preview json
 brew install jq
-````
+```
 
 ## Vim
 

@@ -33,7 +33,7 @@ return {
     -- },
     filetypes = {
       rust = true,
-      html = true,
+      -- html = true,
       lua = true,
       javascript = true,
       javascriptreact = true,

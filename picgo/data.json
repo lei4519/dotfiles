@@ -1,0 +1,85 @@
+{
+  "picBed": {
+    "current": "github",
+    "uploader": "github",
+    "smms": {
+      "token": ""
+    },
+    "list": [
+      {
+        "name": "SM.MS图床",
+        "type": "smms",
+        "visible": false
+      },
+      {
+        "name": "腾讯云COS",
+        "type": "tcyun",
+        "visible": false
+      },
+      {
+        "name": "GitHub图床",
+        "type": "github",
+        "visible": true
+      },
+      {
+        "name": "七牛图床",
+        "type": "qiniu",
+        "visible": false
+      },
+      {
+        "name": "Imgur图床",
+        "type": "imgur",
+        "visible": false
+      },
+      {
+        "name": "阿里云OSS",
+        "type": "aliyun",
+        "visible": false
+      },
+      {
+        "name": "又拍云图床",
+        "type": "upyun",
+        "visible": false
+      }
+    ],
+    "qiniu": {
+      "accessKey": "rG2bd9WPsr2ELslWEfn8leQFAk8Vp_avaaI7O3Qo",
+      "area": "z1",
+      "bucket": "lay-picture",
+      "options": "",
+      "path": "picture-bed",
+      "secretKey": "RQ5kdLZsuwf3NbLxaYhpVArzJ9Tgt6lYcttQXU0P",
+      "url": "http://rbx663sxs.hb-bkt.clouddn.com"
+    },
+    "github": {
+      "branch": "main",
+      "customUrl": "",
+      "path": "images/",
+      "repo": "lei4519/picture-bed",
+      "token": "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"
+    }
+  },
+  "settings": {
+    "shortKey": {
+      "picgo:upload": {
+        "enable": true,
+        "key": "CommandOrControl+Shift+P",
+        "name": "upload",
+        "label": "快捷上传"
+      }
+    },
+    "server": {
+      "port": 36677,
+      "host": "127.0.0.1",
+      "enable": true
+    },
+    "privacyEnsure": true,
+    "showUpdateTip": true,
+    "autoStart": false,
+    "checkBetaUpdate": false
+  },
+  "picgoPlugins": {},
+  "debug": true,
+  "PICGO_ENV": "GUI",
+  "needReload": false
+}
