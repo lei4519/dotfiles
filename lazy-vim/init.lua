@@ -1,9 +1,8 @@
 -- bootstrap lazy.nvim, LazyVim and your plugins
-require("config.lazy")
 
 if vim.g.neovide then
   -- Put anything you want to happen only in Neovide here
-  vim.g.neovide_transparency = 0.9
+  vim.g.neovide_transparency = 1
 
   vim.keymap.set("n", "<D-s>", ":w<CR>") -- Save
   vim.keymap.set("v", "<D-c>", '"+y') -- Copy
@@ -29,3 +28,5 @@ if vim.g.neovide then
     change_transparency(-0.01)
   end)
 end
+
+require("config.lazy")

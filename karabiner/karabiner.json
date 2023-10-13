@@ -26,11 +26,12 @@
                     "bundle_identifiers": [
                       "io.alacritty",
                       "net.kovidgoyal.kitty",
+                      "com.github.wez.wezterm",
                       "com.neovide.neovide",
                       "com.googlecode.iterm2",
                       "org.gnu.Emacs"
                     ],
-                    "file_paths": [""],
+                    "file_paths": ["^\\/opt\\/homebrew\\/bin\\/neovide$"],
                     "type": "frontmost_application_unless"
                   }
                 ],
@@ -59,10 +60,12 @@
                     "bundle_identifiers": [
                       "io.alacritty",
                       "net.kovidgoyal.kitty",
+                      "com.github.wez.wezterm",
                       "com.neovide.neovide",
                       "com.googlecode.iterm2",
                       "org.gnu.Emacs"
                     ],
+                    "file_paths": ["^\\/opt\\/homebrew\\/bin\\/neovide$"],
                     "type": "frontmost_application_unless"
                   }
                 ],
@@ -96,10 +99,12 @@
                     "bundle_identifiers": [
                       "io.alacritty",
                       "net.kovidgoyal.kitty",
+                      "com.github.wez.wezterm",
                       "com.neovide.neovide",
                       "com.googlecode.iterm2",
                       "org.gnu.Emacs"
                     ],
+                    "file_paths": ["^\\/opt\\/homebrew\\/bin\\/neovide$"],
                     "type": "frontmost_application_if"
                   }
                 ],
@@ -128,10 +133,12 @@
                     "bundle_identifiers": [
                       "io.alacritty",
                       "net.kovidgoyal.kitty",
+                      "com.github.wez.wezterm",
                       "com.neovide.neovide",
                       "com.googlecode.iterm2",
                       "org.gnu.Emacs"
                     ],
+                    "file_paths": ["^\\/opt\\/homebrew\\/bin\\/neovide$"],
                     "type": "frontmost_application_if"
                   }
                 ],
@@ -165,10 +172,12 @@
                     "bundle_identifiers": [
                       "io.alacritty",
                       "net.kovidgoyal.kitty",
+                      "com.github.wez.wezterm",
                       "com.neovide.neovide",
                       "com.googlecode.iterm2",
                       "org.gnu.Emacs"
                     ],
+                    "file_paths": ["^\\/opt\\/homebrew\\/bin\\/neovide$"],
                     "type": "frontmost_application_if"
                   }
                 ],
@@ -192,10 +201,12 @@
                     "bundle_identifiers": [
                       "io.alacritty",
                       "net.kovidgoyal.kitty",
+                      "com.github.wez.wezterm",
                       "com.neovide.neovide",
                       "com.googlecode.iterm2",
                       "org.gnu.Emacs"
                     ],
+                    "file_paths": ["^\\/opt\\/homebrew\\/bin\\/neovide$"],
                     "type": "frontmost_application_if"
                   }
                 ],
@@ -219,10 +230,12 @@
                     "bundle_identifiers": [
                       "io.alacritty",
                       "net.kovidgoyal.kitty",
+                      "com.github.wez.wezterm",
                       "com.neovide.neovide",
                       "com.googlecode.iterm2",
                       "org.gnu.Emacs"
                     ],
+                    "file_paths": ["^\\/opt\\/homebrew\\/bin\\/neovide$"],
                     "type": "frontmost_application_if"
                   }
                 ],
@@ -246,10 +259,12 @@
                     "bundle_identifiers": [
                       "io.alacritty",
                       "net.kovidgoyal.kitty",
+                      "com.github.wez.wezterm",
                       "com.neovide.neovide",
                       "com.googlecode.iterm2",
                       "org.gnu.Emacs"
                     ],
+                    "file_paths": ["^\\/opt\\/homebrew\\/bin\\/neovide$"],
                     "type": "frontmost_application_if"
                   }
                 ],
@@ -273,10 +288,12 @@
                     "bundle_identifiers": [
                       "io.alacritty",
                       "net.kovidgoyal.kitty",
+                      "com.github.wez.wezterm",
                       "com.neovide.neovide",
                       "com.googlecode.iterm2",
                       "org.gnu.Emacs"
                     ],
+                    "file_paths": ["^\\/opt\\/homebrew\\/bin\\/neovide$"],
                     "type": "frontmost_application_if"
                   }
                 ],
@@ -300,10 +317,12 @@
                     "bundle_identifiers": [
                       "io.alacritty",
                       "net.kovidgoyal.kitty",
+                      "com.github.wez.wezterm",
                       "com.neovide.neovide",
                       "com.googlecode.iterm2",
                       "org.gnu.Emacs"
                     ],
+                    "file_paths": ["^\\/opt\\/homebrew\\/bin\\/neovide$"],
                     "type": "frontmost_application_if"
                   }
                 ],
@@ -327,10 +346,12 @@
                     "bundle_identifiers": [
                       "io.alacritty",
                       "net.kovidgoyal.kitty",
+                      "com.github.wez.wezterm",
                       "com.neovide.neovide",
                       "com.googlecode.iterm2",
                       "org.gnu.Emacs"
                     ],
+                    "file_paths": ["^\\/opt\\/homebrew\\/bin\\/neovide$"],
                     "type": "frontmost_application_if"
                   }
                 ],
@@ -354,10 +375,12 @@
                     "bundle_identifiers": [
                       "io.alacritty",
                       "net.kovidgoyal.kitty",
+                      "com.github.wez.wezterm",
                       "com.neovide.neovide",
                       "com.googlecode.iterm2",
                       "org.gnu.Emacs"
                     ],
+                    "file_paths": ["^\\/opt\\/homebrew\\/bin\\/neovide$"],
                     "type": "frontmost_application_if"
                   }
                 ],
@@ -381,10 +404,12 @@
                     "bundle_identifiers": [
                       "io.alacritty",
                       "net.kovidgoyal.kitty",
+                      "com.github.wez.wezterm",
                       "com.neovide.neovide",
                       "com.googlecode.iterm2",
                       "org.gnu.Emacs"
                     ],
+                    "file_paths": ["^\\/opt\\/homebrew\\/bin\\/neovide$"],
                     "type": "frontmost_application_if"
                   }
                 ],
@@ -408,10 +433,12 @@
                     "bundle_identifiers": [
                       "io.alacritty",
                       "net.kovidgoyal.kitty",
+                      "com.github.wez.wezterm",
                       "com.neovide.neovide",
                       "com.googlecode.iterm2",
                       "org.gnu.Emacs"
                     ],
+                    "file_paths": ["^\\/opt\\/homebrew\\/bin\\/neovide$"],
                     "type": "frontmost_application_if"
                   }
                 ],
@@ -435,10 +462,12 @@
                     "bundle_identifiers": [
                       "io.alacritty",
                       "net.kovidgoyal.kitty",
+                      "com.github.wez.wezterm",
                       "com.neovide.neovide",
                       "com.googlecode.iterm2",
                       "org.gnu.Emacs"
                     ],
+                    "file_paths": ["^\\/opt\\/homebrew\\/bin\\/neovide$"],
                     "type": "frontmost_application_if"
                   }
                 ],
@@ -462,10 +491,12 @@
                     "bundle_identifiers": [
                       "io.alacritty",
                       "net.kovidgoyal.kitty",
+                      "com.github.wez.wezterm",
                       "com.neovide.neovide",
                       "com.googlecode.iterm2",
                       "org.gnu.Emacs"
                     ],
+                    "file_paths": ["^\\/opt\\/homebrew\\/bin\\/neovide$"],
                     "type": "frontmost_application_if"
                   }
                 ],
@@ -489,10 +520,12 @@
                     "bundle_identifiers": [
                       "io.alacritty",
                       "net.kovidgoyal.kitty",
+                      "com.github.wez.wezterm",
                       "com.neovide.neovide",
                       "com.googlecode.iterm2",
                       "org.gnu.Emacs"
                     ],
+                    "file_paths": ["^\\/opt\\/homebrew\\/bin\\/neovide$"],
                     "type": "frontmost_application_if"
                   }
                 ],
@@ -516,10 +549,12 @@
                     "bundle_identifiers": [
                       "io.alacritty",
                       "net.kovidgoyal.kitty",
+                      "com.github.wez.wezterm",
                       "com.neovide.neovide",
                       "com.googlecode.iterm2",
                       "org.gnu.Emacs"
                     ],
+                    "file_paths": ["^\\/opt\\/homebrew\\/bin\\/neovide$"],
                     "type": "frontmost_application_if"
                   }
                 ],
@@ -543,10 +578,12 @@
                     "bundle_identifiers": [
                       "io.alacritty",
                       "net.kovidgoyal.kitty",
+                      "com.github.wez.wezterm",
                       "com.neovide.neovide",
                       "com.googlecode.iterm2",
                       "org.gnu.Emacs"
                     ],
+                    "file_paths": ["^\\/opt\\/homebrew\\/bin\\/neovide$"],
                     "type": "frontmost_application_if"
                   }
                 ],
@@ -570,10 +607,12 @@
                     "bundle_identifiers": [
                       "io.alacritty",
                       "net.kovidgoyal.kitty",
+                      "com.github.wez.wezterm",
                       "com.neovide.neovide",
                       "com.googlecode.iterm2",
                       "org.gnu.Emacs"
                     ],
+                    "file_paths": ["^\\/opt\\/homebrew\\/bin\\/neovide$"],
                     "type": "frontmost_application_if"
                   }
                 ],
@@ -597,10 +636,12 @@
                     "bundle_identifiers": [
                       "io.alacritty",
                       "net.kovidgoyal.kitty",
+                      "com.github.wez.wezterm",
                       "com.neovide.neovide",
                       "com.googlecode.iterm2",
                       "org.gnu.Emacs"
                     ],
+                    "file_paths": ["^\\/opt\\/homebrew\\/bin\\/neovide$"],
                     "type": "frontmost_application_if"
                   }
                 ],
@@ -624,10 +665,12 @@
                     "bundle_identifiers": [
                       "io.alacritty",
                       "net.kovidgoyal.kitty",
+                      "com.github.wez.wezterm",
                       "com.neovide.neovide",
                       "com.googlecode.iterm2",
                       "org.gnu.Emacs"
                     ],
+                    "file_paths": ["^\\/opt\\/homebrew\\/bin\\/neovide$"],
                     "type": "frontmost_application_if"
                   }
                 ],
@@ -651,10 +694,12 @@
                     "bundle_identifiers": [
                       "io.alacritty",
                       "net.kovidgoyal.kitty",
+                      "com.github.wez.wezterm",
                       "com.neovide.neovide",
                       "com.googlecode.iterm2",
                       "org.gnu.Emacs"
                     ],
+                    "file_paths": ["^\\/opt\\/homebrew\\/bin\\/neovide$"],
                     "type": "frontmost_application_if"
                   }
                 ],
@@ -678,10 +723,12 @@
                     "bundle_identifiers": [
                       "io.alacritty",
                       "net.kovidgoyal.kitty",
+                      "com.github.wez.wezterm",
                       "com.neovide.neovide",
                       "com.googlecode.iterm2",
                       "org.gnu.Emacs"
                     ],
+                    "file_paths": ["^\\/opt\\/homebrew\\/bin\\/neovide$"],
                     "type": "frontmost_application_if"
                   }
                 ],
@@ -710,10 +757,12 @@
                     "bundle_identifiers": [
                       "io.alacritty",
                       "net.kovidgoyal.kitty",
+                      "com.github.wez.wezterm",
                       "com.neovide.neovide",
                       "com.googlecode.iterm2",
                       "org.gnu.Emacs"
                     ],
+                    "file_paths": ["^\\/opt\\/homebrew\\/bin\\/neovide$"],
                     "type": "frontmost_application_if"
                   }
                 ],
@@ -737,10 +786,12 @@
                     "bundle_identifiers": [
                       "io.alacritty",
                       "net.kovidgoyal.kitty",
+                      "com.github.wez.wezterm",
                       "com.neovide.neovide",
                       "com.googlecode.iterm2",
                       "org.gnu.Emacs"
                     ],
+                    "file_paths": ["^\\/opt\\/homebrew\\/bin\\/neovide$"],
                     "type": "frontmost_application_if"
                   }
                 ],
@@ -769,10 +820,12 @@
                     "bundle_identifiers": [
                       "io.alacritty",
                       "net.kovidgoyal.kitty",
+                      "com.github.wez.wezterm",
                       "com.neovide.neovide",
                       "com.googlecode.iterm2",
                       "org.gnu.Emacs"
                     ],
+                    "file_paths": ["^\\/opt\\/homebrew\\/bin\\/neovide$"],
                     "type": "frontmost_application_if"
                   }
                 ],
@@ -796,10 +849,12 @@
                     "bundle_identifiers": [
                       "io.alacritty",
                       "net.kovidgoyal.kitty",
+                      "com.github.wez.wezterm",
                       "com.neovide.neovide",
                       "com.googlecode.iterm2",
                       "org.gnu.Emacs"
                     ],
+                    "file_paths": ["^\\/opt\\/homebrew\\/bin\\/neovide$"],
                     "type": "frontmost_application_if"
                   }
                 ],
@@ -828,10 +883,12 @@
                     "bundle_identifiers": [
                       "io.alacritty",
                       "net.kovidgoyal.kitty",
+                      "com.github.wez.wezterm",
                       "com.neovide.neovide",
                       "com.googlecode.iterm2",
                       "org.gnu.Emacs"
                     ],
+                    "file_paths": ["^\\/opt\\/homebrew\\/bin\\/neovide$"],
                     "type": "frontmost_application_if"
                   }
                 ],
@@ -855,10 +912,12 @@
                     "bundle_identifiers": [
                       "io.alacritty",
                       "net.kovidgoyal.kitty",
+                      "com.github.wez.wezterm",
                       "com.neovide.neovide",
                       "com.googlecode.iterm2",
                       "org.gnu.Emacs"
                     ],
+                    "file_paths": ["^\\/opt\\/homebrew\\/bin\\/neovide$"],
                     "type": "frontmost_application_if"
                   }
                 ],
@@ -887,10 +946,12 @@
                     "bundle_identifiers": [
                       "io.alacritty",
                       "net.kovidgoyal.kitty",
+                      "com.github.wez.wezterm",
                       "com.neovide.neovide",
                       "com.googlecode.iterm2",
                       "org.gnu.Emacs"
                     ],
+                    "file_paths": ["^\\/opt\\/homebrew\\/bin\\/neovide$"],
                     "type": "frontmost_application_if"
                   }
                 ],
@@ -914,10 +975,12 @@
                     "bundle_identifiers": [
                       "io.alacritty",
                       "net.kovidgoyal.kitty",
+                      "com.github.wez.wezterm",
                       "com.neovide.neovide",
                       "com.googlecode.iterm2",
                       "org.gnu.Emacs"
                     ],
+                    "file_paths": ["^\\/opt\\/homebrew\\/bin\\/neovide$"],
                     "type": "frontmost_application_if"
                   }
                 ],
@@ -946,10 +1009,12 @@
                     "bundle_identifiers": [
                       "io.alacritty",
                       "net.kovidgoyal.kitty",
+                      "com.github.wez.wezterm",
                       "com.neovide.neovide",
                       "com.googlecode.iterm2",
                       "org.gnu.Emacs"
                     ],
+                    "file_paths": ["^\\/opt\\/homebrew\\/bin\\/neovide$"],
                     "type": "frontmost_application_if"
                   }
                 ],
@@ -973,10 +1038,12 @@
                     "bundle_identifiers": [
                       "io.alacritty",
                       "net.kovidgoyal.kitty",
+                      "com.github.wez.wezterm",
                       "com.neovide.neovide",
                       "com.googlecode.iterm2",
                       "org.gnu.Emacs"
                     ],
+                    "file_paths": ["^\\/opt\\/homebrew\\/bin\\/neovide$"],
                     "type": "frontmost_application_if"
                   }
                 ],
@@ -1005,10 +1072,12 @@
                     "bundle_identifiers": [
                       "io.alacritty",
                       "net.kovidgoyal.kitty",
+                      "com.github.wez.wezterm",
                       "com.neovide.neovide",
                       "com.googlecode.iterm2",
                       "org.gnu.Emacs"
                     ],
+                    "file_paths": ["^\\/opt\\/homebrew\\/bin\\/neovide$"],
                     "type": "frontmost_application_if"
                   }
                 ],
@@ -1032,10 +1101,12 @@
                     "bundle_identifiers": [
                       "io.alacritty",
                       "net.kovidgoyal.kitty",
+                      "com.github.wez.wezterm",
                       "com.neovide.neovide",
                       "com.googlecode.iterm2",
                       "org.gnu.Emacs"
                     ],
+                    "file_paths": ["^\\/opt\\/homebrew\\/bin\\/neovide$"],
                     "type": "frontmost_application_if"
                   }
                 ],

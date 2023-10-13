@@ -9,8 +9,11 @@ export http_proxy=http://127.0.0.1:8118
 # man use bat
 export MANPAGER="sh -c 'col -bx | bat -l man -p'"
 
-export EDITOR="nvim"
-export VISUAL="nvim"
+# export EDITOR="nvim"
+# export VISUAL="nvim"
+
+export EDITOR="neovide"
+export VISUAL="neovide"
 
 alias vi="$EDITOR"
 alias vim="$EDITOR"
@@ -19,7 +22,7 @@ alias icat="kitty +kitten icat"
 
 alias lg="lazygit"
 
-alias ni="neovide --frame none --maximized"
+alias ni="neovide"
 
 function zvm_config() {
   ZVM_LINE_INIT_MODE=$ZVM_MODE_INSERT
@@ -59,7 +62,7 @@ eval "$(zoxide init zsh)"
 eval "$(starship init zsh)"
 source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 source $(brew --prefix)/share/zsh-autocomplete/zsh-autocomplete.plugin.zsh
-# source $(brew --prefix)/opt/zsh-vi-mode/share/zsh-vi-mode/zsh-vi-mode.plugin.zsh
+source $(brew --prefix)/opt/zsh-vi-mode/share/zsh-vi-mode/zsh-vi-mode.plugin.zsh
 
 # zoxide
 export _ZO_ECHO='1'

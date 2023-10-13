@@ -57,6 +57,10 @@ ln -f -n -s ~/dotfiles/alacritty ~/.config/alacritty
 brew install kitty
 rm -rf ~/.config/kitty && ln -f -n -s ~/dotfiles/kitty ~/.config/kitty
 
+# wezterm 终端
+brew install wezterm
+rm -rf ~/.config/wezterm && ln -f -n -s ~/dotfiles/wezterm ~/.config/wezterm
+
 # 终端主题
 brew install starship
 rm -rf ~/.config/starship.toml && ln -f -n -s ~/dotfiles/starship.toml ~/.config/starship.toml
@@ -177,9 +181,10 @@ rm -rf ~/.fzf.zsh && ln -f -n -s  ~/dotfiles/.fzf.zsh ~/.fzf.zsh
 brew install fd
 brew install ripgrep
 ```
+
 ## neovide
 
 ```sh
-brew install neovide
-rm -rf ~/.config/neovide/config.toml && ln -f -n -s ~/dotfiles/neovide/config.toml ~/.config/neovide/config.toml 
+brew install --cask neovide  # optional rust 编写的 neovim ui
+rm -rf ~/.config/neovide/config.toml && ln -f -n -s ~/dotfiles/neovide/config.toml ~/.config/neovide/config.toml
 ```

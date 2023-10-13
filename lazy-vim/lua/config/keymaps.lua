@@ -21,6 +21,4 @@ vim.keymap.del("n", "<leader>wd")
 vim.keymap.del("n", "<leader>w-")
 vim.keymap.del("n", "<leader>w|")
 
--- vim.keymap.set("v", "p", '"+P')
--- vim.api.nvim_set_keymap("v", "p", '"+P', { noremap = true, silent = true })
--- map("v", "p", '"+P', { noremap = true, silent = true })
+map("n", "/", "/\\V", { noremap = true })

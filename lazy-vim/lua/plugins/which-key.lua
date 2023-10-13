@@ -6,6 +6,10 @@ return {
       mode = { "n", "v" },
       ["g"] = {
         a = { "<cmd>lua vim.lsp.buf.code_action()<cr>", "Code Action" },
+        A = {
+          "<cmd>lua vim.lsp.buf.code_action({ context={ only = { 'source' }, diagnostics = {} } })<cr>",
+          "Source Action",
+        },
         k = { "<cmd>lua vim.diagnostic.open_float()<cr>", "Line Diagnostics" },
       },
       ["<leader>b"] = {
@@ -13,7 +17,6 @@ return {
         l = { "<cmd>BufferLineCloseLeft<cr>", "Close Left Buffer" },
         r = { "<cmd>BufferLineCloseRight<cr>", "Close Right Buffer" },
       },
-      ["<leader>w"] = { "<cmd>bd<cr>", "Close Current Buffer" },
       ["<leader>\\"] = {
         name = "+toggleterm",
         ["\\"] = { "<cmd>ToggleTerm<cr>", "ToggleTerm" },
