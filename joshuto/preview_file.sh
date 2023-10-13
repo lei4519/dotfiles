@@ -194,7 +194,7 @@ handle_mime() {
 
 		## Text
 	text/* | */xml)
-		bat --color=always --paging=never \
+		bat --color=always --theme=Dracula --paging=never \
 			--style=plain \
 			--terminal-width="${PREVIEW_WIDTH}" \
 			"${FILE_PATH}" && exit 0

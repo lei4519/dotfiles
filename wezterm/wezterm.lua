@@ -35,11 +35,35 @@ config.keys = {
 	-- Turn off the default CMD-m Hide action, allowing CMD-m to
 	-- be potentially recognized and handled by the tab
 	{
+		key = "n",
+		mods = "CTRL|SHIFT",
+		action = wezterm.action.SpawnTab("CurrentPaneDomain"),
+	},
+	{
+		key = "h",
+		mods = "CTRL|SHIFT",
+		action = wezterm.action.ActivatePaneDirection("Left"),
+	},
+	{
+		key = "l",
+		mods = "CTRL|SHIFT",
+		action = wezterm.action.ActivatePaneDirection("Right"),
+	},
+	{
+		key = "k",
+		mods = "CTRL|SHIFT",
+		action = wezterm.action.ActivatePaneDirection("Up"),
+	},
+	{
+		key = "j",
+		mods = "CTRL|SHIFT",
+		action = wezterm.action.ActivatePaneDirection("Down"),
+	},
+	{
 		key = "v",
 		mods = "CTRL|SHIFT",
 		action = wezterm.action.QuickSelect,
 	},
-
 	{
 		key = "|",
 		mods = "CTRL|SHIFT",
