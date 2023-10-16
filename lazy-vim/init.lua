@@ -1,8 +1,24 @@
 -- bootstrap lazy.nvim, LazyVim and your plugins
+function get_os()
+  local ostype = os.getenv("OSTYPE") or ""
+  if string.find(ostype, "linux") then
+    return "Linux"
+  elseif string.find(ostype, "darwin") then
+    return "MacOS"
+  else
+    return "Unknown"
+  end
+end
+
+-- 调用函数获取当前操作系统
+local current_os = get_os()
+IS_MAC = current_os == "MacOS"
+IS_LINUX = current_os == "Linux"
 
 if vim.g.neovide then
   -- Put anything you want to happen only in Neovide here
-  vim.g.neovide_transparency = 1
+  vim.g.neovide_transparency = 0.9
+  vim.o.guifont = "FiraCode Nerd Font:h14"
 
   vim.keymap.set("n", "<D-s>", ":w<CR>") -- Save
   vim.keymap.set("v", "<D-c>", '"+y') -- Copy
