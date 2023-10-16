@@ -35,6 +35,16 @@ config.keys = {
 	-- Turn off the default CMD-m Hide action, allowing CMD-m to
 	-- be potentially recognized and handled by the tab
 	{
+		key = "[",
+		mods = "CTRL|SHIFT",
+		action = wezterm.action.ActivateTabRelative(-1),
+	},
+	{
+		key = "]",
+		mods = "CTRL|SHIFT",
+		action = wezterm.action.ActivateTabRelative(1),
+	},
+	{
 		key = "n",
 		mods = "CTRL|SHIFT",
 		action = wezterm.action.SpawnTab("CurrentPaneDomain"),
