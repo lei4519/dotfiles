@@ -38,6 +38,9 @@
                     "key_code": "caps_lock"
                   }
                 ],
+                "parameters": {
+                  "basic.to_if_alone_timeout_milliseconds": 1000
+                },
                 "type": "basic"
               }
             ]

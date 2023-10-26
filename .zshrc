@@ -56,7 +56,7 @@ function joshuto() {
 			;;
 	esac
 }
-alias ls="joshuto --change-directory"
+alias js="joshuto --change-directory"
 
 eval "$(fnm env --use-on-cd)"
 eval "$(zoxide init zsh)"

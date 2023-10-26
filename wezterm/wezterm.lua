@@ -18,7 +18,7 @@ end
 
 -- This is where you actually apply your config choices
 config.font = wezterm.font("FiraCode Nerd Font Mono", { weight = "Medium" })
-config.font_size = 16
+config.font_size = 14
 
 config.use_fancy_tab_bar = false
 config.tab_bar_at_bottom = true
