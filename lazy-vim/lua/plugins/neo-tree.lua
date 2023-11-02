@@ -77,7 +77,7 @@ return {
         hide_dotfiles = false,
         hide_gitignored = false,
       },
-      group_empty_dirs = true,
+      -- group_empty_dirs = true,
       -- window = {
       --   fuzzy_finder_mappings = { -- define keymaps for filter popup window in fuzzy_finder_mode
       --     ["<C-j>"] = "move_cursor_down",

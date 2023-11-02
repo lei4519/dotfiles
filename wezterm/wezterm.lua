@@ -18,7 +18,7 @@ end
 
 -- This is where you actually apply your config choices
 config.font = wezterm.font("FiraCode Nerd Font Mono", { weight = "Medium" })
-config.font_size = 14
+config.font_size = 15
 
 config.use_fancy_tab_bar = false
 config.tab_bar_at_bottom = true
@@ -34,16 +34,16 @@ config.window_padding = {
 config.keys = {
 	-- Turn off the default CMD-m Hide action, allowing CMD-m to
 	-- be potentially recognized and handled by the tab
-	{
-		key = "[",
-		mods = "CTRL|SHIFT",
-		action = wezterm.action.ActivateTabRelative(-1),
-	},
-	{
-		key = "]",
-		mods = "CTRL|SHIFT",
-		action = wezterm.action.ActivateTabRelative(1),
-	},
+	-- {
+	-- 	key = "[",
+	-- 	mods = "CTRL|SHIFT",
+	-- 	action = wezterm.action.ActivateTabRelative(-1),
+	-- },
+	-- {
+	-- 	key = "]",
+	-- 	mods = "CTRL|SHIFT",
+	-- 	action = wezterm.action.ActivateTabRelative(1),
+	-- },
 	{
 		key = "n",
 		mods = "CTRL|SHIFT",
