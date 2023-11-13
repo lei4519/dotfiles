@@ -1,5 +1,5 @@
 -- bootstrap lazy.nvim, LazyVim and your plugins
-function get_os()
+local function get_os()
   local ostype = os.getenv("OSTYPE") or "darwin"
   if string.find(ostype, "linux") then
     return "Linux"
@@ -17,8 +17,9 @@ IS_LINUX = current_os == "Linux"
 
 if vim.g.neovide then
   -- Put anything you want to happen only in Neovide here
-  vim.g.neovide_transparency = 1
+  -- vim.g.neovide_transparency = 1
   vim.o.guifont = "Hack Nerd Font:h14"
+  vim.opt.linespace = 1
 
   if IS_MAC then
     vim.keymap.set("n", "<D-s>", ":w<CR>") -- Save

@@ -19,6 +19,13 @@ brew install koekeishiya/formulae/yabai
 ln -f -n -s ~/dotfiles/yabai ~/.config/yabai
 ```
 
+## 窗口管理
+
+```sh
+brew install --cask amethyst
+rm -rf ~/.config/amethyst && ln -f -n -s ~/dotfiles/amethyst ~/.config/amethyst
+```
+
 ## 截图
 
 ```sh
