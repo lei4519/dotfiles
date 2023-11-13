@@ -12,6 +12,13 @@ brew install --cask karabiner-elements
 ln -f -n -s ~/dotfiles/karabiner ~/.config/karabiner
 ```
 
+## yabai
+
+```sh
+brew install koekeishiya/formulae/yabai
+ln -f -n -s ~/dotfiles/yabai ~/.config/yabai
+```
+
 ## 截图
 
 ```sh
