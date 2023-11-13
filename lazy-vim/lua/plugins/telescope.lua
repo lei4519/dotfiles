@@ -1,3 +1,5 @@
+local util = require("lazyvim.util")
+
 return {
   "nvim-telescope/telescope.nvim",
   dependencies = {
@@ -6,6 +8,9 @@ return {
     config = function()
       require("telescope").load_extension("fzf")
     end,
+  },
+  keys = {
+    { "<leader><space>", util.telescope("files", { cwd = false }), desc = "Find Files (cwd)" },
   },
   -- opts = {
   --   defaults = {

@@ -35,11 +35,18 @@
                 ],
                 "to_if_alone": [
                   {
-                    "key_code": "caps_lock"
+                    "key_code": "spacebar",
+                    "modifiers": "control"
+                  }
+                ],
+                "to_if_held_down": [
+                  {
+                    "key_code": "left_shift"
                   }
                 ],
                 "parameters": {
-                  "basic.to_if_alone_timeout_milliseconds": 1000
+                  "basic.to_if_alone_timeout_milliseconds": 200,
+                  "basic.to_if_held_down_threshold_milliseconds": 200
                 },
                 "type": "basic"
               }
