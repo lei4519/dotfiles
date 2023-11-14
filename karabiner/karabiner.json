@@ -18,6 +18,368 @@
         },
         "rules": [
           {
+            "description": "Map CapsLock to Ctrl+Shift+Alt",
+            "manipulators": [
+              {
+                "from": {
+                  "key_code": "caps_lock",
+                  "modifiers": {
+                    "optional": ["any"]
+                  }
+                },
+                "to": [
+                  {
+                    "key_code": "left_control",
+                    "modifiers": ["left_shift"]
+                  }
+                ],
+                "type": "basic"
+              }
+            ]
+          },
+          {
+            "description": "yabai: CapsLock + h - focus west",
+            "manipulators": [
+              {
+                "from": {
+                  "key_code": "h",
+                  "modifiers": {
+                    "mandatory": ["left_control", "left_shift"]
+                  }
+                },
+                "to": [
+                  {
+                    "shell_command": "yabai -m window --focus west"
+                  }
+                ],
+                "type": "basic"
+              }
+            ]
+          },
+          {
+            "description": "yabai: CapsLock + j - focus south",
+            "manipulators": [
+              {
+                "from": {
+                  "key_code": "j",
+                  "modifiers": {
+                    "mandatory": ["left_control", "left_shift"]
+                  }
+                },
+                "to": [
+                  {
+                    "shell_command": "yabai -m window --focus south"
+                  }
+                ],
+                "type": "basic"
+              }
+            ]
+          },
+          {
+            "description": "yabai: CapsLock + k - focus north",
+            "manipulators": [
+              {
+                "from": {
+                  "key_code": "k",
+                  "modifiers": {
+                    "mandatory": ["left_control", "left_shift"]
+                  }
+                },
+                "to": [
+                  {
+                    "shell_command": "yabai -m window --focus north"
+                  }
+                ],
+                "type": "basic"
+              }
+            ]
+          },
+          {
+            "description": "yabai: CapsLock + l - focus east",
+            "manipulators": [
+              {
+                "from": {
+                  "key_code": "l",
+                  "modifiers": {
+                    "mandatory": ["left_control", "left_shift"]
+                  }
+                },
+                "to": [
+                  {
+                    "shell_command": "yabai -m window --focus east"
+                  }
+                ],
+                "type": "basic"
+              }
+            ]
+          },
+          {
+            "description": "yabai: CapsLock + alt + h - swap west",
+            "manipulators": [
+              {
+                "from": {
+                  "key_code": "h",
+                  "modifiers": {
+                    "mandatory": ["left_control", "left_shift", "left_alt"]
+                  }
+                },
+                "to": [
+                  {
+                    "shell_command": "yabai -m window --swap west"
+                  }
+                ],
+                "type": "basic"
+              }
+            ]
+          },
+          {
+            "description": "yabai: CapsLock + alt + j - swap south",
+            "manipulators": [
+              {
+                "from": {
+                  "key_code": "j",
+                  "modifiers": {
+                    "mandatory": ["left_control", "left_shift", "left_alt"]
+                  }
+                },
+                "to": [
+                  {
+                    "shell_command": "yabai -m window --swap south"
+                  }
+                ],
+                "type": "basic"
+              }
+            ]
+          },
+          {
+            "description": "yabai: CapsLock + alt + k - swap north",
+            "manipulators": [
+              {
+                "from": {
+                  "key_code": "k",
+                  "modifiers": {
+                    "mandatory": ["left_control", "left_shift", "left_alt"]
+                  }
+                },
+                "to": [
+                  {
+                    "shell_command": "yabai -m window --swap north"
+                  }
+                ],
+                "type": "basic"
+              }
+            ]
+          },
+          {
+            "description": "yabai: CapsLock + alt + l - swap east",
+            "manipulators": [
+              {
+                "from": {
+                  "key_code": "l",
+                  "modifiers": {
+                    "mandatory": ["left_control", "left_shift", "left_alt"]
+                  }
+                },
+                "to": [
+                  {
+                    "shell_command": "yabai -m window --swap east"
+                  }
+                ],
+                "type": "basic"
+              }
+            ]
+          },
+          {
+            "description": "yabai: CapsLock + 0 - balance size of windows",
+            "manipulators": [
+              {
+                "from": {
+                  "key_code": "0",
+                  "modifiers": {
+                    "mandatory": ["left_control", "left_shift"]
+                  }
+                },
+                "to": [
+                  {
+                    "shell_command": "yabai -m space --balance"
+                  }
+                ],
+                "type": "basic"
+              }
+            ]
+          },
+          {
+            "description": "yabai: CapsLock + c - create desktop, move window and follow focus",
+            "manipulators": [
+              {
+                "from": {
+                  "key_code": "c",
+                  "modifiers": {
+                    "mandatory": ["left_control", "left_shift"]
+                  }
+                },
+                "to": [
+                  {
+                    "shell_command": "~/.config/yabai/config/yabai/create_new_space.sh 1"
+                  }
+                ],
+                "type": "basic"
+              }
+            ]
+          },
+          {
+            "description": "yabai: CapsLock + alt + c - create desktop and follow focus",
+            "manipulators": [
+              {
+                "from": {
+                  "key_code": "c",
+                  "modifiers": {
+                    "mandatory": ["left_control", "left_shift", "left_alt"]
+                  }
+                },
+                "to": [
+                  {
+                    "shell_command": "~/.config/yabai/config/yabai/create_new_space.sh"
+                  }
+                ],
+                "type": "basic"
+              }
+            ]
+          },
+          {
+            "description": "yabai: CapsLock + w - destroy desktop and goto recent space",
+            "manipulators": [
+              {
+                "from": {
+                  "key_code": "w",
+                  "modifiers": {
+                    "mandatory": ["left_control", "left_shift"]
+                  }
+                },
+                "to": [
+                  {
+                    "shell_command": "~/.config/yabai/config/yabai/destroy_space.sh"
+                  }
+                ],
+                "type": "basic"
+              }
+            ]
+          },
+          {
+            "description": "yabai: CapsLock + x - close window",
+            "manipulators": [
+              {
+                "from": {
+                  "key_code": "x",
+                  "modifiers": {
+                    "mandatory": ["left_control", "left_shift"]
+                  }
+                },
+                "to": [
+                  {
+                    "shell_command": "yabai -m window --close && ~/.config/yabai/config/yabai/auto_close_space_when_space_empty.sh"
+                  }
+                ],
+                "type": "basic"
+              }
+            ]
+          },
+          {
+            "description": "yabai: CapsLock + r - goto recent space",
+            "manipulators": [
+              {
+                "from": {
+                  "key_code": "r",
+                  "modifiers": {
+                    "mandatory": ["left_control", "left_shift"]
+                  }
+                },
+                "to": [
+                  {
+                    "shell_command": "yabai -m space --focus recent"
+                  }
+                ],
+                "type": "basic"
+              }
+            ]
+          },
+          {
+            "description": "yabai: CapsLock + p - goto prev space",
+            "manipulators": [
+              {
+                "from": {
+                  "key_code": "p",
+                  "modifiers": {
+                    "mandatory": ["left_control", "left_shift"]
+                  }
+                },
+                "to": [
+                  {
+                    "shell_command": "yabai -m space --focus prev || yabai -m space --focus last"
+                  }
+                ],
+                "type": "basic"
+              }
+            ]
+          },
+          {
+            "description": "yabai: CapsLock + n - goto next space",
+            "manipulators": [
+              {
+                "from": {
+                  "key_code": "n",
+                  "modifiers": {
+                    "mandatory": ["left_control", "left_shift"]
+                  }
+                },
+                "to": [
+                  {
+                    "shell_command": "yabai -m space --focus next || yabai -m space --focus first"
+                  }
+                ],
+                "type": "basic"
+              }
+            ]
+          },
+          {
+            "description": "yabai: CapsLock + f - toggle fullscreen",
+            "manipulators": [
+              {
+                "from": {
+                  "key_code": "n",
+                  "modifiers": {
+                    "mandatory": ["left_control", "left_shift"]
+                  }
+                },
+                "to": [
+                  {
+                    "shell_command": "yabai -m window --toggle zoom-fullscreen"
+                  }
+                ],
+                "type": "basic"
+              }
+            ]
+          },
+          {
+            "description": "yabai: CapsLock + t - toggle float",
+            "manipulators": [
+              {
+                "from": {
+                  "key_code": "t",
+                  "modifiers": {
+                    "mandatory": ["left_control", "left_shift"]
+                  }
+                },
+                "to": [
+                  {
+                    "shell_command": "~/.config/yabai/config/yabai/toggle-window-floating-tiling.sh && ~/.config/yabai/config/yabai/change-window-border-color-when-window-focused.sh"
+                  }
+                ],
+                "type": "basic"
+              }
+            ]
+          },
+          {
             "description": "Use Shift to switch input method",
             "manipulators": [
               {
@@ -59,7 +421,7 @@
                 "conditions": [
                   {
                     "bundle_identifiers": [
-                      "io.alacritty",
+                      "org.alacritty",
                       "net.kovidgoyal.kitty",
                       "com.github.wez.wezterm",
                       "com.neovide.neovide",
@@ -93,7 +455,7 @@
                 "conditions": [
                   {
                     "bundle_identifiers": [
-                      "io.alacritty",
+                      "org.alacritty",
                       "net.kovidgoyal.kitty",
                       "com.github.wez.wezterm",
                       "com.neovide.neovide",
@@ -132,7 +494,7 @@
                 "conditions": [
                   {
                     "bundle_identifiers": [
-                      "io.alacritty",
+                      "org.alacritty",
                       "net.kovidgoyal.kitty",
                       "com.github.wez.wezterm",
                       "com.neovide.neovide",
@@ -166,7 +528,7 @@
                 "conditions": [
                   {
                     "bundle_identifiers": [
-                      "io.alacritty",
+                      "org.alacritty",
                       "net.kovidgoyal.kitty",
                       "com.github.wez.wezterm",
                       "com.neovide.neovide",
@@ -205,7 +567,7 @@
                 "conditions": [
                   {
                     "bundle_identifiers": [
-                      "io.alacritty",
+                      "org.alacritty",
                       "net.kovidgoyal.kitty",
                       "com.github.wez.wezterm",
                       "com.neovide.neovide",
@@ -234,7 +596,7 @@
                 "conditions": [
                   {
                     "bundle_identifiers": [
-                      "io.alacritty",
+                      "org.alacritty",
                       "net.kovidgoyal.kitty",
                       "com.github.wez.wezterm",
                       "com.neovide.neovide",
@@ -263,7 +625,7 @@
                 "conditions": [
                   {
                     "bundle_identifiers": [
-                      "io.alacritty",
+                      "org.alacritty",
                       "net.kovidgoyal.kitty",
                       "com.github.wez.wezterm",
                       "com.neovide.neovide",
@@ -292,7 +654,7 @@
                 "conditions": [
                   {
                     "bundle_identifiers": [
-                      "io.alacritty",
+                      "org.alacritty",
                       "net.kovidgoyal.kitty",
                       "com.github.wez.wezterm",
                       "com.neovide.neovide",
@@ -321,7 +683,7 @@
                 "conditions": [
                   {
                     "bundle_identifiers": [
-                      "io.alacritty",
+                      "org.alacritty",
                       "net.kovidgoyal.kitty",
                       "com.github.wez.wezterm",
                       "com.neovide.neovide",
@@ -350,7 +712,7 @@
                 "conditions": [
                   {
                     "bundle_identifiers": [
-                      "io.alacritty",
+                      "org.alacritty",
                       "net.kovidgoyal.kitty",
                       "com.github.wez.wezterm",
                       "com.neovide.neovide",
@@ -379,7 +741,7 @@
                 "conditions": [
                   {
                     "bundle_identifiers": [
-                      "io.alacritty",
+                      "org.alacritty",
                       "net.kovidgoyal.kitty",
                       "com.github.wez.wezterm",
                       "com.neovide.neovide",
@@ -408,7 +770,7 @@
                 "conditions": [
                   {
                     "bundle_identifiers": [
-                      "io.alacritty",
+                      "org.alacritty",
                       "net.kovidgoyal.kitty",
                       "com.github.wez.wezterm",
                       "com.neovide.neovide",
@@ -437,7 +799,7 @@
                 "conditions": [
                   {
                     "bundle_identifiers": [
-                      "io.alacritty",
+                      "org.alacritty",
                       "net.kovidgoyal.kitty",
                       "com.github.wez.wezterm",
                       "com.neovide.neovide",
@@ -466,7 +828,7 @@
                 "conditions": [
                   {
                     "bundle_identifiers": [
-                      "io.alacritty",
+                      "org.alacritty",
                       "net.kovidgoyal.kitty",
                       "com.github.wez.wezterm",
                       "com.neovide.neovide",
@@ -495,7 +857,7 @@
                 "conditions": [
                   {
                     "bundle_identifiers": [
-                      "io.alacritty",
+                      "org.alacritty",
                       "net.kovidgoyal.kitty",
                       "com.github.wez.wezterm",
                       "com.neovide.neovide",
@@ -524,7 +886,7 @@
                 "conditions": [
                   {
                     "bundle_identifiers": [
-                      "io.alacritty",
+                      "org.alacritty",
                       "net.kovidgoyal.kitty",
                       "com.github.wez.wezterm",
                       "com.neovide.neovide",
@@ -553,7 +915,7 @@
                 "conditions": [
                   {
                     "bundle_identifiers": [
-                      "io.alacritty",
+                      "org.alacritty",
                       "net.kovidgoyal.kitty",
                       "com.github.wez.wezterm",
                       "com.neovide.neovide",
@@ -582,7 +944,7 @@
                 "conditions": [
                   {
                     "bundle_identifiers": [
-                      "io.alacritty",
+                      "org.alacritty",
                       "net.kovidgoyal.kitty",
                       "com.github.wez.wezterm",
                       "com.neovide.neovide",
@@ -611,7 +973,7 @@
                 "conditions": [
                   {
                     "bundle_identifiers": [
-                      "io.alacritty",
+                      "org.alacritty",
                       "net.kovidgoyal.kitty",
                       "com.github.wez.wezterm",
                       "com.neovide.neovide",
@@ -640,7 +1002,7 @@
                 "conditions": [
                   {
                     "bundle_identifiers": [
-                      "io.alacritty",
+                      "org.alacritty",
                       "net.kovidgoyal.kitty",
                       "com.github.wez.wezterm",
                       "com.neovide.neovide",
@@ -669,7 +1031,7 @@
                 "conditions": [
                   {
                     "bundle_identifiers": [
-                      "io.alacritty",
+                      "org.alacritty",
                       "net.kovidgoyal.kitty",
                       "com.github.wez.wezterm",
                       "com.neovide.neovide",
@@ -698,7 +1060,7 @@
                 "conditions": [
                   {
                     "bundle_identifiers": [
-                      "io.alacritty",
+                      "org.alacritty",
                       "net.kovidgoyal.kitty",
                       "com.github.wez.wezterm",
                       "com.neovide.neovide",
@@ -727,7 +1089,7 @@
                 "conditions": [
                   {
                     "bundle_identifiers": [
-                      "io.alacritty",
+                      "org.alacritty",
                       "net.kovidgoyal.kitty",
                       "com.github.wez.wezterm",
                       "com.neovide.neovide",
@@ -756,7 +1118,7 @@
                 "conditions": [
                   {
                     "bundle_identifiers": [
-                      "io.alacritty",
+                      "org.alacritty",
                       "net.kovidgoyal.kitty",
                       "com.github.wez.wezterm",
                       "com.neovide.neovide",
@@ -790,7 +1152,7 @@
                 "conditions": [
                   {
                     "bundle_identifiers": [
-                      "io.alacritty",
+                      "org.alacritty",
                       "net.kovidgoyal.kitty",
                       "com.github.wez.wezterm",
                       "com.neovide.neovide",
@@ -819,7 +1181,7 @@
                 "conditions": [
                   {
                     "bundle_identifiers": [
-                      "io.alacritty",
+                      "org.alacritty",
                       "net.kovidgoyal.kitty",
                       "com.github.wez.wezterm",
                       "com.neovide.neovide",
@@ -853,7 +1215,7 @@
                 "conditions": [
                   {
                     "bundle_identifiers": [
-                      "io.alacritty",
+                      "org.alacritty",
                       "net.kovidgoyal.kitty",
                       "com.github.wez.wezterm",
                       "com.neovide.neovide",
@@ -882,7 +1244,7 @@
                 "conditions": [
                   {
                     "bundle_identifiers": [
-                      "io.alacritty",
+                      "org.alacritty",
                       "net.kovidgoyal.kitty",
                       "com.github.wez.wezterm",
                       "com.neovide.neovide",
@@ -916,7 +1278,7 @@
                 "conditions": [
                   {
                     "bundle_identifiers": [
-                      "io.alacritty",
+                      "org.alacritty",
                       "net.kovidgoyal.kitty",
                       "com.github.wez.wezterm",
                       "com.neovide.neovide",
@@ -945,7 +1307,7 @@
                 "conditions": [
                   {
                     "bundle_identifiers": [
-                      "io.alacritty",
+                      "org.alacritty",
                       "net.kovidgoyal.kitty",
                       "com.github.wez.wezterm",
                       "com.neovide.neovide",
@@ -979,7 +1341,7 @@
                 "conditions": [
                   {
                     "bundle_identifiers": [
-                      "io.alacritty",
+                      "org.alacritty",
                       "net.kovidgoyal.kitty",
                       "com.github.wez.wezterm",
                       "com.neovide.neovide",
@@ -1008,7 +1370,7 @@
                 "conditions": [
                   {
                     "bundle_identifiers": [
-                      "io.alacritty",
+                      "org.alacritty",
                       "net.kovidgoyal.kitty",
                       "com.github.wez.wezterm",
                       "com.neovide.neovide",
@@ -1042,7 +1404,7 @@
                 "conditions": [
                   {
                     "bundle_identifiers": [
-                      "io.alacritty",
+                      "org.alacritty",
                       "net.kovidgoyal.kitty",
                       "com.github.wez.wezterm",
                       "com.neovide.neovide",
@@ -1071,7 +1433,7 @@
                 "conditions": [
                   {
                     "bundle_identifiers": [
-                      "io.alacritty",
+                      "org.alacritty",
                       "net.kovidgoyal.kitty",
                       "com.github.wez.wezterm",
                       "com.neovide.neovide",
@@ -1105,7 +1467,7 @@
                 "conditions": [
                   {
                     "bundle_identifiers": [
-                      "io.alacritty",
+                      "org.alacritty",
                       "net.kovidgoyal.kitty",
                       "com.github.wez.wezterm",
                       "com.neovide.neovide",
@@ -1134,7 +1496,7 @@
                 "conditions": [
                   {
                     "bundle_identifiers": [
-                      "io.alacritty",
+                      "org.alacritty",
                       "net.kovidgoyal.kitty",
                       "com.github.wez.wezterm",
                       "com.neovide.neovide",

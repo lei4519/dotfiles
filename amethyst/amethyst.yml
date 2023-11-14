@@ -1,3 +1,80 @@
+# Repo: `https://github.com/ianyh/Amethyst`
+#
+# Note due to issue 1419 (https://github.com/ianyh/Amethyst/issues/1419) some
+# config values may conflict and not work if they are the same as the default
+# values for amathyst. You can see these values on github at
+# https://github.com/ianyh/Amethyst/blob/development/Amethyst/default.amethyst
+# If you're experiencing conflicts and the settings are the same as the default,
+# comment out the commands in this file.
+#
+# Move this file to: `~/.amethyst.yml`
+# In order to register changes restart Amethyst.
+# If you experience issues pulling in the changes you can also quit Amethyst and run: `defaults delete com.amethyst.Amethyst.plist`
+# This removes the current preferences and causes Amethyst to restart with default preferences and pull configs from this file.
+
+# layouts - Ordered list of layouts to use by layout key (default tall, wide, fullscreen, and column).
+layouts:
+  - bsp
+  - tall
+  - tall-right
+  - wide
+  - column
+  - widescreen-tall-right
+  - fullscreen
+  - two-pane
+  - middle-wide
+  - 3column-left
+  - 3column-middle
+  - 3column-right
+  - 4column-left
+  - 4column-right
+  - row
+  - floating
+  - widescreen-tall
+
+# First mod (default option + shift).
+mod1:
+  - option
+  - shift
+  - control
+  # - command
+
+# Second mod (default option + shift + control).
+mod2:
+  - option
+  - shift
+  - control
+  - command
+
+# Commands:
+# special key values
+# space
+# enter
+# up
+# right
+# down
+# left
+
+# special characters require quotes
+# '.'
+# ','
+
+# Move to the next layout in the list.
+cycle-layout:
+  mod: mod1
+  key: space
+
+# Move to the previous layout in the list.
+cycle-layout-backward:
+  mod: mod2
+  key: space
+
+# Shrink the main pane by a percentage of the screen dimension as defined by window-resize-step. Note that not all layouts respond to this command.
+shrink-main:
+  mod: mod1
+  key: h
+
+# Expand the main pane by a percentage of the screen dimension as defined by window-resize-step. Note that not all layouts
 #respond to this command.
 expand-main:
   mod: mod1
@@ -82,9 +159,19 @@ swap-main:
 
 # Move focus to the n-th screen in the list; e.g., focus-screen-3 will move mouse focus to the 3rd screen. Note that the main window in the given screen will be focused.
 #focus-screen-n:
-# focus-screen-<screen-number>:
-#   mod: mod1
-#   key: y
+focus-screen-1:
+  mod: mod1
+  key: 1
+focus-screen-2:
+  mod: mod1
+  key: 2
+focus-screen-3:
+  mod: mod1
+  key: 3
+focus-screen-4:
+  mod: mod1
+  key: 4
+
 # Move the currently focused window to the n-th screen; e.g., throw-screen-3 will move the window to the 3rd screen.
 # throw-screen-n:
 # throw-screen-<screen-number>:
@@ -108,12 +195,12 @@ select-wide-layout:
 # Select fullscreen layout
 select-fullscreen-layout:
   mod: mod1
-  key: d
+  key: f
 
 # Select column layout
-select-column-layout:
-  mod: mod1
-  key: f
+# select-column-layout:
+#   mod: mod1
+#   key: f
 
 # Move the currently focused window to the space to the left.
 throw-space-left:
@@ -136,9 +223,9 @@ display-current-layout:
   key: i
 
 # Turn on or off tiling entirely.
-toggle-tiling:
-  mod: mod1
-  key: t
+# toggle-tiling:
+#   mod: mod1
+#   key: t
 
 # Rerun the current layout's algorithm.
 reevaluate-windows:
@@ -239,79 +326,3 @@ restore-layouts-on-launch: true
 
 # true to display some optional debug information in the layout HUD (default false).
 debug-layout-info: false Default settings for amethyst
-# Repo: `https://github.com/ianyh/Amethyst`
-#
-# Note due to issue 1419 (https://github.com/ianyh/Amethyst/issues/1419) some
-# config values may conflict and not work if they are the same as the default
-# values for amathyst. You can see these values on github at
-# https://github.com/ianyh/Amethyst/blob/development/Amethyst/default.amethyst
-# If you're experiencing conflicts and the settings are the same as the default,
-# comment out the commands in this file.
-#
-# Move this file to: `~/.amethyst.yml`
-# In order to register changes restart Amethyst.
-# If you experience issues pulling in the changes you can also quit Amethyst and run: `defaults delete com.amethyst.Amethyst.plist`
-# This removes the current preferences and causes Amethyst to restart with default preferences and pull configs from this file.
-
-# layouts - Ordered list of layouts to use by layout key (default tall, wide, fullscreen, and column).
-layouts:
-  - tall
-  - fullscreen
-  # - tall-right
-  - wide
-  # - two-pane
-  # - middle-wide
-  # - 3column-left
-  # - 3column-middle
-  # - 3column-right
-  # - 4column-left
-  # - 4column-right
-  - column
-  # - row
-  # - floating
-  # - widescreen-tall
-  # - widescreen-tall-right
-  # - bsp
-
-# First mod (default option + shift).
-mod1:
-  - option
-  - shift
-  # - control
-  # - command
-
-# Second mod (default option + shift + control).
-mod2:
-  - option
-  - shift
-  - control
-  # - command
-
-# Commands:
-# special key values
-# space
-# enter
-# up
-# right
-# down
-# left
-
-# special characters require quotes
-# '.'
-# ','
-
-# Move to the next layout in the list.
-cycle-layout:
-  mod: mod1
-  key: space
-
-# Move to the previous layout in the list.
-cycle-layout-backward:
-  mod: mod2
-  key: space
-
-# Shrink the main pane by a percentage of the screen dimension as defined by window-resize-step. Note that not all layouts respond to this command.
-shrink-main:
-  mod: mod1
-  key: h
-# Expand the main pane by a percentage of the screen dimension as defined by window-resize-step. Note that not all layouts
