@@ -17,6 +17,10 @@ ln -f -n -s ~/dotfiles/karabiner ~/.config/karabiner
 ```sh
 brew install koekeishiya/formulae/yabai
 ln -f -n -s ~/dotfiles/yabai ~/.config/yabai
+# yabai --start-service
+brew install cmacrae/formulae/spacebar
+mkdir -p ~/.config/spacebar && ln -f -n -s ~/dotfiles/yabai/spacebarrc ~/.config/spacebar/spacebarrc
+# brew services start spacebar
 ```
 
 ## 窗口管理

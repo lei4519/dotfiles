@@ -209,11 +209,11 @@
             ]
           },
           {
-            "description": "yabai: CapsLock + c - create desktop, move window and follow focus",
+            "description": "yabai: CapsLock + v - create desktop, move window and follow focus",
             "manipulators": [
               {
                 "from": {
-                  "key_code": "c",
+                  "key_code": "v",
                   "modifiers": {
                     "mandatory": ["left_control", "left_shift"]
                   }
@@ -228,11 +228,11 @@
             ]
           },
           {
-            "description": "yabai: CapsLock + alt + c - create desktop and follow focus",
+            "description": "yabai: CapsLock + alt + v - create desktop and follow focus",
             "manipulators": [
               {
                 "from": {
-                  "key_code": "c",
+                  "key_code": "v",
                   "modifiers": {
                     "mandatory": ["left_control", "left_shift", "left_alt"]
                   }
@@ -346,7 +346,7 @@
             "manipulators": [
               {
                 "from": {
-                  "key_code": "n",
+                  "key_code": "f",
                   "modifiers": {
                     "mandatory": ["left_control", "left_shift"]
                   }

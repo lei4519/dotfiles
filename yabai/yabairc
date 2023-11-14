@@ -1,23 +1,25 @@
 #!/usr/bin/env zsh
 
+# https://docs.google.com/presentation/d/1_QmeV3yoDrTvvjDCroOWdhHpvzCtoRUYtq0qmByiYwA/mobilepresent?pli=1&slide=id.ge9895530b7_0_50
+
 set -x
 
 yabai -m signal --add event=dock_did_restart action="sudo yabai --load-sa"
 sudo yabai --load-sa
 
-# source ~/.config/yabai/config/yabai/initialization.sh
+source ~/.config/yabai/config/yabai/initialization.sh
 
 # ====
 # Signals
 # ====
 
 # Initialize the temp folder when adding or removing displays
-# yabai -m signal --add event=display_added action="~/.config/yabai/initialization.sh"
-# yabai -m signal --add event=display_removed action="~/.config/yabai/initialization.sh"
-# yabai -m signal --add event=window_focused action="~/.config/yabai/change-window-border-color-when-window-focused.sh"
-# yabai -m signal --add event=window_destroyed action="~/.config/yabai/auto-focus-to-new-one-when-window-destroyed.sh 2> /dev/null"
-# yabai -m signal --add event=application_hidden action="~/.config/yabai/auto-focus-to-new-one-when-window-destroyed.sh 2> /dev/null"
-# yabai -m signal --add event=window_minimized action="~/.config/yabai/auto-focus-to-new-one-when-window-destroyed.sh 2> /dev/null"
+yabai -m signal --add event=display_added action="~/.config/yabai/config/yabai/initialization.sh"
+yabai -m signal --add event=display_removed action="~/.config/yabai/config/yabai/initialization.sh"
+yabai -m signal --add event=window_focused action="~/.config/yabai/config/yabai/change-window-border-color-when-window-focused.sh"
+yabai -m signal --add event=window_destroyed action="~/.config/yabai/config/yabai/auto-focus-to-new-one-when-window-destroyed.sh 2> /dev/null"
+yabai -m signal --add event=application_hidden action="~/.config/yabai/config/yabai/auto-focus-to-new-one-when-window-destroyed.sh 2> /dev/null"
+yabai -m signal --add event=window_minimized action="~/.config/yabai/config/yabai/auto-focus-to-new-one-when-window-destroyed.sh 2> /dev/null"
 
 # ====
 # Settings
@@ -58,7 +60,7 @@ yabai -m config right_padding                6
 yabai -m config window_gap                   1.5
 
 # animation
-#yabai -m config window_animation_duration    0.30
+yabai -m config window_animation_duration    0.30
 
 # ====
 # Rules
