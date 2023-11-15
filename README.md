@@ -17,10 +17,18 @@ ln -f -n -s ~/dotfiles/karabiner ~/.config/karabiner
 ```sh
 brew install koekeishiya/formulae/yabai
 ln -f -n -s ~/dotfiles/yabai ~/.config/yabai
+
 # yabai --start-service
-brew install cmacrae/formulae/spacebar
-mkdir -p ~/.config/spacebar && ln -f -n -s ~/dotfiles/yabai/spacebarrc ~/.config/spacebar/spacebarrc
+# brew install cmacrae/formulae/spacebar
+# mkdir -p ~/.config/spacebar && ln -f -n -s ~/dotfiles/yabai/spacebarrc ~/.config/spacebar/spacebarrc
 # brew services start spacebar
+
+brew tap FelixKratz/formulae
+brew install sketchybar
+brew install --cask sf-symbols
+curl -L https://github.com/kvndrsslr/sketchybar-app-font/releases/download/v1.0.4/sketchybar-app-font.ttf -o $HOME/Library/Fonts/sketchybar-app-font.ttf
+ln -f -n -s ~/dotfiles/sketchybar ~/.config/sketchybar
+# brew services start sketchybar
 ```
 
 ## 窗口管理

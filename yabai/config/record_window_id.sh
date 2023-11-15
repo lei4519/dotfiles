@@ -1,4 +1,4 @@
-#!/usr/bin/env zsh
+#!/bin/bash
 
 FILE="/tmp/yabai_active_window_info"
 # window save line format

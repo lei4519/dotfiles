@@ -38,6 +38,25 @@
             ]
           },
           {
+            "description": "Alacritty: CapsLock + a - create-window",
+            "manipulators": [
+              {
+                "from": {
+                  "key_code": "a",
+                  "modifiers": {
+                    "mandatory": ["left_control", "left_shift"]
+                  }
+                },
+                "to": [
+                  {
+                    "shell_command": "alacritty msg create-window || open -a 'Alacritty'"
+                  }
+                ],
+                "type": "basic"
+              }
+            ]
+          },
+          {
             "description": "yabai: CapsLock + h - focus west",
             "manipulators": [
               {
@@ -107,6 +126,63 @@
                 "to": [
                   {
                     "shell_command": "yabai -m window --focus east"
+                  }
+                ],
+                "type": "basic"
+              }
+            ]
+          },
+          {
+            "description": "yabai: CapsLock + alt + w - warp recent",
+            "manipulators": [
+              {
+                "from": {
+                  "key_code": "w",
+                  "modifiers": {
+                    "mandatory": ["left_control", "left_shift", "left_alt"]
+                  }
+                },
+                "to": [
+                  {
+                    "shell_command": "yabai -m window --warp recent"
+                  }
+                ],
+                "type": "basic"
+              }
+            ]
+          },
+          {
+            "description": "yabai: CapsLock + alt + s - swap recent",
+            "manipulators": [
+              {
+                "from": {
+                  "key_code": "s",
+                  "modifiers": {
+                    "mandatory": ["left_control", "left_shift", "left_alt"]
+                  }
+                },
+                "to": [
+                  {
+                    "shell_command": "yabai -m window --swap recent"
+                  }
+                ],
+                "type": "basic"
+              }
+            ]
+          },
+          {
+            "description": "yabai: CapsLock + alt + m - move window to recent",
+            "manipulators": [
+              {
+                "from": {
+                  "key_code": "m",
+                  "modifiers": {
+                    "mandatory": ["left_control", "left_shift", "left_alt"]
+                  }
+                },
+                "to": [
+                  {
+                    "shell_command": "yabai -m window --space recent --focus"
                   }
                 ],
                 "type": "basic"
@@ -247,11 +323,11 @@
             ]
           },
           {
-            "description": "yabai: CapsLock + w - destroy desktop and goto recent space",
+            "description": "yabai: CapsLock + x - destroy desktop and goto recent space",
             "manipulators": [
               {
                 "from": {
-                  "key_code": "w",
+                  "key_code": "x",
                   "modifiers": {
                     "mandatory": ["left_control", "left_shift"]
                   }
@@ -266,11 +342,11 @@
             ]
           },
           {
-            "description": "yabai: CapsLock + x - close window",
+            "description": "yabai: CapsLock + w - close window",
             "manipulators": [
               {
                 "from": {
-                  "key_code": "x",
+                  "key_code": "w",
                   "modifiers": {
                     "mandatory": ["left_control", "left_shift"]
                   }
@@ -335,6 +411,44 @@
                 "to": [
                   {
                     "shell_command": "yabai -m space --focus next || yabai -m space --focus first"
+                  }
+                ],
+                "type": "basic"
+              }
+            ]
+          },
+          {
+            "description": "yabai: CapsLock + alt + p - move to prev space",
+            "manipulators": [
+              {
+                "from": {
+                  "key_code": "p",
+                  "modifiers": {
+                    "mandatory": ["left_control", "left_shift", "left_alt"]
+                  }
+                },
+                "to": [
+                  {
+                    "shell_command": "yabai -m space --swap prev"
+                  }
+                ],
+                "type": "basic"
+              }
+            ]
+          },
+          {
+            "description": "yabai: CapsLock + n - move to next space",
+            "manipulators": [
+              {
+                "from": {
+                  "key_code": "n",
+                  "modifiers": {
+                    "mandatory": ["left_control", "left_shift", "left_alt"]
+                  }
+                },
+                "to": [
+                  {
+                    "shell_command": "yabai -m space --swap next"
                   }
                 ],
                 "type": "basic"
