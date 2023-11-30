@@ -10,6 +10,7 @@ BELL=􀋚
 BELL_DOT=􀝗
 WECHAT=󰘑
 QQ=󰘅
+MAIL=󰇮
 
 # Git Icons
 GIT_ISSUE=􀍷
