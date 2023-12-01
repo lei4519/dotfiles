@@ -11,6 +11,7 @@ BELL_DOT=􀝗
 WECHAT=󰘑
 QQ=󰘅
 MAIL=󰇮
+WEWORKMAC=󰍦
 
 # Git Icons
 GIT_ISSUE=􀍷

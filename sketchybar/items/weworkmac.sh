@@ -1,10 +1,10 @@
 #!/bin/bash
 
-Mail=(
+weworkmac=(
 	update_freq=10
-	icon=$MAIL
+	icon=$WEWORKMAC
 	icon.font="$FONT:Regular:20.0"
-	icon.padding_left=20
+	icon.padding_left=10
 	# background.color=$BACKGROUND_1
 	# background.border_color=$BACKGROUND_2
 	# background.height=30
@@ -13,8 +13,8 @@ Mail=(
 	# padding_right=10
 	label.padding_right=10
 	script="$PLUGIN_DIR/app_status.sh"
-	click_script="open -a Mail"
+	click_script="open -a 企业微信"
 )
 
-sketchybar --add item Mail left \
-	--set Mail "${Mail[@]}"
+sketchybar --add item weworkmac left \
+	--set weworkmac "${weworkmac[@]}"
