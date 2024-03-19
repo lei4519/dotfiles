@@ -68,6 +68,7 @@ ln -f -n -s ~/dotfiles/.zshrc ~/.zshrc
 # 字体
 # https://www.nerdfonts.com/font-downloads
 # 搜索 fira code nerd font
+# https://gist.github.com/davidteren/898f2dcccd42d9f8680ec69a3a5d350e
 brew tap homebrew/cask-fonts
 brew install --cask fira-code-nerd-font
 
@@ -175,6 +176,7 @@ ln -f -n -s ~/dotfiles/native-nvim ~/.config/nvim
 
 ```sh
 brew install lazygit
+brew install tig
 # git pager styles, lazygit need
 brew install git-delta
 ln -f -n -s ~/dotfiles/git/lazygit.yml ~/Library/Application\ Support/lazygit/config.yml
