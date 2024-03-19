@@ -5,7 +5,7 @@ export PATH="$PNPM_HOME:$PATH"
 
 # export https_proxy=http://127.0.0.1:8118
 # export http_proxy=http://127.0.0.1:8118
-export all_proxy=socks5://127.0.0.1:8119
+# export all_proxy=socks5://127.0.0.1:8119
 
 # man use bat
 export MANPAGER="sh -c 'col -bx | bat -l man -p'"

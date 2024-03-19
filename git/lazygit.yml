@@ -19,3 +19,13 @@ keybinding:
     prevScreenMode: "-"
     prevPage: "<c-b>" # go to next page in list
     nextPage: "<c-f>" # go to previous page in list
+customCommands:
+  - key: "U"
+    context: "localBranches"
+    prompts:
+      - type: "input"
+        title: "Update remote branch:"
+        key: "Remote"
+        initialValue: "{{.SelectedRemote.Name}}"
+    command: "git remote update {{.Form.Remote}} --prune"
+    loadingText: "Update remote branch"
