@@ -7,9 +7,11 @@
 # 函数：设置 http_proxy 变量
 set_http_proxy() {
   if [[ $os == "Darwin" ]]; then
-    export all_proxy=http://127.0.0.1:8118
+    export https_proxy=http://127.0.0.1:8118
+    export http_proxy=http://127.0.0.1:8118
   elif [[ $os == "Linux" ]]; then
-    export all_proxy=http://127.0.0.1:7890
+    export https_proxy=http://127.0.0.1:7890
+    export http_proxy=http://127.0.0.1:7890
   fi
 
   show_http_proxy
@@ -17,13 +19,15 @@ set_http_proxy() {
 
 # 函数：取消设置 http_proxy 变量
 unset_http_proxy() {
-    unset all_proxy
+    unset http_proxy
+    unset https_proxy
     show_http_proxy
 }
 
 # 函数：显示当前 http_proxy 变量
 show_http_proxy() {
-    echo "all_proxy=$all_proxy"
+    echo "http_proxy=$http_proxy"
+    echo "https_proxy=$https_proxy"
 }
 
 http_proxy() {
