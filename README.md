@@ -161,6 +161,7 @@ rm -rf ~/.gitignore && ln -s ~/dotfiles/.gitignore ~/.gitignore
 文件管理器，同类的有 `ranger/joshuto`
 
 ```sh
+# arch linux unar -> unarchiver 
 brew install yazi ffmpegthumbnailer unar jq poppler fd ripgrep fzf zoxide xclip
 ```
 
