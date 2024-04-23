@@ -1,0 +1,51 @@
+[user]
+	name = lijinlei
+	email = lijinlei@zhihu.com
+
+[core]
+  pager = delta
+	excludesfile = /Users/lay/.gitignore_global
+
+[interactive]
+  diffFilter = delta --color-only --features=interactive
+
+[include]
+  path = ~/dotfiles/git/delta/themes.gitconfig
+
+[delta]
+  ; features = side-by-side decorations 
+  ; theme: woolly-mammoth chameleon mellow-barbet
+  features = side-by-side decorations ;chameleon 
+  navigate = true
+  true-color = always
+
+[delta "interactive"]
+  keep-plus-minus-markers = false
+
+[delta "decorations"]
+  commit-decoration-style = blue ol
+  commit-style = raw
+  file-style = omit
+  hunk-header-decoration-style = blue box
+  hunk-header-file-style = red
+  hunk-header-line-number-style = "#067a00"
+  hunk-header-style = file line-number syntax
+
+
+[merge]
+  tool = meld
+  conflictstyle = diff3
+
+[diff]
+  colorMoved = default
+
+[pull]
+  rebase = true
+[difftool "sourcetree"]
+	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+	path = 
+[mergetool "sourcetree"]
+	cmd = /Applications/Sourcetree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+	trustExitCode = true
+[commit]
+	template = /Users/lay/.stCommitMsg

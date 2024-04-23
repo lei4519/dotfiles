@@ -1,0 +1,25 @@
+#!/bin/bash
+
+# 建立下载目录
+if ! test -d ~/.local/share/nvim/dapinstall
+then
+  mkdir -p ~/.local/share/nvim/dapinstall
+fi
+
+
+if ! test -d ~/.local/share/nvim/dapinstall/jsnode
+then
+  mkdir ~/.local/share/nvim/dapinstall/jsnode
+fi
+
+
+cd ~/.local/share/nvim/dapinstall/jsnode
+
+git clone https://github.com/microsoft/vscode-node-debug2.git
+
+cd vscode-node-debug2
+
+yarn
+
+yarn build
+

@@ -1,0 +1,59 @@
+{
+  "outline.splitCommand": "to 30vs",
+
+  "diagnostic.checkCurrentLine": false,
+  "diagnostic.virtualTextCurrentLineOnly": false,
+  "diagnostic.virtualText": true,
+  "diagnostic.errorSign": "",
+  "diagnostic.infoSign": "",
+  "diagnostic.hintSign": "",
+  "diagnostic.warningSign": "⚠",
+
+  "codeLens.enable": true,
+  "codeLens.subseparator": "  ",
+
+  "explorer.file.hiddenRules": {
+    "extensions": ["o", "a", "obj", "pyc"],
+    "filenames": [],
+    "patternMatches": []
+  },
+
+  "colors.filetypes": ["*"],
+
+  "hover.target": "float",
+
+  "rust-analyzer.debug.runtime": "vimspector",
+  "rust-analyzer.debug.vimspector.configuration.name": "rust_run",
+  "rust-analyzer.inlayHints.enable": true,
+  "rust-analyzer.completion.autoimport.enable": true,
+  "rust-analyzer.lens.enable": true,
+
+  "typescript.referencesCodeLens.enable": false,
+  "javascript.referencesCodeLens.enable": false,
+  "typescript.implementationsCodeLens.enable": false,
+  "javascript.implementationsCodeLens.enable": false,
+
+  "project.rootPatterns": [".git"],
+
+  "cSpell.enabled": false,
+
+  "stylelintplus.autoFixOnFormat": true,
+
+  "css.validate": false,
+  "less.validate": false,
+  "scss.validate": false,
+  "wxss.validate": false,
+
+  "prettier.semi": false,
+
+  "refactor.showMenu": "<Tab>",
+  "refactor.openCommand": "vsplit",
+
+  "eslint.codeActionsOnSave.mode": "problems",
+  "eslint.format.enable": true,
+
+  "translator.enableHover": false,
+  "translator.engines": ["google", "youdao"],
+
+  "Lua.telemetry.enable": false
+}

@@ -1,0 +1,38 @@
+[manager]
+[[manager.prepend_keymap]]
+on = ["<C-g>"]
+run = ["shell 'lazygit' --block --confirm"]
+
+[[manager.prepend_keymap]]
+on = ["g", "w"]
+run = ["cd ~/work"]
+
+[[manager.prepend_keymap]]
+on = ["g", "."]
+run = ["cd ~/dotfiles"]
+
+[[manager.prepend_keymap]]
+on = ["l"]
+run = "plugin --sync smart-enter"
+desc = "Enter the child directory, or open the file"
+
+[[manager.prepend_keymap]]
+on = ["K"]
+run = "plugin --sync parent-arrow --args=-1"
+
+[[manager.prepend_keymap]]
+on = ["J"]
+run = "plugin --sync parent-arrow --args=1"
+
+# linux
+# [[manager.prepend_keymap]]
+# on  = [ "y" ]
+# run = [ "yank", '''
+# 	shell --confirm 'echo "$@" | xclip -i -selection clipboard -t text/uri-list'
+# ''' ]
+
+[input]
+[[input.prepend_keymap]]
+on = ["<Esc>"]
+run = "close"
+desc = "Cancel input"
