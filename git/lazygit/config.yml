@@ -1,7 +1,7 @@
 gui:
   nerdFontsVersion: "3"
   scrollHeight: 20 # how many lines you scroll by
-  language: "zh-CN"
+  # language: "zh-CN"
   sidePanelWidth: 0.25 # number from 0 to 1
 git:
   paging:
@@ -20,6 +20,7 @@ keybinding:
     prevScreenMode: "-"
     prevPage: "<c-b>" # go to next page in list
     nextPage: "<c-f>" # go to previous page in list
+# see https://github.com/jesseduffield/lazygit/blob/master/docs/Custom_Command_Keybindings.md
 customCommands:
   - key: "D"
     command: git diff {{.SelectedLocalBranch.Name}} > /tmp/lazygit.patch && git reset --hard {{.SelectedLocalBranch.Name}} && git apply /tmp/lazygit.patch
@@ -38,6 +39,14 @@ customCommands:
         labelFormat: "{{ .remote | bold | cyan }} {{ .url }}"
     command: "git remote update {{.Form.Remote}} --prune"
     loadingText: "Pruning..."
+  - key: "A"
+    description: "Amend last commit whit --no-verify"
+    context: "files"
+    prompts:
+      - type: "confirm"
+        title: "Amend last commit"
+        body: "Are you sure you want to amend last commit? Afterwards, you can change the commit message from the commits panel."
+    command: "git commit --amend --no-edit --allow-empty --no-verify"
   - key: "w"
     description: "Create new conventional commit"
     context: "files"
