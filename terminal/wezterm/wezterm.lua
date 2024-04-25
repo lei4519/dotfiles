@@ -91,7 +91,7 @@ config.keys = {
 		action = wezterm.action.ActivatePaneDirection("Down"),
 	},
 	{
-		key = "v",
+		key = "s",
 		mods = "CTRL|SHIFT",
 		action = wezterm.action.QuickSelect,
 	},
