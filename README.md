@@ -209,15 +209,26 @@ bash rime-install iDvel/rime-ice:others/recipes/config:schema=flypy
 
 ##### Linux
 
+我用的是 Fcitx5
+
+参考：
+- https://wiki.archlinux.org/title/Rime
+- https://wiki.archlinux.org/title/Fcitx5
+
 ```sh
-# TODO -
+# pacman 会自动安装所需依赖
+pacman -S fcitx5-rime
+# fcitx5 开机自启动
+mkdir -p ~/.config/autostart && cp /usr/share/applications/org.fcitx.Fcitx5.desktop ~/.config/autostart
+
+# 雾凇拼音
+yay -S rime-ice-git
+
+# 配置文件
 # iBus
 rm -rf ~/.config/ibus/rime && ln -s ~/dotfiles/im/rime ~/.config/ibus/rime
 # Fcitx5
 rm -rf ~/.local/share/fcitx5/rime && ln -s ~/dotfiles/im/rime ~/.local/share/fcitx5/rime
-
-# 雾凇拼音
-paru -S rime-ice-git
 ```
 
 ##### vim 中英文切换
@@ -226,7 +237,7 @@ Mac 可以直接使用 `rime` 的 `vim_mode` 完成中英文切换，非常方�
 
 具体参考 `./im/rime/squirrel.custom.yaml`
 
-- [ ] Linux 输入法
+Linux 可以使用 fcitx5.nvim
 
 ##### 三端数据同步
 
