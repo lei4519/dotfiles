@@ -217,7 +217,9 @@ bash rime-install iDvel/rime-ice:others/recipes/config:schema=flypy
 
 ```sh
 # pacman 会自动安装所需依赖
-pacman -S fcitx5-rime
+pacman -S fcitx5-rime fcitx5-config-qt
+# 配置输入法
+fcitx5-configtool
 # fcitx5 开机自启动
 mkdir -p ~/.config/autostart && cp /usr/share/applications/org.fcitx.Fcitx5.desktop ~/.config/autostart
 
