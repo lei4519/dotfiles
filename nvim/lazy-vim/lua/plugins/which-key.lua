@@ -19,7 +19,7 @@ return {
       },
       ["<leader>\\"] = {
         name = "+toggleterm",
-        ["\\"] = { "<cmd>ToggleTerm<cr>", "ToggleTerm" },
+        ["\\"] = { "<cmd>ToggleTerm direction=vertical<cr>", "ToggleTerm" },
         s = { "<cmd>ToggleTerm direction=horizontal<cr>", "ToggleTerm horizontal" },
         v = { "<cmd>ToggleTerm direction=vertical<cr>", "ToggleTerm vertical" },
         a = { "<cmd>ToggleTermToggleAll<cr>", "ToggleTermToggleAll" },
@@ -29,6 +29,7 @@ return {
         ["2"] = { "<cmd>ToggleTerm 2<cr>", "ToggleTerm ID 2" },
         ["3"] = { "<cmd>ToggleTerm 3<cr>", "ToggleTerm ID 3" },
         ["4"] = { "<cmd>ToggleTerm 4<cr>", "ToggleTerm ID 4" },
+        ["5"] = { "<cmd>ToggleTerm 4<cr>", "ToggleTerm ID 5" },
       },
     },
   },

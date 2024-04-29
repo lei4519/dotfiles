@@ -17,6 +17,8 @@ set_http_proxy() {
   show_http_proxy
 }
 
+set_http_proxy
+
 # 函数：取消设置 http_proxy 变量
 unset_http_proxy() {
     unset http_proxy

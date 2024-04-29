@@ -6,6 +6,7 @@ export MANPAGER="sh -c 'col -bx | bat -l man -p'"
 # export VISUAL="neovide"
 export EDITOR="nvim"
 export VISUAL="nvim"
+export ZVM_VI_EDITOR="$EDITOR"
 
 alias icat="kitty +kitten icat"
 
