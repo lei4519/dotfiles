@@ -11,9 +11,9 @@
 export FZF_DEFAULT_OPTS="
 --ansi 
 --bind ctrl-d:page-down,ctrl-u:page-up
---bind 'enter:become(nvim {})'
 --preview '~/dotfiles/shell/fzf-preview.sh {}'
 "
+# --bind 'enter:become(nvim {})'
 
 # https://github.com/sharkdp/fd?tab=readme-ov-file#using-fd-with-fzf
 export FZF_DEFAULT_COMMAND='fd --type file --color=always --follow --hidden --exclude .git'

@@ -161,7 +161,7 @@ rm -rf ~/.gitignore && ln -s ~/dotfiles/.gitignore ~/.gitignore
 文件管理器，同类的有 `ranger/joshuto`
 
 ```sh
-# arch linux unar -> unarchiver 
+# arch linux unar -> unarchiver
 brew install yazi ffmpegthumbnailer unar jq poppler fd ripgrep fzf zoxide xclip
 ```
 
@@ -192,7 +192,7 @@ rm -rf ~/.config/joshuto && ln -s ~/dotfiles/terminal/file-manager/joshuto ~/.co
 curl -fsSL https://raw.githubusercontent.com/rime/plum/master/rime-install | bash
 ```
 
-##### Mac Squirrel
+##### Mac 鼠须管
 
 ```sh
 brew install --cask squirrel
@@ -207,30 +207,37 @@ bash rime-install iDvel/rime-ice:others/recipes/config:schema=flypy
 # 主题配色：https://pdog18.github.io/rime-soak/#/result
 ```
 
-##### Linux
+##### Linux 中州韵
 
 我用的是 Fcitx5
 
 参考：
+
+- https://fcitx-im.org/wiki/Using_Fcitx_5_on_Wayland
 - https://wiki.archlinux.org/title/Rime
 - https://wiki.archlinux.org/title/Fcitx5
+
+```sh
+nvim /etc/profile
+# 在最后加入
+export XMODIFIERS=@im=fcitx
+```
 
 ```sh
 # pacman 会自动安装所需依赖
 pacman -S fcitx5-rime fcitx5-config-qt
 # 配置输入法
 fcitx5-configtool
-# fcitx5 开机自启动
-mkdir -p ~/.config/autostart && cp /usr/share/applications/org.fcitx.Fcitx5.desktop ~/.config/autostart
+# fcitx5 开机自启动，我用的是 hypyland 的 exec-once
+# 输入法皮肤
+pacman -S fcitx5-material-color
 
 # 雾凇拼音
 yay -S rime-ice-git
 
 # 配置文件
-# iBus
-rm -rf ~/.config/ibus/rime && ln -s ~/dotfiles/im/rime ~/.config/ibus/rime
-# Fcitx5
 rm -rf ~/.local/share/fcitx5/rime && ln -s ~/dotfiles/im/rime ~/.local/share/fcitx5/rime
+ln -s ~/dotfiles/linux/fcitx5/conf/classicui.conf ~/.config/fcitx5/conf/classicui.conf
 ```
 
 ##### vim 中英文切换
@@ -400,4 +407,31 @@ rm -rf ~/.config/amethyst && ln -s ~/dotfiles/mac/amethyst ~/.config/amethyst
 ```sh
 brew install --cask snipaste
 rm -rf ~/.snipaste/config.ini && ln -s ~/dotfiles/mac/snipaste/config.ini ~/.snipaste/config.ini
+```
+
+## Arch Linux
+
+```sh
+# 字体配置
+rm -rf ~/.config/fontconfig && ln -s ~/dotfiles/linux/fontconfig ~/.config/fontconfig
+```
+
+### Hypyland
+
+```sh
+# https://wiki.hyprland.org/Useful-Utilities/Must-have/#authentication-agent
+pacman -S polkit-kde-agent
+
+# hypyland 配置
+rm -rf ~/.config/hypr && ln -s ~/dotfiles/linux/hypr ~/.config/hypr
+# wayland 配置
+rm -rf ~/.config/chrome-flags.conf && ln -s ~/dotfiles/linux/chrome-flags.conf ~/.config/chrome-flags.conf
+rm -rf ~/.config/electron-flags.conf && ln -s ~/dotfiles/linux/electron-flags.conf ~/.config/electron-flags.conf
+
+# https://sr.ht/~kennylevinsen/wlsunset/
+# 根据时间进行伽玛调整
+pacman -S wlsunset
+# 亮度调节
+yay -S wluma
+cp ~/dotfiles/linux/90-wluma-backlight.rules /etc/udev/rules.d/90-wluma-backlight.rules
 ```

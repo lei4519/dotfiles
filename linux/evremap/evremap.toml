@@ -2,7 +2,9 @@
 
 # Run `sudo evremap list-devices` to see the devices available
 # on your system.
-device_name = "CATEX TECH. 84M-LED"
+device_name = "KEYCOOL KEYBOARD Keyboard"
+
+# phys = "64:49:7d:a2:7d:34"
 
 # Hold capslock for ctrl, tap for esc
 [[dual_role]]
