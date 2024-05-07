@@ -186,6 +186,12 @@ rm -rf ~/.config/joshuto && ln -s ~/dotfiles/terminal/file-manager/joshuto ~/.co
 
 #### Rime 输入法
 
+下载配置文件
+
+```sh
+git clone git@github.com:lei4519/rime-ice.git ~/dotfiles/rime --depth 1
+```
+
 安装 [plum](https://github.com/rime/plum)
 
 ```sh
@@ -196,7 +202,7 @@ curl -fsSL https://raw.githubusercontent.com/rime/plum/master/rime-install | bas
 
 ```sh
 brew install --cask squirrel
-rm -rf ~/Library/Rime && ln -s ~/dotfiles/im/rime ~/Library/Rime
+rm -rf ~/Library/Rime && ln -s ~/dotfiles/rime ~/Library/Rime
 
 # 雾凇拼音
 # 安装或更新全部文件
@@ -236,7 +242,7 @@ pacman -S fcitx5-material-color
 yay -S rime-ice-git
 
 # 配置文件
-rm -rf ~/.local/share/fcitx5/rime && ln -s ~/dotfiles/im/rime ~/.local/share/fcitx5/rime
+rm -rf ~/.local/share/fcitx5/rime && ln -s ~/dotfiles/rime ~/.local/share/fcitx5/rime
 ln -s ~/dotfiles/linux/fcitx5/conf/classicui.conf ~/.config/fcitx5/conf/classicui.conf
 ```
 

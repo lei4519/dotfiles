@@ -52,33 +52,31 @@ local.properties
 # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
 
 # dependencies
-/node_modules
-/npm-debug.log*
-/yarn-error.log
-/package-lock.json
+node_modules
+npm-debug.log*
+yarn-error.log
+package-lock.json
 
 # production
-/dist
-/coverage
-/buildAssets
+dist
+coverage
+buildAssets
 
 # umi
 .umi
 .umi-production
 
-/coverage
+coverage
 
 # idea
-.history/
+.history
 
 # vscode
-/.vscode
+.vscode
 
 *.bak
 
-im/rime/cn_dicts
-im/rime/en_dicts
-im/rime/opencc
+rime
 antigen-packages.zsh.zwc
 *.userdb
 lazy-lock.json

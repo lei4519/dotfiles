@@ -59,5 +59,3 @@ http_proxy() {
 }
 
 alias hp=http_proxy
-
-set_http_proxy
