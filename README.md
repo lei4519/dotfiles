@@ -88,7 +88,9 @@ curl -L git.io/antigen > $HOME/dotfiles/antigen.zsh
 
 ```sh
 brew install starship
+# 二选一即可
 rm -rf ~/.config/starship.toml && ln -s ~/dotfiles/shell/starship.toml ~/.config/starship.toml
+rm -rf ~/.config/starship.toml && ln -s ~/dotfiles/shell/starship_end4.toml ~/.config/starship.toml
 ```
 
 #### Font
