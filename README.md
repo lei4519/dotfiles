@@ -84,7 +84,7 @@ zsh 包管理器
 curl -L git.io/antigen > $HOME/dotfiles/antigen.zsh
 ```
 
-#### 美化
+#### shell 美化
 
 ```sh
 brew install starship
@@ -244,6 +244,12 @@ yay -S rime-ice-git
 # 配置文件
 rm -rf ~/.local/share/fcitx5/rime && ln -s ~/dotfiles/rime ~/.local/share/fcitx5/rime
 ln -s ~/dotfiles/linux/fcitx5/conf/classicui.conf ~/.config/fcitx5/conf/classicui.conf
+
+#!/bin/bash
+rime_deployer --build ~/.local/share/fcitx5/rime/ /usr/share/rime-data ~/.local/share/fcitx5/rime/build
+
+# 同步
+rime_dict_manager --sync
 ```
 
 ##### vim 中英文切换
@@ -424,22 +430,20 @@ rm -rf ~/.config/fontconfig && ln -s ~/dotfiles/linux/fontconfig ~/.config/fontc
 
 ### Hypyland
 
-```sh
-# https://wiki.hyprland.org/Useful-Utilities/Must-have/#authentication-agent
-pacman -S polkit-kde-agent
+#### Hypyland 配置
 
+```sh
 # hypyland 配置
+# 先把配置文件夹软链接过去，这样下面的配置更改会自动同步到 dotfiles 目录中
 rm -rf ~/.config/hypr && ln -s ~/dotfiles/linux/hypr ~/.config/hypr
+
 # wayland 配置
 rm -rf ~/.config/chrome-flags.conf && ln -s ~/dotfiles/linux/chrome-flags.conf ~/.config/chrome-flags.conf
 rm -rf ~/.config/electron-flags.conf && ln -s ~/dotfiles/linux/electron-flags.conf ~/.config/electron-flags.conf
 
-# https://sr.ht/~kennylevinsen/wlsunset/
-# 根据时间进行伽玛调整
-pacman -S wlsunset
-# 亮度调节
-yay -S wluma
-cp ~/dotfiles/linux/90-wluma-backlight.rules /etc/udev/rules.d/90-wluma-backlight.rules
+# https://github.com/end-4/dots-hyprland
+bash <(curl -s "https://end-4.github.io/dots-hyprland-wiki/setup.sh")
+# 还可以看看这个 https://github.com/prasanthrangan/hyprdots
 ```
 
 ### Linux 按键映射
