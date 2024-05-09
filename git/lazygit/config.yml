@@ -1,8 +1,8 @@
 gui:
   nerdFontsVersion: "3"
   scrollHeight: 20 # how many lines you scroll by
-  # language: "zh-CN"
-  sidePanelWidth: 0.25 # number from 0 to 1
+  language: "en"
+  # sidePanelWidth: 0.25 # number from 0 to 1
 git:
   paging:
     pager: delta --dark --paging=never
@@ -22,23 +22,6 @@ keybinding:
     nextPage: "<c-f>" # go to previous page in list
 # see https://github.com/jesseduffield/lazygit/blob/master/docs/Custom_Command_Keybindings.md
 customCommands:
-  - key: "D"
-    command: git diff {{.SelectedLocalBranch.Name}} > /tmp/lazygit.patch && git reset --hard {{.SelectedLocalBranch.Name}} && git apply /tmp/lazygit.patch
-    context: localBranches
-    description: Extract diff into index
-  - key: "U"
-    description: "prune deleted remote branches"
-    context: "commits"
-    prompts:
-      - type: "menuFromCommand"
-        title: "Which remote repository to Pruning?"
-        key: "Remote"
-        command: bash -c "git remote --verbose | grep '/.* (push)'"
-        filter: '(?P<remote>.*)\s+(?P<url>.*) \(push\)'
-        valueFormat: "{{ .remote }}"
-        labelFormat: "{{ .remote | bold | cyan }} {{ .url }}"
-    command: "git remote update {{.Form.Remote}} --prune"
-    loadingText: "Pruning..."
   - key: "A"
     description: "Amend last commit whit --no-verify"
     context: "files"
@@ -61,6 +44,9 @@ customCommands:
           - name: "fix"
             value: "fix"
             description: "A bug fix"
+          - name: "wip"
+            value: "wip"
+            description: "Work in process"
           - name: "chore"
             value: "chore"
             description: "Updating grunt tasks etc; no production code change"
@@ -109,6 +95,32 @@ customCommands:
     # command: "git commit -n --message '{{.Form.Type}}{{.Form.Scope}}{{.Form.Breaking}}: {{.Form.Message}}'"
     command: "git commit -n --message '{{.Form.Type}}: {{.Form.Message}}'"
     loadingText: "Creating conventional commit..."
+  - key: "D"
+    description: Extract diff into index
+    command: git diff {{.SelectedLocalBranch.Name}} > /tmp/lazygit.patch && git reset --hard {{.SelectedLocalBranch.Name}} && git apply /tmp/lazygit.patch
+    context: localBranches
+  - key: "U"
+    description: "prune deleted remote branches"
+    context: "commits"
+    prompts:
+      - type: "menuFromCommand"
+        title: "Which remote repository to Pruning?"
+        key: "Remote"
+        command: bash -c "git remote --verbose | grep '/.* (push)'"
+        filter: '(?P<remote>.*)\s+(?P<url>.*) \(push\)'
+        valueFormat: "{{ .remote }}"
+        labelFormat: "{{ .remote | bold | cyan }} {{ .url }}"
+    command: "git remote update {{.Form.Remote}} --prune"
+    loadingText: "Pruning..."
+  - key: "R"
+    description: "Rebase the checked-out branch onto the selected branch."
+    context: "commits"
+    prompts:
+      - type: "confirm"
+        title: "Rebase"
+        body: "Are you sure rebase '{{.CheckedOutBranch.Name}}' onto '{{.SelectedLocalCommit.Sha}}'?"
+    command: "git rebase --autostash --keep-empty --no-autosquash --rebase-merges {{.SelectedLocalCommit.Sha}}"
+    loadingText: "Rebaseing..."
   - key: "<c-a>"
     description: "Search the whole history (From a ref and down) for an expression in a file"
     command: "git checkout {{index .PromptResponses 3}}"

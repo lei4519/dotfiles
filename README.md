@@ -369,7 +369,7 @@ rm -rf ~/.config/nvim && ln -s ~/dotfiles/nvim/native-nvim ~/.config/nvim
 
 ## Mac
 
-### 按键映射
+### Mac 按键映射
 
 ```sh
 brew install --cask karabiner-elements
@@ -440,4 +440,18 @@ pacman -S wlsunset
 # 亮度调节
 yay -S wluma
 cp ~/dotfiles/linux/90-wluma-backlight.rules /etc/udev/rules.d/90-wluma-backlight.rules
+```
+
+### Linux 按键映射
+
+使用 [kanata](https://github.com/jtroo/kanata)
+
+```sh
+# https://github.com/jtroo/kanata/discussions/130
+sudo ln -s ~/dotfiles/linux/kanata/kanata.service /lib/systemd/system/kanata.service
+# sudo systemctl daemon-reload
+# maybe this will be required when changing the service file
+sudo systemctl daemon-reload
+sudo systemctl start kanata
+sudo systemctl enable kanata
 ```
