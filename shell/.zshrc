@@ -30,4 +30,4 @@ eval "$(fnm env --use-on-cd)"
 eval "$(zoxide init --cmd cd zsh)"
 # eval "$(starship init zsh)"
 
-[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+source ~/.p10k.zsh
