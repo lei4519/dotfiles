@@ -9,12 +9,8 @@ elif [[ $os == "Linux" ]]; then
   source ~/dotfiles/shell/linux-os.zsh
 fi
 
-# 由 vim-mode-conf 调用
-# source ~/dotfiles/shell/.fzf.zsh
-
-eval "$(fnm env --use-on-cd)"
-eval "$(zoxide init --cmd cd zsh)"
-eval "$(starship init zsh)"
+#Display Pokemon
+pokemon-colorscripts --no-title -r 1,3,6
 
 # bun completions
 [ -s "/Users/lay/.bun/_bun" ] && source "/Users/lay/.bun/_bun"
@@ -27,3 +23,11 @@ source ~/dotfiles/shell/alias_and_export.zsh
 source ~/dotfiles/shell/autocomplete-conf.zsh
 source ~/dotfiles/shell/vim-mode-conf.zsh
 
+# 由 vim-mode-conf 调用
+# source ~/dotfiles/shell/.fzf.zsh
+
+eval "$(fnm env --use-on-cd)"
+eval "$(zoxide init --cmd cd zsh)"
+# eval "$(starship init zsh)"
+
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh

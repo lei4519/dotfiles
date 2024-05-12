@@ -22,7 +22,12 @@
 
 (defsrc lctl)
 
-(deflayermap (base)
+
+(deflayer default
+  @lctl
+)
+
+(defalias
   lctl (tap-hold-press $tt $ht esc lctl)
 )
 

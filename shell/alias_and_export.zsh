@@ -24,6 +24,20 @@ export PATH="$BUN_INSTALL/bin:$PATH"
 
 export YAZI_CONFIG_HOME="$HOME/dotfiles/terminal/file-manager/yazi"
 
+# Helpful aliases
+alias  c='clear' # clear terminal
+alias vc='code' # gui code editor
+
+# Handy change dir shortcuts
+alias ..='cd ..'
+alias ...='cd ../..'
+alias .3='cd ../../..'
+alias .4='cd ../../../..'
+alias .5='cd ../../../../..'
+
+# Always mkdir a path (this doesn't inhibit functionality to make a single dir)
+alias mkdir='mkdir -p'
+
 alias vi="$EDITOR"
 alias vim="$EDITOR"
 

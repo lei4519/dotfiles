@@ -11,6 +11,7 @@ antigen bundle zsh-users/zsh-syntax-highlighting
 
 # Load the theme
 # antigen theme robbyrussell
+antigen theme romkatv/powerlevel10k
 
 # Tell antigen that you're done
 antigen apply

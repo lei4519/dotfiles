@@ -453,11 +453,12 @@ bash <(curl -s "https://end-4.github.io/dots-hyprland-wiki/setup.sh")
 使用 [kanata](https://github.com/jtroo/kanata)
 
 ```sh
+yay -S kanata
 # https://github.com/jtroo/kanata/discussions/130
 sudo ln -s ~/dotfiles/linux/kanata/kanata.service /lib/systemd/system/kanata.service
 # sudo systemctl daemon-reload
 # maybe this will be required when changing the service file
 sudo systemctl daemon-reload
-sudo systemctl start kanata
 sudo systemctl enable kanata
+sudo systemctl start kanata
 ```
