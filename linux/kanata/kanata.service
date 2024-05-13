@@ -1,11 +1,11 @@
 [Unit]
-Description=Kanata keyboard remapper
-Documentation=https://github.com/jtroo/kanata
+Description=kanata
 
 [Service]
-Type=simple
-ExecStart=/home/user/.cargo/bin/kanata --cfg /home/lay/dotfiles/linux/kanata/kanata.kdb
-Restart=never
+Restart=always
+RestartSec=3
+ExecStart=/usr/bin/kanata -c /home/lay/dotfiles/linux/kanata/kanata.kdb
+Nice=-20
 
 [Install]
 WantedBy=default.target

@@ -403,14 +403,27 @@ rm -rf ~/.config/code-flags.conf && ln -s ~/dotfiles/linux/code-flags.conf ~/.co
 ```sh
 yay -S kanata
 # https://github.com/jtroo/kanata/discussions/130
-# 现在安装之后已经默认有了 .service 文件了，只需要修改其中的配置文件路径即可
-# TODO 确认是否需要自己写一个 .service 文件
-sudo nvim /lib/systemd/system/kanata.service
-# /etc/systemd/system/
+ln -s ~/dotfiles/linux/kanata/kanata.service /etc/systemd/system/kanata.service
 
-# sudo systemctl daemon-reload
-# maybe this will be required when changing the service file
-sudo systemctl daemon-reload
 sudo systemctl enable kanata
 sudo systemctl start kanata
+```
+
+### Clash 自启动
+
+```sh
+ln -s ~/dotfiles/linux/clash.service /etc/systemd/system/clash.service
+sudo systemctl enable clash
+sudo systemctl start clash
+```
+
+### 亮度控制
+
+```sh
+# https://sr.ht/kennylevinsen/wlsunset/
+# 根据时间进行伽玛调整
+pacman -S wlsunset
+# 亮度调节
+yay -S wluma
+cp ~/dotfiles/linux/90-wluma-backlight.rules /etc/udev/rules.d/90-wluma-backlight.rules
 ```
