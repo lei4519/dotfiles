@@ -442,11 +442,12 @@ rm -rf ~/.config/hypr && ln -s ~/dotfiles/linux/hypr ~/.config/hypr
 # wayland 配置
 rm -rf ~/.config/chrome-flags.conf && ln -s ~/dotfiles/linux/chrome-flags.conf ~/.config/chrome-flags.conf
 rm -rf ~/.config/electron-flags.conf && ln -s ~/dotfiles/linux/electron-flags.conf ~/.config/electron-flags.conf
-
-# https://github.com/end-4/dots-hyprland
-bash <(curl -s "https://end-4.github.io/dots-hyprland-wiki/setup.sh")
-# 还可以看看这个 https://github.com/prasanthrangan/hyprdots
+rm -rf ~/.config/code-flags.conf && ln -s ~/dotfiles/linux/code-flags.conf ~/.config/code-flags.conf
 ```
+
+安装 [hyprdots](https://github.com/prasanthrangan/hyprdots)
+
+> 也可以看看 [end-4/dots-hyprland](https://github.com/end-4/dots-hyprland)
 
 ### Linux 按键映射
 
@@ -455,7 +456,11 @@ bash <(curl -s "https://end-4.github.io/dots-hyprland-wiki/setup.sh")
 ```sh
 yay -S kanata
 # https://github.com/jtroo/kanata/discussions/130
-sudo ln -s ~/dotfiles/linux/kanata/kanata.service /lib/systemd/system/kanata.service
+# 现在安装之后已经默认有了 .service 文件了，只需要修改其中的配置文件路径即可
+# TODO 确认是否需要自己写一个 .service 文件
+sudo nvim /lib/systemd/system/kanata.service
+# /etc/systemd/system/
+
 # sudo systemctl daemon-reload
 # maybe this will be required when changing the service file
 sudo systemctl daemon-reload
