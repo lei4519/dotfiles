@@ -256,62 +256,9 @@ rime_dict_manager --sync
 
 ##### vim 中英文切换
 
-Mac 可以直接使用 `rime` 的 `vim_mode` 完成中英文切换，非常方便，不需要使用 `im-select` 了
+直接使用 `rime` 的 `vim_mode` 完成中英文切换，非常方便，不需要使用 `im-select` 了
 
-具体参考 `./im/rime/squirrel.custom.yaml`
-
-Linux 可以使用 fcitx5.nvim
-
-##### 三端数据同步
-
-1. iPhone 仓输入法
-2. Mac Squirrel
-3. ibus-rime
-
-限制在于 iPhone 只能同步到 iCloud，所以要想三端同步，只能靠 Mac 做中转，由 Mac 做集散中心 `iPhone <-> Mac <-> Linux`
-
-1. iPhone 和 Mac 都放在 iCloud 中
-
-iPhone 的 `installation.yaml` 配置
-
-```
-installation_id: "iPhone"
-# 仓的iOS中iCloud前缀路径固定为：/private/var/mobile/Library/Mobile Documents/iCloud~dev~fuxiao~app~hamsterapp/Documents
-sync_dir: "/private/var/mobile/Library/Mobile Documents/iCloud~dev~fuxiao~app~hamsterapp/Documents/sync"
-```
-
-Mac 的 `installation.yaml` 配置
-
-```
-installation_id: "Mac"
-sync_dir: "/Users/lay/Library/Mobile Documents/iCloud~dev~fuxiao~app~hamsterapp/Documents/sync"
-
-```
-
-2. 在 Mac 中将 iCloud 的中的 Mac 文件 **硬链接** 到 git 仓库目录，通过 git 仓库同步至 Linux
-
-```
-ln /Users/lay/Library/Mobile Documents/iCloud~dev~fuxiao~app~hamsterapp/Documents/sync/rime_ice.userdb.txt ~/dotfiles/im/Rime/sync/Mac/rime_ice.userdb.txt
-```
-
-3. Linux 将同步文件放在 git 仓库中即可
-
-Linux 的 `installation.yaml` 配置
-
-```
-installation_id: "Linux"
-```
-
-配置好之后，完整的操作步骤如下
-
-1. iPhone 先同步一下：会同步 iPhone 和 Mac 的数据
-2. Mac 提交 git 变更
-3. Linux 拉取变更，进行同步：会同步 Mac 和 Linux 的数据
-4. Linux 提交 git 变更
-5. Mac 拉取 git 变更
-6. iPhone 再同步一下：会同步 iPhone 和 Linux 的数据
-
-完整操作很复杂，但实际上这些步骤都是分开做的，可能今天同步了 iPhone <-> Mac，明天同步了 Mac <-> Linux，后面再同步 iPhone <-> Mac 的时候顺便就同步 Linux 了
+参考 [完善 Rime Vim Mode：支持 Linux & 自动切换回中文模式](https://github.com/lei4519/blog/issues/85)，全平台支持 `vim_mode` 模式
 
 #### 笔记
 
