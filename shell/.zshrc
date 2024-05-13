@@ -10,7 +10,10 @@ elif [[ $os == "Linux" ]]; then
 fi
 
 #Display Pokemon
-pokemon-colorscripts --no-title -r 1,3,6
+# https://gitlab.com/phoneybadger/pokemon-colorscripts
+# pokemon-colorscripts --no-title -r 1,3,6
+# https://github.com/aflaag/pokemon-icat?tab=readme-ov-file
+~/pokemon-icat/bin/pokemon-icat
 
 # bun completions
 [ -s "/Users/lay/.bun/_bun" ] && source "/Users/lay/.bun/_bun"
@@ -31,3 +34,6 @@ eval "$(zoxide init --cmd cd zsh)"
 # eval "$(starship init zsh)"
 
 source ~/.p10k.zsh
+
+# Created by `pipx` on 2024-05-13 09:16:03
+export PATH="$PATH:/Users/lay/.local/bin"
