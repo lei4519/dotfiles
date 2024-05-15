@@ -237,8 +237,14 @@ pacman -S fcitx5-rime fcitx5-config-qt
 # 配置输入法
 fcitx5-configtool
 # fcitx5 开机自启动，我用的是 hypyland 的 exec-once
+
+# https://github.com/search?o=desc&q=fcitx5+theme&s=stars&type=Repositories
+# https://github.com/kmephistoh/dotfiles/tree/main/.config/themes
 # 输入法皮肤
-pacman -S fcitx5-material-color
+# pacman -S fcitx5-material-color
+git clone https://github.com/catppuccin/fcitx5.git
+mkdir -p ~/.local/share/fcitx5/themes/
+cp -r ./fcitx5/src/* ~/.local/share/fcitx5/themes
 
 # 雾凇拼音
 yay -S rime-ice-git
@@ -426,4 +432,5 @@ pacman -S wlsunset
 # 亮度调节
 yay -S wluma
 cp ~/dotfiles/linux/90-wluma-backlight.rules /etc/udev/rules.d/90-wluma-backlight.rules
+# hyprland 中配置了启动
 ```
