@@ -13,7 +13,7 @@ return {
   },
   opts = {
     -- 配置放在这里
-    lang = "typescript",
+    lang = "rust",
     cn = {
       enabled = true,
     },

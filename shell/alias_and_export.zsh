@@ -10,6 +10,8 @@ export ZVM_VI_EDITOR="$EDITOR"
 
 alias icat="kitty +kitten icat"
 
+alias lc="nvim leetcode.nvim"
+
 
 export BAT_THEME="Dracula"
 
