@@ -419,7 +419,7 @@ sudo systemctl start kanata
 ### Clash 自启动
 
 ```sh
-ln -s ~/dotfiles/linux/clash.service /etc/systemd/system/clash.service
+cp ~/dotfiles/linux/clash.service /usr/lib/systemd/system/clash.service
 sudo systemctl enable clash
 sudo systemctl start clash
 ```
