@@ -4,6 +4,6 @@ vsync = true
 maximized = false
 srgb = false
 idle = true
-frame = "buttonless"
+frame = "none"
 title-hidden = true
 tabs = true

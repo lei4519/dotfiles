@@ -18,8 +18,9 @@ IS_LINUX = current_os == "Linux"
 if vim.g.neovide then
   -- Put anything you want to happen only in Neovide here
   -- vim.g.neovide_transparency = 1
-  vim.o.guifont = "JetBrains Mono:h16"
-  vim.opt.linespace = 1
+  vim.o.guifont = "JetBrainsMono Nerd Font:h16"
+  -- vim.opt.linespace = 1
+  vim.g.neovide_transparency = 0.8
 
   if IS_MAC then
     vim.keymap.set("n", "<D-s>", ":w<CR>") -- Save
