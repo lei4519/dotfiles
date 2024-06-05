@@ -103,6 +103,7 @@ brew tap homebrew/cask-fonts
 # 根据自己的喜好选择其一
 brew install --cask fira-code-nerd-font
 brew install --cask font-jetbrains-mono
+brew install --cask font-victor-mono
 ```
 
 #### 快速跳转

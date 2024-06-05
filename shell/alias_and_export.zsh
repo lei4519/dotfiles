@@ -52,7 +52,7 @@ alias icat="kitty +kitten icat"
 
 alias lg="lazygit"
 
-alias ni="neovide"
+alias ni="neovide --fork"
 
 function yy() {
 	local tmp="$(mktemp -t "yazi-cwd.XXXXXX")"

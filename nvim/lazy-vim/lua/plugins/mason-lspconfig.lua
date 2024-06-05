@@ -1,0 +1,19 @@
+return {}
+-- return {
+--   "williamboman/mason-lspconfig.nvim",
+--   opts = {
+--     handlers = {
+--       rust_analyzer = function() end,
+--     },
+--   },
+-- }
+-- return {
+--   "neovim/nvim-lspconfig",
+--   opts = {
+--     setup = {
+--       rust_analyzer = function()
+--         return true
+--       end,
+--     },
+--   },
+-- }
