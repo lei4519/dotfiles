@@ -35,5 +35,3 @@ eval "$(zoxide init --cmd cd zsh)"
 
 source ~/.p10k.zsh
 
-# Created by `pipx` on 2024-05-13 09:16:03
-export PATH="$PATH:/Users/lay/.local/bin"
