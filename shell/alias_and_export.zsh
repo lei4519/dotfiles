@@ -1,6 +1,7 @@
 
 # man use bat
 export MANPAGER="sh -c 'col -bx | bat -l man -p'"
+export MANROFFOPT="-c"
 
 # export EDITOR="neovide"
 # export VISUAL="neovide"
@@ -56,6 +57,7 @@ alias vim="$EDITOR"
 alias icat="kitty +kitten icat"
 
 alias lg="lazygit"
+alias lzd="lazydocker"
 
 alias ni="neovide --fork"
 

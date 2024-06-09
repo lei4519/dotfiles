@@ -142,6 +142,13 @@ brew install pandoc
 brew install jq
 ```
 
+#### 从 --help 中生成 zsh 自动补全
+
+```sh
+# https://github.com/dim-an/cod?tab=readme-ov-file
+go install github.com/dim-an/cod@latest
+```
+
 ### TUI
 
 #### Lazy Git

@@ -34,6 +34,7 @@ return {
     -- },
     filetypes = {
       rust = true,
+      go = true,
       -- html = true,
       lua = true,
       javascript = true,
