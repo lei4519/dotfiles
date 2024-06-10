@@ -8,7 +8,6 @@ antigen bundle chrissicool/zsh-256color
 antigen bundle jeffreytse/zsh-vi-mode
 antigen bundle marlonrichert/zsh-autocomplete@main
 antigen bundle zsh-users/zsh-syntax-highlighting
-antigen bundle dim-an/cod
 
 
 # Load the theme

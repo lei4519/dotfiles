@@ -32,6 +32,7 @@ source ~/dotfiles/shell/vim-mode-conf.zsh
 eval "$(fnm env --use-on-cd)"
 eval "$(zoxide init --cmd cd zsh)"
 # eval "$(starship init zsh)"
+source <(cod init $$ zsh)
 
 source ~/.p10k.zsh
 
