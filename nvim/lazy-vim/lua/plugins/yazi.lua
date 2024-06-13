@@ -1,11 +1,12 @@
 return {
   "DreamMaoMao/yazi.nvim",
+  enabled = false,
   dependencies = {
     "nvim-telescope/telescope.nvim",
     "nvim-lua/plenary.nvim",
   },
 
   keys = {
-    { "<leader>j", "<cmd>Yazi<CR>", desc = "Toggle Yazi" },
+    { "<leader>z", "<cmd>Yazi<CR>", desc = "Toggle Yazi" },
   },
 }
