@@ -1,3 +1,4 @@
+# https://github.com/junegunn/fzf
 # sbtrkt fuzzy-match	Items that match sbtrkt 与 sbtrkt 匹配的项目
 # 'wild exact-match (quoted) 完全匹配（引用）	Items that include wild 包含 wild 的项目
 # ^music prefix-exact-match 前缀精确匹配	Items that start with music 以 music 开头的项目
@@ -14,6 +15,9 @@ export FZF_DEFAULT_OPTS="
 --preview '~/dotfiles/shell/fzf-preview.sh {}'
 "
 # --bind 'enter:become(nvim {})'
+
+# Use ~~ as the trigger sequence instead of the default **
+# export FZF_COMPLETION_TRIGGER='~~'
 
 # https://github.com/sharkdp/fd?tab=readme-ov-file#using-fd-with-fzf
 export FZF_DEFAULT_COMMAND='fd --type file --color=always --follow --hidden --exclude .git'
@@ -56,3 +60,4 @@ _fzf_comprun() {
 
 
 eval "$(fzf --zsh)"
+# source <(fzf --zsh)

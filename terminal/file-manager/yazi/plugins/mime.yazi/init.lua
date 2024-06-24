@@ -918,7 +918,6 @@ local ext_mime_map = {
 	["726"] = "audio/32kadpcm",
 	["adts"] = "audio/aac",
 	["aac"] = "audio/aac",
-	["ass"] = "audio/aac",
 	["ac3"] = "audio/ac3",
 	["amr"] = "audio/AMR",
 	["awb"] = "audio/AMR-WB",
@@ -1141,13 +1140,13 @@ local ext_mime_map = {
 	["html"] = "text/html",
 	["htm"] = "text/html",
 	["js"] = "text/javascript",
-	["ts"] = "text/typescript",
 	["mjs"] = "text/javascript",
 	["cnd"] = "text/jcr-cnd",
 	["markdown"] = "text/markdown",
 	["md"] = "text/markdown",
 	["miz"] = "text/mizar",
 	["n3"] = "text/n3",
+	["ass"] = "text/plain",
 	["txt"] = "text/plain",
 	["asc"] = "text/plain",
 	["text"] = "text/plain",
@@ -1210,7 +1209,7 @@ local ext_mime_map = {
 	["uric"] = "text/vnd.si.uricatalogue",
 	["jad"] = "text/vnd.sun.j2me.app-descriptor",
 	["sos"] = "text/vnd.sosi",
-	-- ["ts"] = "application/octet-stream",
+	["ts"] = "application/octet-stream",
 	["si"] = "text/vnd.wap.si",
 	["sl"] = "text/vnd.wap.sl",
 	["wml"] = "text/vnd.wap.wml",
@@ -1304,6 +1303,7 @@ local ext_mime_map = {
 	["stw"] = "application/vnd.sun.xml.writer.template",
 	["sis"] = "application/vnd.symbian.install",
 	["mms"] = "application/vnd.wap.mms-message",
+	["7z"] = "application/x-7z-compressed",
 	["anx"] = "application/x-annodex",
 	["bcpio"] = "application/x-bcpio",
 	["torrent"] = "application/x-bittorrent",
@@ -1333,7 +1333,7 @@ local ext_mime_map = {
 	["sv4crc"] = "application/x-sv4crc",
 	["tar"] = "application/x-tar",
 	["tcl"] = "application/x-tcl",
-	["tex"] = "application/x-tex",
+	["tex"] = "text/x-tex",
 	["texinfo"] = "application/x-texinfo",
 	["texi"] = "application/x-texinfo",
 	["man"] = "application/x-troff-man",
@@ -1396,6 +1396,7 @@ local ext_mime_map = {
 	["flv"] = "video/x-flv",
 	["fxm"] = "video/x-javafx",
 	["mkv"] = "video/x-matroska",
+	["rmvb"] = "application/vnd.rn-realmedia",
 	["mk3d"] = "video/x-matroska-3d",
 	["asx"] = "video/x-ms-asf",
 	["wm"] = "video/x-ms-wm",
@@ -1417,13 +1418,13 @@ local function match_mimetype(s)
 	end
 end
 
-function M:preload()		
+function M:fetch()
 	local mimes = {}
 	local unmatch_ext_urls = {}
-  
+
 	for _, file in ipairs(self.files) do
 	  local url = tostring(file.url)
-  
+
 	  local ext = tostring(file.name):match("^.+%.(.+)$")
 	  if ext then
 		ext = ext:lower()
@@ -1436,7 +1437,7 @@ function M:preload()
 	  unmatch_ext_urls[#unmatch_ext_urls + 1] = url
 	  ::continue::
 	end
-	
+
 
 	if #unmatch_ext_urls then
 		local file_one_path = os.getenv("YAZI_FILE_ONE") or "file"
@@ -1446,7 +1447,7 @@ function M:preload()
 	  else
 		command:arg("-bL")
 	  end
-  
+
 	  local i = 1
 	  local mime
 	  local output = command:args(unmatch_ext_urls):output()
@@ -1459,16 +1460,16 @@ function M:preload()
 
 		if mime and string.find(line, mime, 1, true) ~= 1 then
 			goto continue
-		elseif mime then		
+		elseif mime then
 			mimes[unmatch_ext_urls[i]] = mime
 		i = i + 1
 		end
 		::continue::
 	  end
 	end
-  
+
 	if #mimes then
-	  ya.manager_emit("update_mimetype", {}, mimes)
+	  ya.manager_emit("update_mimetype", { updates = mimes })
 	  return 3
 	end
 	return 2
