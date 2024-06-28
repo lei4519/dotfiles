@@ -13,7 +13,6 @@ alias icat="kitty +kitten icat"
 
 alias lc="nvim leetcode.nvim"
 
-
 export BAT_THEME="Dracula"
 
 # pnpm
@@ -53,8 +52,6 @@ alias mkdir='mkdir -p'
 
 alias vi="$EDITOR"
 alias vim="$EDITOR"
-
-alias icat="kitty +kitten icat"
 
 alias lg="lazygit"
 alias lzd="lazydocker"
