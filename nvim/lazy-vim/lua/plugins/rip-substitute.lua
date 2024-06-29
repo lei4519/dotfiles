@@ -1,16 +1,23 @@
 return {
   "chrisgrieser/nvim-rip-substitute",
-  -- config = function()
-  --   require("rip-substitute").setup({
-  --     regexOptions = {
-  --       ---@type "case-sensitive"|"ignore-case"|"smart-case"
-  --       casing = "smart-case",
-  --     },
-  --   })
-  -- end,
+  config = function()
+    require("rip-substitute").setup({
+      popupWin = {
+        -- border = "single",
+        -- matchCountHlGroup = "Keyword",
+        -- noMatchHlGroup = "ErrorMsg",
+        -- hideSearchReplaceLabels = false,
+        position = "top", -- "top"|"bottom"
+      },
+      -- regexOptions = {
+      --   ---@type "case-sensitive"|"ignore-case"|"smart-case"
+      --   casing = "smart-case",
+      -- },
+    })
+  end,
   keys = {
     {
-      "<localleader>s",
+      "<c-f>",
       function()
         require("rip-substitute").sub()
       end,
