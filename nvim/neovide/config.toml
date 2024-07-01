@@ -10,7 +10,7 @@ tabs = true
 
 
 [font]
-normal = ["VictorMono Nerd Font Mono"]
+normal = ["CaskaydiaCove Nerd Font Mono"]
 size = 15
 
 # [font.features]
