@@ -1,13 +1,10 @@
 -- bootstrap lazy.nvim, LazyVim and your plugins
 local function get_os()
-  local ostype = os.getenv("OSTYPE") or "darwin"
-  if string.find(ostype, "linux") then
-    return "Linux"
-  elseif string.find(ostype, "darwin") then
-    return "MacOS"
-  else
-    return "Unknown"
-  end
+  local handle = io.popen("uname -s", "r")
+  local ostype = handle:read("*a") -- 读取全部输出
+  handle:close()
+
+  return ostype
 end
 
 -- 调用函数获取当前操作系统

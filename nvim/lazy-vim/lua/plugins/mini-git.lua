@@ -2,6 +2,7 @@ return {
   "echasnovski/mini-git",
   version = "*",
   main = "mini.git",
+  lazy = false,
   keys = {
     { "<leader>gmr", "<cmd>MiniGit.show_range_history()<cr>", desc = "shows how certain line range evolved" },
     { "<leader>gmd", "<cmd>MiniGit.show_diff_source()<cr>", desc = " shows file state as it was at diff entry" },
