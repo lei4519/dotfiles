@@ -1,3 +1,5 @@
+export XDG_CONFIG_HOME="$HOME/.config"
+
 
 # man use bat
 export MANPAGER="sh -c 'col -bx | bat -l man -p'"
@@ -15,6 +17,8 @@ alias lc="nvim leetcode.nvim"
 
 export BAT_THEME="Dracula"
 
+alias cz="chezmoi"
+
 # pnpm
 export PNPM_HOME="$HOME/Library/pnpm"
 export PATH="$PNPM_HOME:$PATH"
@@ -29,7 +33,7 @@ export PATH="$GOPATH/bin:$PATH"
 export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
 
-export YAZI_CONFIG_HOME="$HOME/dotfiles/terminal/file-manager/yazi"
+export YAZI_CONFIG_HOME="$DOT_PATH/terminal/file-manager/yazi"
 
 # Helpful aliases
 alias  c='clear' # clear terminal

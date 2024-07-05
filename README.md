@@ -1,14 +1,38 @@
 # dotfiles
 
+## chezmoi
+
+使用 [chezmoi](https://www.chezmoi.io/quick-start/#concepts) 管理 dotfiles，只需要运行一下命令即可
+
+> ![WARN]
+> 不需要在执行软链接操作
+> rime 除外
+
+```sh
+chezmoi init git@github.com:lei4519/dotfiles.git
+
+# 添加文件
+chezmoi add ~/.bashrc
+
+# 编辑文件
+chezmoi add ~/.bashrc
+
+# 查看变化
+chezmoi diff
+
+# 应用变化
+chezmoi apply -v
+
+# 更新变化
+chezmoi update -v
+```
+
 ## Clone
 
 ```sh
 # 必须放在 ~/dotfiles，保证下面软连接的命令路径正确
 git clone git@github.com:lei4519/dotfiles.git ~/dotfiles
 ```
-
-> Tips
-> 使用 yazi 可以快速批量的进行软连接操作 - 使用空格进行多选，使用 `y` 复制，使用 `-` 进行软连接
 
 具体的安装命令根据自己的包管理工具去装，比如 arch linux 使用 `yay or pacman`
 
@@ -33,7 +57,6 @@ rm -rf ~/.config/wezterm && ln -s ~/dotfiles/terminal/wezterm ~/.config/wezterm
 
 ```sh
 brew install kitty
-rm -rf ~/.config/kitty && ln -s ~/dotfiles/terminal/kitty ~/.config/kitty
 ```
 
 ##### Kitty 图片查看
@@ -72,25 +95,18 @@ rm ~/.tmux.conf.local && ln -s ~/dotfiles/terminal/tmux/.tmux.conf.local ~/.tmux
 
 #### Zsh Config
 
-```sh
-rm -rf ~/.zshrc && ln -s ~/dotfiles/shell/.zshrc ~/.zshrc
-```
-
 ##### antigen
 
 zsh 包管理器
 
 ```sh
-curl -L git.io/antigen > $HOME/dotfiles/antigen.zsh
+curl -L git.io/antigen > $DOT_PATH/shell/antigen.zsh
 ```
 
 #### shell 美化
 
 ```sh
 brew install starship
-# 二选一即可
-rm -rf ~/.config/starship.toml && ln -s ~/dotfiles/shell/starship.toml ~/.config/starship.toml
-rm -rf ~/.config/starship.toml && ln -s ~/dotfiles/shell/starship_end4.toml ~/.config/starship.toml
 ```
 
 #### Font
@@ -158,12 +174,6 @@ brew install lazygit
 # git pager styles, lazygit need
 brew install git-delta
 brew install tig
-# mac
-rm -rf ~/Library/Application\ Support/lazygit/config.yml && ln -s ~/dotfiles/git/lazygit/config.yml ~/Library/Application\ Support/lazygit/config.yml
-# linux
-rm -rf ~/.config/lazygit/config.yml &&  ln -s ~/dotfiles/git/lazygit/config.yml ~/.config/lazygit/config.yml
-rm -rf ~/.gitconfig && ln -s ~/dotfiles/git/.gitconfig ~/.gitconfig
-rm -rf ~/.gitignore && ln -s ~/dotfiles/.gitignore ~/.gitignore
 ```
 
 #### [yazi](https://yazi-rs.github.io/docs/installation)
@@ -199,7 +209,7 @@ rm -rf ~/.config/joshuto && ln -s ~/dotfiles/terminal/file-manager/joshuto ~/.co
 下载配置文件
 
 ```sh
-git clone git@github.com:lei4519/rime-ice.git ~/dotfiles/rime --depth 1
+git clone git@github.com:lei4519/rime-ice.git $DOT_PATH/rime --depth 1
 ```
 
 安装 [plum](https://github.com/rime/plum)
@@ -212,7 +222,7 @@ curl -fsSL https://raw.githubusercontent.com/rime/plum/master/rime-install | bas
 
 ```sh
 brew install --cask squirrel
-rm -rf ~/Library/Rime && ln -s ~/dotfiles/rime ~/Library/Rime
+rm -rf ~/Library/Rime && ln -s $DOT_PATH/rime ~/Library/Rime
 
 # 雾凇拼音
 # 安装或更新全部文件
@@ -258,8 +268,8 @@ cp -r ./fcitx5/src/* ~/.local/share/fcitx5/themes
 yay -S rime-ice-git
 
 # 配置文件
-rm -rf ~/.local/share/fcitx5/rime && ln -s ~/dotfiles/rime ~/.local/share/fcitx5/rime
-ln -s ~/dotfiles/linux/fcitx5/conf/classicui.conf ~/.config/fcitx5/conf/classicui.conf
+rm -rf ~/.local/share/fcitx5/rime && ln -s $DOT_PATH/rime ~/.local/share/fcitx5/rime
+ln -s $DOT_PATH/linux/fcitx5/conf/classicui.conf ~/.config/fcitx5/conf/classicui.conf
 
 #!/bin/bash
 rime_deployer --build ~/.local/share/fcitx5/rime/ /usr/share/rime-data ~/.local/share/fcitx5/rime/build
@@ -299,17 +309,12 @@ brew install neovim
 
 最方便的，开箱即用，内置了各种预设配置、lsp 配置，这个是最吸引我的（配置各种 lsp、dap 要搞疯了都
 
-```sh
-rm -rf ~/.config/nvim && ln -s ~/dotfiles/nvim/lazy-vim ~/.config/nvim
-```
-
 ### Neovide
 
 Neovim GUI，丝滑的光标移动
 
 ```sh
 brew install --cask neovide  # optional rust 编写的 neovim ui
-rm -rf ~/.config/neovide && ln -s ~/dotfiles/nvim/neovide ~/.config/neovide
 ```
 
 ### ~~[Lunarvim](https://www.lunarvim.org/)~~
@@ -342,7 +347,6 @@ rm -rf ~/.config/nvim && ln -s ~/dotfiles/nvim/native-nvim ~/.config/nvim
 
 ```sh
 brew install --cask karabiner-elements
-rm -rf ~/.config/karabiner/karabiner.json && mkdir ~/.config/karabiner && ln -s ~/dotfiles/mac/karabiner/karabiner.json ~/.config/karabiner/karabiner.json
 ```
 
 ### 窗口管理
@@ -353,7 +357,6 @@ rm -rf ~/.config/karabiner/karabiner.json && mkdir ~/.config/karabiner && ln -s 
 
 ```sh
 brew install koekeishiya/formulae/yabai
-rm -rf ~/.config/yabai && ln -s ~/dotfiles/mac/yabai ~/.config/yabai
 
 # yabai --start-service
 # brew install cmacrae/formulae/spacebar
@@ -364,7 +367,6 @@ brew tap FelixKratz/formulae
 brew install sketchybar
 brew install --cask sf-symbols
 curl -L https://github.com/kvndrsslr/sketchybar-app-font/releases/download/v1.0.4/sketchybar-app-font.ttf -o $HOME/Library/Fonts/sketchybar-app-font.ttf
-rm -rf ~/.config/sketchybar && ln -s ~/dotfiles/mac/sketchybar ~/.config/sketchybar
 # brew services start sketchybar
 ```
 
@@ -381,7 +383,6 @@ rm -rf ~/.config/amethyst && ln -s ~/dotfiles/mac/amethyst ~/.config/amethyst
 
 ```sh
 brew install --cask snipaste
-rm -rf ~/.snipaste/config.ini && ln -s ~/dotfiles/mac/snipaste/config.ini ~/.snipaste/config.ini
 ```
 
 ## Arch Linux

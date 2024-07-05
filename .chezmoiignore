@@ -1,0 +1,11 @@
+{{ if ne .chezmoi.os "darwin" }}
+# only manage list on macos
+~/.config/yabai
+~/.config/sketchybar
+~/.config/karabiner/karabiner.json
+~/.snipaste/config.ini
+{{ end }}
+
+{{ if ne .chezmoi.os "linux" }}
+{{ end }}
+

@@ -1,0 +1,83 @@
+# current
+plugin
+nvim/lsp.log
+nvim/session
+nvim/luacache_chunks
+nvim/luacache_modpaths
+nvim/lvim.shada
+.luarc
+
+karabiner/*
+!karabiner/karabiner.json
+
+alacritty/alacritty.yml--
+__pycache__
+
+*.bin
+
+build
+dist
+target
+.umi
+
+# OSX
+#
+.DS_Store
+*.swp
+
+# Xcode
+*.pbxuser
+!default.pbxuser
+*.mode1v3
+!default.mode1v3
+*.mode2v3
+!default.mode2v3
+*.perspectivev3
+!default.perspectivev3
+xcuserdata
+*.xccheckout
+*.moved-aside
+DerivedData
+*.hmap
+*.ipa
+*.xcuserstate
+project.xcworkspace
+
+# Android/IntelliJ
+#
+.idea
+.gradle
+local.properties
+*.iml
+# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+
+# dependencies
+node_modules
+npm-debug.log*
+yarn-error.log
+package-lock.json
+
+# production
+dist
+coverage
+buildAssets
+
+# umi
+.umi
+.umi-production
+
+coverage
+
+# idea
+.history
+
+# vscode
+.vscode
+
+*.bak
+
+rime
+antigen-packages.zsh.zwc
+*.userdb
+lazy-lock.json
+nvim/native-nvim/session

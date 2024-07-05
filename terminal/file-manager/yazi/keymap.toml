@@ -9,7 +9,7 @@ run = ["cd ~/work"]
 
 [[manager.prepend_keymap]]
 on = ["g", "."]
-run = ["cd ~/dotfiles"]
+run = ["chezmoi cd"]
 
 [[manager.prepend_keymap]]
 on = ["l"]

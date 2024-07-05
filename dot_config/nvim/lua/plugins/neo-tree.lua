@@ -27,9 +27,9 @@ return {
       mappings = {
         ["/"] = "none",
         ["t"] = "none",
-        ["R"] = "search_by_spectre",
-        ["f"] = "telescope_find",
-        ["tg"] = "telescope_grep",
+        -- ["R"] = "search_by_grugfar",
+        ["f"] = "fzf_find",
+        ["tg"] = "fzf_grep",
         ["h"] = function(state)
           local node = state.tree:get_node()
           if node.type == "directory" and node:is_expanded() then
@@ -59,6 +59,15 @@ return {
           cwd = path,
         })
       end,
+      search_by_grugfar = function(state)
+        local node = state.tree:get_node()
+        local path = node:get_id()
+        require("grug-far").grug_far({
+          prefills = {
+            filesFilter = path,
+          },
+        })
+      end,
       telescope_find = function(state)
         local node = state.tree:get_node()
         local path = node:get_id()
@@ -68,6 +77,16 @@ return {
         local node = state.tree:get_node()
         local path = node:get_id()
         require("telescope.builtin").live_grep(getTelescopeOpts(state, path))
+      end,
+      fzf_find = function(state)
+        local node = state.tree:get_node()
+        local path = node:get_id()
+        require("fzf-lua").files({ cwd = path })
+      end,
+      fzf_grep = function(state)
+        local node = state.tree:get_node()
+        local path = node:get_id()
+        require("fzf-lua").live_grep({ cwd = path })
       end,
     },
     filesystem = {

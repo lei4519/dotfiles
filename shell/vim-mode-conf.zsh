@@ -7,7 +7,7 @@ function zvm_config() {
 # this plugin will overwrite the previous key bindings, 
 # this causes the key bindings of other plugins (i.e. fzf, zsh-autocomplete, etc.) to fail.
 function zvm_after_init() {
-  source ~/dotfiles/shell/.fzf.zsh
+  source $DOT_PATH/shell/.fzf.zsh
 }
 
 # all the keybindings of normal and visual mode should be executed by the zvm_after_lazy_keybindings_commands

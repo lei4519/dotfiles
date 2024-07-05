@@ -17,7 +17,7 @@ return {
   end,
   keys = {
     {
-      "<C-f>",
+      "<localleader>s",
       function()
         require("rip-substitute").sub()
       end,

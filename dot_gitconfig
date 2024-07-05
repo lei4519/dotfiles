@@ -4,13 +4,13 @@
 
 [core]
   pager = delta
-	excludesfile = /Users/lay/.gitignore_global
+	excludesfile = ~/.gitignore_global
 
 [interactive]
   diffFilter = delta --color-only --features=interactive
 
 [include]
-  path = ~/dotfiles/git/delta/themes.gitconfig
+  path = $DOT_PATH/git/delta/themes.gitconfig
 
 [delta]
   ; features = side-by-side decorations 
@@ -33,7 +33,6 @@
 
 
 [merge]
-  tool = meld
   conflictstyle = diff3
 
 [diff]
@@ -41,11 +40,3 @@
 
 [pull]
   rebase = true
-[difftool "sourcetree"]
-	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
-	path = 
-[mergetool "sourcetree"]
-	cmd = /Applications/Sourcetree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
-	trustExitCode = true
-[commit]
-	template = /Users/lay/.stCommitMsg
