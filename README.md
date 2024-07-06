@@ -30,8 +30,7 @@ chezmoi update -v
 ## Clone
 
 ```sh
-# 必须放在 ~/dotfiles，保证下面软连接的命令路径正确
-git clone git@github.com:lei4519/dotfiles.git ~/dotfiles
+chezmoi init lei4519 --ssh
 ```
 
 具体的安装命令根据自己的包管理工具去装，比如 arch linux 使用 `yay or pacman`
@@ -387,25 +386,7 @@ brew install --cask snipaste
 
 ## Arch Linux
 
-```sh
-# 字体配置
-rm -rf ~/.config/fontconfig && ln -s ~/dotfiles/linux/fontconfig ~/.config/fontconfig
-```
-
 ### Hypyland
-
-#### Hypyland 配置
-
-```sh
-# hypyland 配置
-# 先把配置文件夹软链接过去，这样下面的配置更改会自动同步到 dotfiles 目录中
-rm -rf ~/.config/hypr && ln -s ~/dotfiles/linux/hypr ~/.config/hypr
-
-# wayland 配置
-rm -rf ~/.config/chrome-flags.conf && ln -s ~/dotfiles/linux/chrome-flags.conf ~/.config/chrome-flags.conf
-rm -rf ~/.config/electron-flags.conf && ln -s ~/dotfiles/linux/electron-flags.conf ~/.config/electron-flags.conf
-rm -rf ~/.config/code-flags.conf && ln -s ~/dotfiles/linux/code-flags.conf ~/.config/code-flags.conf
-```
 
 安装 [hyprdots](https://github.com/prasanthrangan/hyprdots)
 
@@ -418,7 +399,7 @@ rm -rf ~/.config/code-flags.conf && ln -s ~/dotfiles/linux/code-flags.conf ~/.co
 ```sh
 yay -S kanata
 # https://github.com/jtroo/kanata/discussions/130
-ln -s ~/dotfiles/linux/kanata/kanata.service /etc/systemd/system/kanata.service
+sudo rm -rf /etc/systemd/system/kanata.service && sudo ln -s $DOT_PATH/linux/kanata/kanata.service /etc/systemd/system/kanata.service
 
 sudo systemctl enable kanata
 sudo systemctl start kanata
@@ -427,7 +408,7 @@ sudo systemctl start kanata
 ### Clash 自启动
 
 ```sh
-cp ~/dotfiles/linux/clash.service /usr/lib/systemd/system/clash.service
+cp $DOT_PATH/linux/clash.service /usr/lib/systemd/system/clash.service
 sudo systemctl enable clash
 sudo systemctl start clash
 ```
@@ -440,6 +421,6 @@ sudo systemctl start clash
 pacman -S wlsunset
 # 亮度调节
 yay -S wluma
-cp ~/dotfiles/linux/90-wluma-backlight.rules /etc/udev/rules.d/90-wluma-backlight.rules
+cp $DOT_PATH/linux/90-wluma-backlight.rules /etc/udev/rules.d/90-wluma-backlight.rules
 # hyprland 中配置了启动
 ```

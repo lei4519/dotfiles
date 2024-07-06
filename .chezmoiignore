@@ -1,11 +1,25 @@
+README.md
+git
+linux
+mac
+nvim
+shell
+terminal
+
 {{ if ne .chezmoi.os "darwin" }}
 # only manage list on macos
-~/.config/yabai
-~/.config/sketchybar
-~/.config/karabiner/karabiner.json
-~/.snipaste/config.ini
+.config/yabai
+.config/sketchybar
+.config/private_karabiner
+.snipaste/config.ini
 {{ end }}
 
 {{ if ne .chezmoi.os "linux" }}
+.config/fontconfig
+.config/hypr
+.config/private_fcitx5
+.config/chrome-flags.conf
+.config/code-flags.conf
+.config/electron-flags.conf
 {{ end }}
 
