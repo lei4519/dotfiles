@@ -1,3 +1,28 @@
+-- copy from lazyvim lazyvim/plugins/extras/util/chezmoi.lua
+local pick_chezmoi = function()
+  if LazyVim.pick.picker.name == "telescope" then
+    require("telescope").extensions.chezmoi.find_files()
+  elseif LazyVim.pick.picker.name == "fzf" then
+    local fzf_lua = require("fzf-lua")
+    local results = require("chezmoi.commands").list()
+    local chezmoi = require("chezmoi.commands")
+
+    local opts = {
+      fzf_opts = {},
+      fzf_colors = true,
+      actions = {
+        ["default"] = function(selected)
+          chezmoi.edit({
+            targets = { "~/" .. selected[1] },
+            args = { "--watch" },
+          })
+        end,
+      },
+    }
+    fzf_lua.fzf_exec(results, opts)
+  end
+end
+
 return {
   "ibhagwan/fzf-lua",
   keys = {
@@ -7,6 +32,7 @@ return {
     -- find
     { "<leader>fF", LazyVim.pick("auto"), desc = "Find Files (Root Dir)" },
     { "<leader>ff", LazyVim.pick("auto", { root = false }), desc = "Find Files (cwd)" },
+    { "<leader>fc", pick_chezmoi, desc = "Find Config File" },
     { "<leader>fR", "<cmd>FzfLua oldfiles<cr>", desc = "Recent" },
     { "<leader>fr", LazyVim.pick("oldfiles", { cwd = vim.uv.cwd() }), desc = "Recent (cwd)" },
     -- search

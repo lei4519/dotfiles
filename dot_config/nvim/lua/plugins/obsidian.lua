@@ -33,15 +33,100 @@ return {
 
       -- see below for full list of optional dependencies 👇
     },
+    keys = {
+      { "<leader>ns", "<cmd>ObsidianSearch<cr>", desc = "Search" },
+      { "<leader>nr", "<cmd>ObsidianRename<cr>", desc = "Rename" },
+      { "<leader>nl", "<cmd>ObsidianLinks<cr>", desc = "Links" },
+      { "<leader>nL", "<cmd>ObsidianLink<cr>", desc = "Link" },
+      { "<leader>nb", "<cmd>ObsidianBacklinks<cr>", desc = "Backlinks" },
+      { "<leader>nt", "<cmd>ObsidianTags<cr>", desc = "Tags" },
+      { "<leader>nT", "<cmd>ObsidianTemplate<cr>", desc = "Template" },
+      { "<leader>np", "<cmd>ObsidianPasteImg<cr>", desc = "PasteImg" },
+      { "<leader>no", "<cmd>ObsidianQuickSwitch<cr>", desc = "QuickSwitch" },
+      { "<leader>nO", "<cmd>ObsidianOpen<cr>", desc = "Open" },
+      { "<leader>nn", "<cmd>ObsidianNew<cr>", desc = "New" },
+    },
     opts = {
+      -- A list of workspace names, paths, and configuration overrides.
+      -- If you use the Obsidian app, the 'path' of a workspace should generally be
+      -- your vault root (where the `.obsidian` folder is located).
+      -- When obsidian.nvim is loaded by your plugin manager, it will automatically set
+      -- the workspace to the first workspace in the list whose `path` is a parent of the
+      -- current markdown file being edited.
       workspaces = {
         {
           name = "notes",
-          path = "/Users/lay/Library/CloudStorage/OneDrive-Personal/App/notes",
+          path = "~/notes",
         },
       },
 
-      -- see below for full list of options 👇
+      -- Optional, configure key mappings. These are the defaults. If you don't want to set any keymappings this
+      -- way then set 'mappings = {}'.
+      -- mappings = {
+      --   -- Overrides the 'gf' mapping to work on markdown/wiki links within your vault.
+      --   ["gf"] = {
+      --     action = function()
+      --       return require("obsidian").util.gf_passthrough()
+      --     end,
+      --     opts = { noremap = false, expr = true, buffer = true },
+      --   },
+      --   -- Toggle check-boxes.
+      --   ["<leader>ch"] = {
+      --     action = function()
+      --       return require("obsidian").util.toggle_checkbox()
+      --     end,
+      --     opts = { buffer = true },
+      --   },
+      --   -- Smart action depending on context, either follow link or toggle checkbox.
+      --   ["<cr>"] = {
+      --     action = function()
+      --       return require("obsidian").util.smart_action()
+      --     end,
+      --     opts = { buffer = true, expr = true },
+      --   },
+      -- },
+
+      -- Where to put new notes. Valid options are
+      --  * "current_dir" - put new notes in same directory as the current buffer.
+      --  * "notes_subdir" - put new notes in the default notes subdirectory.
+      new_notes_location = "current_dir",
+
+      picker = {
+        -- Set your preferred picker. Can be one of 'telescope.nvim', 'fzf-lua', or 'mini.pick'.
+        name = "fzf-lua",
+        -- Optional, configure key mappings for the picker. These are the defaults.
+        -- Not all pickers support all mappings.
+        mappings = {
+          -- Create a new note from your query.
+          new = "<C-x>",
+          -- Insert a link to the selected note.
+          insert_link = "<C-l>",
+        },
+      },
+
+      -- Set the maximum number of lines to read from notes on disk when performing certain searches.
+      -- search_max_lines = 1000,
+
+      -- Optional, configure additional syntax highlighting / extmarks.
+      -- This requires you have `conceallevel` set to 1 or 2. See `:help conceallevel` for more details.
+
+      -- Specify how to handle attachments.
+      attachments = {
+        -- The default folder to place images in via `:ObsidianPasteImg`.
+        -- If this is a relative path it will be interpreted as relative to the vault root.
+        -- You can always override this per image by passing a full path to the command instead of just a filename.
+        img_folder = "attachments", -- This is the default
+        -- A function that determines the text to insert in the note when pasting an image.
+        -- It takes two arguments, the `obsidian.Client` and an `obsidian.Path` to the image file.
+        -- This is the default implementation.
+        ---@param client obsidian.Client
+        ---@param path obsidian.Path the absolute path to the image file
+        ---@return string
+        -- img_text_func = function(client, path)
+        --   path = client:vault_relative_path(path) or path
+        --   return string.format("![%s](%s)", path.name, path)
+        -- end,
+      },
     },
   },
 }
