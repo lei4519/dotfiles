@@ -5,6 +5,7 @@ mac
 nvim
 shell
 terminal
+rime
 
 {{ if ne .chezmoi.os "darwin" }}
 # only manage list on macos

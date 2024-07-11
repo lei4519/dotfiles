@@ -82,7 +82,7 @@ otherApp='^(IINA|访达|DBeaver|Calendar|日历|System Preferences|系统偏好�
 yabai -m rule --add app="${otherApp}" manage=off
 
 
-notOpacityApp='(Chrome|WeCom|WeChat|PDF)'
+notOpacityApp='(Chrome|WeCom|WeChat|PDF|Firefox|Arc)'
 yabai -m rule --add app="${notOpacityApp}" opacity=1
 
 ## specific rule
