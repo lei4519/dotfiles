@@ -5,7 +5,6 @@ mac
 nvim
 shell
 terminal
-rime
 
 {{ if ne .chezmoi.os "darwin" }}
 # only manage list on macos
@@ -13,6 +12,7 @@ rime
 .config/sketchybar
 .config/private_karabiner
 .snipaste/config.ini
+Library/Rime
 {{ end }}
 
 {{ if ne .chezmoi.os "linux" }}
@@ -22,6 +22,6 @@ rime
 .config/chrome-flags.conf
 .config/code-flags.conf
 .config/electron-flags.conf
-./Library/Rime
+.local/share/fcitx5/rime
 {{ end }}
 

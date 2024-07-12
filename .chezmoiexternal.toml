@@ -6,3 +6,12 @@ refreshPeriod = "168h"
 args = ["--ff-only"]
 ["./Library/Rime".clone]
 args = ["--depth=1"]
+
+["./.local/share/fcitx5/rime"]
+type = "git-repo"
+url = "git@github.com:lei4519/rime-ice.git"
+refreshPeriod = "168h"
+["./.local/share/fcitx5/rime".pull]
+args = ["--ff-only"]
+["./.local/share/fcitx5/rime".clone]
+args = ["--depth=1"]

@@ -6,7 +6,6 @@
 
 > ![WARN]
 > 不需要在执行软链接操作
-> rime 除外
 
 ```sh
 chezmoi init git@github.com:lei4519/dotfiles.git
@@ -210,6 +209,7 @@ rm -rf ~/.config/joshuto && ln -s ~/dotfiles/terminal/file-manager/joshuto ~/.co
 ```sh
 # chezmoi 控制
 # mac os -> ~/Library/Rime
+# linux -> ~/.local/share/fcitx5/rime
 ```
 
 安装 [plum](https://github.com/rime/plum)
@@ -268,7 +268,6 @@ yay -S rime-ice-git
 
 # 配置文件
 rm -rf ~/.local/share/fcitx5/rime && ln -s $DOT_PATH/rime ~/.local/share/fcitx5/rime
-ln -s $DOT_PATH/linux/fcitx5/conf/classicui.conf ~/.config/fcitx5/conf/classicui.conf
 
 #!/bin/bash
 rime_deployer --build ~/.local/share/fcitx5/rime/ /usr/share/rime-data ~/.local/share/fcitx5/rime/build
@@ -399,7 +398,7 @@ brew install --cask snipaste
 ```sh
 yay -S kanata
 # https://github.com/jtroo/kanata/discussions/130
-sudo rm -rf /etc/systemd/system/kanata.service && sudo ln -s $DOT_PATH/linux/kanata/kanata.service /etc/systemd/system/kanata.service
+sudo rm -rf /etc/systemd/system/kanata.service && sudo cp $DOT_PATH/linux/kanata/kanata.service /etc/systemd/system/kanata.service
 
 sudo systemctl enable kanata
 sudo systemctl start kanata

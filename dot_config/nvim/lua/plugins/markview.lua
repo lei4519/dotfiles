@@ -3,7 +3,7 @@ return {
   dependencies = {
     "nvim-tree/nvim-web-devicons", -- Used by the code bloxks
   },
-  enabled = false,
+  -- enabled = false,
   config = function()
     require("markview").setup()
   end,
