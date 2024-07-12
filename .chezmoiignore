@@ -22,5 +22,6 @@ rime
 .config/chrome-flags.conf
 .config/code-flags.conf
 .config/electron-flags.conf
+./Library/Rime
 {{ end }}
 

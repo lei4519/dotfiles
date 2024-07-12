@@ -208,7 +208,8 @@ rm -rf ~/.config/joshuto && ln -s ~/dotfiles/terminal/file-manager/joshuto ~/.co
 下载配置文件
 
 ```sh
-git clone git@github.com:lei4519/rime-ice.git $DOT_PATH/rime --depth 1
+# chezmoi 控制
+# mac os -> ~/Library/Rime
 ```
 
 安装 [plum](https://github.com/rime/plum)
@@ -221,7 +222,6 @@ curl -fsSL https://raw.githubusercontent.com/rime/plum/master/rime-install | bas
 
 ```sh
 brew install --cask squirrel
-rm -rf ~/Library/Rime && ln -s $DOT_PATH/rime ~/Library/Rime
 
 # 雾凇拼音
 # 安装或更新全部文件

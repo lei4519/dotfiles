@@ -1,0 +1,8 @@
+["./Library/Rime"]
+type = "git-repo"
+url = "git@github.com:lei4519/rime-ice.git"
+refreshPeriod = "168h"
+["./Library/Rime".pull]
+args = ["--ff-only"]
+["./Library/Rime".clone]
+args = ["--depth=1"]

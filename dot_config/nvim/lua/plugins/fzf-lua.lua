@@ -33,8 +33,8 @@ return {
     { "<leader>fF", LazyVim.pick("auto"), desc = "Find Files (Root Dir)" },
     { "<leader>ff", LazyVim.pick("auto", { root = false }), desc = "Find Files (cwd)" },
     { "<leader>fc", pick_chezmoi, desc = "Find Config File" },
-    { "<leader>fR", "<cmd>FzfLua oldfiles<cr>", desc = "Recent" },
-    { "<leader>fr", LazyVim.pick("oldfiles", { cwd = vim.uv.cwd() }), desc = "Recent (cwd)" },
+    -- { "<leader>fr", "<cmd>FzfLua oldfiles<cr>", desc = "Recent" },
+    -- { "<leader>fR", LazyVim.pick("oldfiles", { cwd = vim.uv.cwd() }), desc = "Recent (cwd)" },
     -- search
     { "<leader>sG", LazyVim.pick("live_grep"), desc = "Grep (Root Dir)" },
     { "<leader>sg", LazyVim.pick("live_grep", { root = false }), desc = "Grep (cwd)" },
