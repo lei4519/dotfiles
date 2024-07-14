@@ -13,7 +13,7 @@
 
 return {
   "akinsho/toggleterm.nvim",
-  enabled = false,
+  enabled = true,
   version = "*",
   opts = {
     size = function(term)
@@ -23,5 +23,20 @@ return {
         return vim.o.columns * 0.3
       end
     end,
+  },
+  config = true,
+  keys = {
+    { "<localleader>\\", group = "toggleterm" },
+    { "<localleader>\\\\", "<cmd>ToggleTerm direction=vertical<cr>", desc = "ToggleTerm" },
+    { "<localleader>\\s", "<cmd>ToggleTerm direction=horizontal<cr>", desc = "ToggleTerm horizontal" },
+    { "<localleader>\\v", "<cmd>ToggleTerm direction=vertical<cr>", desc = "ToggleTerm vertical" },
+    { "<localleader>\\2", "<cmd>ToggleTerm 2<cr>", desc = "ToggleTerm ID 2" },
+    { "<localleader>\\3", "<cmd>ToggleTerm 3<cr>", desc = "ToggleTerm ID 3" },
+    { "<localleader>\\4", "<cmd>ToggleTerm 4<cr>", desc = "ToggleTerm ID 4" },
+    { "<localleader>\\5", "<cmd>ToggleTerm 4<cr>", desc = "ToggleTerm ID 5" },
+    { "<localleader>\\V", "<cmd>ToggleTermSendVisualSelection<cr>", desc = "ToggleTermSendVisualSelection" },
+    { "<localleader>\\c", "<cmd>ToggleTermSendCurrentLine<cr>", desc = "ToggleTermSendCurrentLine" },
+    { "<localleader>\\a", "<cmd>ToggleTermToggleAll<cr>", desc = "ToggleTermToggleAll" },
+    { "<localleader>\\f", "<cmd>TermSelect<cr>", desc = "TermSelect" },
   },
 }

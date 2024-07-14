@@ -1,35 +1,38 @@
 return {
   "folke/which-key.nvim",
   opts = {
-    plugins = { spelling = true },
-    defaults = {
+    -- --- @type false | "classic" | "modern" | "helix"
+    -- preset = "helix",
+    -- plugins = { spelling = true },
+    spec = {
       mode = { "n", "v" },
-      ["g"] = {
-        a = { "<cmd>lua vim.lsp.buf.code_action()<cr>", "Code Action" },
-        A = {
-          "<cmd>lua vim.lsp.buf.code_action({ context={ only = { 'source' }, diagnostics = {} } })<cr>",
-          "Source Action",
-        },
-        k = { "<cmd>lua vim.diagnostic.open_float()<cr>", "Line Diagnostics" },
+      { "<leader>bl", "<cmd>BufferLineCloseLeft<cr>", desc = "Close Left Buffer" },
+      { "<leader>bo", "<cmd>BufferLineCloseOthers<cr>", desc = "Close Other Buffer" },
+      { "<leader>br", "<cmd>BufferLineCloseRight<cr>", desc = "Close Right Buffer" },
+      {
+        "gA",
+        "<cmd>lua vim.lsp.buf.code_action({ context={ only = { 'source' }, diagnostics = {} } })<cr>",
+        desc = "Source Action",
       },
-      ["<leader>b"] = {
-        o = { "<cmd>BufferLineCloseOthers<cr>", "Close Other Buffer" },
-        l = { "<cmd>BufferLineCloseLeft<cr>", "Close Left Buffer" },
-        r = { "<cmd>BufferLineCloseRight<cr>", "Close Right Buffer" },
-      },
-      ["<leader>\\"] = {
-        name = "+toggleterm",
-        ["\\"] = { "<cmd>ToggleTerm direction=vertical<cr>", "ToggleTerm" },
-        s = { "<cmd>ToggleTerm direction=horizontal<cr>", "ToggleTerm horizontal" },
-        v = { "<cmd>ToggleTerm direction=vertical<cr>", "ToggleTerm vertical" },
-        a = { "<cmd>ToggleTermToggleAll<cr>", "ToggleTermToggleAll" },
-        f = { "<cmd>TermSelect<cr>", "TermSelect" },
-        c = { "<cmd>ToggleTermSendCurrentLine<cr>", "ToggleTermSendCurrentLine" },
-        V = { "<cmd>ToggleTermSendVisualSelection<cr>", "ToggleTermSendVisualSelection" },
-        ["2"] = { "<cmd>ToggleTerm 2<cr>", "ToggleTerm ID 2" },
-        ["3"] = { "<cmd>ToggleTerm 3<cr>", "ToggleTerm ID 3" },
-        ["4"] = { "<cmd>ToggleTerm 4<cr>", "ToggleTerm ID 4" },
-        ["5"] = { "<cmd>ToggleTerm 4<cr>", "ToggleTerm ID 5" },
+      { "ga", "<cmd>lua vim.lsp.buf.code_action()<cr>", desc = "Code Action" },
+      { "gk", "<cmd>lua vim.diagnostic.open_float()<cr>", desc = "Line Diagnostics" },
+      {
+        "<leader>w",
+        function()
+          local bd = require("mini.bufremove").delete
+          if vim.bo.modified then
+            local choice = vim.fn.confirm(("Save changes to %q?"):format(vim.fn.bufname()), "&Yes\n&No\n&Cancel")
+            if choice == 1 then -- Yes
+              vim.cmd.write()
+              bd(0)
+            elseif choice == 2 then -- No
+              bd(0, true)
+            end
+          else
+            bd(0)
+          end
+        end,
+        desc = "Delete Buffer",
       },
     },
   },
