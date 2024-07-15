@@ -6,6 +6,7 @@ return {
     -- plugins = { spelling = true },
     spec = {
       mode = { "n", "v" },
+      { "<leader>n", group = "notes" },
       { "<leader>bl", "<cmd>BufferLineCloseLeft<cr>", desc = "Close Left Buffer" },
       { "<leader>bo", "<cmd>BufferLineCloseOthers<cr>", desc = "Close Other Buffer" },
       { "<leader>br", "<cmd>BufferLineCloseRight<cr>", desc = "Close Right Buffer" },
