@@ -6,7 +6,7 @@ return {
   ---@type Flash.Config
   opts = {
     label = {
-      style = "inline", ---@type "eol" | "overlay" | "right_align" | "inline"
+      style = "overlay", ---@type "eol" | "overlay" | "right_align" | "inline"
     },
     modes = {
       search = {

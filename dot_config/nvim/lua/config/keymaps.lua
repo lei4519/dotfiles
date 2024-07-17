@@ -3,11 +3,11 @@
 -- Add any additional keymaps here
 local map = LazyVim.safe_keymap_set
 
-vim.keymap.del("n", "<leader>wm")
-vim.keymap.del("n", "<leader>ww")
-vim.keymap.del("n", "<leader>wd")
-vim.keymap.del("n", "<leader>w-")
-vim.keymap.del("n", "<leader>w|")
+-- vim.keymap.del("n", "<leader>wm")
+-- vim.keymap.del("n", "<leader>ww")
+-- vim.keymap.del("n", "<leader>wd")
+-- vim.keymap.del("n", "<leader>w-")
+-- vim.keymap.del("n", "<leader>w|")
 
 -- map("n", "/", "/\\V", { noremap = true })
 
