@@ -10,9 +10,16 @@ return {
 
     local cmp = require("cmp")
 
+    -- 关闭默认的虚拟文字提示, 使用 Copilot 提示
+    opts.experimental.ghost_text = false
+
+    local copilotSuggestion = require("copilot.suggestion")
+
     opts.mapping = vim.tbl_extend("force", opts.mapping, {
       ["<Tab>"] = cmp.mapping(function(fallback)
-        if cmp.visible() then
+        if copilotSuggestion.is_visible() then
+          copilotSuggestion.accept()
+        elseif cmp.visible() then
           -- You could replace select_next_item() with confirm({ select = true }) to get VS Code autocompletion behavior
           -- cmp.select_next_item()
           cmp.confirm({ select = true })
@@ -21,13 +28,16 @@ return {
             vim.snippet.jump(1)
           end)
         elseif has_words_before() then
-          cmp.complete()
+          copilotSuggestion.next()
+          -- cmp.complete()
         else
           fallback()
         end
       end, { "i", "s" }),
       ["<S-Tab>"] = cmp.mapping(function(fallback)
-        if cmp.visible() then
+        if copilotSuggestion.is_visible() then
+          copilotSuggestion.prev()
+        elseif cmp.visible() then
           cmp.select_prev_item()
         elseif vim.snippet.active({ direction = -1 }) then
           vim.schedule(function()
