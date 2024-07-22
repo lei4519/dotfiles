@@ -86,7 +86,8 @@ return {
       fzf_grep = function(state)
         local node = state.tree:get_node()
         local path = node:get_id()
-        require("fzf-lua").live_grep({ cwd = path })
+        require("grug-far").grug_far({ prefills = { flags = path } })
+        -- require("fzf-lua").live_grep({ cwd = path })
       end,
     },
     filesystem = {

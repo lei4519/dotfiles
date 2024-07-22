@@ -61,11 +61,11 @@
             ]
           },
           {
-            "description": "Terminal: CapsLock + a - create-terminal",
+            "description": "WeChat: CapsLock + m",
             "manipulators": [
               {
                 "from": {
-                  "key_code": "return_or_enter",
+                  "key_code": "m",
                   "modifiers": {
                     "mandatory": [
                       "right_control",
@@ -76,7 +76,30 @@
                 },
                 "to": [
                   {
-                    "shell_command": "wezterm cli spawn --new-window || open -a 'wezterm'"
+                    "shell_command": "open -a 'wechat'"
+                  }
+                ],
+                "type": "basic"
+              }
+            ]
+          },
+          {
+            "description": "WeCom: CapsLock + o",
+            "manipulators": [
+              {
+                "from": {
+                  "key_code": "o",
+                  "modifiers": {
+                    "mandatory": [
+                      "right_control",
+                      "right_command",
+                      "right_shift"
+                    ]
+                  }
+                },
+                "to": [
+                  {
+                    "shell_command": "open -a '企业微信'"
                   }
                 ],
                 "type": "basic"

@@ -1,5 +1,6 @@
 return {
   "chrisgrieser/nvim-rip-substitute",
+  enabled = false,
   config = function()
     require("rip-substitute").setup({
       popupWin = {

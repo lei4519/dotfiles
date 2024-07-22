@@ -1,6 +1,7 @@
 -- https://github.com/glacambre/firenvim
 return {
   "glacambre/firenvim",
+  enabled = false,
 
   -- Lazy load firenvim
   -- Explanation: https://github.com/folke/lazy.nvim/discussions/463#discussioncomment-4819297

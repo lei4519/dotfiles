@@ -26,5 +26,26 @@ return {
       end,
       desc = "Replace in files (Grug Far)",
     },
+    {
+      "<leader>sw",
+      function()
+        require("grug-far").grug_far({ prefills = { search = vim.fn.expand("<cword>") } })
+      end,
+      desc = "Search under word by Grug Far",
+    },
+    {
+      "<leader>sf",
+      function()
+        require("grug-far").grug_far({ prefills = { flags = vim.fn.expand("%"), search = vim.fn.expand("<cword>") } })
+      end,
+      desc = "Search current file by Grug Far",
+    },
+    {
+      "<leader>sv",
+      function()
+        require("grug-far").with_visual_selection({ prefills = { flags = vim.fn.expand("%") } })
+      end,
+      desc = "Search selection by Grug Far",
+    },
   },
 }

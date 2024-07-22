@@ -7,6 +7,7 @@ return {
   dependencies = {
     "nvim-treesitter/nvim-treesitter",
   },
+  enabled = false,
   config = function()
     require("typewriter").setup({
       enable_with_zen_mode = true,
