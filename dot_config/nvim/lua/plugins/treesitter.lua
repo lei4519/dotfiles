@@ -5,6 +5,9 @@ return {
     { "V", desc = "Decrement selection", mode = "x" },
   },
   opts = {
+    ensure_installed = {
+      "just",
+    },
     incremental_selection = {
       enable = true,
       keymaps = {

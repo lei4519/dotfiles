@@ -24,7 +24,7 @@ end
 -- }
 
 -- This is where you actually apply your config choices
-config.font = wezterm.font("CaskaydiaCove Nerd Font Mono")
+config.font = wezterm.font("CaskaydiaCove Nerd Font")
 config.font_size = 16
 
 config.hide_tab_bar_if_only_one_tab = true

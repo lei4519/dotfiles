@@ -111,4 +111,8 @@ return {
       -- },
     },
   },
+  keys = {
+    { "<leader>e", "<leader>fm", desc = "Explorer Mini-file (Root Dir)", remap = true },
+    { "<leader>E", "<leader>fM", desc = "Explorer Mini-file (cwd)", remap = true },
+  },
 }

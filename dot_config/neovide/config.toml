@@ -10,8 +10,8 @@ tabs = true
 
 
 [font]
-normal = ["CaskaydiaCove Nerd Font Mono"]
-size = 16
+normal = ["CaskaydiaCove Nerd Font"]
+size = 15
 
 # [font.features]
 # MonoLisa = [

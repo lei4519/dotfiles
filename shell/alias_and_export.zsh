@@ -33,6 +33,9 @@ export PATH="$GOPATH/bin:$PATH"
 export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
 
+# Created by `pipx` on 2024-07-26 16:06:43
+export PATH="$PATH:$HOME/.local/bin"
+
 export YAZI_CONFIG_HOME="$DOT_PATH/terminal/file-manager/yazi"
 
 # Helpful aliases
@@ -71,29 +74,3 @@ function yy() {
 	rm -f -- "$tmp"
 }
 alias f="yy"
-
-# function joshuto() {
-# 	ID="$$"
-# 	mkdir -p /tmp/$USER
-# 	OUTPUT_FILE="/tmp/$USER/joshuto-cwd-$ID"
-# 	env joshuto --output-file "$OUTPUT_FILE" $@
-# 	exit_code=$?
-#
-# 	case "$exit_code" in
-# 		# regular exit
-# 		0)
-# 			;;
-# 		# output contains current directory
-# 		101)
-# 			JOSHUTO_CWD=$(cat "$OUTPUT_FILE")
-# 			cd "$JOSHUTO_CWD"
-# 			;;
-# 		# output selected files
-# 		102)
-# 			;;
-# 		*)
-# 			echo "Exit code: $exit_code"
-# 			;;
-# 	esac
-# }
-# alias js="joshuto --change-directory"

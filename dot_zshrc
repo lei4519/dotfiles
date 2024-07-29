@@ -17,9 +17,6 @@ fi
 # https://github.com/aflaag/pokemon-icat?tab=readme-ov-file
 ~/pokemon-icat/bin/pokemon-icat
 
-# bun completions
-[ -s "/Users/lay/.bun/_bun" ] && source "/Users/lay/.bun/_bun"
-
 source $DOT_PATH/shell/proxy.zsh
 source $DOT_PATH/shell/antigen.zsh
 source $DOT_PATH/shell/antigen-packages.zsh
@@ -37,4 +34,3 @@ eval "$(zoxide init --cmd cd zsh)"
 source <(cod init $$ zsh)
 
 source ~/.p10k.zsh
-
