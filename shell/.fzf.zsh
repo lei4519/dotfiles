@@ -17,7 +17,7 @@ export FZF_DEFAULT_OPTS="
 # --bind 'enter:become(nvim {})'
 
 # Use ~~ as the trigger sequence instead of the default **
-# export FZF_COMPLETION_TRIGGER='~~'
+export FZF_COMPLETION_TRIGGER='~~'
 
 # https://github.com/sharkdp/fd?tab=readme-ov-file#using-fd-with-fzf
 export FZF_DEFAULT_COMMAND='fd --type file --color=always --follow --hidden --exclude .git'
