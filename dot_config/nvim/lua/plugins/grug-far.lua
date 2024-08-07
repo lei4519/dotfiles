@@ -2,6 +2,7 @@ return {
   "MagicDuck/grug-far.nvim",
   config = function()
     require("grug-far").setup({
+      engine = "astgrep", -- 'ripgrep' is default, but 'astgrep'
       keymaps = {
         -- replace = { n = "<localleader>r" },
         -- qflist = { n = "<localleader>q" },

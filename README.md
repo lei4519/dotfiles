@@ -133,6 +133,7 @@ brew install zoxide
 brew install fzf
 brew install fd
 brew install ripgrep
+brew install ast-grep
 ```
 
 #### ~~fig~~
@@ -171,6 +172,8 @@ go install github.com/dim-an/cod@latest
 brew install lazygit
 # git pager styles, lazygit need
 brew install git-delta
+# ast diff
+brew install difftastic
 brew install tig
 ```
 

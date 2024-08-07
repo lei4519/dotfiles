@@ -7,11 +7,13 @@ gui:
   # sidePanelWidth: 0.25 # number from 0 to 1
 git:
   paging:
+    colorArg: always
     pager: delta --dark --paging=never
+    externalDiffCommand: difft --color=always
   log:
     showGraph: "always"
     showWholeGraph: true
-  branchLogCmd: "git log --graph --color=always --oneline --decorate --date=relative {{branchName}} --"
+  branchLogCmd: "git log --all --graph --color=always --oneline --decorate --date=relative {{branchName}} --"
 os:
   editPreset: "nvim"
 promptToReturnFromSubprocess: false
@@ -150,7 +152,7 @@ customCommands:
         labelFormat: "{{ .remote | bold | cyan }} {{ .url }}"
     command: "git remote update {{.Form.Remote}} --prune"
     loadingText: "Pruning..."
-  - key: "R"
+  - key: "<c-r>"
     description: "Rebase the checked-out branch onto the selected branch."
     context: "commits"
     prompts:

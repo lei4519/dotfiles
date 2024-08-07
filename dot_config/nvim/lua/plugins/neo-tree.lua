@@ -25,10 +25,11 @@ return {
   opts = {
     window = {
       mappings = {
-        ["/"] = "none",
-        ["t"] = "none",
+        -- ["/"] = "none",
+        -- ["t"] = "none",
         -- ["R"] = "search_by_grugfar",
-        ["f"] = "fzf_find",
+        ["f"] = "filter_on_submit",
+        ["tf"] = "fzf_find",
         ["tg"] = "fzf_grep",
         ["h"] = function(state)
           local node = state.tree:get_node()

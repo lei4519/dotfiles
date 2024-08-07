@@ -1,1 +1,1 @@
-return { "mistricky/codesnap.nvim", build = "make" }
+return { "mistricky/codesnap.nvim", build = "make", enabled = false }

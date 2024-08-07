@@ -1,5 +1,6 @@
 return {
   "leath-dub/snipe.nvim",
+  -- enabled = false,
   config = function()
     local snipe = require("snipe")
     snipe.setup()
