@@ -1,6 +1,7 @@
 -- https://github.com/echasnovski/mini.files
 return {
   "echasnovski/mini.files",
+  enabled = false,
   opts = {
     --   windows = {
     --     -- Maximum number of windows to show side by side

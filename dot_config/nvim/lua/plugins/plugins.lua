@@ -83,4 +83,5 @@ return {
       table.insert(opts.sections.lualine_c, 2, { require("NeoComposer.ui").status_recording })
     end,
   },
+  { "kevinhwang91/nvim-bqf", dependencies = { "junegunn/fzf" }, config = true },
 }
