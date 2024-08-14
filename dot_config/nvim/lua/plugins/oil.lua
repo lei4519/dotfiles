@@ -2,6 +2,9 @@ return {
   "stevearc/oil.nvim",
   enabled = false,
   opts = {
+    view_options = {
+      show_hidden = true
+    },
     keymaps = {
       -- ["g?"] = "actions.show_help",
       ["l"] = "actions.select",
@@ -23,4 +26,8 @@ return {
   },
   -- Optional dependencies
   dependencies = { { "echasnovski/mini.icons", opts = {} } },
+  -- neo-tree
+  -- keys = {
+  --   { "<leader>e", "<cmd>Oil --float<CR>", desc = "Explorer Oil", remap = true },
+  -- },
 }

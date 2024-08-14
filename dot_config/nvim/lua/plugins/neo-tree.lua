@@ -1,5 +1,13 @@
 return {
   "nvim-neo-tree/neo-tree.nvim",
+  keys = {
+    -- { "<leader>e", "<cmd>Oil --float<CR>", desc = "Explorer Oil", remap = true },
+    {
+      "<leader>e",
+      "<cmd>Yazi<cr>",
+      desc = "Open yazi at the current file",
+    },
+  },
   opts = {
     commands = {
       search_by_grugfar = function(state)

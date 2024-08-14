@@ -11,11 +11,11 @@ return {
       { "<leader>bo", "<cmd>BufferLineCloseOthers<cr>", desc = "Close Other Buffer" },
       { "<leader>br", "<cmd>BufferLineCloseRight<cr>", desc = "Close Right Buffer" },
       {
-        "gA",
+        "ga",
         "<cmd>lua vim.lsp.buf.code_action({ context={ only = { 'source' }, diagnostics = {} } })<cr>",
         desc = "Source Action",
       },
-      { "ga", "<cmd>lua vim.lsp.buf.code_action()<cr>", desc = "Code Action" },
+      { "g.", "<cmd>lua vim.lsp.buf.code_action()<cr>", desc = "Code Action" },
       { "gk", "<cmd>lua vim.diagnostic.open_float()<cr>", desc = "Line Diagnostics" },
       {
         "<leader>w",

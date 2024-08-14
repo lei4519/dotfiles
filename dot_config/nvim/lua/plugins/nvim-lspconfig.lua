@@ -12,7 +12,7 @@ return {
           run = "onType", -- onType or onSave
           -- helps eslint find the eslintrc when it's placed in a subfolder instead of the cwd root
           workingDirectories = {
-            mode = "location", -- "auto" or "location"
+            mode = "auto", -- "auto" or "location"
           },
         },
       },

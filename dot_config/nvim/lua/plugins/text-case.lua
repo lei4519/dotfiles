@@ -6,8 +6,8 @@ return {
     require("telescope").load_extension("textcase")
   end,
   keys = {
-    "g.", -- Default invocation prefix
-    { "g.", "<cmd>TextCaseOpenTelescope<CR>", mode = { "n", "x" }, desc = "Telescope" },
+    "g,", -- Default invocation prefix
+    { "g,", "<cmd>TextCaseOpenTelescope<CR>", mode = { "n", "x" }, desc = "Telescope" },
   },
   cmd = {
     -- NOTE: The Subs command name can be customized via the option "substitude_command_name"

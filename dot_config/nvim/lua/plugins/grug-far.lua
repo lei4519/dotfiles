@@ -2,7 +2,7 @@ return {
   "MagicDuck/grug-far.nvim",
   config = function()
     require("grug-far").setup({
-      engine = "astgrep", -- 'ripgrep' is default, but 'astgrep'
+      -- engine = "astgrep", -- 'ripgrep' is default, but 'astgrep'
       keymaps = {
         -- replace = { n = "<localleader>r" },
         -- qflist = { n = "<localleader>q" },
@@ -27,6 +27,14 @@ return {
       end,
       desc = "Replace in files (Grug Far)",
     },
+    {
+      "<leader>sA",
+      function()
+        require("grug-far").grug_far({ prefills = { search = vim.fn.expand("<cword>") } })
+      end,
+      desc = "Replace in files (Grug Far AST)",
+    },
+
     {
       "<leader>sw",
       function()

@@ -33,7 +33,7 @@ customCommands:
       - type: "confirm"
         title: "Amend last commit"
         body: "Are you sure you want to amend last commit? Afterwards, you can change the commit message from the commits panel."
-    command: "git commit --amend --no-edit --allow-empty --no-verify"
+    command: "git commit --amend --no-edit --allow-empty"
   - key: "w"
     description: "Create new conventional commit"
     context: "files"
@@ -97,7 +97,7 @@ customCommands:
       #         - value: 'push --force-with-lease'
       #         - value: 'push --force'
     # command: "git commit -n --message '{{.Form.Type}}{{.Form.Scope}}{{.Form.Breaking}}: {{.Form.Message}}'"
-    command: "git commit -n --message '{{.Form.Type}}: {{.Form.Message}}'"
+    command: "git commit --message '{{.Form.Type}}: {{.Form.Message}}'"
     loadingText: "Creating conventional commit..."
   - key: "K"
     description: "Disentangle: Squash all changes into a single commit and rebase onto the selected branch"
