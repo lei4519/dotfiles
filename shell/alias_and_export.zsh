@@ -36,8 +36,6 @@ export PATH="$BUN_INSTALL/bin:$PATH"
 # Created by `pipx` on 2024-07-26 16:06:43
 export PATH="$PATH:$HOME/.local/bin"
 
-export YAZI_CONFIG_HOME="$DOT_PATH/terminal/file-manager/yazi"
-
 # Helpful aliases
 alias  c='clear' # clear terminal
 alias vc='code' # gui code editor
