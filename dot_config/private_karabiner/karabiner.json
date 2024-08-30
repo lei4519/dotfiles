@@ -1,21 +1,8 @@
 {
-  "global": {
-    "ask_for_confirmation_before_quitting": true,
-    "check_for_updates_on_startup": true,
-    "show_in_menu_bar": false,
-    "show_profile_name_in_menu_bar": false,
-    "unsafe_ui": false
-  },
+  "global": { "show_in_menu_bar": false },
   "profiles": [
     {
       "complex_modifications": {
-        "parameters": {
-          "basic.simultaneous_threshold_milliseconds": 50,
-          "basic.to_delayed_action_delay_milliseconds": 500,
-          "basic.to_if_alone_timeout_milliseconds": 1000,
-          "basic.to_if_held_down_threshold_milliseconds": 500,
-          "mouse_motion_to_scroll.speed": 100
-        },
         "rules": [
           {
             "description": "Map CapsLock to RightShift+RightAlt",
@@ -23,9 +10,7 @@
               {
                 "from": {
                   "key_code": "caps_lock",
-                  "modifiers": {
-                    "optional": ["any"]
-                  }
+                  "modifiers": { "optional": ["any"] }
                 },
                 "to": [
                   {
@@ -51,11 +36,7 @@
                     ]
                   }
                 },
-                "to": [
-                  {
-                    "shell_command": "open -a 'neovide'"
-                  }
-                ],
+                "to": [{ "shell_command": "open -a 'neovide'" }],
                 "type": "basic"
               }
             ]
@@ -74,11 +55,7 @@
                     ]
                   }
                 },
-                "to": [
-                  {
-                    "shell_command": "open -a 'wechat'"
-                  }
-                ],
+                "to": [{ "shell_command": "open -a 'wechat'" }],
                 "type": "basic"
               }
             ]
@@ -97,11 +74,7 @@
                     ]
                   }
                 },
-                "to": [
-                  {
-                    "shell_command": "open -a '企业微信'"
-                  }
-                ],
+                "to": [{ "shell_command": "open -a '企业微信'" }],
                 "type": "basic"
               }
             ]
@@ -120,11 +93,7 @@
                     ]
                   }
                 },
-                "to": [
-                  {
-                    "shell_command": "yabai -m window --focus west"
-                  }
-                ],
+                "to": [{ "shell_command": "yabai -m window --focus west" }],
                 "type": "basic"
               },
               {
@@ -138,11 +107,7 @@
                     ]
                   }
                 },
-                "to": [
-                  {
-                    "shell_command": "yabai -m window --focus south"
-                  }
-                ],
+                "to": [{ "shell_command": "yabai -m window --focus south" }],
                 "type": "basic"
               },
               {
@@ -156,11 +121,7 @@
                     ]
                   }
                 },
-                "to": [
-                  {
-                    "shell_command": "yabai -m window --focus north"
-                  }
-                ],
+                "to": [{ "shell_command": "yabai -m window --focus north" }],
                 "type": "basic"
               },
               {
@@ -174,11 +135,7 @@
                     ]
                   }
                 },
-                "to": [
-                  {
-                    "shell_command": "yabai -m window --focus east"
-                  }
-                ],
+                "to": [{ "shell_command": "yabai -m window --focus east" }],
                 "type": "basic"
               }
             ]
@@ -198,11 +155,7 @@
                     ]
                   }
                 },
-                "to": [
-                  {
-                    "shell_command": "yabai -m window --warp recent"
-                  }
-                ],
+                "to": [{ "shell_command": "yabai -m window --warp recent" }],
                 "type": "basic"
               }
             ]
@@ -222,11 +175,7 @@
                     ]
                   }
                 },
-                "to": [
-                  {
-                    "shell_command": "yabai -m window --swap recent"
-                  }
-                ],
+                "to": [{ "shell_command": "yabai -m window --swap recent" }],
                 "type": "basic"
               }
             ]
@@ -247,9 +196,7 @@
                   }
                 },
                 "to": [
-                  {
-                    "shell_command": "yabai -m window --space recent --focus"
-                  }
+                  { "shell_command": "yabai -m window --space recent --focus" }
                 ],
                 "type": "basic"
               }
@@ -270,11 +217,7 @@
                     ]
                   }
                 },
-                "to": [
-                  {
-                    "shell_command": "yabai -m window --swap west"
-                  }
-                ],
+                "to": [{ "shell_command": "yabai -m window --swap west" }],
                 "type": "basic"
               },
               {
@@ -289,11 +232,7 @@
                     ]
                   }
                 },
-                "to": [
-                  {
-                    "shell_command": "yabai -m window --swap south"
-                  }
-                ],
+                "to": [{ "shell_command": "yabai -m window --swap south" }],
                 "type": "basic"
               },
               {
@@ -308,11 +247,7 @@
                     ]
                   }
                 },
-                "to": [
-                  {
-                    "shell_command": "yabai -m window --swap north"
-                  }
-                ],
+                "to": [{ "shell_command": "yabai -m window --swap north" }],
                 "type": "basic"
               },
               {
@@ -327,11 +262,7 @@
                     ]
                   }
                 },
-                "to": [
-                  {
-                    "shell_command": "yabai -m window --swap east"
-                  }
-                ],
+                "to": [{ "shell_command": "yabai -m window --swap east" }],
                 "type": "basic"
               }
             ]
@@ -350,11 +281,7 @@
                     ]
                   }
                 },
-                "to": [
-                  {
-                    "shell_command": "yabai -m space --balance"
-                  }
-                ],
+                "to": [{ "shell_command": "yabai -m space --balance" }],
                 "type": "basic"
               }
             ]
@@ -406,7 +333,6 @@
               }
             ]
           },
-
           {
             "description": "yabai: CapsLock + x - destroy desktop and goto recent space",
             "manipulators": [
@@ -467,11 +393,7 @@
                     ]
                   }
                 },
-                "to": [
-                  {
-                    "shell_command": "yabai -m space --focus recent"
-                  }
-                ],
+                "to": [{ "shell_command": "yabai -m space --focus recent" }],
                 "type": "basic"
               }
             ]
@@ -537,11 +459,7 @@
                     ]
                   }
                 },
-                "to": [
-                  {
-                    "shell_command": "yabai -m space --swap prev"
-                  }
-                ],
+                "to": [{ "shell_command": "yabai -m space --swap prev" }],
                 "type": "basic"
               }
             ]
@@ -561,11 +479,7 @@
                     ]
                   }
                 },
-                "to": [
-                  {
-                    "shell_command": "yabai -m space --swap next"
-                  }
-                ],
+                "to": [{ "shell_command": "yabai -m space --swap next" }],
                 "type": "basic"
               }
             ]
@@ -584,11 +498,7 @@
                     ]
                   }
                 },
-                "to": [
-                  {
-                    "shell_command": "yabai -m space --focus 1"
-                  }
-                ],
+                "to": [{ "shell_command": "yabai -m space --focus 1" }],
                 "type": "basic"
               },
               {
@@ -602,11 +512,7 @@
                     ]
                   }
                 },
-                "to": [
-                  {
-                    "shell_command": "yabai -m space --focus 2"
-                  }
-                ],
+                "to": [{ "shell_command": "yabai -m space --focus 2" }],
                 "type": "basic"
               },
               {
@@ -620,11 +526,7 @@
                     ]
                   }
                 },
-                "to": [
-                  {
-                    "shell_command": "yabai -m space --focus 3"
-                  }
-                ],
+                "to": [{ "shell_command": "yabai -m space --focus 3" }],
                 "type": "basic"
               },
               {
@@ -638,11 +540,7 @@
                     ]
                   }
                 },
-                "to": [
-                  {
-                    "shell_command": "yabai -m space --focus 4"
-                  }
-                ],
+                "to": [{ "shell_command": "yabai -m space --focus 4" }],
                 "type": "basic"
               },
               {
@@ -656,11 +554,7 @@
                     ]
                   }
                 },
-                "to": [
-                  {
-                    "shell_command": "yabai -m space --focus 5"
-                  }
-                ],
+                "to": [{ "shell_command": "yabai -m space --focus 5" }],
                 "type": "basic"
               }
             ]
@@ -732,9 +626,7 @@
                 ],
                 "from": {
                   "key_code": "left_control",
-                  "modifiers": {
-                    "optional": ["any"]
-                  }
+                  "modifiers": { "optional": ["any"] }
                 },
                 "to": [
                   {
@@ -742,11 +634,7 @@
                     "lazy": true
                   }
                 ],
-                "to_if_alone": [
-                  {
-                    "key_code": "escape"
-                  }
-                ],
+                "to_if_alone": [{ "key_code": "escape" }],
                 "type": "basic"
               },
               {
@@ -767,9 +655,7 @@
                 ],
                 "from": {
                   "key_code": "left_gui",
-                  "modifiers": {
-                    "optional": ["any"]
-                  }
+                  "modifiers": { "optional": ["any"] }
                 },
                 "to": [
                   {
@@ -777,11 +663,7 @@
                     "lazy": true
                   }
                 ],
-                "to_if_alone": [
-                  {
-                    "key_code": "escape"
-                  }
-                ],
+                "to_if_alone": [{ "key_code": "escape" }],
                 "type": "basic"
               }
             ]
@@ -807,9 +689,7 @@
                 ],
                 "from": {
                   "key_code": "left_control",
-                  "modifiers": {
-                    "optional": ["any"]
-                  }
+                  "modifiers": { "optional": ["any"] }
                 },
                 "to": [
                   {
@@ -817,11 +697,7 @@
                     "lazy": true
                   }
                 ],
-                "to_if_alone": [
-                  {
-                    "key_code": "escape"
-                  }
-                ],
+                "to_if_alone": [{ "key_code": "escape" }],
                 "type": "basic"
               },
               {
@@ -842,9 +718,7 @@
                 ],
                 "from": {
                   "key_code": "left_gui",
-                  "modifiers": {
-                    "optional": ["any"]
-                  }
+                  "modifiers": { "optional": ["any"] }
                 },
                 "to": [
                   {
@@ -852,11 +726,7 @@
                     "lazy": true
                   }
                 ],
-                "to_if_alone": [
-                  {
-                    "key_code": "escape"
-                  }
-                ],
+                "to_if_alone": [{ "key_code": "escape" }],
                 "type": "basic"
               }
             ]
@@ -882,9 +752,7 @@
                 ],
                 "from": {
                   "key_code": "0",
-                  "modifiers": {
-                    "mandatory": ["left_gui"]
-                  }
+                  "modifiers": { "mandatory": ["left_gui"] }
                 },
                 "to": [
                   {
@@ -912,9 +780,7 @@
                 ],
                 "from": {
                   "key_code": "0",
-                  "modifiers": {
-                    "mandatory": ["left_control"]
-                  }
+                  "modifiers": { "mandatory": ["left_control"] }
                 },
                 "to": [
                   {
@@ -942,9 +808,7 @@
                 ],
                 "from": {
                   "key_code": "1",
-                  "modifiers": {
-                    "mandatory": ["left_gui"]
-                  }
+                  "modifiers": { "mandatory": ["left_gui"] }
                 },
                 "to": [
                   {
@@ -972,9 +836,7 @@
                 ],
                 "from": {
                   "key_code": "1",
-                  "modifiers": {
-                    "mandatory": ["left_control"]
-                  }
+                  "modifiers": { "mandatory": ["left_control"] }
                 },
                 "to": [
                   {
@@ -1002,9 +864,7 @@
                 ],
                 "from": {
                   "key_code": "2",
-                  "modifiers": {
-                    "mandatory": ["left_gui"]
-                  }
+                  "modifiers": { "mandatory": ["left_gui"] }
                 },
                 "to": [
                   {
@@ -1032,9 +892,7 @@
                 ],
                 "from": {
                   "key_code": "2",
-                  "modifiers": {
-                    "mandatory": ["left_control"]
-                  }
+                  "modifiers": { "mandatory": ["left_control"] }
                 },
                 "to": [
                   {
@@ -1062,9 +920,7 @@
                 ],
                 "from": {
                   "key_code": "3",
-                  "modifiers": {
-                    "mandatory": ["left_gui"]
-                  }
+                  "modifiers": { "mandatory": ["left_gui"] }
                 },
                 "to": [
                   {
@@ -1092,9 +948,7 @@
                 ],
                 "from": {
                   "key_code": "3",
-                  "modifiers": {
-                    "mandatory": ["left_control"]
-                  }
+                  "modifiers": { "mandatory": ["left_control"] }
                 },
                 "to": [
                   {
@@ -1122,9 +976,7 @@
                 ],
                 "from": {
                   "key_code": "4",
-                  "modifiers": {
-                    "mandatory": ["left_gui"]
-                  }
+                  "modifiers": { "mandatory": ["left_gui"] }
                 },
                 "to": [
                   {
@@ -1152,9 +1004,7 @@
                 ],
                 "from": {
                   "key_code": "4",
-                  "modifiers": {
-                    "mandatory": ["left_control"]
-                  }
+                  "modifiers": { "mandatory": ["left_control"] }
                 },
                 "to": [
                   {
@@ -1182,9 +1032,7 @@
                 ],
                 "from": {
                   "key_code": "5",
-                  "modifiers": {
-                    "mandatory": ["left_gui"]
-                  }
+                  "modifiers": { "mandatory": ["left_gui"] }
                 },
                 "to": [
                   {
@@ -1212,9 +1060,7 @@
                 ],
                 "from": {
                   "key_code": "5",
-                  "modifiers": {
-                    "mandatory": ["left_control"]
-                  }
+                  "modifiers": { "mandatory": ["left_control"] }
                 },
                 "to": [
                   {
@@ -1242,9 +1088,7 @@
                 ],
                 "from": {
                   "key_code": "6",
-                  "modifiers": {
-                    "mandatory": ["left_gui"]
-                  }
+                  "modifiers": { "mandatory": ["left_gui"] }
                 },
                 "to": [
                   {
@@ -1272,9 +1116,7 @@
                 ],
                 "from": {
                   "key_code": "6",
-                  "modifiers": {
-                    "mandatory": ["left_control"]
-                  }
+                  "modifiers": { "mandatory": ["left_control"] }
                 },
                 "to": [
                   {
@@ -1302,9 +1144,7 @@
                 ],
                 "from": {
                   "key_code": "7",
-                  "modifiers": {
-                    "mandatory": ["left_gui"]
-                  }
+                  "modifiers": { "mandatory": ["left_gui"] }
                 },
                 "to": [
                   {
@@ -1332,9 +1172,7 @@
                 ],
                 "from": {
                   "key_code": "7",
-                  "modifiers": {
-                    "mandatory": ["left_control"]
-                  }
+                  "modifiers": { "mandatory": ["left_control"] }
                 },
                 "to": [
                   {
@@ -1362,9 +1200,7 @@
                 ],
                 "from": {
                   "key_code": "8",
-                  "modifiers": {
-                    "mandatory": ["left_gui"]
-                  }
+                  "modifiers": { "mandatory": ["left_gui"] }
                 },
                 "to": [
                   {
@@ -1392,9 +1228,7 @@
                 ],
                 "from": {
                   "key_code": "8",
-                  "modifiers": {
-                    "mandatory": ["left_control"]
-                  }
+                  "modifiers": { "mandatory": ["left_control"] }
                 },
                 "to": [
                   {
@@ -1422,9 +1256,7 @@
                 ],
                 "from": {
                   "key_code": "9",
-                  "modifiers": {
-                    "mandatory": ["left_gui"]
-                  }
+                  "modifiers": { "mandatory": ["left_gui"] }
                 },
                 "to": [
                   {
@@ -1452,9 +1284,7 @@
                 ],
                 "from": {
                   "key_code": "9",
-                  "modifiers": {
-                    "mandatory": ["left_control"]
-                  }
+                  "modifiers": { "mandatory": ["left_control"] }
                 },
                 "to": [
                   {
@@ -1487,9 +1317,7 @@
                 ],
                 "from": {
                   "key_code": "spacebar",
-                  "modifiers": {
-                    "mandatory": ["left_gui"]
-                  }
+                  "modifiers": { "mandatory": ["left_gui"] }
                 },
                 "to": [
                   {
@@ -1517,9 +1345,7 @@
                 ],
                 "from": {
                   "key_code": "spacebar",
-                  "modifiers": {
-                    "mandatory": ["left_control"]
-                  }
+                  "modifiers": { "mandatory": ["left_control"] }
                 },
                 "to": [
                   {
@@ -1535,279 +1361,80 @@
       },
       "devices": [
         {
-          "disable_built_in_keyboard_if_exists": false,
-          "fn_function_keys": [],
-          "game_pad_swap_sticks": false,
           "identifiers": {
-            "is_game_pad": false,
             "is_keyboard": true,
             "is_pointing_device": true,
             "product_id": 17,
             "vendor_id": 12994
           },
-          "ignore": false,
-          "manipulate_caps_lock_led": true,
-          "mouse_flip_horizontal_wheel": false,
-          "mouse_flip_vertical_wheel": false,
-          "mouse_flip_x": false,
-          "mouse_flip_y": false,
-          "mouse_swap_wheels": false,
-          "mouse_swap_xy": false,
-          "simple_modifications": [],
-          "treat_as_built_in_keyboard": false
+          "ignore": false
         },
         {
-          "disable_built_in_keyboard_if_exists": false,
-          "fn_function_keys": [],
-          "game_pad_swap_sticks": false,
-          "identifiers": {
-            "is_game_pad": false,
-            "is_keyboard": false,
-            "is_pointing_device": true,
-            "product_id": 13330,
-            "vendor_id": 14
-          },
-          "ignore": true,
-          "manipulate_caps_lock_led": false,
-          "mouse_flip_horizontal_wheel": false,
-          "mouse_flip_vertical_wheel": false,
-          "mouse_flip_x": false,
-          "mouse_flip_y": false,
-          "mouse_swap_wheels": false,
-          "mouse_swap_xy": false,
-          "simple_modifications": [],
-          "treat_as_built_in_keyboard": false
-        },
-        {
-          "disable_built_in_keyboard_if_exists": false,
-          "fn_function_keys": [],
-          "game_pad_swap_sticks": false,
-          "identifiers": {
-            "is_game_pad": false,
-            "is_keyboard": true,
-            "is_pointing_device": false,
-            "product_id": 635,
-            "vendor_id": 1452
-          },
-          "ignore": false,
-          "manipulate_caps_lock_led": true,
-          "mouse_flip_horizontal_wheel": false,
-          "mouse_flip_vertical_wheel": false,
-          "mouse_flip_x": false,
-          "mouse_flip_y": false,
-          "mouse_swap_wheels": false,
-          "mouse_swap_xy": false,
-          "simple_modifications": [],
-          "treat_as_built_in_keyboard": false
-        },
-        {
-          "disable_built_in_keyboard_if_exists": false,
-          "fn_function_keys": [],
-          "game_pad_swap_sticks": false,
           "identifiers": {
             "device_id": 4295964707,
-            "is_game_pad": false,
             "is_keyboard": true,
-            "is_pointing_device": false,
             "product_id": 4137,
             "vendor_id": 39658
           },
-          "ignore": false,
-          "manipulate_caps_lock_led": true,
-          "mouse_flip_horizontal_wheel": false,
-          "mouse_flip_vertical_wheel": false,
-          "mouse_flip_x": false,
-          "mouse_flip_y": false,
-          "mouse_swap_wheels": false,
-          "mouse_swap_xy": false,
           "simple_modifications": [
             {
-              "from": {
-                "key_code": "escape"
-              },
-              "to": [
-                {
-                  "key_code": "grave_accent_and_tilde"
-                }
-              ]
+              "from": { "key_code": "escape" },
+              "to": [{ "key_code": "grave_accent_and_tilde" }]
             },
             {
-              "from": {
-                "key_code": "grave_accent_and_tilde"
-              },
-              "to": [
-                {
-                  "key_code": "insert"
-                }
-              ]
+              "from": { "key_code": "grave_accent_and_tilde" },
+              "to": [{ "key_code": "insert" }]
             },
             {
-              "from": {
-                "key_code": "left_command"
-              },
-              "to": [
-                {
-                  "key_code": "left_option"
-                }
-              ]
+              "from": { "key_code": "left_command" },
+              "to": [{ "key_code": "left_option" }]
             },
             {
-              "from": {
-                "key_code": "left_option"
-              },
-              "to": [
-                {
-                  "key_code": "left_command"
-                }
-              ]
+              "from": { "key_code": "left_option" },
+              "to": [{ "key_code": "left_command" }]
             }
           ],
           "treat_as_built_in_keyboard": true
         },
         {
-          "disable_built_in_keyboard_if_exists": false,
-          "fn_function_keys": [],
-          "game_pad_swap_sticks": false,
           "identifiers": {
-            "is_game_pad": false,
             "is_keyboard": true,
             "is_pointing_device": true,
             "product_id": 544,
             "vendor_id": 1452
           },
           "ignore": false,
-          "manipulate_caps_lock_led": true,
-          "mouse_flip_horizontal_wheel": false,
-          "mouse_flip_vertical_wheel": false,
-          "mouse_flip_x": false,
-          "mouse_flip_y": false,
-          "mouse_swap_wheels": false,
-          "mouse_swap_xy": false,
           "simple_modifications": [
             {
-              "from": {
-                "key_code": "left_gui"
-              },
-              "to": [
-                {
-                  "key_code": "left_option"
-                }
-              ]
+              "from": { "key_code": "left_gui" },
+              "to": [{ "key_code": "left_option" }]
             },
             {
-              "from": {
-                "key_code": "left_option"
-              },
-              "to": [
-                {
-                  "key_code": "left_gui"
-                }
-              ]
+              "from": { "key_code": "left_option" },
+              "to": [{ "key_code": "left_gui" }]
             }
-          ],
-          "treat_as_built_in_keyboard": false
+          ]
         },
         {
-          "disable_built_in_keyboard_if_exists": false,
-          "fn_function_keys": [],
-          "game_pad_swap_sticks": false,
           "identifiers": {
-            "is_game_pad": false,
             "is_keyboard": true,
-            "is_pointing_device": false,
-            "product_id": 833,
-            "vendor_id": 1452
-          },
-          "ignore": false,
-          "manipulate_caps_lock_led": true,
-          "mouse_flip_horizontal_wheel": false,
-          "mouse_flip_vertical_wheel": false,
-          "mouse_flip_x": false,
-          "mouse_flip_y": false,
-          "mouse_swap_wheels": false,
-          "mouse_swap_xy": false,
-          "simple_modifications": [],
-          "treat_as_built_in_keyboard": false
-        },
-        {
-          "disable_built_in_keyboard_if_exists": false,
-          "fn_function_keys": [],
-          "game_pad_swap_sticks": false,
-          "identifiers": {
-            "is_game_pad": false,
-            "is_keyboard": false,
-            "is_pointing_device": true,
-            "product_id": 833,
-            "vendor_id": 1452
-          },
-          "ignore": true,
-          "manipulate_caps_lock_led": false,
-          "mouse_flip_horizontal_wheel": false,
-          "mouse_flip_vertical_wheel": false,
-          "mouse_flip_x": false,
-          "mouse_flip_y": false,
-          "mouse_swap_wheels": false,
-          "mouse_swap_xy": false,
-          "simple_modifications": [],
-          "treat_as_built_in_keyboard": false
-        },
-        {
-          "disable_built_in_keyboard_if_exists": false,
-          "fn_function_keys": [],
-          "game_pad_swap_sticks": false,
-          "identifiers": {
-            "is_game_pad": false,
-            "is_keyboard": false,
-            "is_pointing_device": true,
-            "product_id": 1,
-            "vendor_id": 2652
-          },
-          "ignore": true,
-          "manipulate_caps_lock_led": false,
-          "mouse_flip_horizontal_wheel": false,
-          "mouse_flip_vertical_wheel": false,
-          "mouse_flip_x": false,
-          "mouse_flip_y": false,
-          "mouse_swap_wheels": false,
-          "mouse_swap_xy": false,
-          "simple_modifications": [],
-          "treat_as_built_in_keyboard": false
-        },
-        {
-          "disable_built_in_keyboard_if_exists": false,
-          "fn_function_keys": [],
-          "game_pad_swap_sticks": false,
-          "identifiers": {
-            "is_game_pad": false,
-            "is_keyboard": true,
-            "is_pointing_device": false,
             "product_id": 34304,
             "vendor_id": 1452
           },
-          "ignore": true,
-          "manipulate_caps_lock_led": true,
-          "mouse_flip_horizontal_wheel": false,
-          "mouse_flip_vertical_wheel": false,
-          "mouse_flip_x": false,
-          "mouse_flip_y": false,
-          "mouse_swap_wheels": false,
-          "mouse_swap_xy": false,
-          "simple_modifications": [],
-          "treat_as_built_in_keyboard": false
+          "ignore": true
+        },
+        {
+          "identifiers": {
+            "is_keyboard": true,
+            "is_pointing_device": true,
+            "product_id": 33398,
+            "vendor_id": 9306
+          },
+          "ignore": false
         }
       ],
-      "fn_function_keys": [],
       "name": "Lay profile",
-      "parameters": {
-        "delay_milliseconds_before_open_device": 1000
-      },
-      "selected": true,
-      "simple_modifications": [],
-      "virtual_hid_keyboard": {
-        "country_code": 0,
-        "indicate_sticky_modifier_keys_state": true,
-        "mouse_key_xy_scale": 100
-      }
+      "selected": true
     }
   ]
 }

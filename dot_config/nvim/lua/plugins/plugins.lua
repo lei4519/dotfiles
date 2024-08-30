@@ -57,11 +57,13 @@ return {
       -- your configuration comes here
       -- or leave it empty to use the default settings
       -- refer to the configuration section below
+      options = {
+        enabled = true,
+      },
       -- plugins = {
-      -- kitty = {
-      --   enabled = true,
-      --   font = "+4", -- font size increment
-      -- },
+      --   kitty = {
+      --     enabled = true,
+      --   },
       -- },
     },
   },
@@ -91,5 +93,13 @@ return {
       default_engine = "google",
     },
     keys = { { "<leader>tn", "<cmd>Pantran<CR>", desc = "Translate" } },
+  },
+  {
+    "otavioschwanck/arrow.nvim",
+    opts = {
+      show_icons = true,
+      leader_key = ";", -- Recommended to be a single key
+      buffer_leader_key = "m", -- Per Buffer Mappings
+    },
   },
 }
