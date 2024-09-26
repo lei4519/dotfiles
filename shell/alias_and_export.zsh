@@ -5,6 +5,15 @@ export XDG_CONFIG_HOME="$HOME/.config"
 export MANPAGER="sh -c 'col -bx | bat -l man -p'"
 export MANROFFOPT="-c"
 
+export JAVA_HOME="/Library/Java/JavaVirtualMachines/liberica-jdk-8.jdk/Contents/Home"
+export PATH="$PATH:$JAVA_HOME/bin:$JAVA_HOME/jre/bin"
+
+export MAVEN_HOME="$HOME/apache-maven"
+export PATH="$PATH:$MAVEN_HOME/bin"
+
+# export M2_HOME="$HOME/apache-maven"
+# export PATH="$PATH:$M2_HOME/bin"
+#
 # export EDITOR="neovide"
 # export VISUAL="neovide"
 export EDITOR="nvim"

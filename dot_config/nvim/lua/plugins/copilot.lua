@@ -1,50 +1,52 @@
 return {
   {
     "zbirenbaum/copilot.lua",
-    enabled = true,
     cmd = "Copilot",
-    build = ":Copilot auth",
-    opts = {
-      panel = {
-        enabled = false,
-        auto_refresh = false,
-        keymap = {
-          jump_prev = "[[",
-          jump_next = "]]",
-          accept = "<CR>",
-          refresh = "gr",
-          open = "<M-CR>",
+    event = "InsertEnter",
+    config = function()
+      require("copilot").setup({
+        panel = {
+          enabled = false,
+          auto_refresh = false,
+          keymap = {
+            jump_prev = "[[",
+            jump_next = "]]",
+            accept = "<CR>",
+            refresh = "gr",
+            open = "<M-CR>",
+          },
+          layout = {
+            position = "right", -- | top | left | right
+            ratio = 0.4,
+          },
         },
-        layout = {
-          position = "right", -- | top | left | right
-          ratio = 0.4,
+        suggestion = {
+          enabled = true,
+          auto_trigger = true,
+          debounce = 75,
+          keymap = {
+            accept = "<M-l>",
+            accept_word = false,
+            accept_line = false,
+            next = "<M-]>",
+            prev = "<M-[>",
+            dismiss = "<C-]>",
+          },
         },
-      },
-      suggestion = {
-        enabled = true,
-        auto_trigger = true,
-        debounce = 75,
-        keymap = {
-          accept = "<M-l>",
-          accept_word = false,
-          accept_line = false,
-          next = "<M-]>",
-          prev = "<M-[>",
-          dismiss = "<C-]>",
+        filetypes = {
+          rust = true,
+          go = true,
+          -- html = true,
+          lua = true,
+          javascript = true,
+          javascriptreact = true,
+          typescript = true,
+          typescriptreact = true,
+          ["*"] = false,
         },
-      },
-      filetypes = {
-        rust = true,
-        go = true,
-        -- html = true,
-        lua = true,
-        javascript = true,
-        javascriptreact = true,
-        typescript = true,
-        typescriptreact = true,
-        ["*"] = false,
-      },
-    },
+        copilot_node_command = vim.fn.expand("$FNM_DIR") .. "/node-versions/v18.19.0/installation/bin/node",
+      })
+    end,
   },
   -- copy from lazyvim
   {
