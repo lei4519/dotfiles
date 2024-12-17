@@ -51,3 +51,5 @@ vim.ui.open = function(path)
 
   return vim.system(cmd, { text = true, detach = true }), nil
 end
+
+vim.g.lazyvim_prettier_needs_config = true

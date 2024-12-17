@@ -1,5 +1,14 @@
 return {
   {
+    "echasnovski/mini.animate",
+    version = "*",
+    opts = {
+      cursor = {
+        enable = false,
+      },
+    },
+  },
+  {
     "chrisgrieser/nvim-spider",
     lazy = true,
     keys = {
@@ -30,10 +39,10 @@ return {
     "echasnovski/mini.pairs",
     enabled = false,
   },
-  {
-    "tzachar/highlight-undo.nvim",
-    config = true,
-  },
+  -- {
+  --   "tzachar/highlight-undo.nvim",
+  --   config = true,
+  -- },
   {
     "dmmulroy/ts-error-translator.nvim",
     config = true,
@@ -74,6 +83,7 @@ return {
     event = { "WinLeave" },
   },
   {
+    -- 宏录制增强
     "ecthelionvi/NeoComposer.nvim",
     dependencies = { "kkharji/sqlite.lua" },
     opts = {},
@@ -94,14 +104,14 @@ return {
     },
     keys = { { "<leader>tn", "<cmd>Pantran<CR>", desc = "Translate" } },
   },
-  {
-    "otavioschwanck/arrow.nvim",
-    opts = {
-      show_icons = true,
-      leader_key = ";", -- Recommended to be a single key
-      buffer_leader_key = "m", -- Per Buffer Mappings
-    },
-  },
+  -- {
+  --   "otavioschwanck/arrow.nvim",
+  --   opts = {
+  --     show_icons = true,
+  --     leader_key = ";", -- Recommended to be a single key
+  --     buffer_leader_key = "m", -- Per Buffer Mappings
+  --   },
+  -- },
   {
     "jake-stewart/multicursor.nvim",
     branch = "1.0",

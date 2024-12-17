@@ -13,9 +13,19 @@ return {
   },
   opts = {
     -- 配置放在这里
-    lang = "rust",
+    lang = "golang",
     cn = {
       enabled = true,
     },
+    ---@type lc.storage
+    storage = {
+      home = "/Users/lay/Lay/l-algo/src",
+    },
   },
+  -- keys = {
+  --   { "<localleader>l", "<cmd>Leet list<cr>", desc = "Leet list" },
+  --   { "<localleader>t", "<cmd>Leet test<cr>", desc = "Leet test" },
+  --   { "<localleader>s", "<cmd>Leet submit<cr>", desc = "Leet submit" },
+  --   { "<localleader>d", "<cmd>Leet desc<cr>", desc = "Leet desc" },
+  -- },
 }

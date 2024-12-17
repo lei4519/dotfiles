@@ -67,7 +67,7 @@ yabai -m config window_gap 4
 # animation
 yabai -m config window_animation_duration 0.30
 
-yabai -m config external_bar all:0:24 \
+yabai -m config external_bar all:24:0 \
 	mouse_follows_focus off \
 	window_zoom_persist off \
 	insert_feedback_color 0xff9dd274 \

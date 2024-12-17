@@ -14,3 +14,17 @@ vim.api.nvim_create_autocmd("FileType", {
     vim.opt_local.spell = true
   end,
 })
+
+LazyVim.lsp.on_attach(function(client, buffer)
+  if client.name == "biome" then
+    -- 使用系统命令调用 Biome lint
+    vim.api.nvim_create_autocmd("BufWritePre", {
+      group = augroup("biome_lint"),
+      pattern = "*.js,*.ts,*.jsx,*.tsx,*.less,*.css,*.md", -- 修改为你需要的文件类型
+      callback = function()
+        vim.cmd("silent! !biome lint --write --unsafe " .. vim.fn.expand("%:p")) -- 调用 Biome 格式化
+        vim.cmd("edit!") -- 重新加载文件
+      end,
+    })
+  end
+end)

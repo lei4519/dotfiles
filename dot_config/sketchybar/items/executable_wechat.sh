@@ -16,5 +16,5 @@ wechat=(
 	click_script="open -a Wechat"
 )
 
-sketchybar --add item wechat right \
-	--set wechat "${wechat[@]}"
+sketchybar --add item xinwechat center \
+	--set xinwechat "${wechat[@]}"
