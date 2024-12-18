@@ -32,16 +32,7 @@ return {
         typescriptreact = true,
         ["*"] = false,
       },
+      copilot_node_command = vim.fn.expand("$FNM_DIR") .. "/node-versions/v18.19.0/installation/bin/node",
     },
   },
-  -- {
-  --   "zbirenbaum/copilot.lua",
-  --   cmd = "Copilot",
-  --   event = "InsertEnter",
-  --   config = function()
-  --     require("copilot").setup({
-  --       copilot_node_command = vim.fn.expand("$FNM_DIR") .. "/node-versions/v18.19.0/installation/bin/node",
-  --     })
-  --   end,
-  -- },
 }
